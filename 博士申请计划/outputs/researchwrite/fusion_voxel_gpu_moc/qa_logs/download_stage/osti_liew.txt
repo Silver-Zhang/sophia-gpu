@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<records>
+<record>
+  <osti_id>10106233</osti_id>
+  <title>Optimization of the National Ignition Facility primary shield design</title>
+  <description>Minimum cost design concepts of the primary shield for the National Ignition laser fusion experimental Facility (NIF) are searched with the help of the optimization code SWAN. The computational method developed for this search involves incorporating the time dependence of the delayed photon field within effective delayed photon production cross sections. This method enables one to address the time-dependent problem using relatively simple, time-independent transport calculations, thus significantly simplifying the design process. A novel approach was used for the identification of the optimal combination of constituents that will minimize the shield cost; it involves the generation, with SWAN, of effectiveness functions for replacing materials on an equal cost basis. The minimum cost shield design concept was found to consist of a mixture of polyethylene and low cost, low activation materials such as SiC, with boron added near the shield boundaries.</description>
+  <authors>
+      <author>Annese, C E</author><author>Watkins, E F</author><author>Greenspan, E</author><author>Miller, W F [California Univ., Berkeley, CA (United States). Dept. of Nuclear Engineering]</author><author>Latkowski, J</author><author>Lee, J D</author><author>Soran, P</author><author>Tobin, M L [Lawrence Livermore National Lab., CA (United States)]</author>
+  </authors>
+  <product_type>Conference</product_type>
+  
+  <journal_name></journal_name>
+  <journal_volume></journal_volume>
+  <journal_issue></journal_issue>
+  
+  <article_type></article_type>
+  <conference_info>Symposium on fusion engineering,Hyannis, MA (United States),11-15 Oct 1993</conference_info>
+  <publication_date>1993-10-01T00:00:00</publication_date>
+  <publisher></publisher>
+  <country_publication>United States</country_publication>
+  <format>6 p.</format>
+  <language>English</language>
+  <availability>INIS; OSTI as DE94003622; Paper copy available at OSTI: phone, 865-576-8401, or email, reports@adonis.osti.gov</availability>
+  <research_orgs>
+      <research_org>Lawrence Livermore National Lab., CA (United States)</research_org>
+  </research_orgs>
+  <sponsor_orgs>
+      <sponsor_org>USDOE, Washington, DC (United States)</sponsor_org>
+  </sponsor_orgs>
+  <contributing_org></contributing_org>
+  <subjects>
+      <subject>70 PLASMA PHYSICS AND FUSION TECHNOLOGY</subject><subject>700411</subject><subject>700480</subject><subject>COMPONENT DEVELOPMENT</subject><subject>DESIGN</subject><subject>INERTIAL CONFINEMENT DEVICES</subject><subject>LASER FUSION REACTORS</subject><subject>MATERIALS STUDIES</subject><subject>POLYETHYLENES</subject><subject>RADIATION DOSES</subject><subject>SHIELDING</subject><subject>SHIELDING MATERIALS</subject><subject>SILICON CARBIDES</subject>
+  </subjects>
+  <doe_contract_number>W-7405-ENG-48; </doe_contract_number>
+    <report_number>UCRL-JC-115616; CONF-931018-63</report_number>
+      <other_identifiers><identifier>ON: DE94003622</identifier></other_identifiers>
+  
+  <entry_date>2026-08-24T11:14:25</entry_date>
+  <links>
+      <link rel="citation" href="https://www.osti.gov/biblio/10106233" /><link rel="fulltext" href="https://www.osti.gov/servlets/purl/10106233" />
+  </links>
+</record>
+</records>

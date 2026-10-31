@@ -1,0 +1,474 @@
+[
+  {
+    "doi": "10.1016/j.anucene.2022.109335",
+    "title": [
+      "VITAS: A multi-purpose simulation code for the solution of neutron transport problems based on variational nodal methods"
+    ],
+    "authors": [
+      "Tengfei Zhang",
+      "Wei Xiao",
+      "Han Yin",
+      "Qizheng Sun",
+      "Xiaojing Liu"
+    ],
+    "journal": [
+      "Annals of Nuclear Energy"
+    ],
+    "volume": "178",
+    "issue": null,
+    "pages": "109335",
+    "article": "109335",
+    "published": {
+      "date-parts": [
+        [
+          2022,
+          12
+        ]
+      ]
+    },
+    "online": null,
+    "print": {
+      "date-parts": [
+        [
+          2022,
+          12
+        ]
+      ]
+    }
+  },
+  {
+    "doi": "10.1007/s41365-024-01430-4",
+    "title": [
+      "An efficient parallel algorithm of variational nodal method for heterogeneous neutron transport problems"
+    ],
+    "authors": [
+      "Han Yin",
+      "Xiao-Jing Liu",
+      "Teng-Fei Zhang"
+    ],
+    "journal": [
+      "Nuclear Science and Techniques"
+    ],
+    "volume": "35",
+    "issue": "4",
+    "pages": null,
+    "article": "69",
+    "published": {
+      "date-parts": [
+        [
+          2024,
+          4
+        ]
+      ]
+    },
+    "online": {
+      "date-parts": [
+        [
+          2024,
+          5,
+          9
+        ]
+      ]
+    },
+    "print": {
+      "date-parts": [
+        [
+          2024,
+          4
+        ]
+      ]
+    }
+  },
+  {
+    "doi": "10.13832/j.jnpe.2023.02.0015",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "doi": "10.1016/j.anucene.2013.06.039",
+    "title": [
+      "Accelerating a three-dimensional MOC calculation using GPU with CUDA and two-level GCMFD method"
+    ],
+    "authors": [
+      "ZhiZhu Zhang",
+      "Kan Wang",
+      "Qing Li"
+    ],
+    "journal": [
+      "Annals of Nuclear Energy"
+    ],
+    "volume": "62",
+    "issue": null,
+    "pages": "445-451",
+    "article": null,
+    "published": {
+      "date-parts": [
+        [
+          2013,
+          12
+        ]
+      ]
+    },
+    "online": null,
+    "print": {
+      "date-parts": [
+        [
+          2013,
+          12
+        ]
+      ]
+    }
+  },
+  {
+    "doi": "10.1016/j.anucene.2013.12.012",
+    "title": [
+      "The OpenMOC method of characteristics neutral particle transport code"
+    ],
+    "authors": [
+      "William Boyd",
+      "Samuel Shaner",
+      "Lulu Li",
+      "Benoit Forget",
+      "Kord Smith"
+    ],
+    "journal": [
+      "Annals of Nuclear Energy"
+    ],
+    "volume": "68",
+    "issue": null,
+    "pages": "43-52",
+    "article": null,
+    "published": {
+      "date-parts": [
+        [
+          2014,
+          6
+        ]
+      ]
+    },
+    "online": null,
+    "print": {
+      "date-parts": [
+        [
+          2014,
+          6
+        ]
+      ]
+    }
+  },
+  {
+    "doi": "10.1016/j.anucene.2019.02.026",
+    "title": [
+      "Implementation and performance analysis of the massively parallel method of characteristics based on GPU"
+    ],
+    "authors": [
+      "Peitao Song",
+      "Zhijian Zhang",
+      "Liang Liang",
+      "Qian Zhang",
+      "Qiang Zhao"
+    ],
+    "journal": [
+      "Annals of Nuclear Energy"
+    ],
+    "volume": "131",
+    "issue": null,
+    "pages": "257-272",
+    "article": null,
+    "published": {
+      "date-parts": [
+        [
+          2019,
+          9
+        ]
+      ]
+    },
+    "online": null,
+    "print": {
+      "date-parts": [
+        [
+          2019,
+          9
+        ]
+      ]
+    }
+  },
+  {
+    "doi": "10.1080/00295450.2021.1871995",
+    "title": [
+      "Method of Characteristics for 3D, Full-Core Neutron Transport on Unstructured Mesh"
+    ],
+    "authors": [
+      "Derek R. Gaston",
+      "Benoit Forget",
+      "Kord S. Smith",
+      "Logan H. Harbour",
+      "Gavin K. Ridley",
+      "Guillaume G. Giudicelli"
+    ],
+    "journal": [
+      "Nuclear Technology"
+    ],
+    "volume": "207",
+    "issue": "7",
+    "pages": "931-953",
+    "article": null,
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          7,
+          3
+        ]
+      ]
+    },
+    "online": {
+      "date-parts": [
+        [
+          2021,
+          7,
+          9
+        ]
+      ]
+    },
+    "print": {
+      "date-parts": [
+        [
+          2021,
+          7,
+          3
+        ]
+      ]
+    }
+  },
+  {
+    "doi": "10.1080/00295639.2026.2652773",
+    "title": [
+      "Verification and Performance Assessment of NuDEAL, a GPU-Accelerated Deterministic Transport Framework on Unstructured Meshes"
+    ],
+    "authors": [
+      "Kyung Min Kim",
+      "Jaeuk Im",
+      "Han Gyu Lee",
+      "Yeon Sang Jung"
+    ],
+    "journal": [
+      "Nuclear Science and Engineering"
+    ],
+    "volume": null,
+    "issue": null,
+    "pages": "1-25",
+    "article": null,
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          23
+        ]
+      ]
+    },
+    "online": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          23
+        ]
+      ]
+    },
+    "print": null
+  },
+  {
+    "doi": "10.13182/NSE12-33",
+    "title": [
+      "FW-CADIS Method for Global and Regional Variance Reduction of Monte Carlo Radiation Transport Calculations"
+    ],
+    "authors": [
+      "John C. Wagner",
+      "Douglas E. Peplow",
+      "Scott W. Mosher"
+    ],
+    "journal": [
+      "Nuclear Science and Engineering"
+    ],
+    "volume": "176",
+    "issue": "1",
+    "pages": "37-57",
+    "article": null,
+    "published": {
+      "date-parts": [
+        [
+          2014,
+          1
+        ]
+      ]
+    },
+    "online": {
+      "date-parts": [
+        [
+          2017,
+          3,
+          22
+        ]
+      ]
+    },
+    "print": {
+      "date-parts": [
+        [
+          2014,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "doi": "10.1016/j.fusengdes.2014.02.046",
+    "title": [
+      "Assessment of fusion facility dose rate map using mesh adaptivity enhancements of hybrid Monte Carlo/deterministic techniques"
+    ],
+    "authors": [
+      "Ahmad M. Ibrahim",
+      "Paul P. Wilson",
+      "Mohamed E. Sawan",
+      "Scott W. Mosher",
+      "Douglas E. Peplow",
+      "Robert E. Grove"
+    ],
+    "journal": [
+      "Fusion Engineering and Design"
+    ],
+    "volume": "89",
+    "issue": "9-10",
+    "pages": "1875-1879",
+    "article": null,
+    "published": {
+      "date-parts": [
+        [
+          2014,
+          10
+        ]
+      ]
+    },
+    "online": null,
+    "print": {
+      "date-parts": [
+        [
+          2014,
+          10
+        ]
+      ]
+    }
+  },
+  {
+    "doi": "10.1080/00295639.2025.2458958",
+    "title": [
+      "Application of the Random Ray Method to Variance Reduction in Radiation Shielding Problems"
+    ],
+    "authors": [
+      "Valeria Raffuzzi",
+      "Rufus Neame",
+      "Paul Cosgrove"
+    ],
+    "journal": [
+      "Nuclear Science and Engineering"
+    ],
+    "volume": "200",
+    "issue": "sup1",
+    "pages": null,
+    "article": null,
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          3,
+          3
+        ]
+      ]
+    },
+    "online": {
+      "date-parts": [
+        [
+          2025,
+          3,
+          3
+        ]
+      ]
+    },
+    "print": {
+      "date-parts": [
+        [
+          2026,
+          2,
+          26
+        ]
+      ]
+    }
+  },
+  {
+    "doi": "10.1016/j.nds.2024.01.001",
+    "title": [
+      "FENDL: A library for fusion research and applications"
+    ],
+    "authors": [
+      "G. Schnabel",
+      "D.L. Aldama",
+      "T. Bohm",
+      "U. Fischer",
+      "S. Kunieda",
+      "A. Trkov",
+      "C. Konno",
+      "R. Capote",
+      "A.J. Koning",
+      "S. Breidokaite",
+      "T. Eade",
+      "M. Fabbri",
+      "D. Flammini",
+      "L. Isolan",
+      "I. Kodeli",
+      "M. Košťál",
+      "S. Kwon",
+      "D. Laghi",
+      "D. Leichtle",
+      "S. Nakayama",
+      "M. Ohta",
+      "L.W. Packer",
+      "Y. Qiu",
+      "S. Sato",
+      "M. Sawan",
+      "M. Schulc",
+      "G. Stankunas",
+      "M. Sumini",
+      "A. Valentine",
+      "R. Villari",
+      "A. Žohar"
+    ],
+    "journal": [
+      "Nuclear Data Sheets"
+    ],
+    "volume": "193",
+    "issue": null,
+    "pages": "1-78",
+    "article": null,
+    "published": {
+      "date-parts": [
+        [
+          2024,
+          2
+        ]
+      ]
+    },
+    "online": null,
+    "print": {
+      "date-parts": [
+        [
+          2024,
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "doi": "10.2312/egtp.19871000",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

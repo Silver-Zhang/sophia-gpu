@@ -1,0 +1,27 @@
+{
+  "provided_by": "applicant",
+  "received_date": "2026-10-20",
+  "confirmed_self_report": [
+    "数学物理方法、辐射屏蔽设计、核反应堆物理等课程",
+    "Python、C++、Linux、Docker、GitHub、GitLab",
+    "Geant4屏蔽装置、加速器大厅与10 MeV电子加速器靶建模",
+    "OpenMC、Serpent、VSOP99-11群常数修正相关项目",
+    "敏感性分析、降阶与代理建模、优化算法经验"
+  ],
+  "ongoing_thesis": {
+    "title": "HTR-PM初装堆计算中石墨吸收群常数的有效修正",
+    "period": "2026.01–2027.06",
+    "status": "在研，不视为完成"
+  },
+  "not_confirmed": [
+    "具体GPU编程与MOC实现学习安排"
+  ],
+  "scope_note": "蒙卡经历仅作为申请人技能基础，不引入本课题蒙卡对照或耦合实验。",
+  "explicit_capability_update": {
+    "date": "2026-10-20",
+    "GPU编程": "当前不具备，需学习",
+    "MOC实现": "当前不具备，需学习",
+    "可迁移基础": "已有Python、C++编程与粒子输运建模经验",
+    "evidence_source": "申请人明确补充"
+  }
+}

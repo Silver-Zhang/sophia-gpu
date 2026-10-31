@@ -1,0 +1,49 @@
+{
+  "mode": "compose",
+  "scope": "merged_research_proposal_chapters_1_to_11",
+  "status": "review_package_ready",
+  "round": 2,
+  "literature_cutoff": "2026-10-18",
+  "scores": {
+    "transport_feasibility": 8.8,
+    "novelty_advisor_fit": 8.6
+  },
+  "outputs": [
+    "exports/博士科研计划书_审阅版.docx",
+    "exports/提交前仍需补充的信息清单.docx"
+  ],
+  "references": 24,
+  "docx_render_pages": 12,
+  "qa": "All 12 final PNG pages visually inspected; Chinese glyphs, black headings, tables, links and pagination passed.",
+  "next_step": "User review and completion of the separate pre-submission information checklist; pending resources are not confirmed.",
+  "technical_debts": [
+    "Applicant background and preliminary results not supplied.",
+    "Exact school length/format and training duration not confirmed.",
+    "Code interfaces, GPU allocation and private engineering models not assumed.",
+    "Not all cited papers were available in full text; access/read-depth log is preserved."
+  ],
+  "active_review_draft": "exports/博士科研计划书_唯一审查底稿.md",
+  "current_scope": "chapters 1–11, frozen representation–execution co-design problem anchor",
+  "current_status": "word_review_package_complete",
+  "historical_outputs": [
+    "exports/大纲_历史版本_已废弃.md",
+    "exports/博士科研计划书大纲.docx"
+  ],
+  "reference_verification_report": "exports/参考文献核验表.md",
+  "word_render_qa": "qa_logs/Word排版核验记录.json",
+  "reference_download": {
+    "status": "partial_no_institutional_access",
+    "directory": "参考文献全文",
+    "archive": "参考文献全文.zip",
+    "downloaded": 9,
+    "total": 13,
+    "missing_numbers": [
+      2,
+      3,
+      8,
+      12
+    ],
+    "si_requested": true,
+    "si_files_downloaded": 0
+  }
+}

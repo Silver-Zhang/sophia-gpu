@@ -1,0 +1,73 @@
+[
+  {
+    "number": 6,
+    "title": "A Fast Voxel Traversal Algorithm for Ray Tracing",
+    "doi": "10.2312/egtp.19871000",
+    "file": null,
+    "source": "https://www.cse.chalmers.se/edu/year/2012/course/_courses_2011/TDA361/grid.pdf",
+    "version": "作者主页公开版",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "download_failed",
+    "attempts": [],
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+  },
+  {
+    "number": 7,
+    "title": "AMReX: Block-structured adaptive mesh refinement for multiphysics applications",
+    "doi": "10.1177/10943420211022811",
+    "file": null,
+    "source": "https://arxiv.org/pdf/2009.12009v2",
+    "version": "arXiv公开稿，按文件首页核验版本",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "download_failed",
+    "attempts": [],
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+  },
+  {
+    "number": 8,
+    "title": "Method of Characteristics for 3D, Full-Core Neutron Transport on Unstructured Mesh",
+    "doi": "10.1080/00295450.2021.1871995",
+    "file": null,
+    "source": "https://www.tandfonline.com/doi/pdf/10.1080/00295450.2021.1871995?needAccess=true",
+    "version": "期刊正式版",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "download_failed",
+    "attempts": [],
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+  },
+  {
+    "number": 3,
+    "title": "Automatic generation and validation of an ITER neutronics model from CAD data",
+    "doi": "10.1016/j.fusengdes.2007.06.038",
+    "file": null,
+    "source": "https://www.researchgate.net/profile/Arkady-Serikov/publication/245221428_Automatic_generation_and_validation_of_an_ITER_neutronics_model_from_CAD_data/links/69a14bf41e8bd47aa006ad32/Automatic-generation-and-validation-of-an-ITER-neutronics-model-from-CAD-data.pdf",
+    "version": "期刊正式版",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "download_failed",
+    "attempts": [],
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+  },
+  {
+    "number": 13,
+    "title": "FW-CADIS Method for Global and Regional Variance Reduction of Monte Carlo Radiation Transport Calculations",
+    "doi": "10.13182/NSE12-33",
+    "file": null,
+    "source": "https://web.ornl.gov/~peplowde/p068.pdf?download=1",
+    "version": "作者机构公开期刊版",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "download_failed",
+    "attempts": [
+      {
+        "url": "https://web.ornl.gov/~peplowde/p068.pdf?download=1",
+        "resolved_url": "https://web.ornl.gov/~peplowde/p068.pdf?download=1",
+        "bytes": 791701
+      }
+    ],
+    "error": "Cannot find Root object in pdf"
+  }
+]

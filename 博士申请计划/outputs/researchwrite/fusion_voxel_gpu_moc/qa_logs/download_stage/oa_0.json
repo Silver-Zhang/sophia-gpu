@@ -1,0 +1,778 @@
+{
+  "doi": "10.13182/FST91-A29687",
+  "openalex": {
+    "id": "https://openalex.org/W2735404631",
+    "doi": "https://doi.org/10.13182/fst91-a29687",
+    "title": "Shielding Design Optimization for the Compact Ignition Tokamak Test Cell Building",
+    "display_name": "Shielding Design Optimization for the Compact Ignition Tokamak Test Cell Building",
+    "publication_year": 1991,
+    "publication_date": "1991-09-01",
+    "ids": {
+      "openalex": "https://openalex.org/W2735404631",
+      "doi": "https://doi.org/10.13182/fst91-a29687",
+      "mag": "2735404631"
+    },
+    "language": "en",
+    "primary_location": {
+      "id": "doi:10.13182/fst91-a29687",
+      "doi": "https://doi.org/10.13182/fst91-a29687",
+      "is_oa": false,
+      "landing_page_url": "https://doi.org/10.13182/fst91-a29687",
+      "pdf_url": null,
+      "source": {
+        "id": "https://openalex.org/S17775143",
+        "display_name": "Fusion Technology",
+        "issn_l": "0748-1896",
+        "issn": [
+          "0748-1896"
+        ],
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_core": true,
+        "listed_in": [
+          "cwts-core"
+        ],
+        "host_organization": "https://openalex.org/P4320800701",
+        "host_organization_name": "American Nuclear Society",
+        "host_organization_lineage": [
+          "https://openalex.org/P4320800701"
+        ],
+        "host_organization_lineage_names": [
+          "American Nuclear Society"
+        ],
+        "type": "journal"
+      },
+      "license": null,
+      "license_id": null,
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "Fusion Technology",
+      "raw_type": "journal-article"
+    },
+    "volume": null,
+    "type": "article",
+    "indexed_in": [
+      "crossref"
+    ],
+    "open_access": {
+      "is_oa": false,
+      "oa_status": "closed",
+      "oa_url": null,
+      "any_repository_has_fulltext": false
+    },
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5112297439",
+          "display_name": "Seng Liek Liew",
+          "orcid": null,
+          "observed_orcids": []
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I20089843",
+            "display_name": "Princeton University",
+            "ror": "https://ror.org/00hx57361",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I20089843"
+            ]
+          },
+          {
+            "id": "https://openalex.org/I2799567181",
+            "display_name": "Princeton Plasma Physics Laboratory",
+            "ror": "https://ror.org/03vn1ts68",
+            "country_code": "US",
+            "type": "facility",
+            "lineage": [
+              "https://openalex.org/I1330989302",
+              "https://openalex.org/I20089843",
+              "https://openalex.org/I2799567181",
+              "https://openalex.org/I39565521"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Seng Liek Liew",
+        "raw_affiliation_strings": [
+          "Princeton University Plasma Physics Laboratory, Princeton, New Jersey 08543"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Princeton University Plasma Physics Laboratory, Princeton, New Jersey 08543",
+            "institution_ids": [
+              "https://openalex.org/I20089843",
+              "https://openalex.org/I2799567181"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "last",
+        "author": {
+          "id": "https://openalex.org/A5111415799",
+          "display_name": "Long-Poe Ku",
+          "orcid": null,
+          "observed_orcids": []
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I20089843",
+            "display_name": "Princeton University",
+            "ror": "https://ror.org/00hx57361",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I20089843"
+            ]
+          },
+          {
+            "id": "https://openalex.org/I2799567181",
+            "display_name": "Princeton Plasma Physics Laboratory",
+            "ror": "https://ror.org/03vn1ts68",
+            "country_code": "US",
+            "type": "facility",
+            "lineage": [
+              "https://openalex.org/I1330989302",
+              "https://openalex.org/I20089843",
+              "https://openalex.org/I2799567181",
+              "https://openalex.org/I39565521"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Long-Poe Ku",
+        "raw_affiliation_strings": [
+          "Princeton University Plasma Physics Laboratory, Princeton, New Jersey 08543"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Princeton University Plasma Physics Laboratory, Princeton, New Jersey 08543",
+            "institution_ids": [
+              "https://openalex.org/I20089843",
+              "https://openalex.org/I2799567181"
+            ]
+          }
+        ]
+      }
+    ],
+    "institutions": [],
+    "countries_distinct_count": 1,
+    "institutions_distinct_count": 2,
+    "corresponding_author_ids": [],
+    "corresponding_institution_ids": [],
+    "apc_list": null,
+    "apc_paid": null,
+    "fwci": 0.0,
+    "has_fulltext": false,
+    "cited_by_count": 4,
+    "citation_normalized_percentile": {
+      "value": 0.3639885,
+      "is_in_top_1_percent": false,
+      "is_in_top_10_percent": false
+    },
+    "cited_by_percentile_year": {
+      "min": 89,
+      "max": 93
+    },
+    "biblio": {
+      "volume": "20",
+      "issue": "2",
+      "first_page": "164",
+      "last_page": "178"
+    },
+    "is_retracted": false,
+    "is_paratext": false,
+    "is_xpac": false,
+    "primary_topic": {
+      "id": "https://openalex.org/T12299",
+      "display_name": "Radiation Shielding Materials Analysis",
+      "score": 0.46000000834465027,
+      "subfield": {
+        "id": "https://openalex.org/subfields/2505",
+        "display_name": "Materials Chemistry"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/25",
+        "display_name": "Materials Science"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/3",
+        "display_name": "Physical Sciences"
+      }
+    },
+    "topics": [
+      {
+        "id": "https://openalex.org/T12299",
+        "display_name": "Radiation Shielding Materials Analysis",
+        "score": 0.46000000834465027,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2505",
+          "display_name": "Materials Chemistry"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/25",
+          "display_name": "Materials Science"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      {
+        "id": "https://openalex.org/T10597",
+        "display_name": "Nuclear reactor physics and engineering",
+        "score": 0.23389999568462372,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2202",
+          "display_name": "Aerospace Engineering"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/22",
+          "display_name": "Engineering"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      {
+        "id": "https://openalex.org/T10592",
+        "display_name": "Fusion materials and technologies",
+        "score": 0.16599999368190765,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2505",
+          "display_name": "Materials Chemistry"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/25",
+          "display_name": "Materials Science"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      }
+    ],
+    "keywords": [
+      {
+        "id": "https://openalex.org/keywords/radiation-shielding-design",
+        "display_name": "radiation shielding design",
+        "score": 0.652999997138977
+      },
+      {
+        "id": "https://openalex.org/keywords/compact-ignition-tokamak",
+        "display_name": "Compact Ignition Tokamak",
+        "score": 0.9190000295639038
+      },
+      {
+        "id": "https://openalex.org/keywords/boron-concentration",
+        "display_name": "boron content",
+        "score": 0.7689999938011169
+      },
+      {
+        "id": "https://openalex.org/keywords/structural-requirements",
+        "display_name": "structural requirements",
+        "score": 0.35100001096725464
+      }
+    ],
+    "concepts": [
+      {
+        "id": "https://openalex.org/C2265751",
+        "wikidata": "https://www.wikidata.org/wiki/Q332007",
+        "display_name": "Electromagnetic shielding",
+        "level": 2,
+        "score": 0.9081506133079529
+      },
+      {
+        "id": "https://openalex.org/C116515362",
+        "wikidata": "https://www.wikidata.org/wiki/Q188589",
+        "display_name": "Tokamak",
+        "level": 3,
+        "score": 0.7290585041046143
+      },
+      {
+        "id": "https://openalex.org/C116915560",
+        "wikidata": "https://www.wikidata.org/wiki/Q83504",
+        "display_name": "Nuclear engineering",
+        "level": 1,
+        "score": 0.6539286971092224
+      },
+      {
+        "id": "https://openalex.org/C159063594",
+        "wikidata": "https://www.wikidata.org/wiki/Q248382",
+        "display_name": "Ignition system",
+        "level": 2,
+        "score": 0.6476108431816101
+      },
+      {
+        "id": "https://openalex.org/C19499675",
+        "wikidata": "https://www.wikidata.org/wiki/Q232207",
+        "display_name": "Monte Carlo method",
+        "level": 2,
+        "score": 0.49590978026390076
+      },
+      {
+        "id": "https://openalex.org/C12725497",
+        "wikidata": "https://www.wikidata.org/wiki/Q810247",
+        "display_name": "Baseline (sea)",
+        "level": 2,
+        "score": 0.4508384168148041
+      },
+      {
+        "id": "https://openalex.org/C192562407",
+        "wikidata": "https://www.wikidata.org/wiki/Q228736",
+        "display_name": "Materials science",
+        "level": 0,
+        "score": 0.4504642188549042
+      },
+      {
+        "id": "https://openalex.org/C131584629",
+        "wikidata": "https://www.wikidata.org/wiki/Q4308705",
+        "display_name": "Coupling (piping)",
+        "level": 2,
+        "score": 0.4361325204372406
+      },
+      {
+        "id": "https://openalex.org/C41008148",
+        "wikidata": "https://www.wikidata.org/wiki/Q21198",
+        "display_name": "Computer science",
+        "level": 0,
+        "score": 0.4023173749446869
+      },
+      {
+        "id": "https://openalex.org/C121332964",
+        "wikidata": "https://www.wikidata.org/wiki/Q413",
+        "display_name": "Physics",
+        "level": 0,
+        "score": 0.2474757730960846
+      },
+      {
+        "id": "https://openalex.org/C185544564",
+        "wikidata": "https://www.wikidata.org/wiki/Q81197",
+        "display_name": "Nuclear physics",
+        "level": 1,
+        "score": 0.2309880256652832
+      },
+      {
+        "id": "https://openalex.org/C127413603",
+        "wikidata": "https://www.wikidata.org/wiki/Q11023",
+        "display_name": "Engineering",
+        "level": 0,
+        "score": 0.11666688323020935
+      },
+      {
+        "id": "https://openalex.org/C82706917",
+        "wikidata": "https://www.wikidata.org/wiki/Q10251",
+        "display_name": "Plasma",
+        "level": 2,
+        "score": 0.10177060961723328
+      },
+      {
+        "id": "https://openalex.org/C33923547",
+        "wikidata": "https://www.wikidata.org/wiki/Q395",
+        "display_name": "Mathematics",
+        "level": 0,
+        "score": 0.09117791056632996
+      },
+      {
+        "id": "https://openalex.org/C159985019",
+        "wikidata": "https://www.wikidata.org/wiki/Q181790",
+        "display_name": "Composite material",
+        "level": 1,
+        "score": 0.08969414234161377
+      },
+      {
+        "id": "https://openalex.org/C97355855",
+        "wikidata": "https://www.wikidata.org/wiki/Q11473",
+        "display_name": "Thermodynamics",
+        "level": 1,
+        "score": 0.0688888430595398
+      },
+      {
+        "id": "https://openalex.org/C111368507",
+        "wikidata": "https://www.wikidata.org/wiki/Q43518",
+        "display_name": "Oceanography",
+        "level": 1,
+        "score": 0.0
+      },
+      {
+        "id": "https://openalex.org/C127313418",
+        "wikidata": "https://www.wikidata.org/wiki/Q1069",
+        "display_name": "Geology",
+        "level": 0,
+        "score": 0.0
+      },
+      {
+        "id": "https://openalex.org/C105795698",
+        "wikidata": "https://www.wikidata.org/wiki/Q12483",
+        "display_name": "Statistics",
+        "level": 1,
+        "score": 0.0
+      }
+    ],
+    "mesh": [],
+    "locations_count": 1,
+    "locations": [
+      {
+        "id": "doi:10.13182/fst91-a29687",
+        "doi": "https://doi.org/10.13182/fst91-a29687",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.13182/fst91-a29687",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S17775143",
+          "display_name": "Fusion Technology",
+          "issn_l": "0748-1896",
+          "issn": [
+            "0748-1896"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core"
+          ],
+          "host_organization": "https://openalex.org/P4320800701",
+          "host_organization_name": "American Nuclear Society",
+          "host_organization_lineage": [
+            "https://openalex.org/P4320800701"
+          ],
+          "host_organization_lineage_names": [
+            "American Nuclear Society"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Fusion Technology",
+        "raw_type": "journal-article"
+      }
+    ],
+    "best_oa_location": null,
+    "sustainable_development_goals": [
+      {
+        "id": "https://metadata.un.org/sdg/7",
+        "display_name": "Affordable and clean energy",
+        "score": 0.5690000057220459
+      }
+    ],
+    "sustainable_development_goals_aurora": [
+      {
+        "id": "https://metadata.un.org/sdg/11",
+        "display_name": "Sustainable cities and communities",
+        "score": 0.5400000214576721
+      }
+    ],
+    "study_designs": [],
+    "awards": [],
+    "funders": [],
+    "has_content": {
+      "grobid_xml": false,
+      "pdf": false
+    },
+    "content_urls": null,
+    "referenced_works_count": 8,
+    "referenced_works": [
+      "https://openalex.org/W159610669",
+      "https://openalex.org/W241646541",
+      "https://openalex.org/W336943728",
+      "https://openalex.org/W1570090709",
+      "https://openalex.org/W2072670899",
+      "https://openalex.org/W2089039543",
+      "https://openalex.org/W2169596288",
+      "https://openalex.org/W2589673284"
+    ],
+    "related_works": [
+      "https://openalex.org/W3041309965",
+      "https://openalex.org/W4233910537",
+      "https://openalex.org/W2383111961",
+      "https://openalex.org/W2940496612",
+      "https://openalex.org/W2365952365",
+      "https://openalex.org/W2515869527",
+      "https://openalex.org/W2352448290",
+      "https://openalex.org/W2367685550",
+      "https://openalex.org/W2380820513",
+      "https://openalex.org/W2913146933"
+    ],
+    "abstract_inverted_index": {
+      "Shielding": [
+        0
+      ],
+      "optimization": [
+        1
+      ],
+      "for": [
+        2
+      ],
+      "the": [
+        3,
+        16,
+        31,
+        54,
+        64,
+        67,
+        71,
+        82,
+        97
+      ],
+      "Compact": [
+        4
+      ],
+      "Ignition": [
+        5
+      ],
+      "Tokamak": [
+        6
+      ],
+      "baseline": [
+        7,
+        55,
+        98
+      ],
+      "test": [
+        8
+      ],
+      "cell": [
+        9
+      ],
+      "building": [
+        10
+      ],
+      "design": [
+        11,
+        19
+      ],
+      "is": [
+        12,
+        20,
+        61
+      ],
+      "performed": [
+        13
+      ],
+      "to": [
+        14,
+        30,
+        41,
+        96
+      ],
+      "minimize": [
+        15
+      ],
+      "cost.": [
+        17
+      ],
+      "The": [
+        18,
+        76
+      ],
+      "based": [
+        21
+      ],
+      "on": [
+        22
+      ],
+      "iterative": [
+        23
+      ],
+      "calculations": [
+        24
+      ],
+      "using": [
+        25
+      ],
+      "one-dimensional": [
+        26
+      ],
+      "SN": [
+        27,
+        44
+      ],
+      "models": [
+        28,
+        48
+      ],
+      "calibrated": [
+        29
+      ],
+      "results": [
+        32
+      ],
+      "obtained": [
+        33
+      ],
+      "by": [
+        34
+      ],
+      "coupling": [
+        35
+      ],
+      "a": [
+        36,
+        42,
+        58,
+        88
+      ],
+      "three-dimensional": [
+        37
+      ],
+      "Monte": [
+        38
+      ],
+      "Carlo": [
+        39
+      ],
+      "model": [
+        40
+      ],
+      "two-dimensional": [
+        43
+      ],
+      "model.": [
+        45
+      ],
+      "These": [
+        46
+      ],
+      "sophisticated": [
+        47
+      ],
+      "remove": [
+        49
+      ],
+      "most": [
+        50
+      ],
+      "conservative": [
+        51
+      ],
+      "factors": [
+        52
+      ],
+      "in": [
+        53
+      ],
+      "design.": [
+        56,
+        99
+      ],
+      "When": [
+        57
+      ],
+      "low-sodium": [
+        59
+      ],
+      "concrete": [
+        60
+      ],
+      "used": [
+        62
+      ],
+      "as": [
+        63
+      ],
+      "base": [
+        65
+      ],
+      "material,": [
+        66
+      ],
+      "boron": [
+        68
+      ],
+      "concentration": [
+        69
+      ],
+      "and": [
+        70,
+        84
+      ],
+      "thicknesses": [
+        72
+      ],
+      "are": [
+        73
+      ],
+      "reduced": [
+        74
+      ],
+      "substantially.": [
+        75
+      ],
+      "optimal": [
+        77
+      ],
+      "configuration": [
+        78
+      ],
+      "that": [
+        79
+      ],
+      "satisfies": [
+        80
+      ],
+      "all": [
+        81
+      ],
+      "shielding": [
+        83
+      ],
+      "structural": [
+        85
+      ],
+      "requirements": [
+        86
+      ],
+      "shows": [
+        87
+      ],
+      "cost": [
+        89
+      ],
+      "reduction": [
+        90
+      ],
+      "of": [
+        91
+      ],
+      "∼14%": [
+        92
+      ],
+      "($4.1": [
+        93
+      ],
+      "million)": [
+        94
+      ],
+      "relative": [
+        95
+      ]
+    },
+    "counts_by_year": [
+      {
+        "year": 2023,
+        "cited_by_count": 1
+      }
+    ],
+    "updated_date": "2025-11-06T03:46:38.306776",
+    "created_date": "2025-10-10T00:00:00"
+  },
+  "semantic_scholar": {
+    "error": "HTTP Error 429: "
+  }
+}

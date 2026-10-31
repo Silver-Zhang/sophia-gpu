@@ -1,0 +1,24 @@
+{
+  "https://developer.nvidia.com/blog/parallelforall/wp-content/uploads/2014/10/image2.png": {
+    "bytes": 23869
+  },
+  "https://developer.nvidia.com/blog/parallelforall/wp-content/uploads/2014/10/image5.png": {
+    "bytes": 33529
+  },
+  "https://developer.nvidia.com/blog/parallelforall/wp-content/uploads/2017/11/image6.png": {
+    "bytes": 50907
+  },
+  "https://developer.nvidia.com/blog/parallelforall/wp-content/uploads/2017/11/image3.png": {
+    "bytes": 53544
+  },
+  "https://developer.nvidia.com/blog/parallelforall/wp-content/uploads/2017/11/image4.png": {
+    "bytes": 55291,
+    "retried_successfully": true
+  },
+  "https://developer.nvidia.com/blog/parallelforall/wp-content/uploads/2017/11/image1.png": {
+    "bytes": 52149
+  },
+  "https://developer.nvidia.com/blog/parallelforall/wp-content/uploads/2014/04/aadinetz_avatar_1396938277.jpg": {
+    "bytes": 17417
+  }
+}

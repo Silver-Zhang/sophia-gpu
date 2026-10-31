@@ -1,0 +1,52 @@
+{
+  "status": "passed_render_and_content_review",
+  "main_docx": "exports/博士科研计划书_审阅版.docx",
+  "checklist_docx": "exports/提交前仍需补充的信息清单.docx",
+  "source_sha256": "6aa78f156b101072b9b7ec456ae57984dc4873bae623dfc88068413363da0f25",
+  "paragraphs_checked": 158,
+  "formulas": [
+    {
+      "latex": "|R-R_{\\mathrm{ref}}|\\leq\\varepsilon_{\\mathrm{abs}}+\\varepsilon_{\\mathrm{rel}}|R_{\\mathrm{ref}}|",
+      "visible_tokens": "|R−Rref| ≤ εabs + εrel|Rref|"
+    },
+    {
+      "latex": "d_{s,j}=T_{\\mathrm{局部},s,j}-T_{\\mathrm{均匀},s,j}",
+      "visible_tokens": "ds,j = T局部,s,j − T均匀,s,j"
+    },
+    {
+      "latex": "\\Delta T_s=\\operatorname{median}_j(d_{s,j})",
+      "visible_tokens": "ΔTs = medianj(ds,j)"
+    },
+    {
+      "latex": "\\Delta T_{\\mathrm{seq}}",
+      "visible_tokens": "ΔTseq"
+    },
+    {
+      "latex": "|\\Delta T_s|",
+      "visible_tokens": "|ΔTs|"
+    }
+  ],
+  "internal_citations": 22,
+  "reference_bookmarks": 13,
+  "body_prose_rewritten": false,
+  "draft_metadata_removed": true,
+  "page": "A4; margins top 2.4 / bottom 2.3 / left-right 2.5 cm",
+  "styles": "Title; Heading 1; Heading 2; 12pt body exact 20pt spacing; 10.5pt hanging references; editable OMML",
+  "resources": "All pending solver/GPU/tool states retained; GPU/MOC skill not yet acquired retained.",
+  "pages": {
+    "proposal": 17,
+    "checklist": 1
+  },
+  "all_pages_visually_inspected": true,
+  "no_missing_glyphs_overlap_or_clipping": true,
+  "body_matches_approved_pre_numbering_source": true,
+  "font_render_fix": "Task-local FONTCONFIG_FILE adds installed Songti SC, Heiti SC, Times New Roman and STIX Two Math; bundled LibreOffice retained.",
+  "reviewed_png_directories": [
+    "qa_logs/word_render/final_main",
+    "qa_logs/word_render/final_checklist"
+  ],
+  "docx_sha256": {
+    "博士科研计划书_审阅版.docx": "fa7b4940606cb74a59888ea35676b6f480e9176779e6407cc022a6fd10b76f85",
+    "提交前仍需补充的信息清单.docx": "30e81d8bd8afa91e2b9e3e4956f72e5816658473b94a5762ea4ec63456de870e"
+  }
+}

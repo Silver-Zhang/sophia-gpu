@@ -1,0 +1,235 @@
+[
+  {
+    "number": 1,
+    "title": "ParaStell: parametric modeling and neutronics support for stellarator fusion power plants",
+    "doi": "10.3389/fnuen.2024.1384788",
+    "file": "01_Moreno_2024_ParaStell_期刊版.pdf",
+    "source": "https://www.frontiersin.org/journals/nuclear-engineering/articles/10.3389/fnuen.2024.1384788/pdf",
+    "version": "期刊正式版",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "open_access_downloaded",
+    "attempts": [
+      {
+        "url": "https://www.frontiersin.org/journals/nuclear-engineering/articles/10.3389/fnuen.2024.1384788/pdf",
+        "resolved_url": "https://www.frontiersin.org/journals/nuclear-engineering/articles/10.3389/fnuen.2024.1384788/pdf",
+        "bytes": 3794687
+      }
+    ],
+    "pages": 13,
+    "first_page": "ParaStell: parametric modeling\nand neutronics support for\nstellarator fusion power plants\nConnor Moreno 1*, Aaron Bader 1,2 and Paul Wilson 1\n1Computational Nuclear Engineering Research Group, Department of Nuclear Engineering and\nEngineering Physics, University of Wisconsin —Madison, Madison, WI, United States, 2Type One Energy\nGroup, Madison, WI, United States\nThe three-dimensional variation inherent to stellarator geometries and fusion\nsources motivates three-dimensional modeling to obtain accurate results from\ncomputational modeling in support of design and analysis of ﬁrst wall, blanket,\nand shield (FWBS) systems. Manually constructing stellarator fusion power plant\ngeometries in computer-aided design (CAD) and de ﬁning the corresponding\nfusion source can be cumbersome and challenging. The open-source parametric\nmodeling toolset ParaStell has been developed to automate construction of such\ngeometries in low- ﬁdelity. Low-ﬁdelity modeling is useful during the conceptual\nphase of engineering design as a means of rapidly exploring the design space of a\ngiven device. The modeling capability of ParaStell includes in-vessel components\nand magnets, for any given stellarator conﬁguration, using a parametric deﬁnition\nand plasma equilibrium data. Furthermore, the toolset automates the generation\nof detailed, tetrahedral neutron source de ﬁnitions and DAGMC geometries for\nuse in neu",
+    "bytes": 3794687,
+    "sha256": "f7d9d4b3910599ce004c0bbb891e93226452a1ae93295e40cf89c19f4acc0eff"
+  },
+  {
+    "number": 2,
+    "title": "Shielding Design Optimization for the Compact Ignition Tokamak Test Cell Building",
+    "doi": "10.13182/FST91-A29687",
+    "file": null,
+    "source": "https://www.ans.org/pubs/journals/download/article-29687/",
+    "version": "期刊正式版",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "download_failed",
+    "attempts": [
+      {
+        "url": "https://www.ans.org/pubs/journals/download/article-29687/",
+        "resolved_url": "https://www.ans.org/pubs/journals/download/article-29687/",
+        "bytes": 0
+      }
+    ],
+    "error": "Response is not PDF; not saved as paper"
+  },
+  {
+    "number": 3,
+    "title": "Automatic generation and validation of an ITER neutronics model from CAD data",
+    "doi": "10.1016/j.fusengdes.2007.06.038",
+    "file": null,
+    "source": "https://www.sciencedirect.com/science/article/pii/S0920379607003407/pdfft?isDTMRedir=true&download=true",
+    "version": "期刊正式版",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "download_failed",
+    "attempts": [],
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "number": 4,
+    "title": "Neutron particle transport 3D method of characteristic Multi GPU platform Parallel Computing",
+    "doi": "10.48550/arXiv.2503.17743",
+    "file": "04_Zhou_2025_GPU_MOC_arXiv预印本.pdf",
+    "source": "local:multi_gpu2025.pdf",
+    "version": "arXiv预印本",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "verified_local_fulltext_copied",
+    "attempts": [
+      {
+        "url": "local:multi_gpu2025.pdf",
+        "resolved_url": "local:multi_gpu2025.pdf",
+        "bytes": 1542662
+      }
+    ],
+    "pages": 14,
+    "first_page": "NEUTRON PARTICLE TRANSPORT 3D METHOD OF\nCHARACTERISTIC MULTI GPU PLATFORM PARALLEL\nCOMPUTING\nFaguo Zhou\nSchool of Artificial Intelligence\nChina University of Mining and Technology-Beijing\nBeijing 100083, China\nShunde Li\nComputer Network Information Center\nChinese Academy of Sciences\nBeijing 100083, China\nRong Xue\nSchool of Artificial Intelligence\nChina University of Mining and Technology-Beijing\nBeijing 100083, China\nLingkun Bu\nNational Center for Materials Service Safety\nUniversity of Science and Technology Beijing\nBeijing 100083, China\nNingming Nie\nComputer Network Information Center\nChinese Academy of Sciences\nBeijing 100083, China\nPeng Shi ∗\nNational Center for Materials Service Safety\nUniversity of Science and Technology Beijing\nBeijing 100083, China\npshi@ustb.edu.cn\nJue Wang †\nComputer Network Information Center\nChinese Academy of Sciences\nBeijing 100083, China\nwangjue@sccas.cn\nYun Hu\nChina Institute of Atomic Energy\nBeijing 102413, China\nZongguo Wang\nComputer Network Information Center\nChinese Academy of Sciences\nBeijing 100083, China\nYangang Wang\nComputer Network Information Center\nChinese Academy of Sciences\nBeijing 100083, China\nQinmeng Yang\nComputer Network Information Center\nChinese Academy of Sciences\nBeijing 100083, China\nMiao Yu\nSchool of Artificial Intelligence\nChina University of Mining and Technology-Beijing\nBeijing 100083, China\nMarch 25, 2025\nABSTRACT\n∗Corre",
+    "bytes": 1542662,
+    "sha256": "7f9cb3573bd0d492f37e25c17bf3dccb22ca690731cdc22fbee080899112860f"
+  },
+  {
+    "number": 5,
+    "title": "Verification and Performance Assessment of NuDEAL, a GPU-Accelerated Deterministic Transport Framework on Unstructured Meshes",
+    "doi": "10.1080/00295639.2026.2652773",
+    "file": "05_Kim_2026_NuDEAL_作者稿.pdf",
+    "source": "local:nudeal2026.pdf",
+    "version": "作者原始稿；正式发表DOI见清单",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "verified_local_fulltext_copied",
+    "attempts": [
+      {
+        "url": "local:nudeal2026.pdf",
+        "resolved_url": "local:nudeal2026.pdf",
+        "bytes": 11527105
+      }
+    ],
+    "pages": 39,
+    "first_page": "Verification and Performance Assessment of NuDEAL, a\nGPU-accelerated Deterministic Transport Framework on\nUnstructured Meshes\nKyung Min Kim,1,† Jaeuk Im,1,† Han Gyu Lee,2 and Yeon Sang Jung ∗,3\n1Seoul National University\n1 Gwanak-ro, Gwanak-gu, Seoul 08826, Republic of Korea\n2University of Michigan\n2355 Bonisteel Blvd, Ann Arbor, MI 48109, USA\n3Korea Atomic Energy Research Institute\n111 Daedeok-daero 989 beon-gil, Yuseong-gu, Daejeon 34057, Republic of Korea\n∗Email: yjung@kaeri.re.kr\nNumber of pages: 39\nNumber of tables: 14\nNumber of figures: 15\n† Current affiliation: Korea Atomic Energy Research Institute, 111 Daedeok-daero, 989 beon-gil, Yuseong-\ngu, Daejeon 34057, Republic of Korea\narXiv:2607.01591v1  [physics.comp-ph]  2 Jul 2026",
+    "bytes": 11527105,
+    "sha256": "a695d20dffbca68b2554738aee964cbbe5c7692ebfd95e1df443da7e7aad2be7"
+  },
+  {
+    "number": 6,
+    "title": "A Fast Voxel Traversal Algorithm for Ray Tracing",
+    "doi": "10.2312/egtp.19871000",
+    "file": null,
+    "source": "https://www.cs.yorku.ca/~amana/research/grid.pdf",
+    "version": "作者主页公开版",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "download_failed",
+    "attempts": [],
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.cs.yorku.ca'. (_ssl.c:1010)>"
+  },
+  {
+    "number": 7,
+    "title": "AMReX: Block-structured adaptive mesh refinement for multiphysics applications",
+    "doi": "10.1177/10943420211022811",
+    "file": null,
+    "source": "https://arxiv.org/pdf/2009.12009",
+    "version": "arXiv公开稿，按文件首页核验版本",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "download_failed",
+    "attempts": [],
+    "error": "The read operation timed out"
+  },
+  {
+    "number": 8,
+    "title": "Method of Characteristics for 3D, Full-Core Neutron Transport on Unstructured Mesh",
+    "doi": "10.1080/00295450.2021.1871995",
+    "file": null,
+    "source": "https://www.tandfonline.com/doi/pdf/10.1080/00295450.2021.1871995",
+    "version": "期刊正式版",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "download_failed",
+    "attempts": [],
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "number": 9,
+    "title": "The OpenMOC method of characteristics neutral particle transport code",
+    "doi": "10.1016/j.anucene.2013.12.012",
+    "file": "09_Boyd_2014_OpenMOC_作者接受稿.pdf",
+    "source": "local:openmoc2014.pdf",
+    "version": "MIT机构仓储作者接受稿",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "verified_local_fulltext_copied",
+    "attempts": [
+      {
+        "url": "local:openmoc2014.pdf",
+        "resolved_url": "local:openmoc2014.pdf",
+        "bytes": 948523
+      }
+    ],
+    "pages": 13,
+    "first_page": "MIT Open Access Articles\nThe OpenMOC method of characteristics neutral particle transport code\nThe MIT Faculty has made this article openly available. how this access benefits you. Your story matters. Please share\nCitation: Boyd, William, Samuel Shaner, Lulu Li, Benoit Forget, and Kord Smith. “The OpenMOC Method of Characteristics \nNeutral Particle Transport Code.” Annals of Nuclear Energy 68 (June 2014): 43–52. ©2014\nPublished Version: https://doi.org/10.1016/j.anucene.2013.12.012\nPublisher: Elsevier\nPermanent Link: http://hdl.handle.net/1721.1/108100\nVersion: Author's final manuscript\nTerms of use: http://creativecommons.org/licenses/by-nc-nd/4.0/\n",
+    "bytes": 948523,
+    "sha256": "c5cfb855d75a60f7604de8058ee432452177fec2f2b0480a1f07489f318cf35e"
+  },
+  {
+    "number": 10,
+    "title": "CUDA C++ Best Practices Guide",
+    "doi": null,
+    "file": "10_NVIDIA_2026_CUDA_Best_Practices_Guide.pdf",
+    "source": "https://docs.nvidia.com/cuda/pdf/CUDA_C_Best_Practices_Guide.pdf",
+    "version": "官方技术指南",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "open_access_downloaded",
+    "attempts": [
+      {
+        "url": "https://docs.nvidia.com/cuda/pdf/CUDA_C_Best_Practices_Guide.pdf",
+        "resolved_url": "https://docs.nvidia.com/cuda/pdf/CUDA_C_Best_Practices_Guide.pdf",
+        "bytes": 2336001
+      }
+    ],
+    "pages": 118,
+    "first_page": "CUDA C++ Best Practices Guide\nRelease 13.4\nNVIDIA Corporation\nOct 12, 2026",
+    "bytes": 2336001,
+    "sha256": "7c1d9c834905aacfc1af764cf33feb3276c067f745d0f757479587a7a7527b63"
+  },
+  {
+    "number": 11,
+    "title": "CUDA Pro Tip: Optimized Filtering with Warp-Aggregated Atomics",
+    "doi": null,
+    "file": "11_Adinets_2014_Warp_Aggregated_Atomics_官方全文.html",
+    "source": "https://developer.nvidia.com/blog/cuda-pro-tip-optimized-filtering-warp-aggregated-atomics/",
+    "version": "官方博客HTML全文",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "open_access_downloaded",
+    "attempts": [
+      {
+        "url": "https://developer.nvidia.com/blog/cuda-pro-tip-optimized-filtering-warp-aggregated-atomics/",
+        "resolved_url": "https://developer.nvidia.com/blog/cuda-pro-tip-optimized-filtering-warp-aggregated-atomics/",
+        "bytes": 243142
+      }
+    ],
+    "bytes": 243142,
+    "sha256": "212a1ab3ffd04b7152ed01086d17f18730813f513b3d0b25036443f69248c25e"
+  },
+  {
+    "number": 12,
+    "title": "Goal based mesh adaptivity for fixed source radiation transport calculations",
+    "doi": "10.1016/j.anucene.2012.11.029",
+    "file": null,
+    "source": "https://www.sciencedirect.com/science/article/pii/S0306454912004744/pdfft?isDTMRedir=true&download=true",
+    "version": "期刊正式版",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "download_failed",
+    "attempts": [],
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "number": 13,
+    "title": "FW-CADIS Method for Global and Regional Variance Reduction of Monte Carlo Radiation Transport Calculations",
+    "doi": "10.13182/NSE12-33",
+    "file": null,
+    "source": "https://web.ornl.gov/~peplowde/p068.pdf",
+    "version": "作者机构公开期刊版",
+    "si_requested": true,
+    "si_status": "待逐项核对",
+    "status": "download_failed",
+    "attempts": [
+      {
+        "url": "https://web.ornl.gov/~peplowde/p068.pdf",
+        "resolved_url": "https://web.ornl.gov/~peplowde/p068.pdf",
+        "bytes": 679700
+      }
+    ],
+    "error": "Cannot find Root object in pdf"
+  }
+]
