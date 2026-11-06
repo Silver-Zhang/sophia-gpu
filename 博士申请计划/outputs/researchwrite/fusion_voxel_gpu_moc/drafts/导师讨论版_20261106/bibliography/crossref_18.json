@@ -1,0 +1,230 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          18
+        ]
+      ],
+      "date-time": "2026-05-18T07:11:06Z",
+      "timestamp": 1779088266718,
+      "version": "3.51.4"
+    },
+    "reference-count": 0,
+    "publisher": "China Science Publishing & Media Ltd.",
+    "issue": "2",
+    "content-domain": {
+      "domain": [
+        "engine.scichina.com"
+      ],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "J Comput-Aided Design Comput Graphics"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2026,
+          2,
+          1
+        ]
+      ]
+    },
+    "DOI": "10.3724/sp.j.1089.2024-00765",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          18
+        ]
+      ],
+      "date-time": "2026-05-18T06:52:41Z",
+      "timestamp": 1779087161000
+    },
+    "page": "296-312",
+    "update-policy": "https://doi.org/10.1360/scp-crossmark-policy-page",
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "title": [
+      "A Survey of GPU-Based Parallel Adaptive Cartesian Grid Modeling Methods and Simulation Applications"
+    ],
+    "prefix": "10.3724",
+    "volume": "38",
+    "author": [
+      {
+        "given": "Lixin",
+        "family": "Ren",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Shusen",
+        "family": "Liu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Yuzhong",
+        "family": "Guo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Xiaowei",
+        "family": "He",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Enhua",
+        "family": "Wu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "member": "2026",
+    "published-online": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          14
+        ]
+      ]
+    },
+    "container-title": [
+      "Journal of Computer-Aided Design &amp; Computer Graphics"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://www.sciengine.com/sci-open/api/v1/open/file/pdf/DB1F6642BFBB4B5A9E3883041B150C29",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://www.sciengine.com/doi/10.3724/SP.J.1089.2024-00765",
+        "content-type": "text/html",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://www.sciengine.com/sci-open/api/v1/open/file/pdf/DB1F6642BFBB4B5A9E3883041B150C29",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          18
+        ]
+      ],
+      "date-time": "2026-05-18T06:52:42Z",
+      "timestamp": 1779087162000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://www.sciengine.com/doi/10.3724/SP.J.1089.2024-00765"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          14
+        ]
+      ]
+    },
+    "references-count": 0,
+    "journal-issue": {
+      "issue": "2",
+      "published-online": {
+        "date-parts": [
+          [
+            2025,
+            7,
+            14
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2026,
+            2,
+            1
+          ]
+        ]
+      }
+    },
+    "URL": "https://doi.org/10.3724/sp.j.1089.2024-00765",
+    "relation": {},
+    "ISSN": [
+      "1003-9775"
+    ],
+    "issn-type": [
+      {
+        "value": "1003-9775",
+        "type": "print"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          14
+        ]
+      ]
+    }
+  }
+}

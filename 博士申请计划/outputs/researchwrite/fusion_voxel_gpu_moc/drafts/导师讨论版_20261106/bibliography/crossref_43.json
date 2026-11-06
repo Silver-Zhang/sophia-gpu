@@ -1,0 +1,485 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          13
+        ]
+      ],
+      "date-time": "2026-01-13T20:32:15Z",
+      "timestamp": 1768336335073,
+      "version": "3.49.0"
+    },
+    "reference-count": 27,
+    "publisher": "Informa UK Limited",
+    "issue": "2",
+    "funder": [
+      {
+        "name": "Exascale Computing Project",
+        "award": [
+          "DE-AC05-00OR22725"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "DE-AC05-00OR22725"
+            ]
+          }
+        ]
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "www.tandfonline.com"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "Nuclear Science and Engineering"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2026,
+          2
+        ]
+      ]
+    },
+    "DOI": "10.1080/00295639.2025.2484511",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          5,
+          28
+        ]
+      ],
+      "date-time": "2025-05-28T14:24:22Z",
+      "timestamp": 1748442262000
+    },
+    "page": "444-470",
+    "update-policy": "https://doi.org/10.1080/tandf_crossmark_01",
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "title": [
+      "Automated Hybrid Variance Reduction on Advanced Architectures in the Shift Monte Carlo Code"
+    ],
+    "prefix": "10.1080",
+    "volume": "200",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0001-5743-3788",
+        "authenticated-orcid": false,
+        "given": "Thomas M.",
+        "family": "Evans",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Oak Ridge National Laboratory",
+            "place": [
+              "Oak Ridge, Tennessee"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7443-3242",
+        "authenticated-orcid": false,
+        "given": "Katherine E.",
+        "family": "Royston",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Oak Ridge National Laboratory",
+            "place": [
+              "Oak Ridge, Tennessee"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3542-114X",
+        "authenticated-orcid": false,
+        "given": "Steven P.",
+        "family": "Hamilton",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Oak Ridge National Laboratory",
+            "place": [
+              "Oak Ridge, Tennessee"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-3941-8688",
+        "authenticated-orcid": false,
+        "given": "Gregory G.",
+        "family": "Davidson",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Oak Ridge National Laboratory",
+            "place": [
+              "Oak Ridge, Tennessee"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-9088-1360",
+        "authenticated-orcid": false,
+        "given": "Elliott",
+        "family": "Biondo",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Oak Ridge National Laboratory",
+            "place": [
+              "Oak Ridge, Tennessee"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-1504-8966",
+        "authenticated-orcid": false,
+        "given": "Seth R.",
+        "family": "Johnson",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Oak Ridge National Laboratory",
+            "place": [
+              "Oak Ridge, Tennessee"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "member": "301",
+    "published-online": {
+      "date-parts": [
+        [
+          2025,
+          5,
+          28
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "e_1_3_4_2_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.15669/pnst.2.808"
+      },
+      {
+        "key": "e_1_3_4_3_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NT09-9"
+      },
+      {
+        "key": "e_1_3_4_4_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE12-33"
+      },
+      {
+        "key": "e_1_3_4_5_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jcp.2015.12.037"
+      },
+      {
+        "key": "e_1_3_4_6_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3390/jne2020010"
+      },
+      {
+        "key": "e_1_3_4_7_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NT171-171"
+      },
+      {
+        "key": "e_1_3_4_8_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jcp.2014.12.014"
+      },
+      {
+        "key": "e_1_3_4_9_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.anucene.2021.108687"
+      },
+      {
+        "key": "e_1_3_4_10_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.anucene.2019.01.012"
+      },
+      {
+        "key": "e_1_3_4_11_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.anucene.2017.11.032"
+      },
+      {
+        "key": "e_1_3_4_12_1",
+        "volume-title": "A Practical Manual on the Monte Carlo Method for Random Walk Problems",
+        "author": "CASHWELL E. D.",
+        "year": "1959",
+        "unstructured": "E. D. CASHWELL and C. J. EVERETT, A Practical Manual on the Monte Carlo Method for Random Walk Problems, Pergamon Press, London (1959)."
+      },
+      {
+        "key": "e_1_3_4_13_1",
+        "volume-title": "A Sample Problem for Variance Reduction in MCNP",
+        "author": "BOOTH T. E.",
+        "year": "1985",
+        "unstructured": "T. E. BOOTH, “A Sample Problem for Variance Reduction in MCNP,” LA-10363-MS, Los Alamos National Laboratory (1985)."
+      },
+      {
+        "key": "e_1_3_4_14_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE98-2"
+      },
+      {
+        "issue": "25",
+        "key": "e_1_3_4_15_1",
+        "article-title": "Monte Carlo Variance Reduction with Deterministic Importance Functions",
+        "volume": "42",
+        "author": "HAGHIGHAT A.",
+        "year": "2003",
+        "unstructured": "A. HAGHIGHAT and J. C. WAGNER, “Monte Carlo Variance Reduction with Deterministic Importance Functions,” Prog. Nucl. Energy, 42, 25 (2003); https://www.sciencedirect.com/science/article/pii/S0149197002000021 (current as of Feb. 24, 2025).",
+        "journal-title": "Prog. Nucl. Energy"
+      },
+      {
+        "key": "e_1_3_4_16_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.15669/pnst.2.815"
+      },
+      {
+        "key": "e_1_3_4_17_1",
+        "unstructured": "G. BELL and S. GLASSTONE “Nuclear Reactor Theory ” U.S. Atomic Energy Commission (1971)."
+      },
+      {
+        "key": "e_1_3_4_18_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2172/1105937"
+      },
+      {
+        "key": "e_1_3_4_19_1",
+        "volume-title": "MAVRIC: MONACO with Automated Variance Reduction Using Importance Calculations",
+        "author": "PEPLOW D.",
+        "year": "2011",
+        "unstructured": "D. PEPLOW, “MAVRIC: MONACO with Automated Variance Reduction Using Importance Calculations,” ORNL/TM–2005/39, Oak Ridge National Laboratory (2011)."
+      },
+      {
+        "key": "e_1_3_4_20_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.parco.2019.06.001"
+      },
+      {
+        "key": "e_1_3_4_21_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE98-1"
+      },
+      {
+        "key": "e_1_3_4_22_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.net.2017.06.006"
+      },
+      {
+        "key": "e_1_3_4_23_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s10894-017-0140-3"
+      },
+      {
+        "key": "e_1_3_4_24_1",
+        "unstructured": "“Frontier Direction of Discovery ” Oak Ridge Leadership Computing Facility Oak Ridge National Laboratory; https://www.olcf.ornl.gov/frontier (current as of Feb. 24 2025)."
+      },
+      {
+        "key": "e_1_3_4_25_1",
+        "unstructured": "“Frontier User Guide ” Oak Ridge Leadership Computing Facility Oak Ridge National Laboratory; https://docs.olcf.ornl.gov/systems/frontier_user_guide.html (current as of Feb. 24 2025)."
+      },
+      {
+        "key": "e_1_3_4_26_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2172/1052244"
+      },
+      {
+        "key": "e_1_3_4_27_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/00295639.2019.1586273"
+      },
+      {
+        "key": "e_1_3_4_28_1",
+        "unstructured": "X–5 MONTE CARLO TEAM “MCNP—A General Monte Carlo N-Particle Transport Code Version 5 ” LA-UR-03-1987 Los Alamos National Laboratory (2008)."
+      }
+    ],
+    "container-title": [
+      "Nuclear Science and Engineering"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://www.tandfonline.com/doi/pdf/10.1080/00295639.2025.2484511",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          13
+        ]
+      ],
+      "date-time": "2026-01-13T13:58:14Z",
+      "timestamp": 1768312694000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://www.tandfonline.com/doi/full/10.1080/00295639.2025.2484511"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          5,
+          28
+        ]
+      ]
+    },
+    "references-count": 27,
+    "journal-issue": {
+      "issue": "2",
+      "published-print": {
+        "date-parts": [
+          [
+            2026,
+            2
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.1080/00295639.2025.2484511"
+    ],
+    "URL": "https://doi.org/10.1080/00295639.2025.2484511",
+    "relation": {},
+    "ISSN": [
+      "0029-5639",
+      "1943-748X"
+    ],
+    "issn-type": [
+      {
+        "value": "0029-5639",
+        "type": "print"
+      },
+      {
+        "value": "1943-748X",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          5,
+          28
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "The publishing and review policy for this title is described in its Aims & Scope.",
+        "order": 1,
+        "name": "peerreview_statement",
+        "label": "Peer Review Statement"
+      },
+      {
+        "value": "http://www.tandfonline.com/action/journalInformation?show=aimsScope&journalCode=unse20",
+        "URL": "http://www.tandfonline.com/action/journalInformation?show=aimsScope&journalCode=unse20",
+        "order": 2,
+        "name": "aims_and_scope_url",
+        "label": "Aim & Scope"
+      },
+      {
+        "value": "2024-04-24",
+        "order": 0,
+        "name": "received",
+        "label": "Received",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      },
+      {
+        "value": "2025-02-24",
+        "order": 2,
+        "name": "accepted",
+        "label": "Accepted",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      },
+      {
+        "value": "2025-05-28",
+        "order": 3,
+        "name": "published",
+        "label": "Published",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,1528 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          5
+        ]
+      ],
+      "date-time": "2026-09-05T16:58:13Z",
+      "timestamp": 1788627493235,
+      "version": "build-2803163510"
+    },
+    "reference-count": 128,
+    "publisher": "Elsevier BV",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2026,
+              6,
+              1
+            ]
+          ],
+          "date-time": "2026-06-01T00:00:00Z",
+          "timestamp": 1780272000000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2026,
+              6,
+              1
+            ]
+          ],
+          "date-time": "2026-06-01T00:00:00Z",
+          "timestamp": 1780272000000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://www.elsevier.com/legal/tdmrep-license"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2026,
+              2,
+              28
+            ]
+          ],
+          "date-time": "2026-02-28T00:00:00Z",
+          "timestamp": 1772236800000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "funder": [
+      {
+        "DOI": "10.13039/501100000767",
+        "name": "Rolls-Royce plc",
+        "doi-asserted-by": "publisher",
+        "id": [
+          {
+            "id": "10.13039/501100000767",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      },
+      {
+        "DOI": "10.13039/501100000266",
+        "name": "Engineering and Physical Sciences Research Council",
+        "doi-asserted-by": "publisher",
+        "id": [
+          {
+            "id": "10.13039/501100000266",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "elsevier.com",
+        "sciencedirect.com"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "Computer Methods in Applied Mechanics and Engineering"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2026,
+          6
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.cma.2026.118872",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          3,
+          6
+        ]
+      ],
+      "date-time": "2026-03-06T14:53:47Z",
+      "timestamp": 1772808827000
+    },
+    "page": "118872",
+    "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 3,
+    "special_numbering": "C",
+    "title": [
+      "Adaptive mesh h(p)-refinement of a discontinuous Bubnov-Galerkin isogeometric analysis spatial discretisation of the first-order form of the neutron transport equation with goal-based error measures and diffusion acceleration"
+    ],
+    "prefix": "10.1016",
+    "volume": "455",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-0293-7983",
+        "authenticated-orcid": false,
+        "given": "S.G.",
+        "family": "Wilson",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-6980-7692",
+        "authenticated-orcid": false,
+        "given": "M.D.",
+        "family": "Eaton",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-8048-1574",
+        "authenticated-orcid": false,
+        "given": "J.",
+        "family": "Kópházi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "78",
+    "reference": [
+      {
+        "issue": "2",
+        "key": "10.1016/j.cma.2026.118872_bib0001",
+        "doi-asserted-by": "crossref",
+        "first-page": "145",
+        "DOI": "10.13182/NSE09-46",
+        "article-title": "Diffusion synthetic acceleration for high-order discontinuous finite element sN transport schemes and application to locally refined unstructured meshes",
+        "volume": "166",
+        "author": "Wang",
+        "year": "2010",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0002",
+        "doi-asserted-by": "crossref",
+        "first-page": "496",
+        "DOI": "10.1006/jcph.2002.7183",
+        "article-title": "Estimation of modeling error in computational mechanics",
+        "volume": "182",
+        "author": "Oden",
+        "year": "2002",
+        "journal-title": "J Comput Phys"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0003",
+        "doi-asserted-by": "crossref",
+        "first-page": "352",
+        "DOI": "10.1016/j.jcp.2017.01.035",
+        "article-title": "Energy dependent mesh adaptivity of discontinuous isogeometric discrete ordinate methods with dual weighted residual error estimators",
+        "volume": "335",
+        "author": "Owens",
+        "year": "2017",
+        "journal-title": "J Comput Phys"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0004",
+        "doi-asserted-by": "crossref",
+        "first-page": "65",
+        "DOI": "10.13182/NSE63-1",
+        "article-title": "Synthetic method solution of the transport equation",
+        "volume": "17",
+        "author": "Kopp",
+        "year": "1963",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0005",
+        "doi-asserted-by": "crossref",
+        "first-page": "288",
+        "DOI": "10.13182/NSE69-A20689",
+        "article-title": "The synthetic method as applied to the sN equations",
+        "volume": "37",
+        "author": "Gelbard",
+        "year": "1969",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.cma.2026.118872_bib0006",
+        "doi-asserted-by": "crossref",
+        "first-page": "245",
+        "DOI": "10.13182/NSE71-A19077",
+        "article-title": "The effectiveness of acceleration techniques for iterative methods in transport theory",
+        "volume": "45",
+        "author": "Reed",
+        "year": "1971",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0007",
+        "doi-asserted-by": "crossref",
+        "first-page": "344",
+        "DOI": "10.13182/NSE77-1",
+        "article-title": "Diffusion synthetic acceleration methods for the diamond-differenced discrete-ordinates equations",
+        "volume": "64",
+        "author": "Alcouffe",
+        "year": "1977",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0008",
+        "first-page": "774",
+        "article-title": "Sulla diffusion dei neutron lenti",
+        "volume": "23",
+        "author": "Wick",
+        "year": "1936",
+        "journal-title": "Atti della Accademia Nazionale dei Lincei Rendiconti"
+      },
+      {
+        "issue": "6",
+        "key": "10.1016/j.cma.2026.118872_bib0009",
+        "doi-asserted-by": "crossref",
+        "first-page": "478",
+        "DOI": "10.1016/S0031-8914(37)80080-4",
+        "article-title": "Some kinetic problems regarding the motion of neutrons through parafine",
+        "volume": "4",
+        "author": "Ornstein",
+        "year": "1937",
+        "journal-title": "Physica"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0010",
+        "doi-asserted-by": "crossref",
+        "first-page": "173",
+        "DOI": "10.1103/PhysRev.53.173",
+        "article-title": "On multiple scattering of neutrons I: theory of the albedo of a plane boundary",
+        "volume": "53",
+        "author": "Halpern",
+        "year": "1938",
+        "journal-title": "Physical Review"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0011",
+        "first-page": "491",
+        "article-title": "A survey of neutron transport theory",
+        "volume": "Suppl. X",
+        "author": "Kuščer",
+        "year": "1973",
+        "journal-title": "Acta Physica Austriaca"
+      },
+      {
+        "issue": "1-4",
+        "key": "10.1016/j.cma.2026.118872_bib0012",
+        "doi-asserted-by": "crossref",
+        "first-page": "1",
+        "DOI": "10.1016/0370-1573(84)90214-X",
+        "article-title": "From the discovery of the neutron to the discovery of nuclear fission",
+        "volume": "111",
+        "author": "Amaldi",
+        "year": "1984",
+        "journal-title": "Phys Rep"
+      },
+      {
+        "issue": "9",
+        "key": "10.1016/j.cma.2026.118872_bib0013",
+        "first-page": "1",
+        "article-title": "Gian-Carlo wick and neutron physics in the 1930s",
+        "volume": "49",
+        "author": "Gould",
+        "year": "2024",
+        "journal-title": "The European Physical Journal H"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0014",
+        "series-title": "Computational Methods of Neutron Transport",
+        "author": "Lewis",
+        "year": "1993"
+      },
+      {
+        "issue": "2",
+        "key": "10.1016/j.cma.2026.118872_bib0015",
+        "first-page": "13",
+        "article-title": "Sul moto dei neutroni nelle sostanze idrogenate",
+        "volume": "7",
+        "author": "Fermi",
+        "year": "1936",
+        "journal-title": "Ric. Sci."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0016",
+        "series-title": "The Foundations of Neutron Transport Theory",
+        "author": "Osborn",
+        "year": "1966"
+      },
+      {
+        "issue": "4",
+        "key": "10.1016/j.cma.2026.118872_bib0017",
+        "doi-asserted-by": "crossref",
+        "first-page": "369",
+        "DOI": "10.13182/NSE92-A23985",
+        "article-title": "A simple derivation of the neutron transport equation",
+        "volume": "112",
+        "author": "Pázsit",
+        "year": "1992",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0018",
+        "series-title": "Report No. LA-4769",
+        "article-title": "Triangular Mesh Difference Schemes for the Transport Equation",
+        "author": "Reed",
+        "year": "1971"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0019",
+        "series-title": "Report No. LA-UR-73-479",
+        "article-title": "Triangular mesh methods for the neutron transport equation",
+        "author": "Reed",
+        "year": "1973"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.cma.2026.118872_bib0020",
+        "doi-asserted-by": "crossref",
+        "first-page": "371",
+        "DOI": "10.13182/NSE77-A26979",
+        "article-title": "Finite element solutions of the neutron transport equation with applications to strong heterogeneities",
+        "volume": "62",
+        "author": "Martin",
+        "year": "1977",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0021",
+        "doi-asserted-by": "crossref",
+        "first-page": "501",
+        "DOI": "10.1016/j.jcp.2016.03.060",
+        "article-title": "Discontinuous isogeometric analysis methods for the first-order form of the neutron transport equation with discrete ordinate (SN) angular discretisation",
+        "volume": "315",
+        "author": "Owens",
+        "year": "2016",
+        "journal-title": "J Comput Phys"
+      },
+      {
+        "issue": "11",
+        "key": "10.1016/j.cma.2026.118872_bib0022",
+        "doi-asserted-by": "crossref",
+        "first-page": "2880",
+        "DOI": "10.3390/en18112880",
+        "article-title": "Review of the discrete ordinates method for particle transport in nuclear energy",
+        "volume": "18",
+        "author": "Yu",
+        "year": "2025",
+        "journal-title": "Energies"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0023",
+        "doi-asserted-by": "crossref",
+        "first-page": "702",
+        "DOI": "10.1007/BF01339167",
+        "article-title": "Über ebene diffusionprobleme",
+        "volume": "121",
+        "author": "Wick",
+        "year": "1943",
+        "journal-title": "Zeitschrift für Physik"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0024",
+        "doi-asserted-by": "crossref",
+        "first-page": "76",
+        "DOI": "10.1086/144639",
+        "article-title": "On the radiative equilibrium of stellar atmosphere II",
+        "volume": "100",
+        "author": "Chandrasekhar",
+        "year": "1944",
+        "journal-title": "Astrophys. J."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0025",
+        "series-title": "Report No. LA-1599",
+        "article-title": "Solution of the Transport Equation by SN Approximations",
+        "author": "Carlson",
+        "year": "1953"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0026",
+        "series-title": "Report No. LA-2595",
+        "article-title": "The Discrete SN Approximation to Transport Theory",
+        "author": "Lee",
+        "year": "1961"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0027",
+        "series-title": "Report No. LA-3186",
+        "article-title": "Discrete Ordinates Angular Quadrature of the Neutron Transport Equation",
+        "author": "Lathrop",
+        "year": "1964"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0028",
+        "series-title": "Report No. LA-524",
+        "article-title": "The calculation of critical masses including the effects of the distribution of neutron energies",
+        "author": "Feynman",
+        "year": "1947"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0029",
+        "series-title": "A Multi-group Method for Computing Critical Masses of Intermediate Piles",
+        "author": "Ehrlich",
+        "year": "1947"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0030",
+        "series-title": "Further Developments of Multi-group Method for Intermediate Piles",
+        "author": "Hurwitz",
+        "year": "1948"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0031",
+        "unstructured": "H. Hurwitz Jr, R. Ehrlich, Multigroup methodsNuclear Science and Technology (Extracts from Reactor Science and Technology), 3, 1953, 81–108."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0032",
+        "series-title": "Report No. AECD-3595",
+        "article-title": "Multigroup Methods for Neutron Diffusion Problems",
+        "author": "Hurwitz",
+        "year": "1954"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0033",
+        "first-page": "240",
+        "article-title": "Historical review of group diffusion computation",
+        "volume": "66",
+        "author": "Wachspress",
+        "year": "1992",
+        "journal-title": "Trans Am Nucl Soc"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0034",
+        "doi-asserted-by": "crossref",
+        "first-page": "109",
+        "DOI": "10.1016/S0306-4549(01)00034-2",
+        "article-title": "Application of preconditioned GMRES to the numerical solution of the neutron transport equation",
+        "volume": "29",
+        "author": "Patton",
+        "year": "2002",
+        "journal-title": "Ann Nucl Energy"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0035",
+        "doi-asserted-by": "crossref",
+        "first-page": "3",
+        "DOI": "10.1016/S0149-1970(01)00023-3",
+        "article-title": "Fast iterative methods for discrete ordinates particle transport calculations",
+        "volume": "40",
+        "author": "Adams",
+        "year": "2002",
+        "journal-title": "Prog. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0036",
+        "first-page": "135",
+        "article-title": "Fourier mode analysis of source iteration in spatially periodic media",
+        "volume": "79",
+        "author": "Zika",
+        "year": "1998",
+        "journal-title": "Trans Am Nucl Soc"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0037",
+        "series-title": "Report No. LA-3251",
+        "article-title": "Transport Theory: The Method of Discrete Ordinates",
+        "author": "Carlson",
+        "year": "1965"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0038",
+        "first-page": "203",
+        "article-title": "A stable diffusion synthetic acceleration method for neutron transport iteration",
+        "volume": "23",
+        "author": "Alcouffe",
+        "year": "1976",
+        "journal-title": "Trans. of the American Nuclear Society"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0039",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1016/j.cma.2024.117414",
+        "article-title": "A symmetric interior-penalty discontinuous Galerkin isogeometric analysis spatial discretization of the self-adjoint angular flux form of the neutron transport equation",
+        "volume": "432",
+        "author": "Wilson",
+        "year": "2024",
+        "journal-title": "Computational Methods in Applied Mechanics and Engineering"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.cma.2026.118872_bib0040",
+        "doi-asserted-by": "crossref",
+        "first-page": "236",
+        "DOI": "10.13182/NSE141-236",
+        "article-title": "Fully consistent diffusion synthetic acceleration of linear discontinuous transport discretizations on unstructured tetrahedral meshes",
+        "volume": "141",
+        "author": "Warsa",
+        "year": "2002",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0041",
+        "first-page": "2093",
+        "article-title": "Solution of the discontinuous p1 equations in two-dimensional cartesian geometry with two-level preconditioning",
+        "volume": "24",
+        "author": "Warsa",
+        "year": "2003",
+        "journal-title": "J Sci Comput"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.cma.2026.118872_bib0042",
+        "doi-asserted-by": "crossref",
+        "first-page": "218",
+        "DOI": "10.13182/NSE02-14",
+        "article-title": "Krylov iterative methods and the degraded effectiveness of diffusion synthetic acceleration for multidimensional sN calculations in problems with material discontinuities",
+        "volume": "147",
+        "author": "Warsa",
+        "year": "2004",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0043",
+        "doi-asserted-by": "crossref",
+        "first-page": "409",
+        "DOI": "10.6028/jres.049.044",
+        "article-title": "Methods of conjugate gradients for solving linear systems",
+        "volume": "49",
+        "author": "Hestenese",
+        "year": "1952",
+        "journal-title": "J Res Natl Bur Stand (1934)"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0044",
+        "series-title": "Iterative Methods for Sparse Linear Systems",
+        "author": "Saad",
+        "year": "2003"
+      },
+      {
+        "issue": "1",
+        "key": "10.1016/j.cma.2026.118872_bib0045",
+        "doi-asserted-by": "crossref",
+        "first-page": "83",
+        "DOI": "10.1080/00411459908214516",
+        "article-title": "GMRES as a multi-step transport sweep accelerator",
+        "volume": "28",
+        "author": "Guthrie",
+        "year": "1999",
+        "journal-title": "Transp Theory Stat Phys"
+      },
+      {
+        "issue": "1",
+        "key": "10.1016/j.cma.2026.118872_bib0046",
+        "doi-asserted-by": "crossref",
+        "first-page": "128",
+        "DOI": "10.1137/0732005",
+        "article-title": "A linear algebraic analysis of diffusion synthetic acceleration for the bolzmann transport equation",
+        "volume": "32",
+        "author": "Ashby",
+        "year": "1995",
+        "journal-title": "SIAM J Numer Anal"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0047",
+        "doi-asserted-by": "crossref",
+        "first-page": "223",
+        "DOI": "10.1080/23324309.2024.2334277",
+        "article-title": "Energy-dependent, self-adaptive mesh h(p)-refinement of an interior-penalty scheme for a discontinuous Galerkin isogeometric analysis spatial discretisation of the multi-group neutron diffusion equations with dual-weighted residual error measures",
+        "volume": "53",
+        "author": "Wilson",
+        "year": "2024",
+        "journal-title": "Journal of Computational and Theoretical Transport"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0048",
+        "doi-asserted-by": "crossref",
+        "first-page": "89",
+        "DOI": "10.1080/23324309.2024.2313460",
+        "article-title": "Energy-dependent, self-adaptive mesh h(p)-refinement of a constraint-based continuous Bubnov-Galerkin isogeometric analysis spatial discretization of the multi-group neutron diffusion equations with dual-weighted residual error measures",
+        "volume": "53",
+        "author": "Wilson",
+        "year": "2024",
+        "journal-title": "Journal of Computational and Theoretical Transport"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0049",
+        "series-title": "Proc. of the Symposium on Mathematical Aspects of Finite Elements in Partial Differential Equations",
+        "article-title": "On a finite element method for solving the neutron transport equation",
+        "author": "Lesaint",
+        "year": "1974"
+      },
+      {
+        "issue": "5",
+        "key": "10.1016/j.cma.2026.118872_bib0050",
+        "doi-asserted-by": "crossref",
+        "first-page": "951",
+        "DOI": "10.1137/0720065",
+        "article-title": "Convergence of a fully discrete scheme for two-dimensional neutron transport",
+        "volume": "20",
+        "author": "Johnson",
+        "year": "1983",
+        "journal-title": "SIAM J Numer Anal"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0051",
+        "doi-asserted-by": "crossref",
+        "first-page": "1226",
+        "DOI": "10.1137/S1064827500378799",
+        "article-title": "hp-Adaptive discontinuous Galerkin finite element methods for first-order hyperbolic problems",
+        "volume": "23",
+        "author": "Houston",
+        "year": "2001",
+        "journal-title": "SIAM J. Sci. Comput."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0052",
+        "doi-asserted-by": "crossref",
+        "first-page": "B916",
+        "DOI": "10.1137/16M1079944",
+        "article-title": "hp-Adaptive discontinuous Galerkin methods for neutron transport criticality problems",
+        "volume": "39",
+        "author": "Hall",
+        "year": "2017",
+        "journal-title": "SIAM J. Sci. Comput."
+      },
+      {
+        "issue": "2",
+        "key": "10.1016/j.cma.2026.118872_bib0053",
+        "doi-asserted-by": "crossref",
+        "first-page": "A936",
+        "DOI": "10.1137/110844581",
+        "article-title": "Discontinuous Galerkin discretization and hp-refinement for the resolution of the neutron transport equation",
+        "volume": "35",
+        "author": "Fournier",
+        "year": "2013",
+        "journal-title": "SIAM Journal on Scientific Computing"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0054",
+        "doi-asserted-by": "crossref",
+        "first-page": "56",
+        "DOI": "10.13182/NSE08-72",
+        "article-title": "On the convergence of DGFEM applied to the discrete ordinates transport equation for structured and unstructured triangular meshes",
+        "volume": "163",
+        "author": "Wang",
+        "year": "2009",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0055",
+        "doi-asserted-by": "crossref",
+        "first-page": "134",
+        "DOI": "10.1093/imamat/10.2.134",
+        "article-title": "The numerical evaluations of B-splines",
+        "volume": "10",
+        "author": "Cox",
+        "year": "1972",
+        "journal-title": "IMA J. Appl. Math."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0056",
+        "doi-asserted-by": "crossref",
+        "first-page": "50",
+        "DOI": "10.1016/0021-9045(72)90080-9",
+        "article-title": "On calculating with B-splines",
+        "volume": "6",
+        "author": "de Boor",
+        "year": "1972",
+        "journal-title": "Journal of Approximation Theory"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0057",
+        "series-title": "The NURBS Book: Monographs in Visual Communication",
+        "author": "Piegl",
+        "year": "1997"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0058",
+        "doi-asserted-by": "crossref",
+        "first-page": "4160",
+        "DOI": "10.1016/j.cma.2007.04.007",
+        "article-title": "Studies of refinement and continuity in isogeometric structural analysis",
+        "volume": "196",
+        "author": "Cottrell",
+        "year": "2007",
+        "journal-title": "Comput Methods Appl Mech Eng"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0059",
+        "series-title": "Isogeometric Analysis: Toward Integration of CAD and FEA",
+        "author": "Cottrell",
+        "year": "2009"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0060",
+        "doi-asserted-by": "crossref",
+        "first-page": "271",
+        "DOI": "10.1007/s00211-010-0338-z",
+        "article-title": "Some estimates for h-p-k-refinement in isogeometric analysis",
+        "volume": "118",
+        "author": "Veiga",
+        "year": "2011",
+        "journal-title": "Numerische Mathematik"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0061",
+        "doi-asserted-by": "crossref",
+        "first-page": "1555",
+        "DOI": "10.1016/j.camwa.2015.05.031",
+        "article-title": "Simple a posteriori error estimators in adaptive isogeometric analysis",
+        "volume": "70",
+        "author": "Kumar",
+        "year": "2015",
+        "journal-title": "Computers & Mathematics with Applications"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.cma.2026.118872_bib0062",
+        "first-page": "477",
+        "article-title": "T-Splines and T-NURCCSs",
+        "volume": "22",
+        "author": "Sederberg",
+        "year": "2003",
+        "journal-title": "Association for Computing Machinery Transactions on Graphics"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0063",
+        "doi-asserted-by": "crossref",
+        "first-page": "229",
+        "DOI": "10.1016/j.cma.2009.02.036",
+        "article-title": "Isogeometric analysis using T-Splines",
+        "volume": "199",
+        "author": "Bazilevs",
+        "year": "2010",
+        "journal-title": "Comput Methods Appl Mech Eng"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0064",
+        "doi-asserted-by": "crossref",
+        "first-page": "485",
+        "DOI": "10.1016/j.cagd.2012.03.025",
+        "article-title": "THB-Splines: the truncated basis for hierarchical splines",
+        "volume": "29",
+        "author": "Giannelli",
+        "year": "2012",
+        "journal-title": "Comput Aided Geom Des"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0065",
+        "doi-asserted-by": "crossref",
+        "first-page": "331",
+        "DOI": "10.1016/j.cagd.2012.12.005",
+        "article-title": "Polynomial splines over locally refined box-partitions",
+        "volume": "30",
+        "author": "Dokken",
+        "year": "2013",
+        "journal-title": "Comput Aided Geom Des"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0066",
+        "doi-asserted-by": "crossref",
+        "first-page": "471",
+        "DOI": "10.1016/j.cma.2013.09.014",
+        "article-title": "Isogeometric analysis using LR B-splines",
+        "volume": "269",
+        "author": "Johannessen",
+        "year": "2014",
+        "journal-title": "Comput Methods Appl Mech Eng"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0067",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1016/j.jcp.2020.109941",
+        "article-title": "Spatial adaptivity of the SAAF and weighted least squares (WLS) forms of the neutron transport equation using constraint based, locally refined, isogeometric analysis (IGA) with dual weighted residual (DWR) error measures",
+        "volume": "426",
+        "author": "Latimer",
+        "year": "2021",
+        "journal-title": "J Comput Phys"
+      },
+      {
+        "issue": "1",
+        "key": "10.1016/j.cma.2026.118872_bib0068",
+        "doi-asserted-by": "crossref",
+        "first-page": "22",
+        "DOI": "10.13182/NSE161-22",
+        "article-title": "Application of hp adaptivity to the multigroup diffusion equations",
+        "volume": "161",
+        "author": "Wang",
+        "year": "2009",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0069",
+        "doi-asserted-by": "crossref",
+        "first-page": "215",
+        "DOI": "10.1016/j.cma.2017.01.036",
+        "article-title": "An adaptive, hanging-node, discontinuous isogeometric analysis method for the first-order form of the neutron transport equation with discrete ordinate (SN) angular discretisation",
+        "volume": "318",
+        "author": "Owens",
+        "year": "2017",
+        "journal-title": "Comput Methods Appl Mech Eng"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0070",
+        "doi-asserted-by": "crossref",
+        "first-page": "465",
+        "DOI": "10.1016/j.anucene.2016.11.015",
+        "article-title": "Isogeometric analysis for the multigroup neutron diffusion equation with applications in reactor physics",
+        "volume": "101",
+        "author": "Welch",
+        "year": "2017",
+        "journal-title": "Ann Nucl Energy"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0071",
+        "doi-asserted-by": "crossref",
+        "first-page": "75",
+        "DOI": "10.1063/1.1666510",
+        "article-title": "Asymptotic solution of neutron transport problems for small mean free paths",
+        "volume": "15",
+        "author": "Larsen",
+        "year": "1974",
+        "journal-title": "J Math Phys"
+      },
+      {
+        "issue": "4",
+        "key": "10.1016/j.cma.2026.118872_bib0072",
+        "doi-asserted-by": "crossref",
+        "first-page": "336",
+        "DOI": "10.13182/NSE92-A23982",
+        "article-title": "The asymptotic diffusion limit of discretized transport problems",
+        "volume": "112",
+        "author": "Larsen",
+        "year": "1992",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.cma.2026.118872_bib0073",
+        "doi-asserted-by": "crossref",
+        "first-page": "298",
+        "DOI": "10.13182/NSE00-41",
+        "article-title": "Discontinuous finite element transport solutions in thick diffusive problems",
+        "volume": "137",
+        "author": "Adams",
+        "year": "2001",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0074",
+        "doi-asserted-by": "crossref",
+        "first-page": "413",
+        "DOI": "10.1016/j.cma.2012.08.015",
+        "article-title": "Multigrid methods for isogeometric discretisation",
+        "volume": "253",
+        "author": "Gahaluat",
+        "year": "2013",
+        "journal-title": "Comput Methods Appl Mech Eng"
+      },
+      {
+        "issue": "6",
+        "key": "10.1016/j.cma.2026.118872_bib0075",
+        "doi-asserted-by": "crossref",
+        "first-page": "A3644",
+        "DOI": "10.1137/16M1062788",
+        "article-title": "Isogeometric preconditioners based on fast solvers for the Sylvester equation",
+        "volume": "38",
+        "author": "Sangalli",
+        "year": "2016",
+        "journal-title": "SIAM J. Sci. Comput."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0076",
+        "doi-asserted-by": "crossref",
+        "first-page": "543",
+        "DOI": "10.1016/j.pnucene.2008.11.005",
+        "article-title": "Three-dimensional h-adaptivity for the multigroup neutron diffusion equations",
+        "volume": "51",
+        "author": "Wang",
+        "year": "2009",
+        "journal-title": "Prog. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0077",
+        "article-title": "Computing with hp-Adaptive Finite Elements: One and Two Dimensional Elliptic and Maxwell Problems",
+        "volume": "1",
+        "author": "Demkowicz",
+        "year": "2007"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0078",
+        "doi-asserted-by": "crossref",
+        "first-page": "726",
+        "DOI": "10.1016/j.jcp.2012.12.035",
+        "article-title": "Minimising the error in eigenvalue calculations involving the Boltzmann transport equation using goal-based adaptivity on unstructured meshes",
+        "volume": "242",
+        "author": "Goffin",
+        "year": "2013",
+        "journal-title": "J Comput Phys"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0079",
+        "series-title": "Report No. ICES 04-03",
+        "article-title": "Projection based interpolation",
+        "author": "Demkowicz",
+        "year": "2004"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0080",
+        "doi-asserted-by": "crossref",
+        "first-page": "160",
+        "DOI": "10.1016/j.anucene.2012.05.030",
+        "article-title": "The application of isogeometric analysis to the neutron diffusion equation for a pincell problem with an analytic benchmark",
+        "volume": "49",
+        "author": "Hall",
+        "year": "2012",
+        "journal-title": "Ann Nucl Energy"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0081",
+        "doi-asserted-by": "crossref",
+        "first-page": "340",
+        "DOI": "10.1016/j.anucene.2014.08.028",
+        "article-title": "A new mathematical adjoint for the modified SAAF-SN equations",
+        "volume": "75",
+        "author": "Schunert",
+        "year": "2015",
+        "journal-title": "Ann Nucl Energy"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0082",
+        "series-title": "Self-Adaptive Isogeometric Spatial Discretisations of the First and Second-Order Forms of the Neutron Transport Equation with Dual-Weighted Residual Error Measures and Diffusion Acceleration",
+        "author": "Wilson",
+        "year": "2021"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0083",
+        "series-title": "An Introduction to the Mathematical Theory of Finite Elements",
+        "author": "Oden",
+        "year": "2011"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0084",
+        "article-title": "Mathematical Aspects of Discontinuous Galerkin Methods",
+        "volume": "69",
+        "author": "Di Pietro",
+        "year": "2012"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0085",
+        "doi-asserted-by": "crossref",
+        "first-page": "385",
+        "DOI": "10.13182/NSE160-385TN",
+        "article-title": "A continuous finite element-based, discontinuous finite element method for SN transport",
+        "volume": "160",
+        "author": "Warsa",
+        "year": "2008",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0086",
+        "series-title": "Proc. of the ANS Topical Meeting: Nuclear Mathematical and Computational Sciences: A Century in Review, a Century Anew, Gatlinburg, Tennessee, USA",
+        "article-title": "A piecewise linear finite element basis with applications to particle transport",
+        "author": "Stone",
+        "year": "2003"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.cma.2026.118872_bib0087",
+        "doi-asserted-by": "crossref",
+        "first-page": "256",
+        "DOI": "10.13182/NSE138-256",
+        "article-title": "Discontinuous finite element SN methods on three-dimensional unstructured grids",
+        "volume": "138",
+        "author": "Wareing",
+        "year": "2001",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0088",
+        "series-title": "Algorithmic Graph Theory",
+        "author": "Gibbons",
+        "year": "1985"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0089",
+        "article-title": "Data Structures and Algorithms",
+        "author": "Aho",
+        "year": "1987"
+      },
+      {
+        "issue": "7",
+        "key": "10.1016/j.cma.2026.118872_bib0090",
+        "doi-asserted-by": "crossref",
+        "first-page": "746",
+        "DOI": "10.1080/00295639.2018.1562778",
+        "article-title": "An efficient sweep-based solver for the SN equations on high-order meshes",
+        "volume": "193",
+        "author": "Haut",
+        "year": "2019",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "issue": "5",
+        "key": "10.1016/j.cma.2026.118872_bib0091",
+        "doi-asserted-by": "crossref",
+        "first-page": "B1271",
+        "DOI": "10.1137/19M124993X",
+        "article-title": "Diffusion synthetic acceleration preconditioning for discontinuous Galerkin discretizations of SN transport on high-order curved meshes",
+        "volume": "42",
+        "author": "Haut",
+        "year": "2020",
+        "journal-title": "SIAM J. Sci. Comput."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0092",
+        "doi-asserted-by": "crossref",
+        "first-page": "1",
+        "DOI": "10.13182/NSE89-A23628",
+        "article-title": "A multigrid acceleration method for the one-dimensional SN equations with anisotropic scattering",
+        "volume": "102",
+        "author": "Barnett",
+        "year": "1989",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0093",
+        "doi-asserted-by": "crossref",
+        "first-page": "664",
+        "DOI": "10.1007/BF01733786",
+        "article-title": "GMRES And the minimal polynomial",
+        "volume": "36",
+        "author": "Campbell",
+        "year": "1996",
+        "journal-title": "BIT Numerical Mathematics"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.cma.2026.118872_bib0094",
+        "doi-asserted-by": "crossref",
+        "first-page": "856",
+        "DOI": "10.1137/0907058",
+        "article-title": "GMRES: A generalized minimal residual algorithm for solving nonsymmetric linear systems",
+        "volume": "7",
+        "author": "Saad",
+        "year": "1986",
+        "journal-title": "Journal on Scientific and Statistical Computing"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0095",
+        "series-title": "Proc. of the ANS Topical Meeting: Advances in Radiation Protection & Shielding, Falmouth, Massachusetts, USA, Sponsored by the ANS, Northeastern Section, Radiation Protection and Shielding Division, in Co-operation with the NEA of the OECD",
+        "first-page": "384",
+        "article-title": "Application of Krylov subspace iterative methods to the slab geometry transport equation",
+        "volume": "1",
+        "author": "Patton",
+        "year": "1996"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0096",
+        "series-title": "Proc. of the ANS Topical Meeting: Nuclear Mathematical and Computational Sciences: A Century in Review, a Century Anew, Gatlinburg, Tennessee, USA",
+        "first-page": "1",
+        "article-title": "Some remarks on GMRES for transport theory",
+        "author": "Patton",
+        "year": "2003"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0097",
+        "doi-asserted-by": "crossref",
+        "first-page": "17",
+        "DOI": "10.1090/qam/42792",
+        "article-title": "The principle of minimized iterations in the solution of the matrix eigenvalue problem",
+        "volume": "9",
+        "author": "Arnoldi",
+        "year": "1951",
+        "journal-title": "Q top Q. Appl. Math."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0098",
+        "article-title": "Finite Element Methods for Particle Transport: Applications to Reactor and Radiation Physics",
+        "author": "Ackroyd",
+        "year": "1997"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0099",
+        "first-page": "260",
+        "article-title": "Use of the preconditioned conjugate gradient method to accelerate SN iterations",
+        "volume": "50",
+        "author": "Derstine",
+        "year": "1985",
+        "journal-title": "Trans Am Nucl Soc"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0100",
+        "doi-asserted-by": "crossref",
+        "first-page": "47",
+        "DOI": "10.13182/NSE82-1",
+        "article-title": "Unconditionally stable diffusion synthetic acceleration methods for the slab geometry discrete-ordinates equations. part 1: theory",
+        "volume": "82",
+        "author": "Larsen",
+        "year": "1982",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0101",
+        "doi-asserted-by": "crossref",
+        "first-page": "107",
+        "DOI": "10.1080/00411458408211656",
+        "article-title": "Diffusion-synthetic acceleration methods for discrete-ordinates problems",
+        "volume": "13",
+        "author": "Larsen",
+        "year": "1984",
+        "journal-title": "Transp Theory Stat Phys"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0102",
+        "doi-asserted-by": "crossref",
+        "first-page": "34",
+        "DOI": "10.13182/NSE82-A19026",
+        "article-title": "A synthetic acceleration method for discrete-ordinates calculations with highly anisotropic scattering",
+        "volume": "82",
+        "author": "Morel",
+        "year": "1982",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "issue": "4",
+        "key": "10.1016/j.cma.2026.118872_bib0103",
+        "doi-asserted-by": "crossref",
+        "first-page": "341",
+        "DOI": "10.13182/NSE89-A23623",
+        "article-title": "An S2 synthetic acceleration scheme for the one-Dimensional SN equations with linear discontinuous spatial differencing",
+        "volume": "101",
+        "author": "Lorence",
+        "year": "1989",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0104",
+        "doi-asserted-by": "crossref",
+        "first-page": "330",
+        "DOI": "10.13182/NSE91-A23795",
+        "article-title": "An angular multigrid acceleration technique for SN equations with highly forward-peaked scattering",
+        "volume": "107",
+        "author": "Morel",
+        "year": "1991",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0105",
+        "doi-asserted-by": "crossref",
+        "first-page": "145",
+        "DOI": "10.13182/NSE92-A23930",
+        "article-title": "Diffusion synthetic acceleration of discontinuous finite element transport iterations",
+        "volume": "111",
+        "author": "Adams",
+        "year": "1992",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0106",
+        "article-title": "Diffusion accelerated discontinuous finite element schemes for the SN equations in slab and x,y geometries",
+        "volume": "3",
+        "author": "Wareing",
+        "year": "1991"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0107",
+        "series-title": "Development of the Discontinuous Galerkin Method for High-Resolution, Large-Scale CFD and Acoustics in Industrial Geometries",
+        "author": "Hillewaert",
+        "year": "2013"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0108",
+        "doi-asserted-by": "crossref",
+        "first-page": "401",
+        "DOI": "10.1016/j.jcp.2004.11.017",
+        "article-title": "An explicit expression for the penalty parameter of the interior penalty method",
+        "volume": "205",
+        "author": "Shahbazi",
+        "year": "2005",
+        "journal-title": "J Comput Phys"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0109",
+        "doi-asserted-by": "crossref",
+        "first-page": "847",
+        "DOI": "10.1016/j.jcp.2017.09.020",
+        "article-title": "Optimal trace inequality constants for interior penalty discontinuous Galerkin discretisations of elliptic operators using arbitrary elements with non-constant Jacobians",
+        "volume": "350",
+        "author": "Owens",
+        "year": "2017",
+        "journal-title": "J Comput Phys"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0110",
+        "doi-asserted-by": "crossref",
+        "first-page": "356",
+        "DOI": "10.1016/j.jcp.2014.05.044",
+        "article-title": "Discontinuous diffusion synthetic acceleration for SN transport on 2D arbitrary polygonal meshes",
+        "volume": "274",
+        "author": "Turcksin",
+        "year": "2014",
+        "journal-title": "J Comput Phys"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0111",
+        "doi-asserted-by": "crossref",
+        "first-page": "134",
+        "DOI": "10.1016/j.anucene.2016.11.048",
+        "article-title": "Hybrid multi-level solvers for discontinuous Galerkin finite element discrete ordinate diffusion synthetic acceleration of radiation transport algorithms",
+        "volume": "102",
+        "author": "O’Malley",
+        "year": "2017",
+        "journal-title": "Ann Nucl Energy"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0112",
+        "doi-asserted-by": "crossref",
+        "first-page": "177",
+        "DOI": "10.1016/j.pnucene.2017.03.014",
+        "article-title": "P-Multigrid expansion of hybrid multilevel solvers for discontinuous Galerkin finite element discrete ordinate (DG-FEM-SN) diffusion synthetic acceleration (DSA) of radiation transport algorithms",
+        "volume": "98",
+        "author": "O’Malley",
+        "year": "2017",
+        "journal-title": "Prog. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0113",
+        "doi-asserted-by": "crossref",
+        "first-page": "213",
+        "DOI": "10.1006/jcph.2002.7162",
+        "article-title": "Unconditionally stable and robust adjacent-cell diffusive preconditioning of weighted-difference particle transport methods is impossible",
+        "volume": "182",
+        "author": "Azmy",
+        "year": "2002",
+        "journal-title": "J Comput Phys"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0114",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1093/oso/9780198876571.001.0001",
+        "article-title": "Modern Fortran Explained: Incorporating Fortran 2023",
+        "author": "Metcalf",
+        "year": "2023"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0115",
+        "series-title": "Report No. ANL-95/11 Rev. 3.9",
+        "article-title": "PETSc Users Manual: Revision 3.9",
+        "author": "Balay",
+        "year": "2018"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0116",
+        "doi-asserted-by": "crossref",
+        "first-page": "155",
+        "DOI": "10.1016/S0168-9274(01)00115-5",
+        "article-title": "BoomerAMG: a parallel algebraic multigrid solver and preconditioner",
+        "volume": "41",
+        "author": "Henson",
+        "year": "2002",
+        "journal-title": "Appl. Numer. Math."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0117",
+        "series-title": "Parallel, Hierarchical Solution Algorithms for Diffusion Synthetic Acceleration of the Neutron Transport Equation",
+        "author": "O’Malley",
+        "year": "2018"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0118",
+        "series-title": "Adaptive Mesh Refinement Solution Techniques for the Multigroup SN Transport Equation using a Higher-Order Discontinuous Finite Element Method",
+        "author": "Wang",
+        "year": "2009"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0119",
+        "series-title": "Report No. SAND2000-1444",
+        "article-title": "Code Verification by the Method of Manufactured Solutions",
+        "author": "Salari",
+        "year": "2000"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0120",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1137/1.9780898717440",
+        "article-title": "Discontinuous Galerkin methods for solving elliptic and parabolic equations: Theory and Implementation",
+        "author": "Rivière",
+        "year": "2008"
+      },
+      {
+        "issue": "181",
+        "key": "10.1016/j.cma.2026.118872_bib0121",
+        "doi-asserted-by": "crossref",
+        "first-page": "75",
+        "DOI": "10.1090/S0025-5718-1988-0917819-3",
+        "article-title": "An optimal-order error-estimate for the discontinuous Galerkin method",
+        "volume": "50",
+        "author": "Richter",
+        "year": "1988",
+        "journal-title": "Math Comput"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0122",
+        "doi-asserted-by": "crossref",
+        "first-page": "3178",
+        "DOI": "10.1016/j.cam.2009.12.020",
+        "article-title": "A two-mesh adaptive mesh refinement technique for SN neutral-particle transport using a higher-order DGFEM",
+        "volume": "233",
+        "author": "Ragusa",
+        "year": "2010",
+        "journal-title": "J Comput Appl Math"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0123",
+        "series-title": "Discontinuous Isogeometric Analysis Methods for the First-Order Form of the Neutron Transport Equation with Discrete Oridnate Angular Discretisation",
+        "author": "Owens",
+        "year": "2017"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0124",
+        "doi-asserted-by": "crossref",
+        "first-page": "763",
+        "DOI": "10.1016/j.jcp.2010.10.018",
+        "article-title": "Standard and goal-oriented adaptive mesh refinement applied to radiation transport on 2D unstructured triangular meshes",
+        "volume": "230",
+        "author": "Wang",
+        "year": "2011",
+        "journal-title": "J Comput Phys"
+      },
+      {
+        "issue": "1",
+        "key": "10.1016/j.cma.2026.118872_bib0125",
+        "doi-asserted-by": "crossref",
+        "first-page": "21",
+        "DOI": "10.1016/0149-1970(84)90010-6",
+        "article-title": "Recent progress in the application of the finite element method to the neutron transport equation",
+        "volume": "14",
+        "author": "Wood",
+        "year": "1984",
+        "journal-title": "Prog. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0126",
+        "unstructured": "International Atomic Energy Agency, Transport Theory and Advanced Reactor Calculations, Report No. IAEA-TECDOC-254, International Atomic Energy Agency, 1981."
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0127",
+        "series-title": "Report No. LA-10983-MS",
+        "article-title": "Transport Calculations for Nuclear Analyses: Theory and Guidelines for Effective Use of Transport Codes",
+        "author": "O’Dell",
+        "year": "1987"
+      },
+      {
+        "key": "10.1016/j.cma.2026.118872_bib0128",
+        "doi-asserted-by": "crossref",
+        "first-page": "697",
+        "DOI": "10.1007/s42967-021-00136-3",
+        "article-title": "Uniform subspace correction preconditioners for discontinuous Galerkin methods with h(p)-refinement",
+        "volume": "4",
+        "author": "Pazner",
+        "year": "2022",
+        "journal-title": "Communications on Applied Mathematics and Computation"
+      }
+    ],
+    "container-title": [
+      "Computer Methods in Applied Mechanics and Engineering"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S0045782526001453?httpAccept=text/xml",
+        "content-type": "text/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S0045782526001453?httpAccept=text/plain",
+        "content-type": "text/plain",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          29
+        ]
+      ],
+      "date-time": "2026-04-29T12:37:14Z",
+      "timestamp": 1777466234000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0045782526001453"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          6
+        ]
+      ]
+    },
+    "references-count": 128,
+    "alternative-id": [
+      "S0045782526001453"
+    ],
+    "URL": "https://doi.org/10.1016/j.cma.2026.118872",
+    "relation": {},
+    "ISSN": [
+      "0045-7825"
+    ],
+    "issn-type": [
+      {
+        "value": "0045-7825",
+        "type": "print"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          6
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "Elsevier",
+        "name": "publisher",
+        "label": "This article is maintained by"
+      },
+      {
+        "value": "Adaptive mesh h(p)-refinement of a discontinuous Bubnov-Galerkin isogeometric analysis spatial discretisation of the first-order form of the neutron transport equation with goal-based error measures and diffusion acceleration",
+        "name": "articletitle",
+        "label": "Article Title"
+      },
+      {
+        "value": "Computer Methods in Applied Mechanics and Engineering",
+        "name": "journaltitle",
+        "label": "Journal Title"
+      },
+      {
+        "value": "https://doi.org/10.1016/j.cma.2026.118872",
+        "name": "articlelink",
+        "label": "CrossRef DOI link to publisher maintained version"
+      },
+      {
+        "value": "article",
+        "name": "content_type",
+        "label": "Content Type"
+      },
+      {
+        "value": "© 2026 The Author(s). Published by Elsevier B.V.",
+        "name": "copyright",
+        "label": "Copyright"
+      }
+    ],
+    "article-number": "118872"
+  }
+}

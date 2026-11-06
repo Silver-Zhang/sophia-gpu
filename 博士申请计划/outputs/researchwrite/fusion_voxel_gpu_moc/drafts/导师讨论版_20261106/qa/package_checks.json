@@ -1,0 +1,17 @@
+{
+  "status": "structural checks passed; visual review recorded separately",
+  "pages": 37,
+  "chapters": 6,
+  "confirmed_headings": 129,
+  "third_level_sections": 97,
+  "references": 47,
+  "figures": 6,
+  "native_tables": 6,
+  "native_OMML_objects": 29,
+  "numbered_display_equations": 8,
+  "repeating_table_headers": 6,
+  "external_reference_links": 47,
+  "TOC_entries_with_verified_page_numbers": 33,
+  "original_00_04_unchanged": true,
+  "MD_citation_order_matches_DOCX": true
+}

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450pt" height="258pt" viewBox="0 0 450 258">
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="none" stroke="#425466" stroke-width="1"/></marker></defs>
+<rect width="450" height="258" fill="white"/>
+<text x="225" y="17" text-anchor="middle" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="11" fill="#172B40">GPU-MOC的轨迹组织与成本来源</text>
+<g id="node-0"><rect x="10" y="36" width="126" height="44" rx="3" fill="#F5F6F7" stroke="#425466" stroke-width="0.8"/>
+<text x="73.0" y="55.0" text-anchor="middle" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10" fill="#172B40">网格／材料／源</text>
+<text x="73.0" y="68.0" text-anchor="middle" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10" fill="#172B40">段数与访问分布</text>
+</g>
+<g id="node-1"><rect x="162" y="36" width="126" height="44" rx="3" fill="#E7F0F8" stroke="#425466" stroke-width="0.8"/>
+<text x="225.0" y="55.0" text-anchor="middle" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10" fill="#172B40">轨迹存储选择</text>
+<text x="225.0" y="68.0" text-anchor="middle" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10" fill="#172B40">在线／全／部分缓存</text>
+</g>
+<g id="node-2"><rect x="314" y="36" width="126" height="44" rx="3" fill="#F5F6F7" stroke="#425466" stroke-width="0.8"/>
+<text x="377.0" y="55.0" text-anchor="middle" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10" fill="#172B40">按工作量分组</text>
+<text x="377.0" y="68.0" text-anchor="middle" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10" fill="#172B40">轨迹／角度／能群</text>
+</g>
+<g id="node-3"><rect x="314" y="117" width="126" height="46" rx="3" fill="#F5F6F7" stroke="#425466" stroke-width="0.8"/>
+<text x="377.0" y="137.0" text-anchor="middle" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10" fill="#172B40">沿轨迹扫描</text>
+<text x="377.0" y="150.0" text-anchor="middle" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10" fill="#172B40">段内积分及递推</text>
+</g>
+<g id="node-4"><rect x="162" y="117" width="126" height="46" rx="3" fill="#F5F6F7" stroke="#425466" stroke-width="0.8"/>
+<text x="225.0" y="137.0" text-anchor="middle" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10" fill="#172B40">通量归约与源更新</text>
+<text x="225.0" y="150.0" text-anchor="middle" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10" fill="#172B40">原子／局部归约</text>
+</g>
+<g id="node-5"><rect x="10" y="117" width="126" height="46" rx="3" fill="#F5F6F7" stroke="#425466" stroke-width="0.8"/>
+<text x="73.0" y="137.0" text-anchor="middle" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10" fill="#172B40">收敛及数据输出</text>
+<text x="73.0" y="150.0" text-anchor="middle" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10" fill="#172B40">全部迭代计时</text>
+</g>
+<g id="node-6"><rect x="10" y="207" width="430" height="32" rx="3" fill="#F5F6F7" stroke="#425466" stroke-width="0.8"/>
+<text x="225.0" y="226.5" text-anchor="middle" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="10" fill="#172B40">成本观测：追踪、访存、分歧、竞争、传输、峰值显存</text>
+</g>
+<polyline id="edge-0" points="136,58 162,58" fill="none" stroke="#425466" stroke-width="1" marker-end="url(#arrow)"/>
+<polyline id="edge-1" points="288,58 314,58" fill="none" stroke="#425466" stroke-width="1" marker-end="url(#arrow)"/>
+<polyline id="edge-2" points="377,80 377,117" fill="none" stroke="#425466" stroke-width="1" marker-end="url(#arrow)"/>
+<polyline id="edge-3" points="314,140 288,140" fill="none" stroke="#425466" stroke-width="1" marker-end="url(#arrow)"/>
+<polyline id="edge-4" points="162,140 136,140" fill="none" stroke="#425466" stroke-width="1" marker-end="url(#arrow)"/>
+<polyline id="edge-5" points="225,163 225,184 377,184 377,163" fill="none" stroke="#425466" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+<text x="85" y="188" text-anchor="middle" font-family="PingFang SC" font-size="9" fill="#172B40">虚线为源迭代</text>
+</svg>

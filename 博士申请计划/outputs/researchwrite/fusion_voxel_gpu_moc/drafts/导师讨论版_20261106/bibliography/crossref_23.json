@@ -1,0 +1,781 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          3
+        ]
+      ],
+      "date-time": "2026-06-03T10:34:34Z",
+      "timestamp": 1780482874374,
+      "version": "3.54.1"
+    },
+    "reference-count": 39,
+    "publisher": "Elsevier BV",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2024,
+              6,
+              1
+            ]
+          ],
+          "date-time": "2024-06-01T00:00:00Z",
+          "timestamp": 1717200000000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2024,
+              6,
+              1
+            ]
+          ],
+          "date-time": "2024-06-01T00:00:00Z",
+          "timestamp": 1717200000000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://www.elsevier.com/legal/tdmrep-license"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2024,
+              6,
+              1
+            ]
+          ],
+          "date-time": "2024-06-01T00:00:00Z",
+          "timestamp": 1717200000000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-017"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2024,
+              6,
+              1
+            ]
+          ],
+          "date-time": "2024-06-01T00:00:00Z",
+          "timestamp": 1717200000000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-037"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2024,
+              6,
+              1
+            ]
+          ],
+          "date-time": "2024-06-01T00:00:00Z",
+          "timestamp": 1717200000000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-012"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2024,
+              6,
+              1
+            ]
+          ],
+          "date-time": "2024-06-01T00:00:00Z",
+          "timestamp": 1717200000000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-029"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2024,
+              6,
+              1
+            ]
+          ],
+          "date-time": "2024-06-01T00:00:00Z",
+          "timestamp": 1717200000000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-004"
+      }
+    ],
+    "funder": [
+      {
+        "DOI": "10.13039/501100002855",
+        "name": "Ministry of Science and Technology of the People's Republic of China",
+        "doi-asserted-by": "publisher",
+        "id": [
+          {
+            "id": "10.13039/501100002855",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      },
+      {
+        "DOI": "10.13039/501100012166",
+        "name": "National Key Research and Development Program of China",
+        "doi-asserted-by": "publisher",
+        "award": [
+          "2023YFB3002101"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "2023YFB3002101"
+            ]
+          }
+        ],
+        "id": [
+          {
+            "id": "10.13039/501100012166",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "elsevier.com",
+        "sciencedirect.com"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "Nuclear Engineering and Design"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2024,
+          6
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.nucengdes.2024.113148",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2024,
+          3,
+          27
+        ]
+      ],
+      "date-time": "2024-03-27T04:45:08Z",
+      "timestamp": 1711514708000
+    },
+    "page": "113148",
+    "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 3,
+    "special_numbering": "C",
+    "title": [
+      "A cyclic-track decomposition method for 3D MOC neutron transport simulation"
+    ],
+    "prefix": "10.1016",
+    "volume": "422",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-2886-5850",
+        "authenticated-orcid": false,
+        "given": "An",
+        "family": "Wang",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Junying",
+        "family": "Wang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Zhezhao",
+        "family": "Ding",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Xiaoxu",
+        "family": "Geng",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Haodong",
+        "family": "Shan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yun",
+        "family": "Hu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Dandan",
+        "family": "Chen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "78",
+    "reference": [
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b1",
+        "series-title": "Visualization Handbook",
+        "first-page": "717",
+        "article-title": "ParaView: An End-User Tool for Large Data Visualization",
+        "author": "Ahrens",
+        "year": "2005"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b2",
+        "series-title": "Proceedings of the Twenty-Sixth RAMP Symposium",
+        "first-page": "171",
+        "article-title": "Solving mixed-integer quadratic programming problems with IBM-CPLEX: a progress report",
+        "author": "Bliek",
+        "year": "2014"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b3",
+        "doi-asserted-by": "crossref",
+        "first-page": "43",
+        "DOI": "10.1016/j.anucene.2013.12.012",
+        "article-title": "The OpenMOC method of characteristics neutral particle transport code",
+        "volume": "68",
+        "author": "Boyd",
+        "year": "2014",
+        "journal-title": "Ann. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b4",
+        "doi-asserted-by": "crossref",
+        "first-page": "417",
+        "DOI": "10.1016/j.anucene.2018.02.049",
+        "article-title": "A new high-fidelity neutronics code NECP-X",
+        "volume": "116",
+        "author": "Chen",
+        "year": "2018",
+        "journal-title": "Ann. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b5",
+        "series-title": "Proceedings of the International Conference on Supercomputing in Nuclear Application",
+        "article-title": "Parallelization of three-dimensional whole core transport code DeCART",
+        "author": "Cho",
+        "year": "2003"
+      },
+      {
+        "issue": "2",
+        "key": "10.1016/j.nucengdes.2024.113148_b6",
+        "doi-asserted-by": "crossref",
+        "first-page": "119",
+        "DOI": "10.13182/NSE81-A21346",
+        "article-title": "Particle transport calculations with the method of streaming rays",
+        "volume": "77",
+        "author": "Filippone",
+        "year": "1981",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "issue": "1",
+        "key": "10.1016/j.nucengdes.2024.113148_b7",
+        "doi-asserted-by": "crossref",
+        "first-page": "33",
+        "DOI": "10.13182/NSE83-A17455",
+        "article-title": "The solution of the multigroup neutron transport equation using spherical harmonics",
+        "volume": "84",
+        "author": "Fletcher",
+        "year": "1983",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b8",
+        "series-title": "Introduction to Parallel Computing",
+        "first-page": "109",
+        "author": "Grama",
+        "year": "2003"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b9",
+        "doi-asserted-by": "crossref",
+        "first-page": "299",
+        "DOI": "10.1016/j.anucene.2019.05.050",
+        "article-title": "Full core 3D simulation of the BEAVRS benchmark with OpenMOC",
+        "volume": "134",
+        "author": "Gunow",
+        "year": "2019",
+        "journal-title": "Ann. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b10",
+        "series-title": "Proceedings of Physics of Reactors 2016",
+        "first-page": "1",
+        "article-title": "Reducing 3D MOC storage requirements with axial on-the-fly ray tracing",
+        "author": "Gunow",
+        "year": "2016"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b11",
+        "series-title": "Proceedings of the Joint International Conference on Mathematics and Computation (M&C), Supercomputing in Nuclear Applications (SNA) and the Monte Carlo (MC) Method",
+        "article-title": "SimpleMOC-a performance abstraction for 3D MOC",
+        "author": "Gunow",
+        "year": "2015"
+      },
+      {
+        "issue": "10",
+        "key": "10.1016/j.nucengdes.2024.113148_b12",
+        "doi-asserted-by": "crossref",
+        "first-page": "646",
+        "DOI": "10.1016/j.parco.2014.10.001",
+        "article-title": "Monte Carlo domain decomposition for robust nuclear reactor analysis",
+        "volume": "40",
+        "author": "Horelik",
+        "year": "2014",
+        "journal-title": "Parallel Comput."
+      },
+      {
+        "issue": "S2",
+        "key": "10.1016/j.nucengdes.2024.113148_b13",
+        "first-page": "71",
+        "article-title": "Analysis of keff uncertainty on nuclear data of CEFR",
+        "volume": "35",
+        "author": "Jun",
+        "year": "2013",
+        "journal-title": "Annu. Rep. China Inst. Atom. Energy"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b14",
+        "first-page": "1042",
+        "article-title": "Verification of high-fidelity neutronics code PROTEUS for C5G7 benchmark problems",
+        "volume": "116",
+        "author": "Jung",
+        "year": "2017",
+        "journal-title": "Trans. Am. Nucl. Soc."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b15",
+        "doi-asserted-by": "crossref",
+        "first-page": "51",
+        "DOI": "10.1016/j.anucene.2017.03.034",
+        "article-title": "Mesh-free method for numerical solution of the multi-group discrete ordinate neutron transport equation",
+        "volume": "106",
+        "author": "Kashi",
+        "year": "2017",
+        "journal-title": "Ann. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b16",
+        "series-title": "Knapsack Problems",
+        "first-page": "483",
+        "article-title": "Introduction to NP-completeness of knapsack problems",
+        "author": "Kellerer",
+        "year": "2004"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b17",
+        "series-title": "Knapsack Problems",
+        "first-page": "185",
+        "article-title": "The bounded knapsack problem",
+        "author": "Kellerer",
+        "year": "2004"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b18",
+        "series-title": "A Hybrid Parallel Algorithm for the 3-D Method of Characteristics Solution of the Boltzmann Transport Equation on High Performance Compute Clusters",
+        "author": "Kochunas",
+        "year": "2013"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b19",
+        "series-title": "Overview of Development and Design of MPACT: Michigan Parallel Characteristics Transport Code",
+        "first-page": "42",
+        "author": "Kochunas",
+        "year": "2013"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b20",
+        "series-title": "Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis",
+        "first-page": "1",
+        "article-title": "ANT-MOC: Scalable neutral particle transport using 3D method of characteristics on multi-GPU systems",
+        "author": "Li",
+        "year": "2023"
+      },
+      {
+        "issue": "2–3",
+        "key": "10.1016/j.nucengdes.2024.113148_b21",
+        "doi-asserted-by": "crossref",
+        "first-page": "447",
+        "DOI": "10.1016/j.anucene.2010.09.021",
+        "article-title": "A new three-dimensional method of characteristics for the neutron transport calculation",
+        "volume": "38",
+        "author": "Liu",
+        "year": "2011",
+        "journal-title": "Ann. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b22",
+        "series-title": "Handbook of Nuclear Engineering",
+        "first-page": "427",
+        "article-title": "General principles of neutron transport",
+        "author": "Prinja",
+        "year": "2010"
+      },
+      {
+        "issue": "2",
+        "key": "10.1016/j.nucengdes.2024.113148_b23",
+        "doi-asserted-by": "crossref",
+        "first-page": "113",
+        "DOI": "10.5516/NET.01.2012.501",
+        "article-title": "Prospects in deterministic three-dimensional whole-core transport calculations",
+        "volume": "44",
+        "author": "Sanchez",
+        "year": "2012",
+        "journal-title": "Nucl. Eng. Technol."
+      },
+      {
+        "issue": "1",
+        "key": "10.1016/j.nucengdes.2024.113148_b24",
+        "doi-asserted-by": "crossref",
+        "first-page": "23",
+        "DOI": "10.13182/NSE140-23",
+        "article-title": "Treatment of boundary conditions in trajectory-based deterministic transport methods",
+        "volume": "140",
+        "author": "Sanchez",
+        "year": "2002",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.nucengdes.2024.113148_b25",
+        "doi-asserted-by": "crossref",
+        "first-page": "239",
+        "DOI": "10.1080/00295639.2016.1273634",
+        "article-title": "A neutron transport characteristics method for 3D axially extruded geometries coupled with a fine group self-shielding environment",
+        "volume": "186",
+        "author": "Santandrea",
+        "year": "2017",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b26",
+        "series-title": "Proceedings of Physics of Reactors 2016",
+        "article-title": "APOLLO3: CEA/DEN deterministic multi-purpose code for reactor physics analysis",
+        "author": "Schneider",
+        "year": "2016"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b27",
+        "doi-asserted-by": "crossref",
+        "first-page": "49",
+        "DOI": "10.1016/j.anucene.2015.05.014",
+        "article-title": "Optimized tracking strategies for step MOC calculations in extruded 3D axial geometries",
+        "volume": "87",
+        "author": "Sciannandrone",
+        "year": "2016",
+        "journal-title": "Ann. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b28",
+        "series-title": "Proceedings of the Joint International Conference on Mathematics and Computation (M&C), Supercomputing in Nuclear Applications (SNA) and the Monte Carlo (MC) Method",
+        "first-page": "1",
+        "article-title": "Theoretical analysis of track generation in 3D method of characteristics",
+        "author": "Shaner",
+        "year": "2015"
+      },
+      {
+        "issue": "5",
+        "key": "10.1016/j.nucengdes.2024.113148_b29",
+        "doi-asserted-by": "crossref",
+        "first-page": "383",
+        "DOI": "10.1016/j.pnucene.2006.01.002",
+        "article-title": "Benchmark on deterministic 3-D MOX fuel assembly transport calculations without spatial homogenization",
+        "volume": "48",
+        "author": "Smith",
+        "year": "2006",
+        "journal-title": "Prog. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b30",
+        "series-title": "Proceedings of the International Conference on Mathematics and Computational Methods Applied to Nuclear Science and Engineering",
+        "first-page": "1",
+        "article-title": "Method of characteristics development targeting the high performance Blue Gene/P computer at argonne national laboratory",
+        "author": "Smith",
+        "year": "2011"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b31",
+        "doi-asserted-by": "crossref",
+        "first-page": "257",
+        "DOI": "10.1016/j.anucene.2019.02.026",
+        "article-title": "Implementation and performance analysis of the massively parallel method of characteristics based on GPU",
+        "volume": "131",
+        "author": "Song",
+        "year": "2019",
+        "journal-title": "Ann. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b32",
+        "series-title": "Monte Carlo Principles and Neutron Transport Problems",
+        "author": "Spanier",
+        "year": "2008"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b33",
+        "doi-asserted-by": "crossref",
+        "first-page": "141",
+        "DOI": "10.1016/j.cpc.2016.01.007",
+        "article-title": "A task-based parallel and vectorized approach to 3D method of characteristics (MOC) reactor simulation for high performance computing architectures",
+        "volume": "202",
+        "author": "Tramm",
+        "year": "2016",
+        "journal-title": "Comput. Phys. Comm."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b34",
+        "doi-asserted-by": "crossref",
+        "first-page": "693",
+        "DOI": "10.1016/j.anucene.2017.10.015",
+        "article-title": "ARRC: A random ray neutron transport code for nuclear reactor simulation",
+        "volume": "112",
+        "author": "Tramm",
+        "year": "2018",
+        "journal-title": "Ann. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b35",
+        "doi-asserted-by": "crossref",
+        "first-page": "544",
+        "DOI": "10.1016/j.jcp.2016.09.003",
+        "article-title": "The virtual environment for reactor applications (VERA): Design and architecture",
+        "volume": "326",
+        "author": "Turner",
+        "year": "2016",
+        "journal-title": "J. Comput. Phys."
+      },
+      {
+        "issue": "09",
+        "key": "10.1016/j.nucengdes.2024.113148_b36",
+        "first-page": "1559",
+        "article-title": "Parallel implementation of direct 3D neutron transport method of characteristics",
+        "volume": "55",
+        "author": "Wang",
+        "year": "2021",
+        "journal-title": "Atom. Energy Sci. Technol."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b37",
+        "doi-asserted-by": "crossref",
+        "first-page": "43",
+        "DOI": "10.1016/j.jandt.2019.10.001",
+        "article-title": "Verification of the 2D/1D coupling 3D transport code TIGER with C5G7 benchmarks",
+        "volume": "1",
+        "author": "Wu",
+        "year": "2019",
+        "journal-title": "Int. J. Adv. Nucl. Reactor Des. Technol."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b38",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1016/j.anucene.2022.109156",
+        "article-title": "Development of a GPU-based three-dimensional neutron transport code",
+        "volume": "174",
+        "author": "Zhang",
+        "year": "2022",
+        "journal-title": "Ann. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.113148_b39",
+        "doi-asserted-by": "crossref",
+        "first-page": "109303",
+        "DOI": "10.1016/j.anucene.2022.109303",
+        "article-title": "ARCHER - a new three-dimensional method of characteristics neutron transport code for Pebble-bed HTR with coarse mesh finite difference acceleration",
+        "volume": "177",
+        "author": "Zhu",
+        "year": "2022",
+        "journal-title": "Ann. Nucl. Energy"
+      }
+    ],
+    "container-title": [
+      "Nuclear Engineering and Design"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S0029549324002486?httpAccept=text/xml",
+        "content-type": "text/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S0029549324002486?httpAccept=text/plain",
+        "content-type": "text/plain",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2024,
+          4,
+          17
+        ]
+      ],
+      "date-time": "2024-04-17T15:18:10Z",
+      "timestamp": 1713367090000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0029549324002486"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          6
+        ]
+      ]
+    },
+    "references-count": 39,
+    "alternative-id": [
+      "S0029549324002486"
+    ],
+    "URL": "https://doi.org/10.1016/j.nucengdes.2024.113148",
+    "relation": {},
+    "ISSN": [
+      "0029-5493"
+    ],
+    "issn-type": [
+      {
+        "value": "0029-5493",
+        "type": "print"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2024,
+          6
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "Elsevier",
+        "name": "publisher",
+        "label": "This article is maintained by"
+      },
+      {
+        "value": "A cyclic-track decomposition method for 3D MOC neutron transport simulation",
+        "name": "articletitle",
+        "label": "Article Title"
+      },
+      {
+        "value": "Nuclear Engineering and Design",
+        "name": "journaltitle",
+        "label": "Journal Title"
+      },
+      {
+        "value": "https://doi.org/10.1016/j.nucengdes.2024.113148",
+        "name": "articlelink",
+        "label": "CrossRef DOI link to publisher maintained version"
+      },
+      {
+        "value": "article",
+        "name": "content_type",
+        "label": "Content Type"
+      },
+      {
+        "value": "© 2024 Elsevier B.V. All rights reserved.",
+        "name": "copyright",
+        "label": "Copyright"
+      }
+    ],
+    "article-number": "113148"
+  }
+}

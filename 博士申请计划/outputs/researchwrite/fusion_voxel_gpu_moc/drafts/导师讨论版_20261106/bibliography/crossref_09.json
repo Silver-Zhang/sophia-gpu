@@ -1,0 +1,620 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          17
+        ]
+      ],
+      "date-time": "2026-09-17T18:36:24Z",
+      "timestamp": 1789670184712,
+      "version": "4.0.1"
+    },
+    "reference-count": 27,
+    "publisher": "Elsevier BV",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2024,
+              4,
+              1
+            ]
+          ],
+          "date-time": "2024-04-01T00:00:00Z",
+          "timestamp": 1711929600000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2024,
+              4,
+              1
+            ]
+          ],
+          "date-time": "2024-04-01T00:00:00Z",
+          "timestamp": 1711929600000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://www.elsevier.com/legal/tdmrep-license"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2024,
+              4,
+              1
+            ]
+          ],
+          "date-time": "2024-04-01T00:00:00Z",
+          "timestamp": 1711929600000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-017"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2024,
+              4,
+              1
+            ]
+          ],
+          "date-time": "2024-04-01T00:00:00Z",
+          "timestamp": 1711929600000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-037"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2024,
+              4,
+              1
+            ]
+          ],
+          "date-time": "2024-04-01T00:00:00Z",
+          "timestamp": 1711929600000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-012"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2024,
+              4,
+              1
+            ]
+          ],
+          "date-time": "2024-04-01T00:00:00Z",
+          "timestamp": 1711929600000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-029"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2024,
+              4,
+              1
+            ]
+          ],
+          "date-time": "2024-04-01T00:00:00Z",
+          "timestamp": 1711929600000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-004"
+      }
+    ],
+    "funder": [
+      {
+        "DOI": "10.13039/501100001809",
+        "name": "National Natural Science Foundation of China",
+        "doi-asserted-by": "publisher",
+        "id": [
+          {
+            "id": "10.13039/501100001809",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "elsevier.com",
+        "sciencedirect.com"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "Nuclear Engineering and Design"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2024,
+          4
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.nucengdes.2024.112994",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2024,
+          2,
+          14
+        ]
+      ],
+      "date-time": "2024-02-14T07:23:38Z",
+      "timestamp": 1707895418000
+    },
+    "page": "112994",
+    "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 1,
+    "special_numbering": "C",
+    "title": [
+      "Research on approaches to automatic modeling of discrete ordinate programs based on CAD model"
+    ],
+    "prefix": "10.1016",
+    "volume": "420",
+    "author": [
+      {
+        "given": "Chao",
+        "family": "Yang",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Xiao",
+        "family": "Tan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Fang-Yuan",
+        "family": "Xu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Zhen-Ping",
+        "family": "Chen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Tao",
+        "family": "Yu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "78",
+    "reference": [
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0005",
+        "doi-asserted-by": "crossref",
+        "first-page": "434",
+        "DOI": "10.1016/j.anucene.2018.11.049",
+        "article-title": "Coupling of reactor transient simulations via the SALOME platform",
+        "volume": "126",
+        "author": "Aydemir",
+        "year": "2019",
+        "journal-title": "Ann. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0010",
+        "unstructured": "Carew, J., Hu, K., Aronson, A., 2001. PWR and BWR Pressure Vessel Fluence Calculation Benchmark Problems and Solutions. Brookhaven National Laboratory."
+      },
+      {
+        "issue": "S2",
+        "key": "10.1016/j.nucengdes.2024.112994_b0015",
+        "first-page": "147",
+        "article-title": "Reconstruction and parallelization of 3D SN program for neutron/photon transport",
+        "volume": "35",
+        "author": "Cheng",
+        "year": "2014",
+        "journal-title": "Nucl. Power Eng."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0020",
+        "doi-asserted-by": "crossref",
+        "first-page": "108",
+        "DOI": "10.1007/s41365-022-01092-0",
+        "article-title": "A high fidelity general purpose 3-D Monte Carlo particle transport program JMCT3.0",
+        "volume": "33",
+        "author": "Deng",
+        "year": "2022",
+        "journal-title": "Nucl. Sci. Tech."
+      },
+      {
+        "issue": "2",
+        "key": "10.1016/j.nucengdes.2024.112994_b0025",
+        "doi-asserted-by": "crossref",
+        "first-page": "171",
+        "DOI": "10.13182/NT171-171",
+        "article-title": "Denovo: A New Three Dimensional Parallel Discrete Ordinates Code in SCALE",
+        "volume": "171",
+        "author": "Evans",
+        "year": "2010",
+        "journal-title": "Nucl. Technol."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0030",
+        "doi-asserted-by": "crossref",
+        "first-page": "161",
+        "DOI": "10.1016/j.anucene.2014.08.058",
+        "article-title": "CAD-based Monte Carlo program for integrated simulation of nuclear system SuperMC",
+        "volume": "82",
+        "author": "FDS Team",
+        "year": "2015",
+        "journal-title": "Ann. Nucl. Energy."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0035",
+        "doi-asserted-by": "crossref",
+        "first-page": "2210",
+        "DOI": "10.1016/j.fusengdes.2013.02.146",
+        "article-title": "Status of the McCad geometry conversion tool and related visualization capabilities for 3D fusion neutronics calculations",
+        "volume": "88",
+        "author": "Grosse",
+        "year": "2013",
+        "journal-title": "Fusion Eng. Des."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0040",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Hébert, A., 2016. DRAGON5 and DONJON5, the contribution of École Polytechnique deMontréal to the SALOME platform, Ann. Nucl. Energy. 87(1), 12-20(2016). https://doi.org/10.1016/j.anucene.2015.02.033.",
+        "DOI": "10.1016/j.anucene.2015.02.033"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0045",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1299/jsmeicone.2007.15._ICONE1510_281",
+        "article-title": "Automatic Conversion of CAD Model into Neutrinics Model",
+        "author": "Hu",
+        "year": "2007",
+        "journal-title": "ICONE"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0050",
+        "unstructured": "Liu, J.J., Tian, C., Xiao, F., Zhang, Y., 2019b. High Fidelity Geometry Convert Method in MCNP-TORT Shielding Verification. Nucl. Power Eng. 40(S2), 117-120. http://www.cnki.com.cn/Article/CJFDTotal-HDLG2019S2024.htm (In Chinese)."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0055",
+        "doi-asserted-by": "crossref",
+        "first-page": "161",
+        "DOI": "10.1007/s41365-019-0695-y",
+        "article-title": "Numerical study of scattering Legendre moments and effect of anisotropic scattering on SN shielding calculation",
+        "volume": "30",
+        "author": "Liu",
+        "year": "2019",
+        "journal-title": "Nucl. Sci. Tech."
+      },
+      {
+        "issue": "9–10",
+        "key": "10.1016/j.nucengdes.2024.112994_b0060",
+        "doi-asserted-by": "crossref",
+        "first-page": "1885",
+        "DOI": "10.1016/j.fusengdes.2014.05.015",
+        "article-title": "Improved algorithms and advanced features of the CAD to MC conversion tool McCad",
+        "volume": "89",
+        "author": "Lu",
+        "year": "2014",
+        "journal-title": "Fusion. Eng. Des."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0065",
+        "doi-asserted-by": "crossref",
+        "first-page": "74",
+        "DOI": "10.1007/s41365-022-01063-5",
+        "article-title": "MeshCNN-based BREP to CSG conversion algorithmfor 3D CAD models and its application",
+        "volume": "33",
+        "author": "Luo",
+        "year": "2022",
+        "journal-title": "Nucl. Sci. Tech."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0070",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1016/j.anucene.2021.108943",
+        "article-title": "Development and preliminary application of deterministic code NECP-FISH for neutronics analysis of fusion-reactor blanket",
+        "volume": "169",
+        "author": "Miao",
+        "year": "2022",
+        "journal-title": "Ann. Nucl. Energy."
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.nucengdes.2024.112994_b0075",
+        "doi-asserted-by": "crossref",
+        "first-page": "68",
+        "DOI": "10.13182/NSE05-A2524",
+        "article-title": "BOT3P: Bologna radiation transport analysis pre-post-Processors Version 4.0",
+        "volume": "150",
+        "author": "Orsi",
+        "year": "2005",
+        "journal-title": "Nucl. Sci. Eng."
+      },
+      {
+        "issue": "06",
+        "key": "10.1016/j.nucengdes.2024.112994_b0080",
+        "first-page": "51",
+        "article-title": "Research and platform development of multi-physical coupling scheme based on unified framework",
+        "volume": "43",
+        "author": "Qian",
+        "year": "2022",
+        "journal-title": "Power Eng."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0085",
+        "unstructured": "Salome Platform, 2022. The open-source platform for numerical simulation. https://www.salome-platform.org/."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0090",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Song, J., Sun, G., Chen Z., Zheng, H., Hu, L., 2014. Benchmarking of CAD-based SuperMC with ITER benchmark model. Fusion Eng. Des. 89(11), 2499–2503. https://doi.org/10.1016/j.fusengdes.2014.05.003.",
+        "DOI": "10.1016/j.fusengdes.2014.05.003"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.nucengdes.2024.112994_b0095",
+        "doi-asserted-by": "crossref",
+        "first-page": "395",
+        "DOI": "10.1016/0029-5493(70)90035-X",
+        "article-title": "Use of the discrete ordinates Sn method in radiation shielding calculations",
+        "volume": "13",
+        "author": "Stevens",
+        "year": "1970",
+        "journal-title": "Nucl. Eng. Des."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0100",
+        "doi-asserted-by": "crossref",
+        "first-page": "82",
+        "DOI": "10.1007/s41365-020-00793-8",
+        "article-title": "CMGC: a CAD to Monte Carlo geometry conversion code",
+        "volume": "31",
+        "author": "Wang",
+        "year": "2020",
+        "journal-title": "Nucl. Sci. Tech."
+      },
+      {
+        "issue": "9",
+        "key": "10.1016/j.nucengdes.2024.112994_b0105",
+        "first-page": "1548",
+        "article-title": "Development of master library for multi-group constant library NuDa-SN",
+        "volume": "52",
+        "author": "Wen",
+        "year": "2018",
+        "journal-title": "Atom. Energy Sci. Technol."
+      },
+      {
+        "issue": "Jan.",
+        "key": "10.1016/j.nucengdes.2024.112994_b0110",
+        "article-title": "Development of 3-D parallel first-collision source method for discrete ordinate code JSNT-S",
+        "volume": "135",
+        "author": "Yang",
+        "year": "2020",
+        "journal-title": "Ann. Nucl. Energy"
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0115",
+        "doi-asserted-by": "crossref",
+        "first-page": "74",
+        "DOI": "10.1007/s41365-020-00789-4",
+        "article-title": "Neutronic calculations of the China dual-functional lithium–lead test blanket module with the parallel discrete ordinates code Hydra",
+        "volume": "31",
+        "author": "Zhang",
+        "year": "2020",
+        "journal-title": "Nucl. Sci. Tech."
+      },
+      {
+        "key": "10.1016/j.nucengdes.2024.112994_b0120",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1016/j.anucene.2021.108169",
+        "article-title": "Development and verification of the coupled thermal–hydraulic code – TRACE/SCF based on the ICoCo interface and the SALOME platform",
+        "volume": "155",
+        "author": "Zhang",
+        "year": "2021",
+        "journal-title": "Ann. Nucl. Energy"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.nucengdes.2024.112994_b0125",
+        "doi-asserted-by": "crossref",
+        "first-page": "204",
+        "DOI": "10.2298/NTRP1703204Z",
+        "article-title": "Evaluation of PWR pressure vessel fast neutron fluence benchmarks from NUREG/CR-6115 with areas transport code",
+        "volume": "32",
+        "author": "Zhang",
+        "year": "2017",
+        "journal-title": "Nucl. Technol. Radiat."
+      },
+      {
+        "issue": "1",
+        "key": "10.1016/j.nucengdes.2024.112994_b0130",
+        "doi-asserted-by": "crossref",
+        "first-page": "87",
+        "DOI": "10.1016/j.nucengdes.2017.11.005",
+        "article-title": "Application of a 3D Discrete Ordinates-Monte Carlo coupling method to deep-penetration shielding calculation",
+        "volume": "326",
+        "author": "Zheng",
+        "year": "2018",
+        "journal-title": "Nucl. Eng. Des."
+      },
+      {
+        "issue": "05",
+        "key": "10.1016/j.nucengdes.2024.112994_b0135",
+        "first-page": "76",
+        "article-title": "Study on application of DAG-OpenMC in fusion neutronics analysis",
+        "volume": "45",
+        "author": "Zhong",
+        "year": "2020",
+        "journal-title": "Nucl. Tech."
+      }
+    ],
+    "container-title": [
+      "Nuclear Engineering and Design"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S0029549324000943?httpAccept=text/xml",
+        "content-type": "text/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S0029549324000943?httpAccept=text/plain",
+        "content-type": "text/plain",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2024,
+          7,
+          13
+        ]
+      ],
+      "date-time": "2024-07-13T00:32:21Z",
+      "timestamp": 1720830741000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0029549324000943"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          4
+        ]
+      ]
+    },
+    "references-count": 27,
+    "alternative-id": [
+      "S0029549324000943"
+    ],
+    "URL": "https://doi.org/10.1016/j.nucengdes.2024.112994",
+    "relation": {},
+    "ISSN": [
+      "0029-5493"
+    ],
+    "issn-type": [
+      {
+        "value": "0029-5493",
+        "type": "print"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2024,
+          4
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "Elsevier",
+        "name": "publisher",
+        "label": "This article is maintained by"
+      },
+      {
+        "value": "Research on approaches to automatic modeling of discrete ordinate programs based on CAD model",
+        "name": "articletitle",
+        "label": "Article Title"
+      },
+      {
+        "value": "Nuclear Engineering and Design",
+        "name": "journaltitle",
+        "label": "Journal Title"
+      },
+      {
+        "value": "https://doi.org/10.1016/j.nucengdes.2024.112994",
+        "name": "articlelink",
+        "label": "CrossRef DOI link to publisher maintained version"
+      },
+      {
+        "value": "article",
+        "name": "content_type",
+        "label": "Content Type"
+      },
+      {
+        "value": "© 2024 Elsevier B.V. All rights reserved.",
+        "name": "copyright",
+        "label": "Copyright"
+      }
+    ],
+    "article-number": "112994"
+  }
+}

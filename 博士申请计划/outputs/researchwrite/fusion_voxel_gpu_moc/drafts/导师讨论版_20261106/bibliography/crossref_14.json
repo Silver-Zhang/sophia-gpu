@@ -1,0 +1,709 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          3,
+          20
+        ]
+      ],
+      "date-time": "2026-03-20T12:12:12Z",
+      "timestamp": 1774008732624,
+      "version": "3.50.1"
+    },
+    "reference-count": 31,
+    "publisher": "Elsevier BV",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2022,
+              10,
+              1
+            ]
+          ],
+          "date-time": "2022-10-01T00:00:00Z",
+          "timestamp": 1664582400000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2022,
+              10,
+              1
+            ]
+          ],
+          "date-time": "2022-10-01T00:00:00Z",
+          "timestamp": 1664582400000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://www.elsevier.com/legal/tdmrep-license"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2022,
+              10,
+              1
+            ]
+          ],
+          "date-time": "2022-10-01T00:00:00Z",
+          "timestamp": 1664582400000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-017"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2022,
+              10,
+              1
+            ]
+          ],
+          "date-time": "2022-10-01T00:00:00Z",
+          "timestamp": 1664582400000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-037"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2022,
+              10,
+              1
+            ]
+          ],
+          "date-time": "2022-10-01T00:00:00Z",
+          "timestamp": 1664582400000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-012"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2022,
+              10,
+              1
+            ]
+          ],
+          "date-time": "2022-10-01T00:00:00Z",
+          "timestamp": 1664582400000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-029"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2022,
+              10,
+              1
+            ]
+          ],
+          "date-time": "2022-10-01T00:00:00Z",
+          "timestamp": 1664582400000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-004"
+      }
+    ],
+    "funder": [
+      {
+        "DOI": "10.13039/501100001809",
+        "name": "National Natural Science Foundation of China",
+        "doi-asserted-by": "publisher",
+        "award": [
+          "12102062"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "12102062"
+            ]
+          }
+        ],
+        "id": [
+          {
+            "id": "10.13039/501100001809",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "elsevier.com",
+        "sciencedirect.com"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "Annals of Nuclear Energy"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2022,
+          10
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.anucene.2022.109288",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2022,
+          6,
+          22
+        ]
+      ],
+      "date-time": "2022-06-22T13:47:58Z",
+      "timestamp": 1655905678000
+    },
+    "page": "109288",
+    "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 7,
+    "special_numbering": "C",
+    "title": [
+      "Multilevel mesh adaptivity for discrete ordinates transport calculation with spatial-moment-ratio indicators"
+    ],
+    "prefix": "10.1016",
+    "volume": "176",
+    "author": [
+      {
+        "given": "Cong",
+        "family": "Liu",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Junxia",
+        "family": "Wei",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Jinhong",
+        "family": "Li",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Zhiqiang",
+        "family": "Sheng",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Bin",
+        "family": "Zhang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Shuang",
+        "family": "Tan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "member": "78",
+    "reference": [
+      {
+        "issue": "3",
+        "key": "10.1016/j.anucene.2022.109288_b0005",
+        "doi-asserted-by": "crossref",
+        "first-page": "484",
+        "DOI": "10.1016/0021-9991(84)90073-1",
+        "article-title": "Adaptive mesh refinement for hyperbolic partial differential equations",
+        "volume": "53",
+        "author": "Berger",
+        "year": "1984",
+        "journal-title": "Journal of Computational Physics"
+      },
+      {
+        "issue": "1",
+        "key": "10.1016/j.anucene.2022.109288_b0010",
+        "doi-asserted-by": "crossref",
+        "first-page": "64",
+        "DOI": "10.1016/0021-9991(89)90035-1",
+        "article-title": "Local adaptive mesh refinement for shock hydrodynamics",
+        "volume": "82",
+        "author": "Berger",
+        "year": "1989",
+        "journal-title": "Journal of Computational Physics"
+      },
+      {
+        "issue": "2",
+        "key": "10.1016/j.anucene.2022.109288_b0015",
+        "doi-asserted-by": "crossref",
+        "first-page": "380",
+        "DOI": "10.1006/jcph.1997.5870",
+        "article-title": "An adaptive mesh refinement algorithm for the radiative transport equation",
+        "volume": "139",
+        "author": "Jessee",
+        "year": "1998",
+        "journal-title": "Journal of Computational Physics"
+      },
+      {
+        "key": "10.1016/j.anucene.2022.109288_b0020",
+        "doi-asserted-by": "crossref",
+        "first-page": "65",
+        "DOI": "10.1016/j.jpdc.2015.11.005",
+        "article-title": "Advances in patch-based adaptive mesh refinement scalability",
+        "volume": "89",
+        "author": "Gunney",
+        "year": "2016",
+        "journal-title": "Journal of Parallel and Distributed Computing"
+      },
+      {
+        "issue": "1",
+        "key": "10.1016/j.anucene.2022.109288_b0025",
+        "doi-asserted-by": "crossref",
+        "first-page": "1",
+        "DOI": "10.13182/NSE02-A2262",
+        "article-title": "A block adaptive mesh refinement algorithm for the neutral particle transport equation",
+        "volume": "141",
+        "author": "Baker",
+        "year": "2002",
+        "journal-title": "Nuclear Science and Engineering"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.anucene.2022.109288_b0030",
+        "doi-asserted-by": "crossref",
+        "first-page": "281",
+        "DOI": "10.13182/NSE03-A2336",
+        "article-title": "Styx: A multidimensional AMR SN scheme",
+        "volume": "143",
+        "author": "Aussourd",
+        "year": "2003",
+        "journal-title": "Nuclear Science and Engineering"
+      },
+      {
+        "key": "10.1016/j.anucene.2022.109288_b0035",
+        "unstructured": "Compton, J., Clouse, C. 2003. Domain decomposition and load balancing in the AMTRAN neutron transport code (No. UCRL-JC-152231). Lawrence Livermore National Lab., Livermore, CA (United States)."
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.anucene.2022.109288_b0040",
+        "doi-asserted-by": "crossref",
+        "first-page": "268",
+        "DOI": "10.1016/j.anucene.2008.12.008",
+        "article-title": "A posteriori error estimator and AMR for discrete ordinates nodal transport methods",
+        "volume": "36",
+        "author": "Duo",
+        "year": "2009",
+        "journal-title": "Annals of Nuclear Energy"
+      },
+      {
+        "issue": "2–3",
+        "key": "10.1016/j.anucene.2022.109288_b0045",
+        "doi-asserted-by": "crossref",
+        "first-page": "221",
+        "DOI": "10.1016/j.anucene.2010.11.006",
+        "article-title": "Analysis of an a posteriori error estimator for the transport equation with SN and discontinuous Galerkin discretizations",
+        "volume": "38",
+        "author": "Fournier",
+        "year": "2011",
+        "journal-title": "Annals of Nuclear Energy"
+      },
+      {
+        "key": "10.1016/j.anucene.2022.109288_b0050",
+        "doi-asserted-by": "crossref",
+        "first-page": "188",
+        "DOI": "10.1016/j.jcp.2018.05.032",
+        "article-title": "Quadratic serendipity discontinuous finite element discretization for SN transport on arbitrary polygonal grids",
+        "volume": "374",
+        "author": "Hackemack",
+        "year": "2018",
+        "journal-title": "Journal of Computational Physics"
+      },
+      {
+        "key": "10.1016/j.anucene.2022.109288_b0055",
+        "unstructured": "O’Brien, S., Azmy, Y. Y., 2013. A posteriori error estimators for the discrete ordinates approximation of the one-speed neutron transport equation. In: International Conference on Mathematics and Computational Methods Applied to Nuclear Science & Engineering (M&C 2013), Sun Valley, Idaho, USA."
+      },
+      {
+        "key": "10.1016/j.anucene.2022.109288_b0060",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Zhang, L., Zhang, B., Liu, C., Chen, Y. 2018. Analysis of spatial discretization error estimators implemented in ARES transport code for equations. Science and Technology of Nuclear Installations, Vol. 2018, Article ID 3965309. 10.1155/2018/3965309.",
+        "DOI": "10.1155/2018/3965309"
+      },
+      {
+        "key": "10.1016/j.anucene.2022.109288_b0065",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1016/j.anucene.2019.107092",
+        "article-title": "An a posteriori residual-based spatial discretization error estimator for SN neutron transport",
+        "volume": "137",
+        "author": "Hart",
+        "year": "2020",
+        "journal-title": "Annals of Nuclear Energy"
+      },
+      {
+        "issue": "6",
+        "key": "10.1016/j.anucene.2022.109288_b0070",
+        "doi-asserted-by": "crossref",
+        "first-page": "1373",
+        "DOI": "10.1016/j.anucene.2011.01.038",
+        "article-title": "Goal-oriented spatial adaptivity for the SN equations on unstructured triangular meshes",
+        "volume": "38",
+        "author": "Lathouwers",
+        "year": "2011",
+        "journal-title": "Annals of Nuclear Energy"
+      },
+      {
+        "key": "10.1016/j.anucene.2022.109288_b0075",
+        "doi-asserted-by": "crossref",
+        "first-page": "352",
+        "DOI": "10.1016/j.jcp.2017.01.035",
+        "article-title": "Energy dependent mesh adaptivity of discontinuous isogeometric discrete ordinate methods with dual weighted residual error estimators",
+        "volume": "335",
+        "author": "Owens",
+        "year": "2017",
+        "journal-title": "Journal of Computational Physics"
+      },
+      {
+        "key": "10.1016/j.anucene.2022.109288_b0080",
+        "doi-asserted-by": "crossref",
+        "first-page": "179",
+        "DOI": "10.1016/j.jcp.2017.01.037",
+        "article-title": "Goal-based h-adaptivity of the 1-D diamond difference discrete ordinate method",
+        "volume": "335",
+        "author": "Jeffers",
+        "year": "2017",
+        "journal-title": "Journal of Computational Physics"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.anucene.2022.109288_b0085",
+        "doi-asserted-by": "crossref",
+        "first-page": "763",
+        "DOI": "10.1016/j.jcp.2010.10.018",
+        "article-title": "Standard and goal-oriented adaptive mesh refinement applied to radiation transport on 2D unstructured triangular meshes",
+        "volume": "230",
+        "author": "Wang",
+        "year": "2011",
+        "journal-title": "Journal of Computational Physics"
+      },
+      {
+        "issue": "12",
+        "key": "10.1016/j.anucene.2022.109288_b0090",
+        "doi-asserted-by": "crossref",
+        "first-page": "3178",
+        "DOI": "10.1016/j.cam.2009.12.020",
+        "article-title": "A two-mesh adaptive mesh refinement technique for SN neutral-particle transport using a higher-order DGFEM",
+        "volume": "233",
+        "author": "Ragusa",
+        "year": "2010",
+        "journal-title": "Journal of Computational and Applied Mathematics"
+      },
+      {
+        "key": "10.1016/j.anucene.2022.109288_b0095",
+        "doi-asserted-by": "crossref",
+        "first-page": "249",
+        "DOI": "10.1016/j.anucene.2018.04.013",
+        "article-title": "Neutron transport solution of lattice Boltzmann method and streaming-based block-structured adaptive mesh refinement",
+        "volume": "118",
+        "author": "Wang",
+        "year": "2018",
+        "journal-title": "Annals of Nuclear Energy"
+      },
+      {
+        "issue": "1",
+        "key": "10.1016/j.anucene.2022.109288_b0100",
+        "doi-asserted-by": "crossref",
+        "first-page": "57",
+        "DOI": "10.13182/NSE02-A2287",
+        "article-title": "Spatial adaptivity applied to the variational nodal Pn equations",
+        "volume": "142",
+        "author": "Zhang",
+        "year": "2002",
+        "journal-title": "Nuclear Science and Engineering"
+      },
+      {
+        "issue": "2",
+        "key": "10.1016/j.anucene.2022.109288_b0105",
+        "doi-asserted-by": "crossref",
+        "first-page": "216",
+        "DOI": "10.13182/NSE161-216",
+        "article-title": "Coupled space-angle adaptivity for radiation transport calculations",
+        "volume": "161",
+        "author": "Park",
+        "year": "2009",
+        "journal-title": "Nuclear Science and Engineering"
+      },
+      {
+        "key": "10.1016/j.anucene.2022.109288_b0110",
+        "doi-asserted-by": "crossref",
+        "first-page": "169",
+        "DOI": "10.1016/j.anucene.2012.11.029",
+        "article-title": "Goal based mesh adaptivity for fixed source radiation transport calculations",
+        "volume": "55",
+        "author": "Baker",
+        "year": "2013",
+        "journal-title": "Annals of Nuclear Energy"
+      },
+      {
+        "issue": "12",
+        "key": "10.1016/j.anucene.2022.109288_b0115",
+        "doi-asserted-by": "crossref",
+        "first-page": "1175",
+        "DOI": "10.1080/00295639.2020.1780842",
+        "article-title": "Nonmatching discontinuous Cartesian grid algorithm based on the multilevel octree architecture for discrete ordinates transport calculation",
+        "volume": "194",
+        "author": "Liu",
+        "year": "2020",
+        "journal-title": "Nuclear Science and Engineering"
+      },
+      {
+        "key": "10.1016/j.anucene.2022.109288_b0120",
+        "first-page": "206",
+        "article-title": "An adaptive weighted diamond differencing method for three-dimensional XYZ geometry",
+        "volume": "68A",
+        "author": "Alcouffe",
+        "year": "1993",
+        "journal-title": "Transactions of the American Nuclear Society"
+      },
+      {
+        "key": "10.1016/j.anucene.2022.109288_b0125",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1016/j.anucene.2019.107080",
+        "article-title": "Solving nonlinear discretizations of SN transport calculations",
+        "volume": "137",
+        "author": "Hackemack",
+        "year": "2020",
+        "journal-title": "Annals of Nuclear Energy"
+      },
+      {
+        "key": "10.1016/j.anucene.2022.109288_b0130",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1016/j.anucene.2020.108033",
+        "article-title": "Solution-dependent predictor-corrector flux mapping algorithm for discrete ordinates calculation on multilevel discontinuous grids",
+        "volume": "152",
+        "author": "Liu",
+        "year": "2021",
+        "journal-title": "Annals of Nuclear Energy"
+      },
+      {
+        "key": "10.1016/j.anucene.2022.109288_b0135",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Chen, Y., Zhang, B., Zhang, L., Zheng, J., Zheng, Y., Liu, C. 2017. ARES: a parallel discrete ordinates transport code for radiation shielding applications and reactor physics analysis. Science and Technology of Nuclear Installations, Vol. 2017, Article ID 2596727. 10.1155/2017/2596727.",
+        "DOI": "10.1155/2017/2596727"
+      },
+      {
+        "issue": "2",
+        "key": "10.1016/j.anucene.2022.109288_b0140",
+        "doi-asserted-by": "crossref",
+        "first-page": "309",
+        "DOI": "10.13182/NSE46-309",
+        "article-title": "New difference schemes for the neutron transport equation",
+        "volume": "46",
+        "author": "Reed",
+        "year": "1971",
+        "journal-title": "Nuclear Science and Engineering"
+      },
+      {
+        "issue": "7",
+        "key": "10.1016/j.anucene.2022.109288_b0145",
+        "doi-asserted-by": "crossref",
+        "first-page": "656",
+        "DOI": "10.1080/18811248.1991.9731408",
+        "article-title": "3-D neutron transport benchmarks",
+        "volume": "28",
+        "author": "Takeda",
+        "year": "1991",
+        "journal-title": "Journal of Nuclear Science and Technology"
+      },
+      {
+        "issue": "9",
+        "key": "10.1016/j.anucene.2022.109288_b0150",
+        "doi-asserted-by": "crossref",
+        "first-page": "925",
+        "DOI": "10.1016/j.anucene.2005.01.009",
+        "article-title": "Finite element spherical harmonics (PN) solutions of the three-dimensional Takeda benchmark problems",
+        "volume": "32",
+        "author": "Ziver",
+        "year": "2005",
+        "journal-title": "Annals of Nuclear Energy"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.anucene.2022.109288_b0155",
+        "doi-asserted-by": "crossref",
+        "first-page": "254",
+        "DOI": "10.1080/00295639.2018.1507185",
+        "article-title": "Contributon-based mesh-reduction methodology for hybrid deterministic-stochastic particle transport simulations using block-structured grids",
+        "volume": "192",
+        "author": "Flaspoehler",
+        "year": "2018",
+        "journal-title": "Nuclear Science and Engineering"
+      }
+    ],
+    "container-title": [
+      "Annals of Nuclear Energy"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S0306454922003231?httpAccept=text/xml",
+        "content-type": "text/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S0306454922003231?httpAccept=text/plain",
+        "content-type": "text/plain",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2025,
+          10,
+          5
+        ]
+      ],
+      "date-time": "2025-10-05T17:44:32Z",
+      "timestamp": 1759686272000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0306454922003231"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2022,
+          10
+        ]
+      ]
+    },
+    "references-count": 31,
+    "alternative-id": [
+      "S0306454922003231"
+    ],
+    "URL": "https://doi.org/10.1016/j.anucene.2022.109288",
+    "relation": {},
+    "ISSN": [
+      "0306-4549"
+    ],
+    "issn-type": [
+      {
+        "value": "0306-4549",
+        "type": "print"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2022,
+          10
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "Elsevier",
+        "name": "publisher",
+        "label": "This article is maintained by"
+      },
+      {
+        "value": "Multilevel mesh adaptivity for discrete ordinates transport calculation with spatial-moment-ratio indicators",
+        "name": "articletitle",
+        "label": "Article Title"
+      },
+      {
+        "value": "Annals of Nuclear Energy",
+        "name": "journaltitle",
+        "label": "Journal Title"
+      },
+      {
+        "value": "https://doi.org/10.1016/j.anucene.2022.109288",
+        "name": "articlelink",
+        "label": "CrossRef DOI link to publisher maintained version"
+      },
+      {
+        "value": "article",
+        "name": "content_type",
+        "label": "Content Type"
+      },
+      {
+        "value": "© 2022 Elsevier Ltd. All rights reserved.",
+        "name": "copyright",
+        "label": "Copyright"
+      }
+    ],
+    "article-number": "109288"
+  }
+}

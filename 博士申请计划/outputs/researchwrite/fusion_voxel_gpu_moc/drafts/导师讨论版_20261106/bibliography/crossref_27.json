@@ -1,0 +1,503 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          5
+        ]
+      ],
+      "date-time": "2026-05-05T03:39:57Z",
+      "timestamp": 1777952397936,
+      "version": "3.51.4"
+    },
+    "reference-count": 45,
+    "publisher": "Informa UK Limited",
+    "content-domain": {
+      "domain": [
+        "www.tandfonline.com"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "Nuclear Science and Engineering"
+    ],
+    "DOI": "10.1080/00295639.2026.2652773",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          23
+        ]
+      ],
+      "date-time": "2026-04-23T17:28:12Z",
+      "timestamp": 1776965292000
+    },
+    "page": "1-25",
+    "update-policy": "https://doi.org/10.1080/tandf_crossmark_01",
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "title": [
+      "Verification and Performance Assessment of NuDEAL, a GPU-Accelerated Deterministic Transport Framework on Unstructured Meshes"
+    ],
+    "prefix": "10.1080",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-1433-3351",
+        "authenticated-orcid": false,
+        "given": "Kyung Min",
+        "family": "Kim",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Seoul National University",
+            "place": [
+              "Republic of Korea"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-0198-4905",
+        "authenticated-orcid": false,
+        "given": "Jaeuk",
+        "family": "Im",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Seoul National University",
+            "place": [
+              "Republic of Korea"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0009-8187-5936",
+        "authenticated-orcid": false,
+        "given": "Han Gyu",
+        "family": "Lee",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "University of Michigan",
+            "place": [
+              "Ann Arbor"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9103-2814",
+        "authenticated-orcid": false,
+        "given": "Yeon Sang",
+        "family": "Jung",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Korea Atomic Energy Research Institute",
+            "place": [
+              "Daejeon, Republic of Korea"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "member": "301",
+    "published-online": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          23
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "e_1_3_2_2_1",
+        "volume-title": "Int. Conf. on Mathematics and Computational Methods Applied to Nuclear Science and Engineering,",
+        "author": "Marin-Lafleche A.",
+        "year": "2013",
+        "unstructured": "A. Marin-Lafleche, M. A. Smith, and C. Lee, “Proteus-MOC: A 3D Deterministic Solver Incorporating 2D Method of Characteristics,” presented at the Int. Conf. on Mathematics and Computational Methods Applied to Nuclear Science and Engineering, 2013."
+      },
+      {
+        "key": "e_1_3_2_3_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.softx.2020.100430"
+      },
+      {
+        "key": "e_1_3_2_4_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/00295450.2020.1843348"
+      },
+      {
+        "key": "e_1_3_2_5_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.anucene.2024.110917"
+      },
+      {
+        "key": "e_1_3_2_6_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.anucene.2013.06.039"
+      },
+      {
+        "key": "e_1_3_2_7_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.anucene.2013.12.012"
+      },
+      {
+        "key": "e_1_3_2_8_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.anucene.2013.06.031"
+      },
+      {
+        "key": "e_1_3_2_9_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.pnucene.2021.103631"
+      },
+      {
+        "key": "e_1_3_2_10_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.anucene.2019.106957"
+      },
+      {
+        "key": "e_1_3_2_11_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.anucene.2019.106988"
+      },
+      {
+        "key": "e_1_3_2_12_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.anucene.2021.108318"
+      },
+      {
+        "key": "e_1_3_2_13_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jcp.2011.04.010"
+      },
+      {
+        "key": "e_1_3_2_14_1",
+        "unstructured": "U. Hanebutte and P. N. Brown “ARDRA Scalable Parallel Code System to Perform Neutron and Radiation Transport Calculations ” UCRL-TB-132078 Lawrence Livermore National Laboratory Livermore CA (1999)."
+      },
+      {
+        "key": "e_1_3_2_15_1",
+        "volume-title": "Int. Conf. on Mathematics and Computational Methods Applied to Nuclear Science and Engineering,",
+        "author": "Kunen A.",
+        "year": "2019",
+        "unstructured": "A. Kunen et al., “Porting 3D Discrete Ordinates Sweep Algorithm in Ardra to CUDA,” presented at the Int. Conf. on Mathematics and Computational Methods Applied to Nuclear Science and Engineering, 2019."
+      },
+      {
+        "key": "e_1_3_2_16_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.net.2025.103597"
+      },
+      {
+        "key": "e_1_3_2_17_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1090/S0025-5718-1977-0431752-8"
+      },
+      {
+        "key": "e_1_3_2_18_1",
+        "article-title": "Mathematical Problems in the One-Velocity of Particle Transport",
+        "volume": "61",
+        "author": "Vladimirov V. S.",
+        "year": "1961",
+        "unstructured": "V. S. Vladimirov, “Mathematical Problems in the One-Velocity of Particle Transport,” Trans. V.A. Steklov Mathematical Institute, 61 (1961).",
+        "journal-title": "Trans. V.A. Steklov Mathematical Institute"
+      },
+      {
+        "key": "e_1_3_2_19_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE85-A27436"
+      },
+      {
+        "key": "e_1_3_2_20_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.camwa.2024.06.032"
+      },
+      {
+        "key": "e_1_3_2_21_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.net.2022.04.012"
+      },
+      {
+        "key": "e_1_3_2_22_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2172/1127298"
+      },
+      {
+        "key": "e_1_3_2_23_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1051/epjconf/202430202001"
+      },
+      {
+        "key": "e_1_3_2_24_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2172/1466687"
+      },
+      {
+        "key": "e_1_3_2_25_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/00295450.2021.1871995"
+      },
+      {
+        "issue": "1",
+        "key": "e_1_3_2_26_1",
+        "first-page": "65",
+        "article-title": "OpenMesh-A Generic and Efficient Polygon Mesh Data Structure",
+        "volume": "13",
+        "author": "Botsch M.",
+        "year": "1999",
+        "unstructured": "M. Botsch et al., “OpenMesh-A Generic and Efficient Polygon Mesh Data Structure,” Comput. Geom., 13, 1, 65 (1999).",
+        "journal-title": "Comput. Geom."
+      },
+      {
+        "key": "e_1_3_2_27_1",
+        "unstructured": "B. M. Kochunas “A Hybrid Parallel Algorithm for the 3-D Method of Characteristics Solution of the Boltzmann Transport Equation on High Performance Compute Clusters ” PhD Thesis Department of Nuclear Engineering and Radiological Sciences University of Michigan (2013)."
+      },
+      {
+        "key": "e_1_3_2_28_1",
+        "volume-title": "Joint Int. Conf. on Mathematics and Computation and Supercomputing in Nuclear Applications and the Monte Carlo Method,",
+        "author": "Palmiotti G.",
+        "year": "2007",
+        "unstructured": "G. Palmiotti et al., “UNÌC: Ultimate Neutronic Investigation Code,” presented at the Joint Int. Conf. on Mathematics and Computation and Supercomputing in Nuclear Applications and the Monte Carlo Method, 2007."
+      },
+      {
+        "key": "e_1_3_2_29_1",
+        "volume-title": "Int. Conf. on Mathematics and Computational Methods Applied to Nuclear Science and Engineering",
+        "author": "Kim K. M.",
+        "year": "2023",
+        "unstructured": "K. M. Kim et al., “GPU-Accelerated Method of Characteristics with Discontinuous Galerkin Method in Unstructured Mesh Geometry,” presented at the Int. Conf. on Mathematics and Computational Methods Applied to Nuclear Science and Engineering, Niagara Falls, Ontario, Canada, 2023."
+      },
+      {
+        "key": "e_1_3_2_30_1",
+        "unstructured": "“NVBLAS Library ” NVIDIA (Sep. 2020)."
+      },
+      {
+        "key": "e_1_3_2_31_1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "M. A. Smith E. E. Lewis and B.-C. Na “Benchmark on Deterministic Transport Calculations Without Spatial Homogenization (MOX Fuel Assembly 3-D Extension Case) ” NEA/NSC/DOC(2005)16 Organisation for Economic Co-operation and Development/Nuclear Energy Agency Paris France (2005).",
+        "DOI": "10.1016/j.pnucene.2006.01.002"
+      },
+      {
+        "key": "e_1_3_2_32_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2172/1761066"
+      },
+      {
+        "key": "e_1_3_2_33_1",
+        "unstructured": "M. D. DeHart J. Ortensi and V. M. Laboure “NEAMS Reactor Physics Assessment Problem ” INL/MIS-21-62472-Revision-0 Idaho National Laboratory Idaho Falls ID (2020)."
+      },
+      {
+        "key": "e_1_3_2_34_1",
+        "unstructured": "D. Shen et al. “Molten-Salt Reactor Experiment (MSRE) Zero-Power First Critical Experiment with 235U ” NEA/NSC/DOC(2006)1 Organisation for Economic Co-operation and Development/Nuclear Energy Agency Paris France (2006)."
+      },
+      {
+        "key": "e_1_3_2_35_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.anucene.2021.108508"
+      },
+      {
+        "key": "e_1_3_2_36_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/00295639.2022.2143209"
+      },
+      {
+        "key": "e_1_3_2_37_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.net.2025.103596"
+      },
+      {
+        "key": "e_1_3_2_38_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2172/1483949"
+      },
+      {
+        "key": "e_1_3_2_39_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2172/10176386"
+      },
+      {
+        "key": "e_1_3_2_40_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.anucene.2020.107713"
+      },
+      {
+        "key": "e_1_3_2_41_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/18811248.2006.9711227"
+      },
+      {
+        "key": "e_1_3_2_42_1",
+        "unstructured": "Z. M. Prince et al. “Performance Improvements to the Griffin Transport Solvers ” INL/RPT-22-69391 ANL/NSE-22/82 Idaho National Laboratory Idaho Falls ID and Argonne National Laboratory Lemont IL (2022)."
+      },
+      {
+        "key": "e_1_3_2_43_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/18811248.2007.9711359"
+      },
+      {
+        "key": "e_1_3_2_44_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2172/1054500"
+      },
+      {
+        "key": "e_1_3_2_45_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/00295639.2024.2348855"
+      },
+      {
+        "key": "e_1_3_2_46_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.anucene.2004.07.008"
+      }
+    ],
+    "container-title": [
+      "Nuclear Science and Engineering"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://www.tandfonline.com/doi/pdf/10.1080/00295639.2026.2652773",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          4
+        ]
+      ],
+      "date-time": "2026-05-04T12:25:18Z",
+      "timestamp": 1777897518000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://www.tandfonline.com/doi/full/10.1080/00295639.2026.2652773"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          23
+        ]
+      ]
+    },
+    "references-count": 45,
+    "alternative-id": [
+      "10.1080/00295639.2026.2652773"
+    ],
+    "URL": "https://doi.org/10.1080/00295639.2026.2652773",
+    "relation": {},
+    "ISSN": [
+      "0029-5639",
+      "1943-748X"
+    ],
+    "issn-type": [
+      {
+        "value": "0029-5639",
+        "type": "print"
+      },
+      {
+        "value": "1943-748X",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          23
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "The publishing and review policy for this title is described in its Aims & Scope.",
+        "order": 1,
+        "name": "peerreview_statement",
+        "label": "Peer Review Statement"
+      },
+      {
+        "value": "http://www.tandfonline.com/action/journalInformation?show=aimsScope&journalCode=unse20",
+        "URL": "http://www.tandfonline.com/action/journalInformation?show=aimsScope&journalCode=unse20",
+        "order": 2,
+        "name": "aims_and_scope_url",
+        "label": "Aim & Scope"
+      },
+      {
+        "value": "2025-12-22",
+        "order": 0,
+        "name": "received",
+        "label": "Received",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      },
+      {
+        "value": "2026-03-23",
+        "order": 2,
+        "name": "accepted",
+        "label": "Accepted",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      },
+      {
+        "value": "2026-04-23",
+        "order": 3,
+        "name": "published",
+        "label": "Published",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      }
+    ]
+  }
+}

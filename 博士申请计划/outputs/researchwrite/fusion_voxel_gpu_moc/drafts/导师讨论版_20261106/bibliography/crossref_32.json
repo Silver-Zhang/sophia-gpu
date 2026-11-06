@@ -1,0 +1,698 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          10,
+          16
+        ]
+      ],
+      "date-time": "2026-10-16T01:18:27Z",
+      "timestamp": 1792113507191,
+      "version": "4.4.0"
+    },
+    "reference-count": 78,
+    "publisher": "Informa UK Limited",
+    "issue": "10",
+    "funder": [
+      {
+        "DOI": "10.13039/100000015",
+        "name": "U.S. Department of Energy",
+        "doi-asserted-by": "publisher",
+        "award": [
+          "DE- NE0008286"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "DE- NE0008286"
+            ]
+          }
+        ],
+        "id": [
+          {
+            "id": "10.13039/100000015",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "www.tandfonline.com"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "Nuclear Science and Engineering"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2019,
+          10,
+          3
+        ]
+      ]
+    },
+    "DOI": "10.1080/00295639.2019.1586273",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2019,
+          4,
+          24
+        ]
+      ],
+      "date-time": "2019-04-24T12:43:25Z",
+      "timestamp": 1556109805000
+    },
+    "page": "1055-1089",
+    "update-policy": "https://doi.org/10.1080/tandf_crossmark_01",
+    "source": "Crossref",
+    "is-referenced-by-count": 43,
+    "title": [
+      "Review of Hybrid Methods for Deep-Penetration Neutron Transport"
+    ],
+    "prefix": "10.1080",
+    "volume": "193",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-0117-5366",
+        "authenticated-orcid": false,
+        "given": "Madicken",
+        "family": "Munk",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "University of Illinois, Urbana-Champaign National Center for Supercomputing Applications, 1205 West Clark Street, MC-257, Urbana, Illinois 61801"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-6296-6519",
+        "authenticated-orcid": false,
+        "given": "Rachel N.",
+        "family": "Slaybaugh",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "University of California, Berkeley, Nuclear Engineering Department, 4155 Etcheverry Hall, MC-1730, Berkeley, California 94720-1730"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "301",
+    "published-online": {
+      "date-parts": [
+        [
+          2019,
+          4,
+          24
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "CIT0001",
+        "volume-title": "Computational Methods of Neutron Transport",
+        "author": "LEWIS E. E.",
+        "year": "1984"
+      },
+      {
+        "key": "CIT0002",
+        "unstructured": "X-5 MONTE CARLO TEAM, “MCNP—A General N-Particle Transport Code, Version 5, Volume I: Overview and Theory,” LA-UR-03-1987, Los Alamos National Laboratory (2003)."
+      },
+      {
+        "issue": "273",
+        "key": "CIT0003",
+        "volume": "87",
+        "author": "BROWN F. B.",
+        "year": "2002",
+        "journal-title": "Trans. Am. Nucl. Soc."
+      },
+      {
+        "key": "CIT0004",
+        "unstructured": "X-5 MONTE CARLO TEAM, “MCNP—A General N-Particle Transport Code, Version 5, Volume II: Users Guide,” LA-CP-03-0245, Los Alamos National Laboratory (2003)."
+      },
+      {
+        "key": "CIT0005",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/BFb0049037"
+      },
+      {
+        "key": "CIT0006",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NT09-A9303"
+      },
+      {
+        "key": "CIT0007",
+        "first-page": "308",
+        "volume": "41",
+        "author": "BOOTH T. E.",
+        "year": "1982",
+        "journal-title": "Trans. Am. Nucl. Soc."
+      },
+      {
+        "key": "CIT0008",
+        "first-page": "307",
+        "volume": "41",
+        "author": "HENDRICKS J. S.",
+        "year": "1982",
+        "journal-title": "Trans. Am. Nucl. Soc."
+      },
+      {
+        "key": "CIT0009",
+        "first-page": "609",
+        "volume": "43",
+        "author": "BOOTH T. E.",
+        "year": "1982",
+        "journal-title": "Trans. Am. Nucl. Soc."
+      },
+      {
+        "key": "CIT0010",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/FST84-A23082"
+      },
+      {
+        "key": "CIT0011",
+        "unstructured": "T. M. EVANS and J. S. HENDRICKS, “An Enhanced Geometry-Independent Mesh Weight Window Generator for MCNP,” LA-UR-97-5057, Vol. 1, p. 165, Los Alamos National Laboratory (1998); https://www.osti.gov/scitech/biblio/663177 (current as of Dec. 7, 2018)."
+      },
+      {
+        "key": "CIT0012",
+        "unstructured": "K. A. VAN RIPER, “Generation of a Monte Carlo Variance Reduction Map from a Deterministic Transport Calculation,” LA-UR-95-0747, Los Alamos National Laboratory (1995)."
+      },
+      {
+        "key": "CIT0013",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.apradiso.2011.11.037"
+      },
+      {
+        "key": "CIT0014",
+        "volume-title": "Importance: The Adjoint Function. The Physical Basis of Variational and Perturbation Theory in Transport and Diffusion Problems",
+        "author": "LEWINS J."
+      },
+      {
+        "key": "CIT0015",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/B978-1-4831-9958-0.50012-2"
+      },
+      {
+        "key": "CIT0016",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/B978-0-12-029309-4.50011-8"
+      },
+      {
+        "key": "CIT0017",
+        "volume-title": "Monte Carlo Particle Transport Methods: Neutron and Photon Calculations",
+        "author": "LUX I.",
+        "year": "1991"
+      },
+      {
+        "key": "CIT0018",
+        "first-page": "315",
+        "author": "GOERTZEL G.",
+        "year": "1958",
+        "journal-title": "Progress in Nuclear Energy"
+      },
+      {
+        "key": "CIT0019",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE63-A26504"
+      },
+      {
+        "key": "CIT0020",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE67-A18262"
+      },
+      {
+        "key": "CIT0021",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE88-A23562"
+      },
+      {
+        "key": "CIT0022",
+        "unstructured": "N. M. GREENE and L. M. PETRIE, “XSDRNPM-S: A One-Dimensional Discrete-Ordinates Code for Transport Analysis,” NUREG/CR–0200-VOL.2, Oak Ridge National Laboratory (1984); http://inis.iaea.org/Search/search.aspx?orig_q=RN:17040287 (current as of Dec. 7, 2018)."
+      },
+      {
+        "key": "CIT0023",
+        "unstructured": "B. T. REARDEN and M. A. JESSEE, “SCALE Code System,” ORNL/TM-2005/39, Version 6.2.1, Oak Ridge National Laboratory (2016); https://rsicc.ornl.gov/codes/ccc/ccc8/ccc-834.html (current as of Dec. 7, 2018)."
+      },
+      {
+        "key": "CIT0024",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE90-33"
+      },
+      {
+        "key": "CIT0025",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE92-A15483"
+      },
+      {
+        "key": "CIT0026",
+        "doi-asserted-by": "crossref",
+        "unstructured": "M. L. WILLIAMS, “A Fundamental Study of Contributon Transport Theory and Channel Theory Applications,” DOE/ER/12899–T1, Louisiana State University (1994).",
+        "DOI": "10.2172/10158859"
+      },
+      {
+        "key": "CIT0027",
+        "unstructured": "T. L. BECKER, “Hybrid Monte Carlo/Deterministic Methods for Deep-Penetration Problems,” PhD Dissertation, University of Michigan (2009)."
+      },
+      {
+        "key": "CIT0028",
+        "doi-asserted-by": "crossref",
+        "unstructured": "M. L. WILLIAMS and W. W. ENGLE, “The Concept of Spatial Channel Theory Applied to Reactor Shielding Analysis,” ORNL/TM-5467, Oak Ridge National Laboratory (1976).",
+        "DOI": "10.2172/7262631"
+      },
+      {
+        "key": "CIT0029",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE77-A27033"
+      },
+      {
+        "key": "CIT0030",
+        "volume-title": "Contributon Theory for Shielding Analysis",
+        "author": "SEYDALIEV M.",
+        "year": "2008"
+      },
+      {
+        "key": "CIT0031",
+        "author": "WAGNER J. C.",
+        "year": "1997",
+        "journal-title": "Proc. Joint Int. Conf. Mathematical Methods and Supercomputing for Nuclear Applications"
+      },
+      {
+        "key": "CIT0032",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE98-2"
+      },
+      {
+        "key": "CIT0033",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/S0149-1970(02)00002-1"
+      },
+      {
+        "key": "CIT0034",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.15669/pnst.2.808"
+      },
+      {
+        "key": "CIT0036",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE00-34"
+      },
+      {
+        "key": "CIT0037",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/00411459308203811"
+      },
+      {
+        "key": "CIT0038",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/0041-5553(64)90085-0"
+      },
+      {
+        "key": "CIT0039",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE07-A2653"
+      },
+      {
+        "key": "CIT0040",
+        "first-page": "595",
+        "volume": "97",
+        "author": "PEPLOW D. E.",
+        "year": "2007",
+        "journal-title": "Trans. Am. Nucl. Soc."
+      },
+      {
+        "key": "CIT0041",
+        "first-page": "630",
+        "volume": "97",
+        "author": "WAGNER J. C.",
+        "year": "2007",
+        "journal-title": "Trans. Am. Nucl. Soc."
+      },
+      {
+        "key": "CIT0043",
+        "first-page": "342",
+        "volume": "103",
+        "author": "WAGNER J. C.",
+        "year": "2010",
+        "journal-title": "Trans. Am. Nucl. Soc."
+      },
+      {
+        "key": "CIT0044",
+        "volume-title": "A ‘Local’ Exponential Transform Method for Global Variance Reduction in Monte Carlo Transport Problems",
+        "author": "BAKER R. S.",
+        "year": "1993"
+      },
+      {
+        "key": "CIT0045",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.anucene.2011.07.037"
+      },
+      {
+        "key": "CIT0046",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.fusengdes.2011.01.059"
+      },
+      {
+        "key": "CIT0047",
+        "first-page": "512",
+        "volume": "107",
+        "author": "PEPLOW D. E.",
+        "year": "2012",
+        "journal-title": "Trans. Am. Nucl. Soc."
+      },
+      {
+        "key": "CIT0048",
+        "volume-title": "AVATAR Automatic Variance Reduction in Monte Carlo Calculations",
+        "author": "VAN RIPER K. A.",
+        "year": "1997"
+      },
+      {
+        "key": "CIT0049",
+        "volume-title": "THREEDANT: A Code to Perform Three-Dimensional, Neutral Particle Transport Calculations",
+        "author": "ALCOUFFE R. E.",
+        "year": "1994"
+      },
+      {
+        "key": "CIT0050",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1103/PhysRev.106.620"
+      },
+      {
+        "key": "CIT0051",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1103/PhysRev.108.171"
+      },
+      {
+        "key": "CIT0052",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/00411459308203818"
+      },
+      {
+        "key": "CIT0053",
+        "volume-title": "A Nonlinear Positive Method for Solving the Transport Equation on Course [sic]Meshes",
+        "author": "WALTERS W. F.",
+        "year": "1994"
+      },
+      {
+        "key": "CIT0054",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/00411459608204836"
+      },
+      {
+        "key": "CIT0055",
+        "doi-asserted-by": "crossref",
+        "unstructured": "D. E. PEPLOW, S. W. MOSHER, and T. M. EVANS, “Consistent Adjoint Driven Importance Sampling Using Space, Energy, and Angle,” ORNL/TM-2012/7, Oak Ridge National Laboratory (2012).",
+        "DOI": "10.2172/1052244"
+      },
+      {
+        "key": "CIT0056",
+        "volume-title": "“FW/CADIS-Ω: An Angle-Informed Hybrid Method for Neutron Transport,” PhD Dissertation",
+        "author": "MUNK M."
+      },
+      {
+        "key": "CIT0057",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/00295639.2018.1509569"
+      },
+      {
+        "key": "CIT0058",
+        "unstructured": "K. ROWLAND, “Advanced Quadrature Selection for Monte Carlo Variance Reduction,” PhD Thesis, University of California, Berkeley (2018)."
+      },
+      {
+        "key": "CIT0059",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/0306-4549(85)90047-7"
+      },
+      {
+        "key": "CIT0060",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/0306-4549(82)90038-X"
+      },
+      {
+        "key": "CIT0061",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1006/jcph.1998.6039"
+      },
+      {
+        "key": "CIT0062",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE85-A18186"
+      },
+      {
+        "key": "CIT0063",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/0149-1970(90)90046-8"
+      },
+      {
+        "key": "CIT0064",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE127-22"
+      },
+      {
+        "key": "CIT0065",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE127-36"
+      },
+      {
+        "key": "CIT0066",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.nucengdes.2015.07.021"
+      },
+      {
+        "key": "CIT0068",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NSE12-81"
+      },
+      {
+        "key": "CIT0069",
+        "volume-title": "“Performance Assessment of Cost-Optimized Variance Reduction Parameters in Radiation Shielding Scenarios,” Proc. Int. Conf. Mathematics and Computational Methods Applied to Nuclear Science and Engineering, Jeju, Korea, April 16–20, 2017, American Nuclear Society",
+        "author": "KULESZA J. A.",
+        "year": "2017"
+      },
+      {
+        "key": "CIT0070",
+        "volume-title": "Cost-Optimized Automated Variance Reduction for Highly Angle-Dependent Radiation Transport Analyses,” Dissertation, University of Michigan",
+        "author": "KULESZA J.",
+        "year": "2018"
+      },
+      {
+        "key": "CIT0071",
+        "volume-title": "Automated Weight-Window Generation for Threat Detection Applications Using ADVANTG",
+        "author": "MOSHER S. W.",
+        "year": "2009"
+      },
+      {
+        "key": "CIT0072",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NT171-171"
+      },
+      {
+        "key": "CIT0073",
+        "volume-title": "“Implementation of Hybrid Variance Reduction Methods in a Multi Group Monte Carlo Code for Deep Shielding Problems,” Proc. Int. Conf. Mathematics and Computational Methods Applied to Nuclear Science and Engineering (M&C 2013), Sun Valley, Idaho, May 5–9, 2013, American Nuclear Society",
+        "author": "SOMASUNDARAM E.",
+        "year": "2013"
+      },
+      {
+        "key": "CIT0074",
+        "volume-title": "“Applications of the 3-D Deterministic Transport Attila for Core Safety Analysis,” Proc. Americas Nuclear Energy Symp. 2004, Miami Beach, Florida, October 3–6, 2004",
+        "author": "LUCAS D. S."
+      },
+      {
+        "key": "CIT0075",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/rpd/nci257"
+      },
+      {
+        "key": "CIT0076",
+        "unstructured": "R. E. ALCOUFFE et al. “PARTISN Manual,” LA-UR-02-5633, Los Alamos National Laboratory (2002)."
+      },
+      {
+        "key": "CIT0077",
+        "volume-title": "Dose Rate Analysis of As-Loaded Spent Nuclear Fuel Casks,” Oak Ridge National Laboratory",
+        "author": "RADULESCU G.",
+        "year": "2013"
+      },
+      {
+        "key": "CIT0078",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NT11-A12306"
+      },
+      {
+        "key": "CIT0079",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.13182/NT11-A12305"
+      },
+      {
+        "key": "CIT0080",
+        "volume-title": "A New Version of the ADVANTG Variance Reduction Generator",
+        "author": "MOSHER S. W.",
+        "year": "2010"
+      },
+      {
+        "key": "CIT0081",
+        "volume-title": "A New Source Biasing Approach in ADVANTG",
+        "author": "BEVILL A. M.",
+        "year": "2012"
+      }
+    ],
+    "container-title": [
+      "Nuclear Science and Engineering"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://www.tandfonline.com/doi/pdf/10.1080/00295639.2019.1586273",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2019,
+          9,
+          10
+        ]
+      ],
+      "date-time": "2019-09-10T13:13:35Z",
+      "timestamp": 1568121215000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://www.tandfonline.com/doi/full/10.1080/00295639.2019.1586273"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          4,
+          24
+        ]
+      ]
+    },
+    "references-count": 78,
+    "journal-issue": {
+      "issue": "10",
+      "published-online": {
+        "date-parts": [
+          [
+            2019,
+            5,
+            20
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2019,
+            10,
+            3
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.1080/00295639.2019.1586273"
+    ],
+    "URL": "https://doi.org/10.1080/00295639.2019.1586273",
+    "relation": {},
+    "ISSN": [
+      "0029-5639",
+      "1943-748X"
+    ],
+    "issn-type": [
+      {
+        "value": "0029-5639",
+        "type": "print"
+      },
+      {
+        "value": "1943-748X",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2019,
+          4,
+          24
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "The publishing and review policy for this title is described in its Aims & Scope.",
+        "order": 1,
+        "name": "peerreview_statement",
+        "label": "Peer Review Statement"
+      },
+      {
+        "value": "http://www.tandfonline.com/action/journalInformation?show=aimsScope&journalCode=unse20",
+        "URL": "http://www.tandfonline.com/action/journalInformation?show=aimsScope&journalCode=unse20",
+        "order": 2,
+        "name": "aims_and_scope_url",
+        "label": "Aim & Scope"
+      },
+      {
+        "value": "2018-12-07",
+        "order": 0,
+        "name": "received",
+        "label": "Received",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      },
+      {
+        "value": "2019-02-20",
+        "order": 2,
+        "name": "accepted",
+        "label": "Accepted",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      },
+      {
+        "value": "2019-04-24",
+        "order": 3,
+        "name": "published",
+        "label": "Published",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      }
+    ]
+  }
+}

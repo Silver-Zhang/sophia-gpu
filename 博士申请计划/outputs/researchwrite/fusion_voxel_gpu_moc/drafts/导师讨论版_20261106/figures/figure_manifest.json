@@ -1,0 +1,50 @@
+[
+  {
+    "figure": 1,
+    "title": "方案评价包含建模、输运与更新反馈",
+    "width_pt": 450,
+    "height_pt": 213,
+    "source": "build_figures.py",
+    "kind": "original conceptual diagram; no experimental data"
+  },
+  {
+    "figure": 2,
+    "title": "四类空间对象及误差传播路径",
+    "width_pt": 450,
+    "height_pt": 244,
+    "source": "build_figures.py",
+    "kind": "original conceptual diagram; no experimental data"
+  },
+  {
+    "figure": 3,
+    "title": "GPU-MOC的轨迹组织与成本来源",
+    "width_pt": 450,
+    "height_pt": 258,
+    "source": "build_figures.py",
+    "kind": "original conceptual diagram; no experimental data"
+  },
+  {
+    "figure": 4,
+    "title": "CADIS与FW-CADIS的一致偏倚流程",
+    "width_pt": 450,
+    "height_pt": 270,
+    "source": "build_figures.py",
+    "kind": "original conceptual diagram; no experimental data"
+  },
+  {
+    "figure": 5,
+    "title": "重要性生成到蒙卡达标的全过程成本",
+    "width_pt": 450,
+    "height_pt": 239,
+    "source": "build_figures.py",
+    "kind": "original conceptual diagram; no experimental data"
+  },
+  {
+    "figure": 6,
+    "title": "候选方向可独立开展并按条件衔接",
+    "width_pt": 450,
+    "height_pt": 255,
+    "source": "build_figures.py",
+    "kind": "original conceptual diagram; no experimental data"
+  }
+]
