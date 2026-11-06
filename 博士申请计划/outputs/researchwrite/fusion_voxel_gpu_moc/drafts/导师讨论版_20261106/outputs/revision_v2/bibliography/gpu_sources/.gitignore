@@ -1,0 +1,4 @@
+# Full texts and rendered excerpts are local research caches, not repository deliverables.
+*
+!.gitignore
+!acquisition_log.md

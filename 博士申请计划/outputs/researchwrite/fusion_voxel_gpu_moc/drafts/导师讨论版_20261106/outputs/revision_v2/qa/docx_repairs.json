@@ -1,0 +1,12 @@
+{
+  "font_mapping": {
+    "宋体": "Songti SC",
+    "黑体": "Heiti SC"
+  },
+  "math_face": "STIX Two Math",
+  "table_headers": 6,
+  "clickable_URLs": true,
+  "contents": "materialized editable internal links",
+  "heading_entries": 25,
+  "reference_entries": 61
+}

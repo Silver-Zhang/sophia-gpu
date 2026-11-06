@@ -1,0 +1,161 @@
+[
+  {
+    "key": "r22",
+    "title": "三维中子输运特征线计算方法及大规模并行实现",
+    "author": [
+      {
+        "family": "汪岸",
+        "given": ""
+      }
+    ],
+    "doi": "",
+    "year": 2025,
+    "journal": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "method": "形式化CSG建模、循环轨迹长度分布与组合负载估计，直接三维ANT-MOC",
+    "object": "多堆型堆芯与CPU大规模并行",
+    "benchmark": "学位目录摘要，CEFR及国际基准",
+    "quantitative_result": "4096→98304 CPU核，摘要报告弱/强效率约95%/53%；正文主要使用方法机制",
+    "primary_url": "https://cnki.istiz.org.cn/kcms/detail/detail.aspx?dbcode=CDFD&dbname=CDFD2026&filename=1025098988.nh",
+    "access_level": "doctoral_catalogue_detailed_abstract_no_fulltext",
+    "source_location": "官方摘要/Introduction",
+    "insight": "把任务粒度、工作量估计和原子竞争分开核对",
+    "unresolved": [
+      "r22未取得学位全文"
+    ]
+  },
+  {
+    "key": "r23",
+    "title": "A cyclic-track decomposition method for 3D MOC neutron transport simulation",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-2886-5850",
+        "authenticated-orcid": false,
+        "given": "An",
+        "family": "Wang",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Junying",
+        "family": "Wang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Zhezhao",
+        "family": "Ding",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Xiaoxu",
+        "family": "Geng",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Haodong",
+        "family": "Shan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yun",
+        "family": "Hu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Dandan",
+        "family": "Chen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "doi": "10.1016/j.nucengdes.2024.113148",
+    "year": 2024,
+    "journal": "Nuclear Engineering and Design",
+    "volume": "422",
+    "issue": "",
+    "pages": "113148",
+    "method": "循环轨迹顶层分解与组合负载分配，细化角分解的任务粒度",
+    "object": "轴向挤出三维MOC，ANT-MOC实现",
+    "benchmark": "ORISE，10240→98304 CPU核",
+    "quantitative_result": "论文摘要并行效率超过40%；为CPU核扩展，不是GPU结果",
+    "primary_url": "https://www.sciencedirect.com/science/article/abs/pii/S0029549324002486",
+    "access_level": "publisher_abstract_and_introduction",
+    "source_location": "官方摘要/Introduction",
+    "insight": "把任务粒度、工作量估计和原子竞争分开核对",
+    "unresolved": []
+  },
+  {
+    "key": "r28",
+    "title": "CUDA Pro Tip: Optimized Filtering with Warp-Aggregated Atomics",
+    "author": [
+      {
+        "family": "Adinets",
+        "given": "Andrey"
+      }
+    ],
+    "doi": "",
+    "year": 2014,
+    "journal": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "method": "warp内合并全局原子更新请求",
+    "object": "CUDA过滤示例的原子竞争",
+    "benchmark": "NVIDIA官方技术博客",
+    "quantitative_result": "为同地址更新归约提供一般编程机制；本计划中MOC性能通过实际段积分归约测量",
+    "primary_url": "https://developer.nvidia.com/blog/cuda-pro-tip-optimized-filtering-warp-aggregated-atomics/",
+    "access_level": "official_blog_selected_sections",
+    "source_location": "warp aggregation mechanism",
+    "insight": "把任务粒度、工作量估计和原子竞争分开核对",
+    "unresolved": []
+  }
+]

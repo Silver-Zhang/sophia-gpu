@@ -1,0 +1,4 @@
+# Local evidence cache: copyright full text and extraction are not published.
+*
+!.gitignore
+!retrieval_log.json

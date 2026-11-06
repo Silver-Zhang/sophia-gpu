@@ -1,0 +1,28 @@
+[
+  {
+    "file": "r4_author.pdf",
+    "url": "https://library.psfc.mit.edu/catalog/reports/2020/24ja/24ja039/24ja039_full.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='library.psfc.mit.edu', port=443): Max retries exceeded with url: /catalog/reports/2020/24ja/24ja039/24ja039_full.pdf (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))"
+  },
+  {
+    "file": "r5_publisher.pdf",
+    "url": "https://www.hjs.sinap.ac.cn/rc-pub/front/front-article/download/56713564/lowqualitypdf/基于SINBAD聚变基准题的cosRMC程序屏蔽计算研究.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www.hjs.sinap.ac.cn', port=443): Max retries exceeded with url: /rc-pub/front/front-article/download/56713564/lowqualitypdf/%E5%9F%BA%E4%BA%8ESINBAD%E8%81%9A%E5%8F%98%E5%9F%BA%E5%87%86%E9%A2%98%E7%9A%84cosRMC%E7%A8%8B%E5%BA%8F%E5%B1%8F%E8%94%BD%E8%AE%A1%E7%AE%97%E7%A0%94%E7%A9%B6.pdf (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.hjs.sinap.ac.cn'. (_ssl.c:1010)\")))"
+  },
+  {
+    "file": "r1_publisher.html",
+    "url": "https://www.frontiersin.org/journals/nuclear-engineering/articles/10.3389/fnuen.2024.1384788/full",
+    "status": "downloaded",
+    "bytes": 674763
+  },
+  {
+    "file": "r4_author.pdf",
+    "url": "https://library.psfc.mit.edu/catalog/reports/2020/24ja/24ja039/24ja039_full.pdf",
+    "status": "downloaded_with_system_curl_after_Python_CA_failure",
+    "bytes": 3033854,
+    "sha256": "e35aea4ba44f41788a1cac02b9a69b4d0fc3888ee85b6b8c10703cd63a4f44b8",
+    "reader_pages": 25
+  }
+]

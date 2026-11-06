@@ -1,0 +1,551 @@
+{
+  "audit_date": "2026-11-06",
+  "scope": "V2阶段二，GPU证据，不修改正文；表2平台列与Zhou行保持删除",
+  "new_keys_priority": [
+    "new_straum2025",
+    "new_denovo_fusion2018",
+    "new_zou2022",
+    "new_stream_kns2024"
+  ],
+  "new_keys_optional": [
+    "new_gong2011"
+  ],
+  "records": [
+    {
+      "key": "r6",
+      "authors": [
+        "William Boyd",
+        "Samuel Shaner",
+        "Lulu Li",
+        "Benoit Forget",
+        "Kord Smith"
+      ],
+      "title": "The OpenMOC method of characteristics neutral particle transport code",
+      "doi": "10.1016/j.anucene.2013.12.012",
+      "year": 2014,
+      "venue": "Annals of Nuclear Energy",
+      "method": "二维多群MOC、平源区；CUDA轨迹—能群并行",
+      "object": "C5G7二维本征值/棒功率",
+      "hardware": {
+        "gpu_models": [
+          "GeForce GTX 480",
+          "Quadro 4000",
+          "Tesla C2070",
+          "Tesla K20c"
+        ],
+        "gpu_count": "每个曲线是一种单GPU结果；不是四卡联合",
+        "cpu": "Intel Xeon单核；另有12核Sandy Bridge-EP强扩展实验，勿混为同一基准"
+      },
+      "baseline": "顺序CPU版、单Intel Xeon核",
+      "benchmark": "C5G7，GPU图扫描4—128个方位角",
+      "result": {
+        "speedup": "GTX480曲线峰值接近50倍；其他型号明显不同",
+        "timing_scope": "§5.3 GPU/CPU solver比较；未给出图11独立墙时分解"
+      },
+      "原文位置": "作者接受稿PDF p.4—5 §3.4.3；p.10 §5.3；p.11 Fig.11（已渲染目视图例）",
+      "insight": "CPU完成追踪并将轨迹/线段/平源区转为CUDA数组；线程负责一条轨迹的一个能群，依次处理线段并累积平源区通量；共享内存缓存频繁更新量，常量内存保存固定标量。图11揭示型号和角度并行度的影响。",
+      "access_level": "author_accepted_manuscript_fulltext_local",
+      "primary_url": "https://doi.org/10.1016/j.anucene.2013.12.012",
+      "unresolved": [
+        "图11未给确切Xeon产品型号和CPU/GPU计时是否包含追踪/传输；不把单核比值解释为相对优化多核的收益。"
+      ],
+      "use_in_v2": "第三章机制及表2保留行；硬件条件放结果单元格/正文，不增平台列。",
+      "local_evidence": "../../参考文献全文/09_Boyd_2014_OpenMOC_作者接受稿.pdf"
+    },
+    {
+      "key": "r19",
+      "authors": [
+        "宋佩涛"
+      ],
+      "title": "MOC全堆芯中子输运CPU/GPU异构并行算法研究",
+      "doi": null,
+      "year": 2021,
+      "venue": "哈尔滨工程大学，核科学与技术博士学位论文",
+      "method": "二维MOC CUDA、三维MOC-EX与CMFD、空间MPI分解",
+      "object": "全堆芯本征值、功率与异构扩展",
+      "hardware": {
+        "gpu_models": [
+          "GeForce GTX 1080 Ti"
+        ],
+        "gpu_count": "单卡实验及5/10异构节点；各实验卡数需分开",
+        "cpu": "摘要记为i9-7900单核；不能无证据补X"
+      },
+      "baseline": "二维与MOC-EX加速对CPU单核；另有CPU集群对照，基准不同",
+      "benchmark": "二维C5G7、三维及压水堆1/8堆芯7群/47群",
+      "result": {
+        "mechanism_optimization": "访存/指令吞吐优化后约1.6倍",
+        "scaling": "5节点强扩展87%→95%；10节点7群约85%",
+        "speedup": "摘要报告FP32单核比超过100；三维MOC-EX约40、CMFD约15"
+      },
+      "原文位置": "CNKI学位论文记录的中英文完整摘要，贡献(1)—(6)",
+      "insight": "比较轨迹、轨迹—群、轨迹—群—极角三种粒度，选择轨迹—群；建立访存效率/缓存命中/指令吞吐分析；异步拷贝及通信掩盖；硬件性能负载模型；CMFD红黑排序SOR。",
+      "access_level": "thesis_abstract_only_not_fulltext",
+      "primary_url": "https://cnki.istiz.org.cn/kcms/detail/detail.aspx?dbcode=CDFD&dbname=CDFD2024&filename=1023018169.nh",
+      "unresolved": [
+        "未取得学位全文，不宣称逐章全文核读。",
+        "摘要中文三维基准称KAIST而英文称TAKEDA，因此不采用6.5h→11min对应基准断言。",
+        "摘要i9-7900与期刊0094的i9-7900X不能直接互填。"
+      ],
+      "use_in_v2": "概括国内独立方法贡献；定量优先改用已读r20全文。"
+    },
+    {
+      "key": "r20",
+      "authors": [
+        "宋佩涛",
+        "张志俭",
+        "梁亮",
+        "张乾",
+        "赵强"
+      ],
+      "title": "基于CPU-GPU异构并行的MOC中子输运计算并行效率优化研究",
+      "doi": "10.7538/yzk.2019.youxian.0416",
+      "year": 2019,
+      "venue": "原子能科学技术 53(11):2209–2217",
+      "method": "二维MOC，空间区域MPI与CUDA流",
+      "object": "本征值/功率验证及强扩展性能",
+      "hardware": {
+        "system": "天津超算TianHe-ES",
+        "gpu_models": [
+          "Tesla K80"
+        ],
+        "gpu_count": "每节点2块K80，即4个GK210逻辑GPU；5节点共20GPU",
+        "cpu_raw": "原表1印作2×Intel XeonCPU E5-1690 v4，2.60GHz，14核",
+        "software": "RedHat7.2，IntelMPI5.1.3，CUDA9.2"
+      },
+      "baseline": "同异构程序掩盖前后；另有MPI+OpenMP CPU节点比较",
+      "benchmark": "二维C5G7验证，扩展10×10燃料组件全堆芯；0.03cm轨迹间距",
+      "result": {
+        "strong_scaling": "5节点20GPU，强并行效率87%→95%，整体效率提升约8%",
+        "node_comparison": "4异构节点整体性能优于20 CPU节点",
+        "timing_scope": "性能模型分迭代、负载、CPU-GPU拷贝与MPI，整体并行时间包含数据传递"
+      },
+      "原文位置": "出版社全文pp.2212—2213 §2.3—2.4/Eqs.(7)—(10)/Fig.3；p.2214 Table1；§3.2—3.3",
+      "insight": "同一CUDA流内以分块将C→G、GPU扫掠、G→C串接，不同流重叠；CPU在GPU异步执行时可处理拷贝与MPI。模型显示MPI与拷贝主导扩展损失，通信优化与核函数加速须分开衡量。",
+      "access_level": "publisher_fulltext_pdf",
+      "primary_url": "https://yznkxjs.xml-journal.net/article/doi/10.7538/yzk.2019.youxian.0416",
+      "unresolved": [
+        "原表CPU型号E5-1690 v4疑似排字问题；保留原文并标待核，不自行修成E5-2690。",
+        "不要把2020 DOI0094的1080Ti实验回填至本篇。"
+      ],
+      "use_in_v2": "第三章国内贡献和表2结果；保留原DOI0416。"
+    },
+    {
+      "key": "r21",
+      "authors": [
+        "Shunde Li",
+        "Zongguo Wang",
+        "Lingkun Bu",
+        "Jue Wang",
+        "Zhikuang Xin",
+        "Shigang Li",
+        "Yangang Wang",
+        "Yangde Feng",
+        "Peng Shi",
+        "Yun Hu",
+        "Xuebin Chi"
+      ],
+      "title": "ANT-MOC: Scalable Neutral Particle Transport Using 3D Method of Characteristics on Multi-GPU Systems",
+      "doi": "10.1145/3581784.3607063",
+      "year": 2023,
+      "venue": "Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis",
+      "method": "直接三维MOC，多层负载映射及轨迹管理",
+      "object": "堆芯尺度三维中子输运与大规模扩展",
+      "hardware": {
+        "gpu_models": null,
+        "gpu_count": 16000,
+        "cpu": null
+      },
+      "baseline": "强/弱扩展基线，非单核CPU速度对照",
+      "benchmark": "官方SC23摘要：1000亿轨迹、16000GPU；具体缩放起点与几何待全文",
+      "result": {
+        "strong_scaling_efficiency": "70.69%",
+        "weak_scaling_efficiency": "89.38%",
+        "timing_scope": "官方摘要未公开强/弱扩展计时区间和基准规模"
+      },
+      "原文位置": "SC23官方技术论文归档pap300摘要；ACM DOI元数据",
+      "insight": "原始贡献是联合建模内存、计算与通信并管理轨迹，再将负载映射到节点、GPU与CU三个层级；不把轨迹数均分直接等同计算负载均衡。",
+      "access_level": "official_conference_abstract_and_metadata_only",
+      "primary_url": "https://sc23.supercomputing.org/proceedings/tech_paper/tech_paper_pages/pap300.html",
+      "unresolved": [
+        "ACM PDF/am-pdf/epdf均403；未取得正式全文。",
+        "SC23官方摘要不含GPU型号、CPU基线、强扩展起点、具体线程/归约实现。",
+        "不能借用2025 Zhou或2026 HeSTEAD的MI60/DCU型号补此篇硬件。"
+      ],
+      "use_in_v2": "保留表2既有ANT-MOC行；在正文叙述已核实层级映射，条件不足留本证据表。"
+    },
+    {
+      "key": "r24",
+      "authors": [
+        "Faguo Zhou",
+        "Shunde Li",
+        "Rong Xue",
+        "Lingkun Bu",
+        "Ningming Nie",
+        "Peng Shi",
+        "Jue Wang",
+        "Yun Hu",
+        "Zongguo Wang",
+        "Yangang Wang",
+        "Qinmeng Yang",
+        "Miao Yu"
+      ],
+      "title": "Neutron particle transport 3D method of characteristic Multi GPU platform Parallel Computing",
+      "doi": "10.48550/arXiv.2503.17743",
+      "year": 2025,
+      "venue": "arXiv:2503.17743v1 [cs.DC]（预印本）",
+      "method": "三维MOC轨迹级GPU OTF、混合显式存储",
+      "object": "仅用于轨迹机制说明",
+      "hardware": {
+        "gpu_models": "本轮不录性能比较型号",
+        "gpu_count": "不用于表2"
+      },
+      "baseline": "不采用该预印本性能作为比较证据",
+      "benchmark": "不恢复被删表2 Zhou行",
+      "result": {
+        "quantitative_performance": "不纳入V2表2",
+        "cache_rule": "按轨迹存储代价降序预置，累积至文中80%阈值，其余OTF"
+      },
+      "原文位置": "arXiv:2503.17743v1 pp.6—9 §3.2/§4.1—4.3，Algorithms1/2与Figs3/5",
+      "insight": "GPU线程以grid-stride遍历轨迹；每轨迹执行生成、分段与扫掠。长轨迹优先存储避免重复追踪，余轨迹实时生成；依据线段数重排索引并交替反序分组平衡线程工作量。",
+      "access_level": "arxiv_v1_fulltext_local_preprint",
+      "primary_url": "https://arxiv.org/abs/2503.17743",
+      "unresolved": [
+        "预印本，未以正式同行评议成果描述。",
+        "缓存80%和512×512只是原文实现参数，不升为一般最优设置。",
+        "不从一般缓存叙述推导未经报告的原子归约性能。"
+      ],
+      "use_in_v2": "严格仅第三章轨迹机制；禁止恢复表2行或速度摘要。"
+    },
+    {
+      "key": "r25",
+      "authors": [
+        "Qufei Song",
+        "Ruixiang Wang",
+        "Yuyang Shen",
+        "Yiwei Wu",
+        "Kuaiyuan Feng",
+        "Hui Guo",
+        "Yao Xiao",
+        "Hanyang Gu"
+      ],
+      "title": "GPU-accelerated few-group 3D Method of Characteristics for full-core neutron transport in Small Modular Reactors",
+      "doi": "10.1016/j.pnucene.2025.106109",
+      "year": 2026,
+      "venue": "Progress in Nuclear Energy",
+      "method": "OpenMOC框架上的少群三维MOC；Track-Group，线源、OTF-ART、轨迹分批、GPU CMFD",
+      "object": "C5G7三维组件与NuScale/NETH-HCF175M两类SMR全堆芯本征值",
+      "hardware": {
+        "gpu_models": null,
+        "gpu_count": 1,
+        "cpu_model": null
+      },
+      "baseline": "单线程CPU；GPU与CPU具体型号未见开放正文",
+      "benchmark": "C5G7组件；MC生成4群截面的两个SMR全堆芯",
+      "result": {
+        "assembly_speedup": "最高1015.8倍（单线程CPU比较，不能视作同条件跨文献排名）",
+        "fullcore_speedup": "274.1倍、378.9倍",
+        "memory_reduction": "组件显存降低98.5%；原显式平源25cm组件22129MB",
+        "timing_scope": "开放摘要/片段未显示计时边界，不能称整条预处理—求解总墙时"
+      },
+      "原文位置": "正式出版社摘要、Introduction末段、Conclusion可见片段；§2/§3全文未开放",
+      "insight": "线源以更高局部近似降低线段需求，OTF-ART针对三维线段存储，分批针对轨迹/边界角通量，CMFD针对迭代次数；四者对应不同成本来源，不应合并成单一GPU核函数收益。",
+      "access_level": "publisher_abstract_introduction_section_snippets_not_fulltext",
+      "primary_url": "https://www.sciencedirect.com/science/article/pii/S0149197025005074",
+      "unresolved": [
+        "出版社和API未提供全文；OpenAlex未发现开放稿；ResearchGate明确无全文。",
+        "GPU/CPU型号、精度、1015.8倍及全堆芯倍率的精确计时边界待正文核验。",
+        "不得猜测RTX4090/3090/A100型号或继承其他Song论文的1080Ti。"
+      ],
+      "use_in_v2": "表2保留文献贡献，定量结果必须带单线程CPU/少群/计时未核限制；型号缺口只留证据表，不灌入正文否定句。"
+    },
+    {
+      "key": "r26",
+      "authors": [
+        "Siarhei Dzianisau",
+        "Deokjung Lee"
+      ],
+      "title": "Axially decomposed GPU-enabled three-dimensional method of characteristics/diamond difference solver in neutron transport code STREAM3D-GPU",
+      "doi": "10.1016/j.cpc.2025.109952",
+      "year": 2026,
+      "venue": "Computer Physics Communications",
+      "method": "轴向分解GPU 3D MOC/DD，异步数据执行",
+      "object": "3D OPR-1000四分之一堆芯，含热工水力反馈",
+      "hardware": {
+        "journal_gpu_models": null,
+        "journal_gpu_count": [
+          8,
+          16
+        ],
+        "journal_cpu_cores": 128,
+        "earlier_2024_hardware": "2024 KNS全文为8×RTX A5000 24GB、2×AMD EPYC7543共64核；不是已核期刊硬件"
+      },
+      "baseline": "正式期刊为128核STREAM3D CPU参考解",
+      "benchmark": "期刊OPR-1000 quarter-core；2024先行稿是octant-core/64核，版本和对象不同",
+      "result": {
+        "journal_moc_solver_speedup": "8卡22.1倍；16卡40.5倍，相对128核参考",
+        "journal_memory": "由每MPI进程理论50GB降至<4.5GB",
+        "timing_scope": "摘要说MOC/DD solver，不能改写为总执行时间同比加速",
+        "earlier_2024_only": "C5G7 MOC1368→34s、总1704→100s；OPR八分之一MOC61535→3995s、总212416→11201s"
+      },
+      "原文位置": "期刊正式摘要/Highlights/§3—4片段；2024 KNS pp.1—3 Fig.1/Tables1—2；2025 KNS p.2硬件与p.3改版说明",
+      "insight": "沿原算法顺序轴向循环只搬运每层必要数据，入/出角通量和CMFD中子流按需传输；留在设备的数据与需回传主存的轴向状态分开。2025先行改版将CMFD移GPU并调整求解结构，说明模块加速不等同总耗时加速。",
+      "access_level": "journal_abstract_snippets_plus_distinct_2024_2025_conference_fulltexts",
+      "primary_url": "https://www.sciencedirect.com/science/article/pii/S0010465525004539",
+      "unresolved": [
+        "正式2026期刊硬件表未取得；A5000/EPYC7543仅确定用于2024先行实验，不能与2026倍率绑定。",
+        "期刊精确线程映射、归约核及异步队列参数待正式全文。"
+      ],
+      "related_primary_urls": [
+        "https://www.kns.org/files/pre_paper/51/24S-051-Siarhei.pdf",
+        "https://www.kns.org/files/pre_paper/53/25S-240-Siarhei.pdf",
+        "https://reactorcore.unist.ac.kr/stream-3d-gpu/"
+      ],
+      "use_in_v2": "正文主讲轴向状态与显存机制；表2按期刊128核和solver范围标结果，不恢复平台列。"
+    },
+    {
+      "key": "r27",
+      "authors": [
+        "Kyung Min Kim",
+        "Jaeuk Im",
+        "Han Gyu Lee",
+        "Yeon Sang Jung"
+      ],
+      "title": "Verification and Performance Assessment of NuDEAL, a GPU-Accelerated Deterministic Transport Framework on Unstructured Meshes",
+      "doi": "10.1080/00295639.2026.2652773",
+      "year": 2026,
+      "venue": "Nuclear Science and Engineering",
+      "method": "NuDEAL三套确定论：planar MOC/HFEM、DGMOC、DFEM-SN",
+      "object": "C5G7、ABTR、Empire微堆、MSRE本征值/功率",
+      "hardware": {
+        "DFEM_SN_C5G7_2D": "1×RTX4070Ti 对96核Intel Xeon Platinum Griffin",
+        "DGMOC_C5G7_3D": "1×RTX2080Ti 对480核PROTEUS-MOC；作者按引用背景推测Blue Gene/P，不是实测确认型号"
+      },
+      "baseline": "跨代码、不同网格/角度/迭代次数的文献结果对照；不是完全同离散硬件竞速",
+      "benchmark": "2D C5G7 DFEM-SN 189584元素/256角；扩大C5G7 8×8组件MOC；3D C5G7 DGMOC",
+      "result": {
+        "DFEM_SN_TableII": "总计算26s（Concurrent）/148s（Sequential）对Griffin53s；角通量缓存23/40MB",
+        "MOC_TableIII": "NuDEAL/nTRACER单扫0.5/0.9s，总32/46s，网格2.7M/1.5M、线段307M/250M",
+        "DGMOC_TableV": "单扫5.25/8.05s，总412/566s，36/28次扫掠",
+        "DGMOC_TableVI": "2角块2589MB/5.25s；32角块7133MB/5.09s；全64角块OOM"
+      },
+      "原文位置": "作者稿pp.12—17 §III.A—C；pp.20—23 TablesII—VI及其脚注",
+      "insight": "MOC截面/源/通量按4能群打包128bit对齐；HFEM每线程一个局部自由度，红黑界面扫。DGMOC角块顺序执行，轴向界面上风量按需保存。DFEM-SN跟踪尚未消费的下游依赖回收角通量槽位；每线程一个角通量自由度，区分调查/局部矩阵预备/扫掠三个核。",
+      "access_level": "author_manuscript_fulltext_local",
+      "primary_url": "https://doi.org/10.1080/00295639.2026.2652773",
+      "unresolved": [
+        "PROTEUS的Blue Gene/P是作者推测值，需保留该证据等级。",
+        "NuDEAL三种求解器不能统一命名GPU-MOC，尤其表II为SN。",
+        "本文验证本征值/功率，不能充作深穿透固定源或伴随验证。"
+      ],
+      "use_in_v2": "表2保留NuDEAL行；正文按求解器分开陈述，不与相异网格基准算加速倍数排名。",
+      "local_evidence": "../../sources/nudeal2026.txt / ../../参考文献全文/05_Kim_2026_NuDEAL_作者稿.pdf"
+    },
+    {
+      "key": "new_straum2025",
+      "authors": [
+        "Ao Zhang",
+        "Ser Gi Hong",
+        "Seungil Jeong",
+        "Jingen Chen"
+      ],
+      "title": "GPU-based multi-group discrete ordinates transport calculations: Parallel computing implementation in STRAUM",
+      "doi": "10.1016/j.net.2025.103597",
+      "year": 2025,
+      "venue": "Nuclear Engineering and Technology 57(9):103597",
+      "method": "非结构四面体LDEM-SCB SN，GPU群块BiCGSTAB",
+      "object": "稳态外源中子—光子屏蔽输运；Kobayashi-like和RPV",
+      "hardware": {
+        "gpu_models": [
+          "GeForce RTX 3080 Ti 12GB",
+          "GeForce RTX 4090 24GB"
+        ],
+        "gpu_count": [
+          1,
+          2
+        ],
+        "cpu": "AMD Ryzen9 7900X，串行1核与并行12核分别报告",
+        "precision": "GPU FP32，CPU FP64"
+      },
+      "baseline": "单核CPU within-group/多群GS，对GPU群块BiCGSTAB；12核OpenMP/Taskflow另作比较",
+      "benchmark": "Kobayashi-like 33750四面体、27中子+19光子群；RPV177575/620205网格、47中子群与P3散射",
+      "result": {
+        "Kobayashi_TableIV": "16角/卦限：单核2960s，3080Ti120.5倍、4090为188.7倍（不同精度/求解器）",
+        "RPV_TableVI": "177575网格：优化群块3080Ti734s、4090为379s；串行约14.2h",
+        "dual_GPU": "RPV同群块基线效率95.4%/93.6%，显存下降42.7%/44.1%",
+        "large_case": "双4090、620205网格约28min、总显存42.2GB",
+        "timing_scope": "Tables2/3为transport calculation；Tables4/6及Fig14为整体elapsed time，群块改变时迭代数也改变"
+      },
+      "原文位置": "正式文/作者公开全文pp.4—6 §3.2 Algorithms1—2；p.7 Table1；pp.8—11 Tables2—6/Figs14—16",
+      "insight": "一块对应能群—方向组合，块内线程处理同波前单元并用__syncthreads维持上风依赖；单元索引按扫序重排。角通量到通量矩以moment/group/cell独占输出避免写冲突。各GPU分群块内子群，交换散射源所需矩，扫掠本身无需跨GPU通信；预算局部矩阵换取额外显存。",
+      "access_level": "author_uploaded_published_fulltext_HTML_and_publisher_record",
+      "primary_url": "https://doi.org/10.1016/j.net.2025.103597",
+      "unresolved": [
+        "CPU/GPU不同精度与群块求解器，倍率包含算法/精度影响；不当作纯硬件收益。",
+        "本篇为正向固定源，未报告伴随GPU性能。"
+      ],
+      "related_primary_urls": [
+        "https://www.researchgate.net/publication/390357834_GPU-based_multi-group_discrete_ordinates_transport_calculations_Parallel_computing_implementation_in_STRAUM"
+      ],
+      "use_in_v2": "建议新增必要文献：第三章正向固定源及群块/波前机制；SN单列说明，可进补充表但不混进MOC排序。"
+    },
+    {
+      "key": "new_denovo_fusion2018",
+      "authors": [
+        "Katherine E. Royston",
+        "Seth R. Johnson",
+        "Thomas M. Evans",
+        "Scott W. Mosher",
+        "Jonathan Naish",
+        "Bor Kos"
+      ],
+      "title": "Application of the Denovo Discrete Ordinates Radiation Transport Code to Large-Scale Fusion Neutronics",
+      "doi": "10.1080/15361055.2018.1504508",
+      "year": 2018,
+      "venue": "Fusion Science and Technology 74(4):303–314",
+      "method": "Denovo Cartesian SN、step-characteristics/slice-balance、KBA与空间—角度—能量GMRES",
+      "object": "JET DD中子流束、探测器中子注量与空气比释动能",
+      "hardware": {
+        "system": "Titan XK7",
+        "gpu": "每节点1×NVIDIA Kepler K20x",
+        "cpu": "每节点AMD16核Interlagos/Opteron",
+        "gpu_count": [
+          128,
+          512,
+          1024,
+          2048,
+          3840
+        ]
+      },
+      "baseline": "MCNP+ADVANTG、Shift及实验作响应对照；没有同题CPU/GPU加速比实验",
+      "benchmark": "JET streaming benchmark，1m—1b空间单元、32/88/216能群与P1/P3",
+      "result": {
+        "TableIV_100m": "100m级别（TableIII实际88080384单元）、32群、P3、每卦限256角，2048节点，4.6h墙时",
+        "TableIV_1b": "935854080单元（1b）、32群、P1、表列256角/卦限，3840节点，10h墙时",
+        "timing_scope": "TableIV Wall times；并非单次扫掠时间，也不能换算GPU对CPU倍率"
+      },
+      "原文位置": "EUROfusion作者接受稿PDF pp.5—6 §II（刊内pp.4—5）；PDF p.16 TableIV（刊内p.15）；PDF p.18 §VI（刊内p.17）；PDF p.12 TableII明确angles/octant、TableIII精确网格数及同页100m工况正文；PDF p.13 Fig.3题注同样明确每卦限256角，已实看PDF12表页",
+      "insight": "能量集合各自含全空间网格，KBA不跨集合；GPU需能量并行，因此用GMRES跨空间/角度/能量，即使无上散射GS可一轮完成。这里为吞吐而改变迭代器，属于硬件并行与收敛代价权衡的原始聚变证据。",
+      "access_level": "accepted_manuscript_fulltext_primary_repository",
+      "primary_url": "https://doi.org/10.1080/15361055.2018.1504508",
+      "unresolved": [
+        "作者稿TableIV的1b工况写P1/256角，结论却写P1/36角，实验对照段又写P3/256角，内部条件不一致；结果引用应明确据TableIV，不拼接这些段落。",
+        "Crossref列六名作者，作者稿加JET Contributors；Polito库另列Subba，书目以出版社最终记录六名为准，完整贡献名单待期刊PDF。",
+        "论文不是GPU伴随或CADIS权窗实测，不能以其正向结果替代伴随验证。"
+      ],
+      "related_primary_urls": [
+        "https://scipub.euro-fusion.org/wp-content/uploads/eurofusion/WPJET3PR1619576_accepted_merged.pdf",
+        "https://www.osti.gov/servlets/purl/1481706"
+      ],
+      "use_in_v2": "建议新增必要文献：第三章固定源GPU SN与第五章JET响应分别主讲方法/对象，避免重复。"
+    },
+    {
+      "key": "new_gong2011",
+      "authors": [
+        "Chunye Gong",
+        "Jie Liu",
+        "Lihua Chi",
+        "Haowei Huang",
+        "Jingyue Fang",
+        "Zhenghu Gong"
+      ],
+      "title": "GPU accelerated simulations of 3D deterministic particle transport using discrete ordinates method",
+      "doi": "10.1016/j.jcp.2011.04.010",
+      "year": 2011,
+      "venue": "Journal of Computational Physics 230(15):6010–6022",
+      "method": "Sweep3D，单能群稳态确定论SN与源迭代",
+      "object": "三维Cartesian真空边界输运，含/不含flux fixup",
+      "hardware": {
+        "gpu": "1×NVIDIA Tesla M2050",
+        "cpu": [
+          "Intel Xeon X5670 chip",
+          "Intel Core Q6600 chip"
+        ]
+      },
+      "baseline": "CPU chip而非摘要明示单核；精确线程数未核",
+      "benchmark": "Sweep3D三维Cartesian真空边界",
+      "result": {
+        "without_fixup": "M2050整体2.56倍于X5670 chip；8.14倍于Q6600 chip",
+        "with_fixup": "M2050整体1.23倍于X5670",
+        "timing_scope": "摘要overall performance，不能称核函数峰值"
+      },
+      "原文位置": "正式出版社摘要；全文未取得",
+      "insight": "早期原始实验表明flux fixup改变GPU收益，应把负通量处理和扫掠核计入性能条件；其单群SN实验不与少群三维MOC直接排名。",
+      "access_level": "publisher_abstract_only",
+      "primary_url": "https://www.sciencedirect.com/science/article/pii/S0021999111002348",
+      "unresolved": [
+        "未取得全文，线程分配、精度、网格尺寸及CPU实际线程数不可补造。"
+      ],
+      "use_in_v2": "可选新增原始历史证据；若控制书目数量，优先采用new_straum2025/new_denovo_fusion2018。"
+    },
+    {
+      "key": "new_zou2022",
+      "authors": [
+        "Hang Zou",
+        "Qian Zhang",
+        "Liang Liang",
+        "Peitao Song",
+        "Qiang Zhao"
+      ],
+      "title": "Development and verification of a GPU-based MOC transient solver",
+      "doi": "10.1016/j.anucene.2022.109171",
+      "year": 2022,
+      "venue": "Annals of Nuclear Energy 174:109171",
+      "method": "ALPHA二维MOC transient fixed source problem，FIM时间离散、pin-CMFD",
+      "object": "C5G7-TD二维时间依赖反应堆输运，逐时间点形成TFSP",
+      "hardware": {
+        "gpu": "NVIDIA GeForce RTX2080Ti",
+        "cpu_model": null,
+        "gpu_count": "本轮可见片段未明确实验卡数"
+      },
+      "baseline": "MPACT准确性对照及ALPHA自身FP32/收敛准则敏感性，不是已核完整CPU速度对照",
+      "benchmark": "C5G7-TD二维异质基准，扰动/控制棒运动",
+      "result": {
+        "validation": "ALPHA与MPACT结果一致性；作者认为适当MOC容差下FP32有足够精度与时间性能",
+        "timing_scope": "本轮开放片段未给可核CPU/GPU总耗时与加速倍数"
+      },
+      "原文位置": "正式出版社摘要、§3 NVIDIA GPU architecture and CUDA片段、§4/结论片段",
+      "insight": "用隐式Euler和先驱核耦合将瞬态变为一系列固定源问题，给出MOC固定源GPU实现的直接先例；FP32容差敏感性需要按时间积分误差另验，不等价于深屏蔽响应精度保证。",
+      "access_level": "publisher_abstract_and_section_snippets",
+      "primary_url": "https://www.sciencedirect.com/science/article/pii/S0306454922002067",
+      "unresolved": [
+        "不是稳态深穿透外源屏蔽，也未报告GPU伴随；本轮未取全文，不给速度数。"
+      ],
+      "use_in_v2": "建议新增直接GPU-MOC固定源先例，用一处正文引用，不增加被删表2行。"
+    },
+    {
+      "key": "new_stream_kns2024",
+      "authors": [
+        "Siarhei Dzianisau",
+        "Deokjung Lee"
+      ],
+      "title": "GPU Acceleration of 3D MOC Solver in STREAM3D Using OpenACC",
+      "doi": null,
+      "year": 2024,
+      "venue": "Transactions of the Korean Nuclear Society Spring Meeting, Jeju, Korea, May 9–10, 2024",
+      "method": "STREAM三维MOC/DD轴向分解与OpenACC GPU扫掠",
+      "object": "C5G7三维本征值与OPR-1000八分之一堆芯含TH反馈",
+      "hardware": {
+        "gpu": "8×NVIDIA RTX A5000，每卡24GB",
+        "cpu": "2×AMD EPYC7543，32核/颗，合计64核；CPU/GPU运行均使用同一64核系统"
+      },
+      "baseline": "同节点64核CPU版，方法/硬件环境一致；MOC模块与总时间分开",
+      "benchmark": "C5G7三维，7群64轴向平面；OPR-1000 octant-core，72群197平面、3cm轴向",
+      "result": {
+        "C5G7_MOC": "1368→34s，40.23倍",
+        "C5G7_total": "1704→100s，17.04倍",
+        "OPR_MOC": "61535→3995s，15.40倍",
+        "OPR_total": "212416→11201s，18.96倍",
+        "timing_scope": "Tables1—2分别列MOC Solver与Total execution time；部分总时间收益来自径向域通信/负载差异，不是核函数独立收益"
+      },
+      "原文位置": "3页KNS正式公开稿p.1 Fig.1轴向分解；p.2 §3/§4硬件与Table1；p.3 Table2及通信讨论",
+      "insight": "每层扫掠前只传必要状态，上/下层依赖量回存主机，入/出角通量和CMFD流量需要搬运；1个MPI进程分配1张卡。原文解释低MPI进程/域负载差异可影响总时间，因此MOC与全程序收益并不相同。",
+      "access_level": "conference_fulltext_primary",
+      "primary_url": "https://www.kns.org/files/pre_paper/51/24S-051-Siarhei.pdf",
+      "unresolved": [
+        "无DOI；不与2026 CPC期刊四分之一堆芯/128核倍率混写。",
+        "该公开先行稿不等价2025 GPU-CMFD改版，亦不是2026正式期刊硬件表。"
+      ],
+      "use_in_v2": "如需可核型号与总耗时实例，将此稿独立引用一次；不恢复表2平台列。"
+    }
+  ]
+}

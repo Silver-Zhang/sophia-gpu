@@ -1,0 +1,158 @@
+{
+  "fig01.svg": {
+    "exit": 0,
+    "sha256": "84f74c1d14c89276980585ce78977402f40f6fccf4110e0a8e0fad4816164028",
+    "audit": {
+      "svg": "sophia-gpu/博士申请计划/outputs/researchwrite/fusion_voxel_gpu_moc/drafts/导师讨论版_20261106/outputs/revision_v2/figures/fig01.svg",
+      "verdict": "PASS WITH WARNINGS",
+      "auditable": true,
+      "width_mm": 158.75,
+      "text_count": 13,
+      "minimum_found_pt": 9.5,
+      "maximum_found_pt": 11.0,
+      "thresholds": {
+        "min_pt": 9.0,
+        "max_pt": 11.0,
+        "max_width_mm": 160.0
+      },
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "canvas.width",
+          "message": "width 158.8 mm is not 89 mm or 183 mm"
+        }
+      ]
+    },
+    "stderr": ""
+  },
+  "fig02.svg": {
+    "exit": 0,
+    "sha256": "f3e66087cbbba6afcef6c74c453a7bd7488882bec3888dd5bd1a8f877fe7b43c",
+    "audit": {
+      "svg": "sophia-gpu/博士申请计划/outputs/researchwrite/fusion_voxel_gpu_moc/drafts/导师讨论版_20261106/outputs/revision_v2/figures/fig02.svg",
+      "verdict": "PASS WITH WARNINGS",
+      "auditable": true,
+      "width_mm": 158.75,
+      "text_count": 12,
+      "minimum_found_pt": 9.5,
+      "maximum_found_pt": 11.0,
+      "thresholds": {
+        "min_pt": 9.0,
+        "max_pt": 11.0,
+        "max_width_mm": 160.0
+      },
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "canvas.width",
+          "message": "width 158.8 mm is not 89 mm or 183 mm"
+        }
+      ]
+    },
+    "stderr": ""
+  },
+  "fig03.svg": {
+    "exit": 0,
+    "sha256": "c8cf14ef7f233341d199f045cf2e1f288c3c3a3e6976f9c7d86c65aad37746ab",
+    "audit": {
+      "svg": "sophia-gpu/博士申请计划/outputs/researchwrite/fusion_voxel_gpu_moc/drafts/导师讨论版_20261106/outputs/revision_v2/figures/fig03.svg",
+      "verdict": "PASS WITH WARNINGS",
+      "auditable": true,
+      "width_mm": 158.75,
+      "text_count": 38,
+      "minimum_found_pt": 9.5,
+      "maximum_found_pt": 11.0,
+      "thresholds": {
+        "min_pt": 9.0,
+        "max_pt": 11.0,
+        "max_width_mm": 160.0
+      },
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "canvas.width",
+          "message": "width 158.8 mm is not 89 mm or 183 mm"
+        }
+      ]
+    },
+    "stderr": ""
+  },
+  "fig04.svg": {
+    "exit": 0,
+    "sha256": "dbf7bfddf0b4bd2584881b9a838ccec87ebbbcf21c73afa7fb502d50df4f6f29",
+    "audit": {
+      "svg": "sophia-gpu/博士申请计划/outputs/researchwrite/fusion_voxel_gpu_moc/drafts/导师讨论版_20261106/outputs/revision_v2/figures/fig04.svg",
+      "verdict": "PASS WITH WARNINGS",
+      "auditable": true,
+      "width_mm": 158.75,
+      "text_count": 14,
+      "minimum_found_pt": 9.5,
+      "maximum_found_pt": 11.0,
+      "thresholds": {
+        "min_pt": 9.0,
+        "max_pt": 11.0,
+        "max_width_mm": 160.0
+      },
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "canvas.width",
+          "message": "width 158.8 mm is not 89 mm or 183 mm"
+        }
+      ]
+    },
+    "stderr": ""
+  },
+  "fig05.svg": {
+    "exit": 0,
+    "sha256": "95bcf669b6fef9bcb2867bd3699f62893130a4c7829579bb3f5185bc8772f5b3",
+    "audit": {
+      "svg": "sophia-gpu/博士申请计划/outputs/researchwrite/fusion_voxel_gpu_moc/drafts/导师讨论版_20261106/outputs/revision_v2/figures/fig05.svg",
+      "verdict": "PASS WITH WARNINGS",
+      "auditable": true,
+      "width_mm": 158.75,
+      "text_count": 18,
+      "minimum_found_pt": 9.5,
+      "maximum_found_pt": 11.0,
+      "thresholds": {
+        "min_pt": 9.0,
+        "max_pt": 11.0,
+        "max_width_mm": 160.0
+      },
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "canvas.width",
+          "message": "width 158.8 mm is not 89 mm or 183 mm"
+        }
+      ]
+    },
+    "stderr": ""
+  },
+  "fig06.svg": {
+    "exit": 0,
+    "sha256": "b4d038052e59cba86c04da15aeabff717d3dc9897fca2aca684a6a09090a5deb",
+    "audit": {
+      "svg": "sophia-gpu/博士申请计划/outputs/researchwrite/fusion_voxel_gpu_moc/drafts/导师讨论版_20261106/outputs/revision_v2/figures/fig06.svg",
+      "verdict": "PASS WITH WARNINGS",
+      "auditable": true,
+      "width_mm": 158.75,
+      "text_count": 15,
+      "minimum_found_pt": 9.5,
+      "maximum_found_pt": 11.0,
+      "thresholds": {
+        "min_pt": 9.0,
+        "max_pt": 11.0,
+        "max_width_mm": 160.0
+      },
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "canvas.width",
+          "message": "width 158.8 mm is not 89 mm or 183 mm"
+        }
+      ]
+    },
+    "stderr": ""
+  }
+}

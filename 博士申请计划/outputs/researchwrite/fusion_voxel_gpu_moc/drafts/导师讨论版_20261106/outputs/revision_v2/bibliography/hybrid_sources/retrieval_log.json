@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-06",
+  "policy": "不提交PDF/全文TXT；仅提交本记录",
+  "files": [
+    {
+      "file": "turner2013.txt",
+      "bytes": 28872,
+      "sha256": "9a68b6213565f416895d2bc04b4dacaeadc7bc8809c52ba1be08407833cde1f0",
+      "provenance": "本轮arXiv下载",
+      "committed": false
+    },
+    {
+      "file": "turner2013.pdf",
+      "bytes": 1058684,
+      "sha256": "72e08e7278808bd6a2a545c6c447f1213fc2c3a4e5561e53e8ff2f6bff40489b",
+      "provenance": "本轮arXiv下载",
+      "committed": false
+    },
+    {
+      "file": "raffuzzi_author_manuscript.txt",
+      "bytes": 70042,
+      "sha256": "e5d27bcbe406ead6dca35ac5db441cc9850ff1077163829f5ad983c3a2b54ad9",
+      "provenance": "此前已合法取得的正式/作者公开版本，本轮复制为只读本地核验缓存",
+      "committed": false
+    },
+    {
+      "file": "cadis_omega2016.txt",
+      "bytes": 41788,
+      "sha256": "e2ce8bea1531918f0d7ab9df7ed670739179146e4532d2952d6b56f3a5be1720",
+      "provenance": "此前已合法取得的正式/作者公开版本，本轮复制为只读本地核验缓存",
+      "committed": false
+    },
+    {
+      "file": "ibrahim2014_mesh.txt",
+      "bytes": 44372,
+      "sha256": "f83ce0c48f525482bdcd7984ec76b4d1b88eb3437c0f3c3d31acd3060ae5c3bf",
+      "provenance": "此前已合法取得的正式/作者公开版本，本轮复制为只读本地核验缓存",
+      "committed": false
+    },
+    {
+      "file": "ibrahim2014_mesh.pdf",
+      "bytes": 865582,
+      "sha256": "71d5efc0af5f37cdf032d86608400aeb48d1436349a229e78ea01620b839eaef",
+      "provenance": "此前已合法取得的正式/作者公开版本，本轮复制为只读本地核验缓存",
+      "committed": false
+    },
+    {
+      "file": "fw_cadis2014.txt",
+      "bytes": 173497,
+      "sha256": "ca5540d208fcadcb37beef13f55fd7dbcd22cd10faa2866269570cab98260a24",
+      "provenance": "此前已合法取得的正式/作者公开版本，本轮复制为只读本地核验缓存",
+      "committed": false
+    }
+  ]
+}
