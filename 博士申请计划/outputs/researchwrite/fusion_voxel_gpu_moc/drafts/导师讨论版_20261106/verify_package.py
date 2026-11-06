@@ -1,5 +1,12 @@
 """Structural/content checks on the actual DOCX/PDF; not a visual QA substitute."""
 from pathlib import Path
+import sys
+_base=Path(__file__).resolve().parent
+if (_base/'review_state.json').exists():
+ import json,subprocess
+ if not json.loads((_base/'review_state.json').read_text()).get('regeneration_approved',False):
+  subprocess.run([sys.executable,str(_base/'verify_review_sync.py')],check=True)
+  raise SystemExit(0)
 from docx import Document
 from docx.oxml.ns import qn
 from pypdf import PdfReader

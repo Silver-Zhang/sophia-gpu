@@ -5,6 +5,8 @@ This patch supplies runtime-resolvable CJK fonts, repeating headers, URL links
 and a materialized, clickable contents page for renderer portability.
 """
 from pathlib import Path
+from review_guard import require_regeneration_approval
+require_regeneration_approval()
 from docx import Document
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn

@@ -1,6 +1,6 @@
 ﻿维度,方向一 空间离散,方向二 GPU正—伴随,方向三 自动耦合减方差
 核心问题,几何/路径误差与网格预算,网格—轨迹—执行联合成本,重要性效用与全流程成本
-最近先例,Liu、Ibrahim、cosRMC[@r15; @r36; @r47],Zhou、ANT-MOC、STREAM3D[@r24; @r21; @r26],Ibrahim、NECP-MCX、Raffuzzi[@r36; @r39; @r42]
+最近先例,Liu、Ibrahim、cosRMC[@r15; @r36; @r47],Zhou、ANT-MOC、STREAM3D[@r21; @r26; @r24],Ibrahim、NECP-MCX、Raffuzzi[@r36; @r39; @r42]
 创新前提,新指标解释并改善现有指标不足,存在现有策略未解决的实测瓶颈,超过成熟权窗配置的可归因增量
 资源依赖,可改网格、材料及伴随接口,MOC源码、GPU与分析权限,正/伴随工具、MGXS与MC接口
 实证门槛,等预算响应/MC达标成本比较,伴随正确＋等精度完整计时,统计可靠＋全过程时间占优范围

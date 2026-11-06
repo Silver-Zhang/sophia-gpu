@@ -1,5 +1,7 @@
 """Rebuild the package offline from committed prose, records and figure code."""
 from pathlib import Path
+from review_guard import require_regeneration_approval
+require_regeneration_approval()
 import os,sys,subprocess,re,json,shutil
 from docx import Document
 from pypdf import PdfReader

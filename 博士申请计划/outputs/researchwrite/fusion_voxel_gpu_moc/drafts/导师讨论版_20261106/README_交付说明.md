@@ -1,5 +1,7 @@
 # 博士科研计划书导师讨论初稿
 
+> 当前状态：用户Word批注修订已完整归档，生成源已按保留文本同步，Word原件未改写。**未经用户明确确认禁止重新生成Word或恢复删除内容。** 现有PDF和原两轮自审仍为首版基线，详见[用户审阅源同步说明](qa/用户审阅源同步说明.md)。下述129标题、37页等数据描述首版交付，不代表当前审阅版的排版与标题数量。
+
 日期：2026年11月6日。工作分支：`research/rp-hybrid-literature-draft-20261106`。本版按本目录00—04文件完成六章正式正文，保留全部129个一级至三级标题，其中97个三级小节；保留用户已有研究背景和技术论据，补充文献评述、研究判断、三条候选方向的路线和条件。
 
 ## 供导师阅读
@@ -35,19 +37,20 @@
 
 用户后续保存的Word修改版已核验并原样归档：38条批注，136处删除、23处插入和101处格式修订标记（OOXML元素计数，不等同于独立修改次数）。批注正文、起止锚点、引用及关系完整；修订保留作者、时间和原始内容，未接受或拒绝任何修改，也未执行批注意见。
 
-当前Word的SHA256为`3b6364646e2b0f29e785997afc0b6912685fa50ff60ef049399e9a0f2550582e`。现有PDF、Markdown、图表源及两轮自审记录仍对应此前正式初稿，并未依据本次用户批注重建。继续运行`rebuild.py`前，应先将用户修订和批注意见落实到源文件，避免覆盖此审阅版Word。
+当前Word的SHA256为`3b6364646e2b0f29e785997afc0b6912685fa50ff60ef049399e9a0f2550582e`。全部批注和删改已先提取、核对并归档至[审阅归档](review_archive/3b6364646e2b/删改与批注核对.md)，随后将修订后保留的文本同步到六章源、前置源和Markdown。另保留15组未跟踪/结构差异及87个源块对照。批注尚待逐条实施。现有PDF、图形资产及原两轮自审记录仍为此前正式初稿，未重建Word。
 
 ## 复现与继续修改
 
-编辑`sources_ch01.md`至`sources_ch06.md`、`table_sources.md`、`build_figures.py`。导出源为`outputs/manuscript.md`，可读Markdown从同一源与实际Word书目生成；不要只改生成文件而遗漏源。
+现行正文源为`frontmatter.md`和`sources_ch01.md`至`sources_ch06.md`，图表与题注在章节源中显式保留。`table_sources.md`及`tables/`为派生快照。图形绘制代码为`build_figures.py`；原始格式修订仍以归档Word及XML为准。
 
 本次工具链为Python 3.12、md-to-word 3.3.2、python-docx 1.2.0、CairoSVG 2.9.1及Codex随附LibreOffice/Poppler。使用可访问这些依赖的Python运行：
 
 ```bash
-python rebuild.py
+python assemble_manuscript.py  # 只更新Markdown及表格快照
+python verify_review_sync.py   # 核对原件、批注、修订和源投影
 ```
 
-`rebuild.py`不进行联网检索，使用已归档元数据；按“图表→正文组装→BibTeX→安装版md-to-word导出→OOXML修复→Word渲染→目录实页回填→结构校验”执行。`DOCX_RENDERER`可指定文档技能的`render_docx.py`。`qa/fonts.conf`适配本机macOS字体与随附LibreOffice，迁移环境应提供对应字体并调整字体目录。修改版式后需要重新检查全部渲染页；目录为已物化的可编辑、可点击目录，页码由重建脚本按实际PDF更新。
+`rebuild.py`和`finalize_docx.py`当前在任何写入前都会因用户尚未确认而停止；不得绕过`review_guard.py`。原完整导出流程及所需渲染器仍保留，只有用户确认后才可考虑重新导出，届时必须重新检查全部页面，并保证不恢复已删内容。`review_state.json`记录当前未获确认的状态及源文件哈希。源文件如有后续手工编辑，不要直接重跑Word导入覆盖它们。
 
 `collect_metadata.py`与`refresh_missing.py`用于可选联网更新，原始Crossref响应和人工核对记录已经保存；网络失败不会被当作不存在文献或已获取全文。
 
