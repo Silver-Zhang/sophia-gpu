@@ -1,0 +1,7 @@
+{"ok": true, "returncode": 0, "input": "manuscript_v3.md", "output": "/Users/sophia_zhou/GPU/sophia-gpu/博士申请计划/outputs/researchwrite/fusion_voxel_gpu_moc/drafts/导师讨论版_20261106/outputs/revision_v3/exports/博士科研计划书_V3.docx", "pdf": null, "lang": "zh", "messages": ["导出完成。版面效果仍须在 Word 中人工核验。"], "errors": []}
+
+INFO md2word: 🔍 执行导出前语法与排版契约预检…
+INFO md2word: ✓ 样式模板已生成：27 个样式
+INFO md2word: ✓ 产物数值完整性检查通过。
+INFO md2word: ✓ 产物与格式要求逐条对账通过。
+INFO md2word: ✅ Word 文档导出成功: /Users/sophia_zhou/GPU/sophia-gpu/博士申请计划/outputs/researchwrite/fusion_voxel_gpu_moc/drafts/导师讨论版_20261106/outputs/revision_v3/exports/博士科研计划书_V3.docx

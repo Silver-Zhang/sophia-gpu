@@ -1,0 +1,14 @@
+{
+  "approved": true,
+  "scope": "用户V3 Goal仅授权新revision_v3生成，V2所有文件与原始Word只读",
+  "baseline_commit": "171f19dcfd2a558972cf3ab8f8f4df85d16f0428",
+  "branch": "revision/rp-v3-targeted-20261106",
+  "original_approval_unchanged": true,
+  "original_approval_value": false,
+  "V2_system_metadata_exception": {
+    "approved": true,
+    "file": ".DS_Store",
+    "source": "用户2026-11-07回复：单列系统元数据差异，继续验收",
+    "policy": "仅该系统元数据差异不计为科研成果变化；保留修订前后哈希及全部差异，不改原始基线，不写回V2"
+  }
+}

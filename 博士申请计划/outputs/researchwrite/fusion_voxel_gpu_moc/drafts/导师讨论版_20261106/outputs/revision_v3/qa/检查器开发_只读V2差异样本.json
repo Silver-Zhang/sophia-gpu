@@ -1,0 +1,27 @@
+[
+  {
+    "kind": "replace",
+    "expected_positions": [
+      143,
+      144
+    ],
+    "actual_positions": [
+      143,
+      144
+    ],
+    "expected": [
+      {
+        "role": "paragraph",
+        "location": "block144",
+        "text": "为区分物理源强与抽样概率,设∫p(x)dx=1,x表示被偏倚的源变量,I(x)为源支持集上的正重要性近似。定义"
+      }
+    ],
+    "actual": [
+      {
+        "role": "paragraph",
+        "location": "word.block144",
+        "text": "为区分物理源强与抽样概率,设∫p(x)dx=1,x表示被偏倚的源变量,I(x)为源支持集上的正重要性近似。定义"
+      }
+    ]
+  }
+]

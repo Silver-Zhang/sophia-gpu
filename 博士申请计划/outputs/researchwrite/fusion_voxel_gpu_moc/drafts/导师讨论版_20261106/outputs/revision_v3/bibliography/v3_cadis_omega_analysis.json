@@ -1,0 +1,131 @@
+{
+  "key": "r44",
+  "analysis_date": "2026-11-07",
+  "source": {
+    "title": "FW/CADIS-Ω: An angle-informed hybrid method for deep-penetration radiation transport",
+    "authors": [
+      "Madicken Munk",
+      "R. N. Slaybaugh",
+      "Tara M. Pandya",
+      "Seth R. Johnson",
+      "T. M. Evans"
+    ],
+    "arxiv": "1612.00793v1",
+    "doi": "10.48550/arXiv.1612.00793",
+    "primary_url": "https://arxiv.org/pdf/1612.00793v1",
+    "identity_url": "https://arxiv.org/abs/1612.00793",
+    "version": "arXiv v1, submitted 2016-12-02; related PHYSOR2016 conference title differs",
+    "access_level": "fresh_official_full_PDF_downloaded; sections4.1/4.2/5 read; Figures1—6/TableI visually inspected",
+    "pdf_pages": 18,
+    "pdf_sha256": "7e16056b80e82e0d550ff2b824ad53f1adae5bb33ea294bd490435718f7ac63f"
+  },
+  "review_independence": "本文件是V3原文专题核验；不复用V2审查结论作为V3通过，未修改正文。",
+  "method": {
+    "definition": "IΩ(r,E)=∫ψ(r,E,Ω)ψ†(r,E,Ω)dΩ / ∫ψ(r,E,Ω)dΩ",
+    "location": "PDF p6 §4.1 Eq(5), pp6—7; p4 Eqs(3a—c)",
+    "meaning": "以正向角分布对伴随贡献加权，生成空间—能量标量重要性；沿用CADIS一致源偏倚/目标权重关系，不显式使用角度权窗。",
+    "implementation": "Denovo保存并输出正向及伴随角通量并后处理Eq(5)，ADVANTG读取所得标量重要性。",
+    "implementation_location": "PDF p7 §4.2"
+  },
+  "benchmark": {
+    "geometry": "混凝土迷宫；真空外边界；10MeV各向同性点源(-75,0,50)cm；10×10×10cm NaI探测器中心(75,-15,50)cm",
+    "location": "PDF p8 §5 and Figure1",
+    "monte_carlo": "MCNP连续能，10^7源粒子，f4径迹长度估计，NaI总反应率响应，能区与Denovo库一致；Figure4把标量通量与ΣT响应函数分开显示。",
+    "deterministic": "Denovo，原文库名27g19n；step-characteristics，QR每卦限4方位×4极角，P3散射展开，135000体素。",
+    "caution": "只按原文保留库名，不自行把其字符次序扩写为中子/光子群数。"
+  },
+  "performance": {
+    "definition": "FOM=1/[计算时间×计分总量平均相对误差的平方]；作者如此定义，但未给独立的逐能群汇总计算伪码。不可直接视为全谱每能区达标时间。",
+    "definition_location": "PDF p7 §5开头；pp8/13—14及TableI",
+    "time_unit": "min",
+    "fom_unit": "min^-1",
+    "table_I": [
+      {
+        "method": "analog",
+        "FOM_MC": 493,
+        "T_MC_min": 64.9,
+        "T_deterministic_min": 0,
+        "FOM_adjusted": 493
+      },
+      {
+        "method": "CADIS",
+        "FOM_MC": 5.1,
+        "T_MC_min": 483.4,
+        "T_deterministic_min": 41.5,
+        "FOM_adjusted": null
+      },
+      {
+        "method": "CADIS-Ω",
+        "FOM_MC": 145,
+        "T_MC_min": 408.9,
+        "T_deterministic_min": 83,
+        "FOM_adjusted": null
+      }
+    ],
+    "time_hardware": "MC：单20核Intel Xeon E5-2670节点；确定论：3GHz Intel Core i7单核。两阶段不同机器，不能称共同平台整链路加速。",
+    "table_discrepancy": "p8正文将analog时间写约64min；采用p13 TableI较精确的64.9min。",
+    "adjusted_boundary": "TableI的CADIS与Ω adjusted FOM是破折号；不填补或冒作原文实测。Ω需正向+伴随两次确定论，CADIS一次。"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "status": "author_method_definition",
+      "claim": "角度信息进入标量重要性的权重，而非新增角度权窗。",
+      "location": "PDF p6 §4.1 Eq(5), p7 §4.2"
+    },
+    {
+      "id": "C2",
+      "status": "author_mechanistic_interpretation_supported_by_map_comparison",
+      "claim": "第26群贡献主要来自孔道出口至探测器的小方向范围，普通伴随图较对称；Ω图保留这类定向传播信息。作者将空气弱散射、低能中子在屏蔽中更易吸收及出界概率，与这种分布联系起来。",
+      "location": "PDF p9末段、p11 Figure5、p13首两段",
+      "energy_range_MeV": [
+        1e-11,
+        1e-08
+      ]
+    },
+    {
+      "id": "C3",
+      "status": "author_mechanistic_interpretation",
+      "claim": "作者认为普通CADIS使不同入射方向获得近似相当的分裂/轮盘投入，而实际到达响应的主要流束来自孔道，增加了低贡献区域追踪；Ω的方向加权减轻这一不匹配。低能区通量及响应截面较高，使该区相对误差强烈影响CADIS FOM。",
+      "location": "PDF p13末段—p14首段；Figures2/4/5"
+    },
+    {
+      "id": "C4",
+      "status": "author_comparative_explanation",
+      "claim": "第11群较易在与屏蔽作用后存活，可由孔道或屏蔽穿出到达探测器，响应场较接近局部各向同性，因此Ω非对称性较弱。这里“较高能”仅相对第26群，不应称其为快中子群。",
+      "location": "PDF p9及p12 Figure6、p13第二段",
+      "energy_range_MeV": [
+        2.9e-05,
+        0.000101
+      ]
+    },
+    {
+      "id": "C5",
+      "status": "reported_results_and_author_qualification",
+      "claim": "Ω低能区误差较CADIS低、某些较高能区略高，能谱误差分布更均匀。analog汇总FOM最高，但若干能区误差仍被作者认为不可接受；未给出所有能区达标的实测时间排序。",
+      "location": "PDF p8末段、p9 Figure2；p14第二段"
+    },
+    {
+      "id": "C6",
+      "status": "author_unresolved_hypothesis",
+      "claim": "部分低能响应差异未达到一倍标准差一致；作者推测中间能区中子数量少、对响应影响小，可能未被VR充分刻画，并明确待进一步研究。不能改称已证明的低统计尾部、罕见高分历史或MC偏差机制。",
+      "location": "PDF p9 Figure2后第二段、p10 Figures3/4"
+    },
+    {
+      "id": "C7",
+      "status": "author_unresolved_geometric_ray_effect_hypothesis",
+      "claim": "本例孔道流束路径与伴随离散射线近垂直，Eq(5)角积分可能使射线伪影软化；正/伴随射线平行可能相互强化，是作者未来情形的推测，未在本算例对照验证。",
+      "location": "PDF p14第三段；Figures5/6"
+    }
+  ],
+  "not_established": [
+    "三组FOM不能证明Ω一定优于直接MC。",
+    "原文没有长历史计数/队列尾部或权窗过度分裂次数统计，不能用其解释本例差值。",
+    "未证明低能不一致的最终原因。",
+    "没有给出一套由完整成本决定的普适最优角度/网格参数。",
+    "不能把Figure5/6不同色标的颜色直接当成相同绝对重要性。"
+  ],
+  "proposal_insight": "应检验正向实际流束与目标伴随贡献在方向和能区上的对应关系，再评价标量权窗引起的统计投入；同时报告响应总量、逐能区RSD及预计算成本。方向重叠/射线取向应作为待验证因素，不预先断言因果。",
+  "suggested_prose_file": "v3_cadis_omega_analysis.md：建议插入段落，供根代理审改",
+  "quotation_note": "英文短引仅在MD中列出，总计11个英文词；JSON不重复引文。"
+}

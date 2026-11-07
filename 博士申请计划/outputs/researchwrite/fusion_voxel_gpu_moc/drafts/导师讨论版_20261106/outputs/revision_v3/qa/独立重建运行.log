@@ -1,0 +1,41 @@
+V3 corpus: 63 identities; 16 new sources; all original 47 covered.
+Wrote six native-table sources (Markdown/CSV/JSON).
+Created 6 SVG/PNG/PDF schematic sets, 480 dpi PNG, live SVG text.
+Assembled 63 cited identities; 9 display equations
+Protected 54 original files; no deleted long passage restored; 23 insertions audited.
+Patched CJK fonts, table headers, reference links and 25 contents entries
+Patched CJK fonts, table headers, reference links and 25 contents entries
+Render 1 : 31 pages; 25 TOC entries
+Render 2 : 31 pages; 25 TOC entries
+V3 Word/PDF generated; all pages require visual inspection before delivery.
+Readable Markdown and 63 actual Word bibliography entries exported.
+Recorded 38 historical dispositions and 2 targeted V3 followups, with evidence gaps explicit.
+Protected 54 original files; no deleted long passage restored; 23 insertions audited.
+{
+  "pages": 31,
+  "references": 63,
+  "new_vs_V2_references": 2,
+  "V2_references": 61,
+  "original_references": 47,
+  "figures": 6,
+  "editable_tables": 6,
+  "native_display_equations": 9,
+  "all_native_math_objects": 65,
+  "toc_entries": 25,
+  "original_protected_files": 54,
+  "comments_addressed": 38,
+  "V2_comments_fully_completed": 36,
+  "V3_targeted_followups_completed": 2,
+  "comments_evidence_limited": [
+    "164",
+    "175"
+  ],
+  "bibliography_order_and_titles_match": true,
+  "no_text_outside_pages": true,
+  "external_hyperlinks": 65,
+  "docx_sha256": "3837d884ea4e6e0cad161d219cd5a8b78435d596fa5d0a28e96bc7fb71d09a0f",
+  "pdf_sha256": "2e0a9504645d9b79e6ad995385313a98779563ee33262b9f972ab17e54a913b8",
+  "visual_QA": "see independent page-by-page report; not inferred by this script"
+}
+Blocks: 393 cells: 196 math: 65 refs: 63 PDF glyph chars: 32273 failures: 0
+Built V3 only. Reinspect every newly rendered page before delivery.

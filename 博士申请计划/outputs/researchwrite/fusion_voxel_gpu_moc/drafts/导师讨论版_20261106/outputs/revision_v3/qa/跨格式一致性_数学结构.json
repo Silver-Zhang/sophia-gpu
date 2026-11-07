@@ -1,0 +1,3149 @@
+[
+  {
+    "occurrence": 1,
+    "latex": "g",
+    "expected_AST": [
+      "g"
+    ],
+    "actual_AST": [
+      "g"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 2,
+    "latex": "\\psi_g",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "g"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "g"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 3,
+    "latex": "\\boldsymbol\\Omega\\cdot\\nabla\\psi_g+\\Sigma_{t,g}\\psi_g=Q_g[\\psi]+q_g.",
+    "expected_AST": [
+      "Ω",
+      "·",
+      "∇",
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "+",
+      {
+        "sub": [
+          [
+            "Σ"
+          ],
+          [
+            "t",
+            ",",
+            "g"
+          ]
+        ]
+      },
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "=",
+      {
+        "sub": [
+          [
+            "Q"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "[",
+      "ψ",
+      "]",
+      "+",
+      {
+        "sub": [
+          [
+            "q"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "."
+    ],
+    "actual_AST": [
+      "Ω",
+      "·",
+      "∇",
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "+",
+      {
+        "sub": [
+          [
+            "Σ"
+          ],
+          [
+            "t",
+            ",",
+            "g"
+          ]
+        ]
+      },
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "=",
+      {
+        "sub": [
+          [
+            "Q"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "[",
+      "ψ",
+      "]",
+      "+",
+      {
+        "sub": [
+          [
+            "q"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "."
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 4,
+    "latex": "\\boldsymbol\\Omega",
+    "expected_AST": [
+      "Ω"
+    ],
+    "actual_AST": [
+      "Ω"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 5,
+    "latex": "\\Sigma_{t,g}",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "Σ"
+          ],
+          [
+            "t",
+            ",",
+            "g"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "Σ"
+          ],
+          [
+            "t",
+            ",",
+            "g"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 6,
+    "latex": "q_g",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "q"
+          ],
+          [
+            "g"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "q"
+          ],
+          [
+            "g"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 7,
+    "latex": "Q_g",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "Q"
+          ],
+          [
+            "g"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "Q"
+          ],
+          [
+            "g"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 8,
+    "latex": "V_D",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "V"
+          ],
+          [
+            "D"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "V"
+          ],
+          [
+            "D"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 9,
+    "latex": "R=\\sum_g{\\int_{V_D}{d_g(\\mathbf r)\\phi_g(\\mathbf r)\\,\\mathrm dV}},\\qquad\\phi_g=\\int_{4\\pi}{\\psi_g\\,\\mathrm d\\Omega}.",
+    "expected_AST": [
+      "R",
+      "=",
+      {
+        "operator": "∑",
+        "sub": [
+          "g"
+        ],
+        "sup": []
+      },
+      {
+        "operator": "∫",
+        "sub": [
+          {
+            "sub": [
+              [
+                "V"
+              ],
+              [
+                "D"
+              ]
+            ]
+          }
+        ],
+        "sup": []
+      },
+      {
+        "sub": [
+          [
+            "d"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "(",
+      "r",
+      ")",
+      {
+        "sub": [
+          [
+            "φ"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "(",
+      "r",
+      ")",
+      "d",
+      "V",
+      ",",
+      {
+        "sub": [
+          [
+            "φ"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "=",
+      {
+        "operator": "∫",
+        "sub": [
+          "4",
+          "π"
+        ],
+        "sup": []
+      },
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "d",
+      "Ω",
+      "."
+    ],
+    "actual_AST": [
+      "R",
+      "=",
+      {
+        "operator": "∑",
+        "sub": [
+          "g"
+        ],
+        "sup": []
+      },
+      {
+        "operator": "∫",
+        "sub": [
+          {
+            "sub": [
+              [
+                "V"
+              ],
+              [
+                "D"
+              ]
+            ]
+          }
+        ],
+        "sup": []
+      },
+      {
+        "sub": [
+          [
+            "d"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "(",
+      "r",
+      ")",
+      {
+        "sub": [
+          [
+            "φ"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "(",
+      "r",
+      ")",
+      "d",
+      "V",
+      ",",
+      {
+        "sub": [
+          [
+            "φ"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "=",
+      {
+        "operator": "∫",
+        "sub": [
+          "4",
+          "π"
+        ],
+        "sup": []
+      },
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "g"
+          ]
+        ]
+      },
+      "d",
+      "Ω",
+      "."
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 10,
+    "latex": "d_g",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "d"
+          ],
+          [
+            "g"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "d"
+          ],
+          [
+            "g"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 11,
+    "latex": "Q",
+    "expected_AST": [
+      "Q"
+    ],
+    "actual_AST": [
+      "Q"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 12,
+    "latex": "\\psi_{\\mathrm{out}}=\\psi_{\\mathrm{in}}e^{-\\Sigma_t l}+\\frac{Q}{\\Sigma_t}(1-e^{-\\Sigma_t l})",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "o",
+            "u",
+            "t"
+          ]
+        ]
+      },
+      "=",
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "i",
+            "n"
+          ]
+        ]
+      },
+      {
+        "sup": [
+          [
+            "e"
+          ],
+          [
+            "-",
+            {
+              "sub": [
+                [
+                  "Σ"
+                ],
+                [
+                  "t"
+                ]
+              ]
+            },
+            "l"
+          ]
+        ]
+      },
+      "+",
+      {
+        "fraction": [
+          [
+            "Q"
+          ],
+          [
+            {
+              "sub": [
+                [
+                  "Σ"
+                ],
+                [
+                  "t"
+                ]
+              ]
+            }
+          ]
+        ]
+      },
+      "(",
+      "1",
+      "-",
+      {
+        "sup": [
+          [
+            "e"
+          ],
+          [
+            "-",
+            {
+              "sub": [
+                [
+                  "Σ"
+                ],
+                [
+                  "t"
+                ]
+              ]
+            },
+            "l"
+          ]
+        ]
+      },
+      ")"
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "o",
+            "u",
+            "t"
+          ]
+        ]
+      },
+      "=",
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "i",
+            "n"
+          ]
+        ]
+      },
+      {
+        "sup": [
+          [
+            "e"
+          ],
+          [
+            "-",
+            {
+              "sub": [
+                [
+                  "Σ"
+                ],
+                [
+                  "t"
+                ]
+              ]
+            },
+            "l"
+          ]
+        ]
+      },
+      "+",
+      {
+        "fraction": [
+          [
+            "Q"
+          ],
+          [
+            {
+              "sub": [
+                [
+                  "Σ"
+                ],
+                [
+                  "t"
+                ]
+              ]
+            }
+          ]
+        ]
+      },
+      "(",
+      "1",
+      "-",
+      {
+        "sup": [
+          [
+            "e"
+          ],
+          [
+            "-",
+            {
+              "sub": [
+                [
+                  "Σ"
+                ],
+                [
+                  "t"
+                ]
+              ]
+            },
+            "l"
+          ]
+        ]
+      },
+      ")"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 13,
+    "latex": "l",
+    "expected_AST": [
+      "l"
+    ],
+    "actual_AST": [
+      "l"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 14,
+    "latex": "\\Sigma_t>0",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "Σ"
+          ],
+          [
+            "t"
+          ]
+        ]
+      },
+      ">",
+      "0"
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "Σ"
+          ],
+          [
+            "t"
+          ]
+        ]
+      },
+      ">",
+      "0"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 15,
+    "latex": "\\Sigma_t\\to0",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "Σ"
+          ],
+          [
+            "t"
+          ]
+        ]
+      },
+      "→",
+      "0"
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "Σ"
+          ],
+          [
+            "t"
+          ]
+        ]
+      },
+      "→",
+      "0"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 16,
+    "latex": "\\psi_{\\mathrm{out}}=\\psi_{\\mathrm{in}}+Ql",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "o",
+            "u",
+            "t"
+          ]
+        ]
+      },
+      "=",
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "i",
+            "n"
+          ]
+        ]
+      },
+      "+",
+      "Q",
+      "l"
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "o",
+            "u",
+            "t"
+          ]
+        ]
+      },
+      "=",
+      {
+        "sub": [
+          [
+            "ψ"
+          ],
+          [
+            "i",
+            "n"
+          ]
+        ]
+      },
+      "+",
+      "Q",
+      "l"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 17,
+    "latex": "h(p)",
+    "expected_AST": [
+      "h",
+      "(",
+      "p",
+      ")"
+    ],
+    "actual_AST": [
+      "h",
+      "(",
+      "p",
+      ")"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 18,
+    "latex": "S_N",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "S"
+          ],
+          [
+            "N"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "S"
+          ],
+          [
+            "N"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 19,
+    "latex": "S_N",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "S"
+          ],
+          [
+            "N"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "S"
+          ],
+          [
+            "N"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 20,
+    "latex": "h(p)",
+    "expected_AST": [
+      "h",
+      "(",
+      "p",
+      ")"
+    ],
+    "actual_AST": [
+      "h",
+      "(",
+      "p",
+      ")"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 21,
+    "latex": "S_N",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "S"
+          ],
+          [
+            "N"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "S"
+          ],
+          [
+            "N"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 22,
+    "latex": "S_N",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "S"
+          ],
+          [
+            "N"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "S"
+          ],
+          [
+            "N"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 23,
+    "latex": "S_N",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "S"
+          ],
+          [
+            "N"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "S"
+          ],
+          [
+            "N"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 24,
+    "latex": "Q_1",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "Q"
+          ],
+          [
+            "1"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "Q"
+          ],
+          [
+            "1"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 25,
+    "latex": "128\\times128",
+    "expected_AST": [
+      "1",
+      "2",
+      "8",
+      "×",
+      "1",
+      "2",
+      "8"
+    ],
+    "actual_AST": [
+      "1",
+      "2",
+      "8",
+      "×",
+      "1",
+      "2",
+      "8"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 26,
+    "latex": "8\\times8",
+    "expected_AST": [
+      "8",
+      "×",
+      "8"
+    ],
+    "actual_AST": [
+      "8",
+      "×",
+      "8"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 27,
+    "latex": "32\\times32",
+    "expected_AST": [
+      "3",
+      "2",
+      "×",
+      "3",
+      "2"
+    ],
+    "actual_AST": [
+      "3",
+      "2",
+      "×",
+      "3",
+      "2"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 28,
+    "latex": "S_N",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "S"
+          ],
+          [
+            "N"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "S"
+          ],
+          [
+            "N"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 29,
+    "latex": "A",
+    "expected_AST": [
+      "A"
+    ],
+    "actual_AST": [
+      "A"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 30,
+    "latex": "W",
+    "expected_AST": [
+      "W"
+    ],
+    "actual_AST": [
+      "W"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 31,
+    "latex": "A^\\dagger=W^{-1}A^\\mathsf{T}W,\\qquad\\langle Au,v\\rangle_W=\\langle u,A^\\dagger v\\rangle_W.",
+    "expected_AST": [
+      {
+        "sup": [
+          [
+            "A"
+          ],
+          [
+            "†"
+          ]
+        ]
+      },
+      "=",
+      {
+        "sup": [
+          [
+            "W"
+          ],
+          [
+            "-",
+            "1"
+          ]
+        ]
+      },
+      {
+        "sup": [
+          [
+            "A"
+          ],
+          [
+            "T"
+          ]
+        ]
+      },
+      "W",
+      ",",
+      "⟨",
+      "A",
+      "u",
+      ",",
+      "v",
+      {
+        "sub": [
+          [
+            "⟩"
+          ],
+          [
+            "W"
+          ]
+        ]
+      },
+      "=",
+      "⟨",
+      "u",
+      ",",
+      {
+        "sup": [
+          [
+            "A"
+          ],
+          [
+            "†"
+          ]
+        ]
+      },
+      "v",
+      {
+        "sub": [
+          [
+            "⟩"
+          ],
+          [
+            "W"
+          ]
+        ]
+      },
+      "."
+    ],
+    "actual_AST": [
+      {
+        "sup": [
+          [
+            "A"
+          ],
+          [
+            "†"
+          ]
+        ]
+      },
+      "=",
+      {
+        "sup": [
+          [
+            "W"
+          ],
+          [
+            "-",
+            "1"
+          ]
+        ]
+      },
+      {
+        "sup": [
+          [
+            "A"
+          ],
+          [
+            "T"
+          ]
+        ]
+      },
+      "W",
+      ",",
+      "⟨",
+      "A",
+      "u",
+      ",",
+      "v",
+      {
+        "sub": [
+          [
+            "⟩"
+          ],
+          [
+            "W"
+          ]
+        ]
+      },
+      "=",
+      "⟨",
+      "u",
+      ",",
+      {
+        "sup": [
+          [
+            "A"
+          ],
+          [
+            "†"
+          ]
+        ]
+      },
+      "v",
+      {
+        "sub": [
+          [
+            "⟩"
+          ],
+          [
+            "W"
+          ]
+        ]
+      },
+      "."
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 32,
+    "latex": "\\mathcal L",
+    "expected_AST": [
+      "L"
+    ],
+    "actual_AST": [
+      "L"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 33,
+    "latex": "q",
+    "expected_AST": [
+      "q"
+    ],
+    "actual_AST": [
+      "q"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 34,
+    "latex": "d",
+    "expected_AST": [
+      "d"
+    ],
+    "actual_AST": [
+      "d"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 35,
+    "latex": "\\mathcal L\\psi=q,\\qquad\\mathcal L^\\dagger\\psi^\\dagger=d,\\qquad R=\\langle d,\\psi\\rangle=\\langle q,\\psi^\\dagger\\rangle.",
+    "expected_AST": [
+      "L",
+      "ψ",
+      "=",
+      "q",
+      ",",
+      {
+        "sup": [
+          [
+            "L"
+          ],
+          [
+            "†"
+          ]
+        ]
+      },
+      {
+        "sup": [
+          [
+            "ψ"
+          ],
+          [
+            "†"
+          ]
+        ]
+      },
+      "=",
+      "d",
+      ",",
+      "R",
+      "=",
+      "⟨",
+      "d",
+      ",",
+      "ψ",
+      "⟩",
+      "=",
+      "⟨",
+      "q",
+      ",",
+      {
+        "sup": [
+          [
+            "ψ"
+          ],
+          [
+            "†"
+          ]
+        ]
+      },
+      "⟩",
+      "."
+    ],
+    "actual_AST": [
+      "L",
+      "ψ",
+      "=",
+      "q",
+      ",",
+      {
+        "sup": [
+          [
+            "L"
+          ],
+          [
+            "†"
+          ]
+        ]
+      },
+      {
+        "sup": [
+          [
+            "ψ"
+          ],
+          [
+            "†"
+          ]
+        ]
+      },
+      "=",
+      "d",
+      ",",
+      "R",
+      "=",
+      "⟨",
+      "d",
+      ",",
+      "ψ",
+      "⟩",
+      "=",
+      "⟨",
+      "q",
+      ",",
+      {
+        "sup": [
+          [
+            "ψ"
+          ],
+          [
+            "†"
+          ]
+        ]
+      },
+      "⟩",
+      "."
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 36,
+    "latex": "\\psi^\\dagger",
+    "expected_AST": [
+      {
+        "sup": [
+          [
+            "ψ"
+          ],
+          [
+            "†"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sup": [
+          [
+            "ψ"
+          ],
+          [
+            "†"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 37,
+    "latex": "\\int{p(x)\\mathrm dx}=1",
+    "expected_AST": [
+      {
+        "operator": "∫",
+        "sub": [],
+        "sup": []
+      },
+      "p",
+      "(",
+      "x",
+      ")",
+      "d",
+      "x",
+      "=",
+      "1"
+    ],
+    "actual_AST": [
+      {
+        "operator": "∫",
+        "sub": [],
+        "sup": []
+      },
+      "p",
+      "(",
+      "x",
+      ")",
+      "d",
+      "x",
+      "=",
+      "1"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 38,
+    "latex": "x",
+    "expected_AST": [
+      "x"
+    ],
+    "actual_AST": [
+      "x"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 39,
+    "latex": "I(x)",
+    "expected_AST": [
+      "I",
+      "(",
+      "x",
+      ")"
+    ],
+    "actual_AST": [
+      "I",
+      "(",
+      "x",
+      ")"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 40,
+    "latex": "C=\\int{p(x)I(x)\\,\\mathrm dx},\\qquad\\widehat p(x)=\\frac{p(x)I(x)}{C},\\qquad w_0(x)=\\frac{p(x)}{\\widehat p(x)}=\\frac{C}{I(x)}.",
+    "expected_AST": [
+      "C",
+      "=",
+      {
+        "operator": "∫",
+        "sub": [],
+        "sup": []
+      },
+      "p",
+      "(",
+      "x",
+      ")",
+      "I",
+      "(",
+      "x",
+      ")",
+      "d",
+      "x",
+      ",",
+      {
+        "accent": [
+          [
+            "p"
+          ],
+          [
+            "^"
+          ]
+        ]
+      },
+      "(",
+      "x",
+      ")",
+      "=",
+      {
+        "fraction": [
+          [
+            "p",
+            "(",
+            "x",
+            ")",
+            "I",
+            "(",
+            "x",
+            ")"
+          ],
+          [
+            "C"
+          ]
+        ]
+      },
+      ",",
+      {
+        "sub": [
+          [
+            "w"
+          ],
+          [
+            "0"
+          ]
+        ]
+      },
+      "(",
+      "x",
+      ")",
+      "=",
+      {
+        "fraction": [
+          [
+            "p",
+            "(",
+            "x",
+            ")"
+          ],
+          [
+            {
+              "accent": [
+                [
+                  "p"
+                ],
+                [
+                  "^"
+                ]
+              ]
+            },
+            "(",
+            "x",
+            ")"
+          ]
+        ]
+      },
+      "=",
+      {
+        "fraction": [
+          [
+            "C"
+          ],
+          [
+            "I",
+            "(",
+            "x",
+            ")"
+          ]
+        ]
+      },
+      "."
+    ],
+    "actual_AST": [
+      "C",
+      "=",
+      {
+        "operator": "∫",
+        "sub": [],
+        "sup": []
+      },
+      "p",
+      "(",
+      "x",
+      ")",
+      "I",
+      "(",
+      "x",
+      ")",
+      "d",
+      "x",
+      ",",
+      {
+        "accent": [
+          [
+            "p"
+          ],
+          [
+            "^"
+          ]
+        ]
+      },
+      "(",
+      "x",
+      ")",
+      "=",
+      {
+        "fraction": [
+          [
+            "p",
+            "(",
+            "x",
+            ")",
+            "I",
+            "(",
+            "x",
+            ")"
+          ],
+          [
+            "C"
+          ]
+        ]
+      },
+      ",",
+      {
+        "sub": [
+          [
+            "w"
+          ],
+          [
+            "0"
+          ]
+        ]
+      },
+      "(",
+      "x",
+      ")",
+      "=",
+      {
+        "fraction": [
+          [
+            "p",
+            "(",
+            "x",
+            ")"
+          ],
+          [
+            {
+              "accent": [
+                [
+                  "p"
+                ],
+                [
+                  "^"
+                ]
+              ]
+            },
+            "(",
+            "x",
+            ")"
+          ]
+        ]
+      },
+      "=",
+      {
+        "fraction": [
+          [
+            "C"
+          ],
+          [
+            "I",
+            "(",
+            "x",
+            ")"
+          ]
+        ]
+      },
+      "."
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 41,
+    "latex": "\\widehat p",
+    "expected_AST": [
+      {
+        "accent": [
+          [
+            "p"
+          ],
+          [
+            "^"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "accent": [
+          [
+            "p"
+          ],
+          [
+            "^"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 42,
+    "latex": "w_0",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "w"
+          ],
+          [
+            "0"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "w"
+          ],
+          [
+            "0"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 43,
+    "latex": "I",
+    "expected_AST": [
+      "I"
+    ],
+    "actual_AST": [
+      "I"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 44,
+    "latex": "d_i",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "d"
+          ],
+          [
+            "i"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "d"
+          ],
+          [
+            "i"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 45,
+    "latex": "\\widetilde R_i",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            {
+              "accent": [
+                [
+                  "R"
+                ],
+                [
+                  "~"
+                ]
+              ]
+            }
+          ],
+          [
+            "i"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            {
+              "accent": [
+                [
+                  "R"
+                ],
+                [
+                  "~"
+                ]
+              ]
+            }
+          ],
+          [
+            "i"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 46,
+    "latex": "\\beta_i",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "β"
+          ],
+          [
+            "i"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "β"
+          ],
+          [
+            "i"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 47,
+    "latex": "\\sum_i{\\beta_iR_i/\\widetilde R_i}",
+    "expected_AST": [
+      {
+        "operator": "∑",
+        "sub": [
+          "i"
+        ],
+        "sup": []
+      },
+      {
+        "sub": [
+          [
+            "β"
+          ],
+          [
+            "i"
+          ]
+        ]
+      },
+      {
+        "sub": [
+          [
+            "R"
+          ],
+          [
+            "i"
+          ]
+        ]
+      },
+      "/",
+      {
+        "sub": [
+          [
+            {
+              "accent": [
+                [
+                  "R"
+                ],
+                [
+                  "~"
+                ]
+              ]
+            }
+          ],
+          [
+            "i"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "operator": "∑",
+        "sub": [
+          "i"
+        ],
+        "sup": []
+      },
+      {
+        "sub": [
+          [
+            "β"
+          ],
+          [
+            "i"
+          ]
+        ]
+      },
+      {
+        "sub": [
+          [
+            "R"
+          ],
+          [
+            "i"
+          ]
+        ]
+      },
+      "/",
+      {
+        "sub": [
+          [
+            {
+              "accent": [
+                [
+                  "R"
+                ],
+                [
+                  "~"
+                ]
+              ]
+            }
+          ],
+          [
+            "i"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 48,
+    "latex": "d_{\\mathrm{FW}}=\\sum_{i=1}^{N_D}\\frac{\\beta_i}{\\widetilde R_i}d_i.",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "d"
+          ],
+          [
+            "F",
+            "W"
+          ]
+        ]
+      },
+      "=",
+      {
+        "operator": "∑",
+        "sub": [
+          "i",
+          "=",
+          "1"
+        ],
+        "sup": [
+          {
+            "sub": [
+              [
+                "N"
+              ],
+              [
+                "D"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "fraction": [
+          [
+            {
+              "sub": [
+                [
+                  "β"
+                ],
+                [
+                  "i"
+                ]
+              ]
+            }
+          ],
+          [
+            {
+              "sub": [
+                [
+                  {
+                    "accent": [
+                      [
+                        "R"
+                      ],
+                      [
+                        "~"
+                      ]
+                    ]
+                  }
+                ],
+                [
+                  "i"
+                ]
+              ]
+            }
+          ]
+        ]
+      },
+      {
+        "sub": [
+          [
+            "d"
+          ],
+          [
+            "i"
+          ]
+        ]
+      },
+      "."
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "d"
+          ],
+          [
+            "F",
+            "W"
+          ]
+        ]
+      },
+      "=",
+      {
+        "operator": "∑",
+        "sub": [
+          "i",
+          "=",
+          "1"
+        ],
+        "sup": [
+          {
+            "sub": [
+              [
+                "N"
+              ],
+              [
+                "D"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "fraction": [
+          [
+            {
+              "sub": [
+                [
+                  "β"
+                ],
+                [
+                  "i"
+                ]
+              ]
+            }
+          ],
+          [
+            {
+              "sub": [
+                [
+                  {
+                    "accent": [
+                      [
+                        "R"
+                      ],
+                      [
+                        "~"
+                      ]
+                    ]
+                  }
+                ],
+                [
+                  "i"
+                ]
+              ]
+            }
+          ]
+        ]
+      },
+      {
+        "sub": [
+          [
+            "d"
+          ],
+          [
+            "i"
+          ]
+        ]
+      },
+      "."
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 49,
+    "latex": "I_{\\Omega}(\\mathbf r,E)=\\frac{\\int_{4\\pi}{\\psi(\\mathbf r,E,\\boldsymbol\\Omega)\\psi^\\dagger(\\mathbf r,E,\\boldsymbol\\Omega)\\,\\mathrm d\\Omega}}{\\int_{4\\pi}{\\psi(\\mathbf r,E,\\boldsymbol\\Omega)\\,\\mathrm d\\Omega}}.",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "I"
+          ],
+          [
+            "Ω"
+          ]
+        ]
+      },
+      "(",
+      "r",
+      ",",
+      "E",
+      ")",
+      "=",
+      {
+        "fraction": [
+          [
+            {
+              "operator": "∫",
+              "sub": [
+                "4",
+                "π"
+              ],
+              "sup": []
+            },
+            "ψ",
+            "(",
+            "r",
+            ",",
+            "E",
+            ",",
+            "Ω",
+            ")",
+            {
+              "sup": [
+                [
+                  "ψ"
+                ],
+                [
+                  "†"
+                ]
+              ]
+            },
+            "(",
+            "r",
+            ",",
+            "E",
+            ",",
+            "Ω",
+            ")",
+            "d",
+            "Ω"
+          ],
+          [
+            {
+              "operator": "∫",
+              "sub": [
+                "4",
+                "π"
+              ],
+              "sup": []
+            },
+            "ψ",
+            "(",
+            "r",
+            ",",
+            "E",
+            ",",
+            "Ω",
+            ")",
+            "d",
+            "Ω"
+          ]
+        ]
+      },
+      "."
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "I"
+          ],
+          [
+            "Ω"
+          ]
+        ]
+      },
+      "(",
+      "r",
+      ",",
+      "E",
+      ")",
+      "=",
+      {
+        "fraction": [
+          [
+            {
+              "operator": "∫",
+              "sub": [
+                "4",
+                "π"
+              ],
+              "sup": []
+            },
+            "ψ",
+            "(",
+            "r",
+            ",",
+            "E",
+            ",",
+            "Ω",
+            ")",
+            {
+              "sup": [
+                [
+                  "ψ"
+                ],
+                [
+                  "†"
+                ]
+              ]
+            },
+            "(",
+            "r",
+            ",",
+            "E",
+            ",",
+            "Ω",
+            ")",
+            "d",
+            "Ω"
+          ],
+          [
+            {
+              "operator": "∫",
+              "sub": [
+                "4",
+                "π"
+              ],
+              "sup": []
+            },
+            "ψ",
+            "(",
+            "r",
+            ",",
+            "E",
+            ",",
+            "Ω",
+            ")",
+            "d",
+            "Ω"
+          ]
+        ]
+      },
+      "."
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 50,
+    "latex": "10^{-11}",
+    "expected_AST": [
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "-",
+            "1",
+            "1"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "-",
+            "1",
+            "1"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 51,
+    "latex": "10^{-8}",
+    "expected_AST": [
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "-",
+            "8"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "-",
+            "8"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 52,
+    "latex": "2.9\\times10^{-5}",
+    "expected_AST": [
+      "2",
+      ".",
+      "9",
+      "×",
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "-",
+            "5"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      "2",
+      ".",
+      "9",
+      "×",
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "-",
+            "5"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 53,
+    "latex": "1.01\\times10^{-4}",
+    "expected_AST": [
+      "1",
+      ".",
+      "0",
+      "1",
+      "×",
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "-",
+            "4"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      "1",
+      ".",
+      "0",
+      "1",
+      "×",
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "-",
+            "4"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 54,
+    "latex": "M",
+    "expected_AST": [
+      "M"
+    ],
+    "actual_AST": [
+      "M"
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 55,
+    "latex": "M=10^5",
+    "expected_AST": [
+      "M",
+      "=",
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "5"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      "M",
+      "=",
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "5"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 56,
+    "latex": "M=10^9",
+    "expected_AST": [
+      "M",
+      "=",
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "9"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      "M",
+      "=",
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "9"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 57,
+    "latex": "\\mathrm{FOM}_{\\mathrm{MC}}=\\frac{1}{\\mathrm{RSD}^{2}T_{\\mathrm{MC}}},\\qquad T_{\\mathrm{all}}=T_{\\mathrm{prep}}+T_{\\mathrm{det}}+T_{\\mathrm{WW}}+T_{\\mathrm{MC}}+T_{\\mathrm{IO}}.",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "F",
+            "O",
+            "M"
+          ],
+          [
+            "M",
+            "C"
+          ]
+        ]
+      },
+      "=",
+      {
+        "fraction": [
+          [
+            "1"
+          ],
+          [
+            {
+              "sup": [
+                [
+                  "R",
+                  "S",
+                  "D"
+                ],
+                [
+                  "2"
+                ]
+              ]
+            },
+            {
+              "sub": [
+                [
+                  "T"
+                ],
+                [
+                  "M",
+                  "C"
+                ]
+              ]
+            }
+          ]
+        ]
+      },
+      ",",
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "a",
+            "l",
+            "l"
+          ]
+        ]
+      },
+      "=",
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "p",
+            "r",
+            "e",
+            "p"
+          ]
+        ]
+      },
+      "+",
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "d",
+            "e",
+            "t"
+          ]
+        ]
+      },
+      "+",
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "W",
+            "W"
+          ]
+        ]
+      },
+      "+",
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "M",
+            "C"
+          ]
+        ]
+      },
+      "+",
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "I",
+            "O"
+          ]
+        ]
+      },
+      "."
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "F",
+            "O",
+            "M"
+          ],
+          [
+            "M",
+            "C"
+          ]
+        ]
+      },
+      "=",
+      {
+        "fraction": [
+          [
+            "1"
+          ],
+          [
+            {
+              "sup": [
+                [
+                  "R",
+                  "S",
+                  "D"
+                ],
+                [
+                  "2"
+                ]
+              ]
+            },
+            {
+              "sub": [
+                [
+                  "T"
+                ],
+                [
+                  "M",
+                  "C"
+                ]
+              ]
+            }
+          ]
+        ]
+      },
+      ",",
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "a",
+            "l",
+            "l"
+          ]
+        ]
+      },
+      "=",
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "p",
+            "r",
+            "e",
+            "p"
+          ]
+        ]
+      },
+      "+",
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "d",
+            "e",
+            "t"
+          ]
+        ]
+      },
+      "+",
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "W",
+            "W"
+          ]
+        ]
+      },
+      "+",
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "M",
+            "C"
+          ]
+        ]
+      },
+      "+",
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "I",
+            "O"
+          ]
+        ]
+      },
+      "."
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 58,
+    "latex": "T_{\\mathrm{prep}}",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "p",
+            "r",
+            "e",
+            "p"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "p",
+            "r",
+            "e",
+            "p"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 59,
+    "latex": "T_{\\mathrm{det}}",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "d",
+            "e",
+            "t"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "d",
+            "e",
+            "t"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 60,
+    "latex": "T_{\\mathrm{WW}}",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "W",
+            "W"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "W",
+            "W"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 61,
+    "latex": "T_{\\mathrm{IO}}",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "I",
+            "O"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "T"
+          ],
+          [
+            "I",
+            "O"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 62,
+    "latex": "2.1\\times10^4",
+    "expected_AST": [
+      "2",
+      ".",
+      "1",
+      "×",
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "4"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      "2",
+      ".",
+      "1",
+      "×",
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "4"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 63,
+    "latex": "P_3",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "P"
+          ],
+          [
+            "3"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "P"
+          ],
+          [
+            "3"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 64,
+    "latex": "2.1\\times10^4",
+    "expected_AST": [
+      "2",
+      ".",
+      "1",
+      "×",
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "4"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      "2",
+      ".",
+      "1",
+      "×",
+      {
+        "sup": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "4"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  },
+  {
+    "occurrence": 65,
+    "latex": "S_N",
+    "expected_AST": [
+      {
+        "sub": [
+          [
+            "S"
+          ],
+          [
+            "N"
+          ]
+        ]
+      }
+    ],
+    "actual_AST": [
+      {
+        "sub": [
+          [
+            "S"
+          ],
+          [
+            "N"
+          ]
+        ]
+      }
+    ],
+    "match": true
+  }
+]

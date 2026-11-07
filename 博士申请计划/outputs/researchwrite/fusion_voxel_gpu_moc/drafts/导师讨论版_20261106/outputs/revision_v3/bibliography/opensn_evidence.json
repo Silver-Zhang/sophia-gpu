@@ -1,0 +1,187 @@
+{
+  "key": "new_opensn2026",
+  "authors": [
+    "David Andrs",
+    "Zachary Hardy",
+    "Daryl Hawkins",
+    "Jim Morel",
+    "Dinh Quoc Dang Nguyen",
+    "Jean C. Ragusa"
+  ],
+  "title": "OpenSn: A massively parallel, open-source simulation environment for discrete ordinates radiation transport",
+  "doi": "10.1016/j.cpc.2025.110001",
+  "year": 2026,
+  "venue": "Computer Physics Communications 320:110001 (March 2026)",
+  "primary_url": "https://doi.org/10.1016/j.cpc.2025.110001",
+  "method": "multigroup SN，PWLD/DGFEM空间离散，Cartesian离散伴随，DAG并行扫掠；现行GPU AAH/CBC",
+  "object": "论文为确定论中性粒子稳态、本征值及伴随；本轮专项检查当前代码GPU+伴随组合",
+  "hardware": {
+    "gpu_model": null,
+    "gpu_count": null,
+    "cpu_model": null,
+    "note": "本轮没有运行GPU或获取该组合硬件实测"
+  },
+  "baseline": "未发现GPU伴随相对CPU的实测对照；现有GPU parity用例是正向",
+  "benchmark": "当前组合可参数化路径：deterministic_sweeps.py case=adjoint/use_gpus=True；该组合未注册进tests.json",
+  "result": {
+    "paper_claim": "Program Summary明确GPU acceleration is under development，不能将2026-11现行实现反写为论文已经验证GPU。",
+    "source_level_inference": "在同一Cartesian/standard角算子配置中，代码可将伴随转置S/F生成的源矩传入GPU扫掠分支；这是可追踪的组合执行路径，不只是两个选项的并列。",
+    "registered_combined_regression_found": false,
+    "gpu_registered_jobs_scanned": 42,
+    "transport_adjoint_registered_jobs": 29,
+    "transport_adjoint_requires_gpu_jobs": 0,
+    "gpu_adjoint_speedup": null,
+    "actual_execution_performed": false
+  },
+  "原文位置": "论文出版社Program Summary；官方现行文档§§11.7.2—11.7.3；下列固定SHA代码与测试定位",
+  "insight": "伴随源在主机依模式取转置散射/裂变矩阵；GPU扫掠消费同一源矩镜像。因此实现已有耦合入口，但正确性、角通量方向和响应恒等式仍需组合回归验证。",
+  "access_level": "publisher_program_summary_metadata_and_official_source_static_audit",
+  "version": {
+    "repository": "https://github.com/Open-Sn/opensn",
+    "branch": "main",
+    "sha": "f903a0d71cb8d130dc104f85d9d9ae66fd79146b",
+    "commit_utc": "2026-11-06T05:16:24Z",
+    "version_txt": "1.0.1",
+    "access_date": "2026-11-06",
+    "snapshot_note": "SHA来自GitHub commit API；按该SHA下载官方源码快照，非可漂移main链接。未将快照提交。"
+  },
+  "documentation_url": "https://open-sn.github.io/opensn/userguide/discrete_ordinates_problems.html",
+  "metadata_sources": [
+    "https://api.crossref.org/works/10.1016/j.cpc.2025.110001",
+    "https://www.sciencedirect.com/science/article/pii/S0010465525005028",
+    "https://open-sn.github.io/opensn/"
+  ],
+  "source_locations": [
+    {
+      "path": "modules/linear_boltzmann_solvers/lbs_problem/lbs_problem.cc",
+      "lines": [
+        1035,
+        1066
+      ],
+      "url": "https://github.com/Open-Sn/opensn/blob/f903a0d71cb8d130dc104f85d9d9ae66fd79146b/modules/linear_boltzmann_solvers/lbs_problem/lbs_problem.cc#L1035",
+      "claim": "伴随检查Cartesian、standard角算子和等权反向方向，拒绝时间依赖；未排斥use_gpus。"
+    },
+    {
+      "path": "modules/linear_boltzmann_solvers/lbs_problem/lbs_problem.cc",
+      "lines": [
+        1177,
+        1187
+      ],
+      "url": "https://github.com/Open-Sn/opensn/blob/f903a0d71cb8d130dc104f85d9d9ae66fd79146b/modules/linear_boltzmann_solvers/lbs_problem/lbs_problem.cc#L1177",
+      "claim": "InitializeMaterials为伴随建立转置截面。"
+    },
+    {
+      "path": "modules/linear_boltzmann_solvers/discrete_ordinates_problem/source_functions/source_function.cc",
+      "lines": [
+        51,
+        66
+      ],
+      "url": "https://github.com/Open-Sn/opensn/blob/f903a0d71cb8d130dc104f85d9d9ae66fd79146b/modules/linear_boltzmann_solvers/discrete_ordinates_problem/source_functions/source_function.cc#L51",
+      "claim": "依问题伴随标志读取GetTransferMatrices/GetProductionMatrix。"
+    },
+    {
+      "path": "modules/linear_boltzmann_solvers/discrete_ordinates_problem/discrete_ordinates_problem.cu",
+      "lines": [
+        12,
+        22
+      ],
+      "url": "https://github.com/Open-Sn/opensn/blob/f903a0d71cb8d130dc104f85d9d9ae66fd79146b/modules/linear_boltzmann_solvers/discrete_ordinates_problem/discrete_ordinates_problem.cu#L12",
+      "claim": "CopyPhiAndSrcToDevice将源矩复制到GPU。"
+    },
+    {
+      "path": "modules/linear_boltzmann_solvers/discrete_ordinates_problem/sweep/discrete_ordinates_sweep_construction.cc",
+      "lines": [
+        253,
+        276
+      ],
+      "url": "https://github.com/Open-Sn/opensn/blob/f903a0d71cb8d130dc104f85d9d9ae66fd79146b/modules/linear_boltzmann_solvers/discrete_ordinates_problem/sweep/discrete_ordinates_sweep_construction.cc#L253",
+      "claim": "use_gpus分派至AAHD/CBCD扫掠块；不按伴随标志回落CPU。"
+    },
+    {
+      "path": "modules/linear_boltzmann_solvers/discrete_ordinates_problem/sweep_chunks/gpu_kernel/arguments.h",
+      "lines": [
+        60,
+        69
+      ],
+      "url": "https://github.com/Open-Sn/opensn/blob/f903a0d71cb8d130dc104f85d9d9ae66fd79146b/modules/linear_boltzmann_solvers/discrete_ordinates_problem/sweep_chunks/gpu_kernel/arguments.h#L60",
+      "claim": "GPU核参数引用源矩设备指针。"
+    },
+    {
+      "path": "modules/linear_boltzmann_solvers/discrete_ordinates_problem/sweep/scheduler/sweep_scheduler.cu",
+      "lines": [
+        25,
+        25
+      ],
+      "url": "https://github.com/Open-Sn/opensn/blob/f903a0d71cb8d130dc104f85d9d9ae66fd79146b/modules/linear_boltzmann_solvers/discrete_ordinates_problem/sweep/scheduler/sweep_scheduler.cu#L25",
+      "claim": "AAH GPU扫掠入口调用CopyPhiAndSrcToDevice；CBC对应185行。"
+    },
+    {
+      "path": "modules/linear_boltzmann_solvers/discrete_ordinates_problem/solvers/steady_state_solver.cc",
+      "lines": [
+        98,
+        101
+      ],
+      "url": "https://github.com/Open-Sn/opensn/blob/f903a0d71cb8d130dc104f85d9d9ae66fd79146b/modules/linear_boltzmann_solvers/discrete_ordinates_problem/solvers/steady_state_solver.cc#L98",
+      "claim": "稳态求解后统一执行伴随方向重定向。"
+    },
+    {
+      "path": "test/python/modules/linear_boltzmann_solvers/transport_steady/deterministic_sweeps.py",
+      "lines": [
+        141,
+        162
+      ],
+      "url": "https://github.com/Open-Sn/opensn/blob/f903a0d71cb8d130dc104f85d9d9ae66fd79146b/test/python/modules/linear_boltzmann_solvers/transport_steady/deterministic_sweeps.py#L141",
+      "claim": "同一个problem_args可同时令CASE=adjoint及USE_GPUS=True。"
+    },
+    {
+      "path": "test/python/modules/linear_boltzmann_solvers/transport_steady/tests.json",
+      "lines": [
+        2514,
+        2597
+      ],
+      "url": "https://github.com/Open-Sn/opensn/blob/f903a0d71cb8d130dc104f85d9d9ae66fd79146b/test/python/modules/linear_boltzmann_solvers/transport_steady/tests.json#L2514",
+      "claim": "CPU adjoint单独注册；GPU注册仅steady、fused steady、CBC steady、keigen，没有case=adjoint+GPU。"
+    },
+    {
+      "path": "test/python/modules/linear_boltzmann_solvers/transport_steady/gpu_cpu_parity.py",
+      "lines": [
+        25,
+        60
+      ],
+      "url": "https://github.com/Open-Sn/opensn/blob/f903a0d71cb8d130dc104f85d9d9ae66fd79146b/test/python/modules/linear_boltzmann_solvers/transport_steady/gpu_cpu_parity.py#L25",
+      "claim": "GPU/CPU通量向量一致性脚本未启伴随。"
+    },
+    {
+      "path": "test/src/job_manager.py",
+      "lines": [
+        816,
+        825
+      ],
+      "url": "https://github.com/Open-Sn/opensn/blob/f903a0d71cb8d130dc104f85d9d9ae66fd79146b/test/src/job_manager.py#L816",
+      "claim": "--gpu只选requires_gpu测试，不能认为GPU工作流顺带执行了CPU伴随用例。"
+    },
+    {
+      "path": ".github/workflows/regression.yaml",
+      "lines": [
+        70,
+        88
+      ],
+      "url": "https://github.com/Open-Sn/opensn/blob/f903a0d71cb8d130dc104f85d9d9ae66fd79146b/.github/workflows/regression.yaml#L70",
+      "claim": "CUDA工作流调用test/run_tests --gpu；配置存在不等于本轮验证运行通过。"
+    }
+  ],
+  "unresolved": [
+    "未找到当前SHA注册GPU+adjoint组合回归；deterministic脚本虽可传组合参数，但无对应已注册执行/通过日志。",
+    "没有GPU伴随耗时、CPU基线和速度倍率，不编造。",
+    "未执行编译/GPU实跑；可达性为明确源码路径的静态推断，不能称实测验证。",
+    "当前实现限制Cartesian、standard角算子、等权反向方向；不推广到曲线坐标/Galerkin角算子/瞬态/CSDA。",
+    "未核定论文CPC发布包对应源码SHA，不能将现行1.0.1功能归属2026年3月论文。"
+  ],
+  "proposed_prose": "OpenSn已建立面向非结构多面体网格的SN/DGFEM与离散伴随求解框架。其现行开源实现可追踪到伴随源矩与GPU扫掠相连的执行路径，为正向—伴随共用算子与数据结构提供实现参照；GPU伴随组合的响应一致性和端到端效率仍应独立验证。",
+  "forbidden_claims": [
+    "OpenSn2026论文已经验证GPU伴随加速。",
+    "官方已有GPU伴随完整回归通过。",
+    "将GPU支持与伴随支持两个文档段落机械合并为已实测结论。"
+  ],
+  "use_in_v2": "可新增new_opensn2026作伴随框架文献；现行源码主张另标2026-11-06访问及SHA，不虚构倍率。"
+}

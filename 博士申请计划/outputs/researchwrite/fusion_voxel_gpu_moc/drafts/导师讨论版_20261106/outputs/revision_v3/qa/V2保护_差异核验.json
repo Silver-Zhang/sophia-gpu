@@ -1,0 +1,16 @@
+{
+  "mode": "all local files",
+  "checked_files": 1949,
+  "all_checked_files_identical": false,
+  "diff": {
+    "added": [],
+    "removed": [],
+    "changed": [
+      ".DS_Store"
+    ]
+  },
+  "research_files_identical": true,
+  "metadata_exception_acceptance": "user approved separate .DS_Store metadata exception",
+  "acceptance_passed": true,
+  "no_V2_mutation_from_V3_scripts": true
+}

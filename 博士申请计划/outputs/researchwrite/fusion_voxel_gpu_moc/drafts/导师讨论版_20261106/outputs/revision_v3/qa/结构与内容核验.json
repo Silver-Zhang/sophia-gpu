@@ -1,0 +1,26 @@
+{
+  "pages": 31,
+  "references": 63,
+  "new_vs_V2_references": 2,
+  "V2_references": 61,
+  "original_references": 47,
+  "figures": 6,
+  "editable_tables": 6,
+  "native_display_equations": 9,
+  "all_native_math_objects": 65,
+  "toc_entries": 25,
+  "original_protected_files": 54,
+  "comments_addressed": 38,
+  "V2_comments_fully_completed": 36,
+  "V3_targeted_followups_completed": 2,
+  "comments_evidence_limited": [
+    "164",
+    "175"
+  ],
+  "bibliography_order_and_titles_match": true,
+  "no_text_outside_pages": true,
+  "external_hyperlinks": 65,
+  "docx_sha256": "23e92440b489b020517480db943ee6e9fb9e912ab804290bca96032ad4f30dae",
+  "pdf_sha256": "01d51e852de2ba411fa5a7d9510c32be3adbd0e7a0145521604d282e0ba84108",
+  "visual_QA": "see independent page-by-page report; not inferred by this script"
+}

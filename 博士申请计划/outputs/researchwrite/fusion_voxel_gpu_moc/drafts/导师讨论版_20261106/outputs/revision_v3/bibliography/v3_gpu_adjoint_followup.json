@@ -1,0 +1,255 @@
+{
+  "task": "175 GPU固定源/伴随证据限定补查",
+  "verified_date": "2026-11-07",
+  "write_scope": "仅revision_v3/bibliography及其v3_sources；V2只读",
+  "records": [
+    {
+      "key": "new_pryer_wavefront2026",
+      "authors": [
+        {
+          "family": "Pryer",
+          "given": "Tristan"
+        }
+      ],
+      "title": "Batched Wavefront Sweeps for Linear Transport Uncertainty Quantification",
+      "doi": "10.48550/arXiv.2609.14496",
+      "year": 2026,
+      "venue": {
+        "name": "arXiv",
+        "type": "preprint",
+        "eprint": "2609.14496",
+        "version": "v1",
+        "submitted": "2026-09-13",
+        "pages": 31,
+        "doi_status": "arXiv身份页显示该DOI但标pending registration，身份以固定v1 URL为准"
+      },
+      "method": {
+        "discretization": "Cartesian upwind DG fixed-source sweeps",
+        "parallelism": "GPU PyTorch tensor program; graph-compatible sample/angle/group/RHS batching and microbatching",
+        "adjoint": "reverse-mode differentiation through a fixed face-sign wavefront branch, compared with independently assembled block-transpose solve"
+      },
+      "object": "固定源定向输运扫掠、材料遮蔽响应灵敏度；另有多群本征值压力测试",
+      "benchmark": {
+        "adjoint_case": "Example3:二维吸收体位置/宽度/强度变化的材料阴影；流出探测器电流、目标区平均通量、吸收响应",
+        "forward_workload": "Q1,128×128 mesh,4096 samples; sensitivities2048 samples in differentiable microbatches128",
+        "adjoint_consistency_test": "double precision Nx=Ny in{8,12,16,24,32},three scalar observables; separate assembled forward and transpose systems",
+        "other_test_boundary": "Example4是C5G7/KAIST-inspired七群固定工作量本征值压力测试，不是完整C5G7屏蔽伴随基准"
+      },
+      "hardware": {
+        "GPU": "NVIDIA RTX A4000",
+        "CPU": "Intel Core i9-10900X",
+        "system": "Dell Precision5820,64GiB RAM",
+        "software": "Python3.14.4,PyTorch2.11,CUDA runtime12.8",
+        "caution": "§5统一描述计算平台；独立小网格双精度转置核验未逐条另报设备及伴随耗时"
+      },
+      "result": {
+        "measured_fact": "§5.3报告反向微分响应导数与独立装配块正向/转置解在全部所测网格和三响应上吻合至双精度舍入量级",
+        "evidence_class": "GPU可微扫掠实现及离散伴随作用的数值一致性证据",
+        "GPU_adjoint_speedup": null,
+        "full_multigroup_shielding_adjoint_validation": false,
+        "source_availability": "Data Availability称复现实验代码将在论文接收后存Zenodo；本轮未发现已给定代码归档链接",
+        "adjoint_error_numeric_status": "原文仅称所有网格和三响应最大误差小于双精度舍入误差，未给逐网格绝对/相对数值表；不补造1e-14等阈值。",
+        "forward_example1_table1": {
+          "scope": "GPU forward sweep,not adjoint timing",
+          "p": 1,
+          "mesh": "256×256",
+          "samples": 64,
+          "total_DG_unknowns": 16777216,
+          "mean_L2_error": 9.257e-07,
+          "mean_DG_error": 2.437e-05,
+          "mean_abs_detector_current_error": 3.819e-10,
+          "median_sweep_s": 0.5,
+          "time_boundary": "wavefront forward substitution only; excludes local block construction and inversion",
+          "location": "PDFp17 Table1"
+        },
+        "forward_example4_table6": {
+          "scope": "same GPU fixed-work multigroup power-iteration layout comparison,notCPU/GPU oradjoint speedup",
+          "mesh": "102×102 Q0",
+          "samples": 1536,
+          "groups": 7,
+          "ordinates": 16,
+          "iterations": 1000,
+          "microbatch64": {
+            "time_s": 10520,
+            "throughput_updates_per_s": 170200000.0,
+            "peak_allocation_MB": 525.032
+          },
+          "microbatch1536": {
+            "time_s": 2016,
+            "throughput_updates_per_s": 887800000.0,
+            "peak_allocation_MB": 12590
+          },
+          "reported_runtime_reduction_factor": 5.22,
+          "location": "PDFpp26—27 Table6"
+        }
+      },
+      "primary_url": "https://arxiv.org/html/2609.14496v1",
+      "identity_url": "https://arxiv.org/abs/2609.14496v1",
+      "access_level": "本轮获取31页arXiv v1 PDF及官方HTML，定位§4、§5.3和数据声明；未运行其代码",
+      "原文位置": [
+        "PDFp13—15 §4: fixed-face-sign branch,reverse-mode discrete-adjoint relation",
+        "PDFp16 §5: hardware/software",
+        "PDFp17 Table1: manufactured-solution forward sweep convergence/timing",
+        "PDFp21—23 §5.3,尤其p23末段: material-shadowing sensitivities and independent transpose verification",
+        "PDFp26—27 Table6: fixed-work multigroup microbatch timing",
+        "PDFp28 Data Availability"
+      ],
+      "unresolved": [
+        "预印本而非已核实同行评议期刊版",
+        "伴随动作核验对应标量材料阴影问题；未给多群深穿透GPU伴随独立性能基线",
+        "本轮没有可执行的作者代码归档，不能称已独立复现",
+        "反向AD对固定face-sign分支成立；不直接推广到拓扑/流入面符号变化"
+      ],
+      "can_write": "Pryer近期预印本将GPU张量化的固定源DG扫掠与反向自动微分结合，并在材料阴影问题中用独立装配的转置系统核对响应导数，为共享扫掠结构下的离散伴随验证提供实现参照。",
+      "cannot_claim": [
+        "成熟GPU-MOC伴随求解器已验证",
+        "已给GPU伴随相对CPU的速度倍率",
+        "已在CADIS/FW-CADIS或聚变深穿透全流程验证",
+        "作者程序已公开且本项目已运行复现"
+      ]
+    },
+    {
+      "key": "new_shift_gpu_status2025",
+      "authors": [
+        {
+          "family": "Biondo",
+          "given": "Elliott"
+        },
+        {
+          "family": "Davidson",
+          "given": "Gregory"
+        },
+        {
+          "family": "Evans",
+          "given": "Thomas"
+        },
+        {
+          "family": "Hamilton",
+          "given": "Steven"
+        },
+        {
+          "family": "Johnson",
+          "given": "Seth"
+        },
+        {
+          "family": "Pandya",
+          "given": "Tara"
+        },
+        {
+          "family": "Royston",
+          "given": "Katherine"
+        },
+        {
+          "family": "Salcedo-Pérez",
+          "given": "José"
+        }
+      ],
+      "title": "Status of GPU capabilities within the Shift Monte Carlo radiation transport code",
+      "doi": "10.1051/epjn/2024034",
+      "year": 2025,
+      "venue": {
+        "name": "EPJ Nuclear Sciences & Technologies",
+        "type": "journal article",
+        "volume": "11",
+        "article": "5",
+        "published_online": "2025-01-31"
+      },
+      "method": {
+        "transport": "continuous-energy event-based GPU Monte Carlo; CPU history-based reference",
+        "hybrid": "CADIS/FW-CADIS importance generation using inline Denovo",
+        "adjoint_assignment": "§7 explicitly assigns Denovo forward/adjoint,WW generation and source biasing toCPU, MC transport includingWWprocessing toGPU"
+      },
+      "object": "通用中子/光子MC固定源和本征值计算；混合流程CPU/GPU分工",
+      "benchmark": {
+        "fixed_source": "fresh-fuel NuScale SMR excore fixed-source problem,§7 Fig6/Table1",
+        "scope": "本轮以CPU确定论预计算与GPU生产MC的分工为主要增量，不追加本征值或燃耗综述"
+      },
+      "hardware": {
+        "fixed_source_platform": "Summit",
+        "deployment": "one GPU graphics complex die per MPI rank",
+        "details": "本轮未从主出版网页重新完整核对节点型号，避免额外拼接硬件参数"
+      },
+      "result": {
+        "architecture_fact": "正/伴随重要性生成仍由CPU Denovo承担，GPU负责MC及权窗处理",
+        "fixed_source_per_node_speedup": "摘要报告Summit固定源每节点约28倍；该值不是GPU伴随加速",
+        "GPU_adjoint_timing": null
+      },
+      "primary_url": "https://doi.org/10.1051/epjn/2024034",
+      "access_level": "出版社DOI全文的搜索索引可读；§7句段另与公开PDF镜像核对。直接出版社请求被拒绝，本地769-byte HTML不是论文全文",
+      "原文位置": [
+        "§2 Core capabilities: event-based GPU versus history-basedCPU",
+        "§7 Hybrid MC/deterministic transport: CPU/GPU assignment,Fig6/Table1",
+        "Abstract:28×fixed-source per-node speedup"
+      ],
+      "unresolved": [
+        "此为2025论文所述版本，不断言之后Shift分工始终未变",
+        "直接出版社HTML/PDF本轮访问失败；未把访问拒绝页面标为全文",
+        "28倍仅固定源输运口径，不能用于正/伴随求解或完整CADIS预计算"
+      ],
+      "can_write": "Shift的混合实现采用CPU上的Denovo正向—伴随求解及权窗生成，配合GPU上的MC粒子和权窗执行，展示了重要性预计算与生产输运分工实现的路径。",
+      "cannot_claim": [
+        "Shift这篇论文实测GPU伴随加速",
+        "CPU端28倍或Denovo伴随28倍",
+        "把正向GPU能力和CPU伴随接口合并为GPU伴随数值验证"
+      ]
+    }
+  ],
+  "recommendation": "优先在3.2加入Pryer预印本的GPU可微扫掠/离散伴随作用验证；Shift2025用于精确说明混合CPU/GPU分工。两者不替换既有OpenSn固定SHA源码证据。",
+  "evidence_ladder": [
+    {
+      "level": "正向GPU已测",
+      "examples": "V2已有STRAUM、Denovo、ALPHA固定源等；本轮不重复扩写"
+    },
+    {
+      "level": "伴随接口已提供",
+      "examples": "OpenSn CPU/理论伴随接口；成熟Denovo正/伴随"
+    },
+    {
+      "level": "源码可追踪GPU+伴随组合",
+      "examples": "V3复制的opensn_evidence.json固定SHA；不是已运行组合测试"
+    },
+    {
+      "level": "GPU可微实现与伴随动作数值核验",
+      "examples": "Pryer2026 §5.3；没有单独GPU伴随速度基线"
+    },
+    {
+      "level": "完整多群深穿透GPU伴随实测性能",
+      "examples": "本轮未取得足够证据，保持空项"
+    }
+  ],
+  "search_log": [
+    {
+      "query": "GPU adjoint neutron transport solver",
+      "outcome": "OpenSn官方文档、Shift、Sandman"
+    },
+    {
+      "query": "GPU-accelerated adjoint discrete ordinates",
+      "outcome": "未定位到比既有OpenSn/Denovo更直接的成熟多群GPU伴随实测"
+    },
+    {
+      "query": "GPU adjoint flux neutron characteristics / CUDA adjoint neutron",
+      "outcome": "Denovo支持概述；多为正向或MC生产执行"
+    },
+    {
+      "query": "GPU adjoint deterministic transport neutron",
+      "outcome": "定位Pryer2026 batched wavefront预印本"
+    },
+    {
+      "query": "Batched Wavefront Sweeps for Linear Transport Uncertainty Quantification adjoint GPU",
+      "outcome": "arXiv固定v1身份与全文，31页；核对§5.3"
+    },
+    {
+      "query": "Status of GPU capabilities within the Shift Monte Carlo radiation transport code",
+      "outcome": "出版社索引及§7公开PDF句段；CPU正/伴随预计算明确"
+    },
+    {
+      "screened_out": "Sandman,10.3390/qubs4020024(2020)",
+      "reason": "真实GPU反向MC中子束设计，但为简单非相互作用束流/中子导管，不是多群散射/次级产生屏蔽伴随；不为数量进入3.2"
+    },
+    {
+      "screened_out": "phonon JAX-BTE、扩散模型、neural operator papers",
+      "reason": "对象/算子或学习替代不同，不拿来填补中子GPU伴随实测"
+    }
+  ],
+  "proposed_prose_3_2": "GPU伴随实现也开始采用可微扫掠。Pryer近期预印本将固定源DG扫掠组织为GPU张量程序，通过反向自动微分计算材料阴影响应的导数，并用独立装配的转置系统核对离散伴随作用。此类实现为正向执行结构与伴随一致性共同设计提供了参照。混合生产流程则可采用不同分工：Shift在CPU上完成Denovo正向—伴随求解及权窗生成，在GPU上执行MC和权窗控制。"
+}

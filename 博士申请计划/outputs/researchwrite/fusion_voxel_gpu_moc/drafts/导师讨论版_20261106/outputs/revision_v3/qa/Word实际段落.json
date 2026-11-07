@@ -1,0 +1,1967 @@
+[
+  {
+    "role": "heading",
+    "location": "word.block1",
+    "text": "第一章研究背景与博士阶段总体研究设想"
+  },
+  {
+    "role": "heading",
+    "location": "word.block2",
+    "text": "1.1聚变屏蔽的工程需求与计算问题"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block3",
+    "text": "聚变装置的屏蔽设计需要在有限的空间内同时满足磁体辐照、结构材料寿命、维护作业和氚增殖等要求。D-T反应产生的约14MeV中子穿过第一壁、包层、屏蔽体与真空室后,可通过散射、俘获及次级粒子产生向外传递能量。超导磁体中的核热决定低温系统的附加热负荷,绝缘材料的辐照影响磁体寿命,维护区域的剂量则影响设备布置与作业安排。输运计算把几何、材料和核反应数据联系到这些可评价的工程响应,是比较屏蔽方案的基础[1,2]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block4",
+    "text": "聚变屏蔽中的复杂性首先来自材料与传播路径的三维分布。薄层屏蔽、斜交界面、诊断孔道和管线穿透件同时存在,局部结构的改变可能使中子穿过不同材料,或增加经孔道及壁面散射到达外部区域的概率。对于磁体背侧和厚屏蔽后的探测位置,贡献来自穿透或散射后仍能到达目标的粒子历史。需要分辨的因此不仅是部件形状,还包括沿这些传播方向经历的材料次序和光学厚度。几何近似、空间离散与角向分辨率均会改变这部分信息。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block5",
+    "text": "屏蔽计算还承担反复比较设计的任务。包层与屏蔽层厚度、孔道位置、材料配比及源分布的变化,会触发几何、截面、轨迹或重要性数据的更新。工程上关心的是一个新方案何时能够获得满足精度要求的响应,以及连续修改多个方案需要多少计算资源。参数化建模与输运联用已被用于三维设计扫描[3]。由此,高效输运方法的研究需要同时考虑响应误差、数据准备、输运求解和设计更新,而不是只观察某个计算内核的执行速度。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block6",
+    "text": "1.2中子输运与确定论—蒙卡方法的互补"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block7",
+    "text": "本研究以稳态多群固定源输运为主要问题。对能群g,角通量ψg在给定材料中的平衡可写为"
+  },
+  {
+    "role": "equation",
+    "location": "word.block8",
+    "text": "Ω·∇ψg+Σt,gψg=Qg[ψ]+qg.(1)"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block9",
+    "text": "其中,Ω为运动方向,Σt,g为宏观总截面,qg为外源,Qg表示离散能群之间的散射和所纳入的次级粒子产生。源归一化、材料密度及边界条件共同确定输运问题。对空间区域VD中的线性响应,可定义"
+  },
+  {
+    "role": "equation",
+    "location": "word.block10",
+    "text": "R=∑g∫VDdg(r)φg(r)dV,φg=∫4πψgdΩ.(2)"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block11",
+    "text": "响应函数dg体现具体物理目标:区域通量取相应计分权重,反应率采用反应截面,剂量采用能量相关转换系数。核热计算将中子与光子的能量沉积纳入一致模型;产氚响应由产氚反应率积分并按物理源归一化。明确响应定义后,才可分别讨论空间误差、统计误差和计算代价。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block12",
+    "text": "确定论方法将空间、角度和能量离散,通过求解输运方程获得全域通量。伴随输运则提供粒子状态对指定响应的贡献,即重要性信息。蒙特卡罗方法以粒子历史抽样描述连续能碰撞和复杂几何传播,通过历史贡献的平均估计响应。两者的互补在于:确定论以较低成本提供全域传播与目标贡献的近似结构,蒙卡据此将样本投入到对目标更有贡献的状态,并以带权输运完成最终统计[4,5]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block13",
+    "text": "这种互补使确定论预计算的评价目标更加具体。用于减方差的重要性场需要表达源到目标之间的贡献分布;其空间细度、角向分辨和能群配置影响采样投入的位置,也影响预计算成本。GPU并行可以缩短场求解中的部分步骤,轨迹和网格的数据组织又决定其显存与执行效率。因此,空间离散、GPU输运和自动减方差应围绕同一响应任务衔接研究。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block14",
+    "text": "1.3总体研究问题与目标"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block15",
+    "text": "本研究关注复杂聚变屏蔽中“哪些信息值得更精细地计算,以及这些信息怎样转化为最终响应的计算效率”。这一问题包含三个相互联系的方面:几何与材料表示如何保留薄层和孔道中的主要传播特征;GPU上的轨迹、缓存与通量累积如何利用给定空间离散;近似重要性如何经源偏倚和权窗转化为稳定的蒙卡统计。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block16",
+    "text": "相应的研究目标是,在明确的响应误差与资源条件下,建立空间表示、确定论执行和蒙卡统计之间可解释的联系。研究将通过受控几何与材料算例辨认误差机制,以真实实验和聚变子结构评价适用性,并比较从输入准备到响应完成的计算时间。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block17",
+    "text": "第二章复杂几何中子输运与自适应空间离散方法"
+  },
+  {
+    "role": "heading",
+    "location": "word.block18",
+    "text": "2.1几何表示与材料界面处理"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block19",
+    "text": "输运计算中的几何表示需要回答两个问题:粒子位于哪种材料中,以及沿给定方向何时进入下一种材料。CAD通常以曲面和实体边界描述设计部件,构造实体几何(CSG)以基本曲面和布尔运算定义区域。由CAD转换为输运模型时,需要把设计实体整理为无遗漏、无重叠且材料赋值明确的空间分区。Tsige-Tamirat等利用McCad生成ITER中子学模型,并以MCNP随机体积计算对照CAD体积,建立了几何转换后的定量检查途径[6]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block20",
+    "text": "直接几何追踪将求解器中的射线求交与材料区域相联系。Chen等把MCAM的CAD建模和通用射线求交用于二维MOC,在SuperMC中采用菱形差分处理平通量近似的空间误差。其作者稿给出的ISSA两材料问题有效增殖因子与参考值相对差为-0.0106%,复杂C5G7-MOX问题的差异约为0.33%[7]。这项工作把CAD几何访问引入确定论轨迹扫描,使材料边界可以直接参与特征线分段;空间源近似和角向积分则由输运离散进一步控制。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block21",
+    "text": "非贴体方法使用独立于实体边界的背景网格,材料界面可以穿过网格内部。Yang等基于SALOME完成边界表示到CSG的转换,在笛卡儿和柱坐标单元中采用体积加权的材料均匀化,减少只以单元中心位置决定材料所造成的映射偏差[8]。Buchan等进一步采用supermeshing,即由实体网格与背景网格的交叠关系构造材料投影,并将守恒投影与背景有限元网格自适应结合[9]。两类方法都将几何生成与求解网格分开管理,区别在于混合材料参数及投影进入离散方程的方式。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block22",
+    "text": "材料体积分数和方向传播特征承担不同作用。一个含窄孔道的单元即使保持相同空隙体积分数,均匀混合后的材料也可能给沿孔道运动的粒子分配额外碰撞。沿某条特征线,各段的宏观总截面与长度之积累加为光学厚度;细薄高吸收层的位置和厚度会直接改变沿程衰减。图1将曲面、局部网格与材料段对应起来,说明材料投影需要同时核对体积、交点、弦长和通道连通性。"
+  },
+  {
+    "role": "figure_caption",
+    "location": "word.block23",
+    "text": "图1曲面材料在非贴体网格中的表示与特征线分段。局部细化增加界面交点的分辨率;各材料段的宏观截面与长度共同确定沿程光学厚度[7,8,9,10]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block24",
+    "text": "规则体素通过整数索引访问材料与源区数据,局部细化则提高指定区域的空间分辨率。块结构方法将细化单元组织成矩形块,使块内数组保持规则布局,并由层级索引处理粗细网格的关系。AMReX中的Box、BoxArray和DistributionMapping分别描述矩形区域、块集合及其并行分配,重网格时依据标记聚类形成新块,再迁移数据[11]。GPU自适应笛卡儿网格研究还将平衡细分、构建与更新开销作为独立问题讨论[12]。对中子输运,块的计算负载还与穿越特征线数量、段长分布、能群和迭代次数相联系,因此工作量估计可以超出单元数量本身。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block25",
+    "text": "2.2MOC空间离散与目标导向自适应"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block26",
+    "text": "MOC把指定方向的输运方程转化为沿射线的一维递推。射线与材料界面及源区边界的交点将其划分为多个段;每段需要总截面、长度和源项的近似表示。在段内截面和角源Q均为常数时,出射角通量由"
+  },
+  {
+    "role": "equation",
+    "location": "word.block27",
+    "text": "ψout=ψine-Σtl+QΣt(1-e-Σtl)(3)"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block28",
+    "text": "给出,其中l为材料段长,Σt>0。真空极限Σt→0取ψout=ψin+Ql;小光学厚度下采用稳定的指数差计算。将各方向、轨迹与段内积分按求积权重汇总,可获得源区标量通量,并更新散射等源项。由此,几何交点决定材料段,源区划分决定沿程源近似,轨迹间距和角向求积决定积分分辨率。平源区的细化、沿程高阶源展开和几何边界加密分别改变这些环节。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block29",
+    "text": "OpenMOC将二维CSG追踪、平源MOC、源迭代与粗网有限差分加速组织为可扩展求解框架,以C5G7和LRA等问题检验本征值与功率分布[13]。Gaston等在MOCkingbird中采用一般非结构网格上的三维长特征线,沿完整轨迹穿越不同子域,并比较保存首次分段和逐次在线分段的组织方式[14]。三维网格的局部变化会增加交点、短段及跨域角通量传递,因而空间自由度与实际扫描工作量需要分别记录。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block30",
+    "text": "对于离散纵标法,局部网格还引入粗细界面的通量映射。Liu等2020年以多层八叉树组织非匹配笛卡儿网格,随后发展与解相关的预测—校正映射,根据通量形状和平衡信息选择跨界重构[10,15]。这一技术链表明,局部加密的实施包括网格层级、界面通量传递和扫描次序三个部分。特征线法可沿材料段递推保持入射与出射角通量的连接,采用其他界面离散时则需要相应的守恒与重构公式。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block31",
+    "text": "自适应的另一核心问题是依据什么量分配分辨率。标准误差指标强调全域解或局部梯度;目标导向方法使用伴随信息,把残差对探测器或积分响应的贡献作为加密依据。Wang与Ragusa在二维非结构三角形网格上比较高阶DG的标准与目标导向自适应,讨论点通量和区域平均反应率;Lathouwers针对体与表面探测器构造含角度依赖的双重加权残差及目标误差控制[16,17]。远端探测区的绝对通量可能很小,目标导向选择使误差控制与需要评价的响应直接对应。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block32",
+    "text": "Baker等在球谐角展开和空间子网格尺度有限元框架中,用子网格校正构造残差,并组合正向、伴随各向异性误差度量,针对两个单群和一个多群固定源屏蔽问题配置网格[18]。Goffin等把目标泛函扩展到有效增殖因子[19]。这些研究将“哪里需要分辨率”具体化为与空间格式、残差构造和目标定义相联系的数值过程。对MOC开展类似研究时,可从源区重构误差、段积分及轨迹积分残差入手,构造与其离散一致的目标指标。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block33",
+    "text": "Liu等的后续工作分别推进了全局与目标精度控制。2022年研究利用多层金字塔结构、空间矩比指标和扫描优化,在达到相同精度时,相对均匀细化节省60%—80%的计算成本;2023年研究以加权差分通量重构残差,并以DWR驱动多群固定源与临界问题的加密,在所测目标相近精度下减少超过70%的工作量和运行时间[20,21]。在Balakovo-3固定源剂量基准中,多层八叉树将约950万网格降至190万,对传统离散纵标计算和实验结果的RMS差异分别约为4%与10%,相对均匀细网格节省约70%计算成本[22]。这些结果为采用局部配置减少达到指定响应精度所需的工作量提供了依据。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block34",
+    "text": "近年的发展还包括提高空间阶次。Wilson等将非连续等几何离散、目标误差度量、局部h(p)细化与扩散加速结合,在参考空间求解后投影形成误差估计[23]。这使空间配置具有改变单元尺寸和提高解表示阶次两种选择。表1按数值处理与验证结果归纳代表性工作;后续研究可以比较细化、源展开和界面重构各自减少的误差及其计算代价。"
+  },
+  {
+    "role": "table_caption",
+    "location": "word.block35",
+    "text": "表1复杂几何与目标导向空间离散的代表性研究"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r0.c0",
+    "text": "工作"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r0.c1",
+    "text": "对象与离散"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r0.c2",
+    "text": "数值处理"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r0.c3",
+    "text": "验证结果及启发"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r1.c0",
+    "text": "Chen;Yang[7,8]"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r1.c1",
+    "text": "CAD-MOC;CAD至离散纵标网格"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r1.c2",
+    "text": "通用射线求交;体积加权混合材料"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r1.c3",
+    "text": "几何边界访问与材料投影分别进入输运离散"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r2.c0",
+    "text": "Buchan[9]"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r2.c1",
+    "text": "内部实体与独立背景有限元网格"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r2.c2",
+    "text": "supermeshing守恒投影并结合自适应"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r2.c3",
+    "text": "把实体几何分辨率与背景解分辨率分开配置"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r3.c0",
+    "text": "Baker;Lathouwers[17,18]"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r3.c1",
+    "text": "固定源探测器;有限元或DG"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r3.c2",
+    "text": "正伴随误差度量;含角度依赖的DWR"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r3.c3",
+    "text": "按目标积分控制加密位置及停止条件"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r4.c0",
+    "text": "Liu2020/2021[10,15]"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r4.c1",
+    "text": "八叉树非匹配笛卡儿SN"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r4.c2",
+    "text": "层级扫描、预测—校正通量映射"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r4.c3",
+    "text": "局部细化同时需要粗细界面传递"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r5.c0",
+    "text": "Liu2022[20]"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r5.c1",
+    "text": "多层空间矩离散"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r5.c2",
+    "text": "空间矩比指标与优化扫描"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r5.c3",
+    "text": "原测试相同精度下较均匀细化节省60%—80%成本"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r6.c0",
+    "text": "Liu2023DWR[21]"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r6.c1",
+    "text": "三维多群固定源与临界"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r6.c2",
+    "text": "加权差分重构残差及近似伴随"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r6.c3",
+    "text": "原测试相近目标精度下工作量和时间减少>70%"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r7.c0",
+    "text": "Liu2023Balakovo[22]"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r7.c1",
+    "text": "VVER-1000固定源剂量"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r7.c2",
+    "text": "多层网格、源投影与跨界映射"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r7.c3",
+    "text": "约950万→190万网格;对计算/实验RMS约4%/10%"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r8.c0",
+    "text": "Wilson2026[23]"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r8.c1",
+    "text": "非连续等几何SN"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r8.c2",
+    "text": "目标度量、h(p)细化与扩散加速"
+  },
+  {
+    "role": "cell",
+    "location": "table1.r8.c3",
+    "text": "在光滑制造解中检查空间阶次,并配置目标自适应"
+  },
+  {
+    "role": "table_note",
+    "location": "word.block72",
+    "text": "DWR为双重加权残差;RMS为所引文献定义的均方根差异。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block73",
+    "text": "2.3研究思路与技术路线"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block74",
+    "text": "我拟从薄层、斜界面及直通或折弯孔道组成的受控几何入手,研究材料路径误差对目标响应的影响。先用原始几何计算材料体积、界面交点和弦长,在背景网格中改变材料投影与局部细度,比较沿选定方向的材料序列和光学厚度。随后固定同一材料模型与多群数据,逐一收敛角度、轨迹间距、源区和迭代误差,得到可用于比较局部配置的参考响应。图2给出从几何核对到目标误差评价的研究次序。"
+  },
+  {
+    "role": "figure_caption",
+    "location": "word.block75",
+    "text": "图2空间离散研究的计算与比较次序。材料映射、粗细界面传递和响应误差分别核对,目标量用于选择局部分辨率[15,18,21]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block76",
+    "text": "局部配置将比较材料界面标记、通量梯度及伴随加权指标。拟在相同单元数或预计算预算下,观察各指标选择的位置、响应误差、特征线段数和计算时间,并在粗细交界核对角通量传递与区域平衡。高分辨率优先配置在对目标贡献较大且材料近似容易改变传播的区域,局部源展开则用于减少平源近似造成的段内误差。这样可以分别辨认几何表示、界面传递和输运离散对目标的作用。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block77",
+    "text": "研究还将比较一次完整求解与几何局部更新的成本。对于层厚或孔道位置的变化,记录受影响网格、需重建轨迹及可保留数据,以目标误差和完整更新时间评价局部配置。预期形成材料路径误差与响应变化的对照算例,以及能够在明确预算下选择局部分辨率的指标。其在重要性预计算中的应用,将按第四章的方法继续评价权窗与蒙卡响应统计。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block78",
+    "text": "第三章GPU加速确定论中子输运计算方法"
+  },
+  {
+    "role": "heading",
+    "location": "word.block79",
+    "text": "3.1MOC并行实现与轨迹数据组织"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block80",
+    "text": "GPU-MOC将大量轨迹—能群任务分配给并行线程,在给定源项下完成沿程扫描,再汇集各空间单元的通量贡献。单条轨迹中,后一段的入射角通量来自前一段出射值,计算具有沿程次序;不同轨迹、角度或能群可提供并行任务。线程分配因而需要同时考虑轨迹数量、材料段数、能群访问和边界耦合。若同一线程束内轨迹长短悬殊,先完成的线程会等待较长任务;按段数或估计工作量分组能够减轻这种不均衡。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block81",
+    "text": "轨迹数据可显式保存、在线生成或部分缓存。显式保存段长、材料及源区索引,使迭代扫描直接读取数组;在线生成在扫描时重新求交,以追踪运算换取存储空间;部分缓存则保存代价较高或重复使用较多的轨迹。Song等在少群三维MOC中组合线性源、在线轴向追踪与轨迹分批,以适应单GPU显存[24]。Zhou等的预印本按轨迹存储代价组织缓存子集,其余在线生成[25]。这些策略把每次扫描的追踪工作与可驻留的数据量联系起来,也使几何更新频率成为缓存选择的依据。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block82",
+    "text": "在GPU-MOC计算中,不同特征线可并行完成角通量扫描,但多条轨迹对同一空间单元的通量贡献需要进行归约累积。直接原子加法能够保证并行更新的正确性,但可能因同址写入竞争而增加计算开销;线程块内局部归约可减少全局原子操作次数,同时引入额外的分组和同步成本。空间网格及轨迹组织方式会改变通量累积的竞争分布,因此归约策略也是GPU-MOC性能优化的重要环节。NVIDIA的warp聚合示例展示了由线程协作汇总更新、再由代表线程提交全局原子操作的机制,官方指南则将合并访存、数据复用、占用率和同步纳入性能分析[26,27]。图3给出轨迹、线程、缓存与通量累积的关系。"
+  },
+  {
+    "role": "figure_caption",
+    "location": "word.block83",
+    "text": "图3GPU-MOC的轨迹处理与通量累积。不同线程处理轨迹—能群任务,沿轨迹递推后汇集空间单元贡献;缓存、分组与局部归约共同改变访存、竞争和同步开销[24,25,26,28,29,30,31]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block84",
+    "text": "早期OpenMOC已经比较二维轨迹扫描的GPU实现。Boyd等分别测试GeForceGTX480、Quadro4000、TeslaC2070和TeslaK20c,在其组件问题中,GTX480相对单IntelXeon核的求解加速接近50倍[13]。宋佩涛的学位研究进一步把二维及MOC-EX实现、性能模型、CPU/GPU任务分配与CMFD结合[32]。其2019年期刊工作针对MPI通信与GPU扫描的重叠,在每节点两块TeslaK80、五节点共20个逻辑GPU的系统上,将强并行效率由87%提高至95%[28]。这里改进的是异构程序中的通信等待和工作分配。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block85",
+    "text": "负载模型也推动了大规模三维并行。Wang等在轴向挤出几何上采用循环轨迹分解,以更细的任务粒度替代单纯角度分解,通过组合模型估计轨迹工作量并安排分区,在ORISE上从10240扩展至98304个CPU核时保持超过40%的并行效率[33]。汪岸的学位研究进一步推导周期几何中的轨迹长度分布,并将几何建模、并行分配及验证组织到ANT-MOC中[34]。Li等SC23工作将存储、计算与通信模型用于三级负载映射,在“东方”超算的16000个DCU上报告70.69%的强扩展和89.38%的弱扩展效率[29]。这些研究把负载估计由轨迹数量推进到轨迹长度、存储需求和通信关系。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block86",
+    "text": "3.2GPU计算性能与正向—伴随输运"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block87",
+    "text": "三维求解中的显存占用包括轨迹段、源项、标量与角通量、散射矩、边界数据及迭代工作区。对轴向挤出问题,在线轴向追踪利用径向轨迹与轴向平面的交点生成三维段;分批扫描则控制同时驻留的轨迹数据。Song等在C5G7组件中将显存需求降低98.5%,并以蒙卡生成的四群截面开展单GPU的SMR全堆芯计算[24]。其方法贡献在于空间源表示、追踪和轨迹批次的联合配置。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block88",
+    "text": "Dzianisau与Lee在STREAM3D-GPU中结合MOC/DD、轴向分解和异步执行,正式期刊结果给出每个MPI进程的GPU存储由理论约50GB降至4.5GB以下,8和16个GPU的MOC/DD求解分别较128核CPU参考快22.1和40.5倍[30]。独立的2024年KNS先行稿采用8块RTXA5000及两颗EPYC7543、共64个CPU核,在其C5G7测试中分别列出扫描时间和总时间[35]。将不同版本的算例、硬件和计时分开记录,可以进一步分析存储削减、源更新与异步执行各自贡献。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block89",
+    "text": "NuDEAL展示了不同离散共用GPU基础设施的另一种组织方式:在轴向挤出几何上采用MOC/HFEM及DGMOC,在一般多面体网格上采用DFEM-SN,并通过角通量压缩与方位角顺序扫描控制工作区[31]。其3DC5G7的DGMOC测试在RTX2080Ti上将角度分成2块与32块时,存储分别约2589MB和7133MB,单次扫描时间分别为5.25s和5.09s。该对照直接展示了存储容量与扫描粒度的取舍。其二维DFEM-SN的Concurrent和Sequential组织在RTX4070Ti上分别给出26s与148s总计算时间,反映了任务并发对同一框架执行的影响。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block90",
+    "text": "固定源研究提供了与屏蔽更接近的计算对象。STRAUM采用GPU群块Krylov迭代和空间波前依赖调度,处理Kobayashi类问题及压力容器屏蔽。其压力容器模型在177575个网格上,优化群块后RTX3080Ti和RTX4090的计算时间分别为734s和379s;GPU采用FP32,串行Ryzen97900X参考采用FP64及相应群迭代配置[36]。较早的Sweep3D研究则显示,通量修正会改变GPU执行代价:TeslaM2050对XeonX5670的整体比值在无修正与有修正设置下分别为2.56和1.23[37]。数值处理、精度和迭代组织因此与硬件共同决定性能。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block91",
+    "text": "GPU输运还覆盖时间依赖与大型工程求解。Zou等在ALPHA中实现全隐式瞬态固定源MOC,采用棒级CMFD,以C5G7-TD和MPACT作结果对照,并研究FP32及MOC收敛容限[38]。Denovo则以GMRES和空间—角度—能量并行求解大型固定源问题,在Titan的K20x节点上用于JET中子学[39]。这两类研究分别提供源随时间更新和大规模外源传播的实现参照。表2将计算对象、算法组织及对应结果放在同一比较框架中。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block92",
+    "text": "OpenSn为非结构多面体网格建立多群SN/间断有限元求解框架,覆盖稳态、本征值与离散伴随问题[40]。在2026年11月6日的公开源码版本1.0.1中,Cartesian坐标、标准角算子和等权反向角求积下的伴随模式,通过转置散射及产生矩阵形成源矩,再将源矩传入GPU扫描路径并处理伴随角通量方向。这一实现为正向—伴随共用数据结构与扫描接口提供了具体参照。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block93",
+    "text": "Pryer的近期预印本将固定源DG波前扫描组织为GPU张量程序,并在网格面流向符号保持不变的分支中,用反向自动微分计算吸收体遮蔽响应的导数。其RTXA4000平台采用Q1离散和128×128网格,对2048个样本按每批128个进行反向计算;另以独立装配的正向和转置块系统,在8×8至32×32网格上,对探测器电流、区域平均通量和吸收响应作双精度核对,报告一致性达到双精度舍入量级[41]。这一数值检验为共享扫描结构的离散伴随作用提供了参照。混合生产流程也可按任务分工:Biondo等所述Shift版本在CPU上完成Denovo正向—伴随、权窗生成及源偏倚,在GPU上执行蒙卡输运与权窗控制[42]。"
+  },
+  {
+    "role": "table_caption",
+    "location": "word.block94",
+    "text": "表2并行MOC及GPU固定源输运的算法与计算结果"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r0.c0",
+    "text": "工作"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r0.c1",
+    "text": "计算对象"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r0.c2",
+    "text": "算法组织"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r0.c3",
+    "text": "主要结果与计算条件"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r1.c0",
+    "text": "OpenMOC[13]"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r1.c1",
+    "text": "二维组件输运"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r1.c2",
+    "text": "轨迹/能群并行与CUDA扫描"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r1.c3",
+    "text": "GTX480对单Xeon核的求解加速接近50倍"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r2.c0",
+    "text": "宋佩涛等[28]"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r2.c1",
+    "text": "二维异构并行MOC"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r2.c2",
+    "text": "MPI通信与GPU扫描重叠"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r2.c3",
+    "text": "5节点20个K80逻辑GPU:强扩展效率87%→95%"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r3.c0",
+    "text": "ANT-MOC[29]"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r3.c1",
+    "text": "直接三维堆芯输运"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r3.c2",
+    "text": "三级负载映射及存储/通信模型"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r3.c3",
+    "text": "16000个DCU:强/弱扩展效率70.69%/89.38%"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r4.c0",
+    "text": "Wang等[33]"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r4.c1",
+    "text": "挤出几何三维CPU并行"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r4.c2",
+    "text": "循环轨迹与组合负载分配"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r4.c3",
+    "text": "10240→98304CPU核,原测试并行效率>40%"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r5.c0",
+    "text": "Song等[24]"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r5.c1",
+    "text": "少群三维组件/SMR"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r5.c2",
+    "text": "线性源、在线轴向追踪、分批"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r5.c3",
+    "text": "组件显存降低98.5%,支持单GPU四群全堆芯"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r6.c0",
+    "text": "STREAM3D-GPU[30]"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r6.c1",
+    "text": "OPR-1000三维MOC/DD"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r6.c2",
+    "text": "轴向分解与异步执行"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r6.c3",
+    "text": "8/16GPU对128核CPU求解22.1/40.5倍;每进程<4.5GB"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r7.c0",
+    "text": "NuDEAL[31]"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r7.c1",
+    "text": "DGMOC及DFEM-SN"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r7.c2",
+    "text": "角通量压缩与角度分块"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r7.c3",
+    "text": "3DC5G7,RTX2080Ti:2/32角块2589/7133MB,单扫5.25/5.09s"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r8.c0",
+    "text": "STRAUM[36]"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r8.c1",
+    "text": "压力容器固定源"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r8.c2",
+    "text": "群块Krylov、空间波前"
+  },
+  {
+    "role": "cell",
+    "location": "table2.r8.c3",
+    "text": "177575网格:3080Ti/4090为734/379s;FP32GPU对FP64CPU配置"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block131",
+    "text": "伴随输运将目标响应作为源,其计算需要转置散射和能群耦合关系,并按流入、流出边界的对偶关系组织空间传播。对实数离散矩阵A及由正体积、正求积权等构成的对称正定内积矩阵W,离散伴随满足"
+  },
+  {
+    "role": "equation",
+    "location": "word.block132",
+    "text": "A†=W-1ATW,⟨Au,v⟩W=⟨u,A†v⟩W.(4)"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block133",
+    "text": "实现时可共享材料、轨迹及源区索引,将正向散射源更新替换为对应转置运算,并使轨迹传播和边界数据交换服从伴随次序。可用内积对偶关系和源—响应互易关系检查离散实现,再将得到的重要性场用于第四章的权窗计算[5,43]。这一过程把GPU执行优化与正向、伴随两种任务的数值正确性连接起来。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block134",
+    "text": "3.3研究思路与技术路线"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block135",
+    "text": "我拟以可修改MOC求解器为基础,先完成多群固定源和离散伴随的实现核对,再围绕图3中的追踪、扫描、归约与源更新开展性能分析。解析材料段用于检查递推与交点,散射和多群问题用于核对源更新,正向—伴随内积及响应恒等式用于核对算子。CPU和GPU在相同物理模型及收敛要求下比较局部响应、守恒量和浮点精度敏感性。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block136",
+    "text": "性能研究将网格与轨迹组织一并作为变量:在均匀和局部细化网格上,分别比较显式、在线及部分缓存,随后按段数或测得工作量分组,比较直接原子累加与线程块内局部归约。记录扫描所处理的段数、有效带宽、线程工作分歧、归约同步、临时工作区和峰值显存,以解释每种组合的时间变化。测量包括完成全部迭代所发生的追踪、源更新、传输和输出,并单列正向与伴随任务。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block137",
+    "text": "进一步拟区分源变化、材料变化和几何变化三种更新条件,研究轨迹缓存的复用及失效范围。预期建立由段数分布、显存预算和更新频率解释的执行选择方法,并给出经验证的固定源正向—伴随计算模块。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block138",
+    "text": "第四章确定论—蒙特卡罗耦合减方差方法"
+  },
+  {
+    "role": "heading",
+    "location": "word.block139",
+    "text": "4.1伴随驱动的源偏倚与权窗"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block140",
+    "text": "减方差的目标是用有限粒子历史获得所需响应的统计精度。源偏倚改变粒子出生状态的抽样概率;分裂增加对目标有贡献的粒子分支数量;俄罗斯轮盘减少低贡献粒子的后续计算。每项操作均通过权重修正,使保留历史在期望上代表原来的物理源。权窗以空间和能量区间规定粒子的适宜权重范围,为输运中的分裂和轮盘提供依据。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block141",
+    "text": "伴随输运为这种资源分配提供目标相关信息。令L为线性固定源输运算子,q为物理源,d为目标响应函数;在配对边界条件下,正向与伴随问题满足"
+  },
+  {
+    "role": "equation",
+    "location": "word.block142",
+    "text": "Lψ=q,L†ψ†=d,R=⟨d,ψ⟩=⟨q,ψ†⟩.(5)"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block143",
+    "text": "这里的内积包含空间、能量和角度积分。伴随角通量ψ†描述某一位置、能量和方向上的粒子对指定响应的期望贡献。Wagner与Haghighat利用离散纵标伴随解,为蒙卡构造一致的源偏倚和权窗,形成CADIS方法[4]。Munk与Slaybaugh的综述将此类确定论驱动方法与蒙卡迭代、角度相关方法纳入共同的技术谱系[44]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block144",
+    "text": "为区分物理源强与抽样概率,设∫p(x)dx=1,x表示被偏倚的源变量,I(x)为源支持集上的正重要性近似。定义"
+  },
+  {
+    "role": "equation",
+    "location": "word.block145",
+    "text": "C=∫p(x)I(x)dx,p^(x)=p(x)I(x)C,w0(x)=p(x)p^(x)=CI(x).(6)"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block146",
+    "text": "按p^抽样后,以w0修正出生粒子的权重,计算结果再按物理源强归一化。重要性较高的源状态被更频繁地抽样,同时赋予较小权重。输运权窗的目标权重也由同一I的倒数确定,使出生权重与沿程权重控制相互一致;上下限和存活权重由具体程序的窗宽约定设置。MAVRIC中的Denovo—Monaco流程实现了这一关系[43]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block147",
+    "text": "对多个探测器或大范围计分,FW-CADIS利用一次正向计算估计各目标的响应,并以这些估计调节伴随源[5]。对于预先给定的响应函数di、正的估计R~i及无量纲优先级βi,可以对归一化目标∑iβiRi/R~i构造"
+  },
+  {
+    "role": "equation",
+    "location": "word.block148",
+    "text": "dFW=∑i=1NDβiR~idi.(7)"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block149",
+    "text": "预计响应较低的目标因而获得较高的伴随源权重。不同目标仍按各自响应定义计分;用于全局通量、区域剂量或探测器能谱的伴随源,应与对应的空间和能量权重一致。图4比较单目标CADIS和正向加权FW-CADIS的计算次序,以及二者共同的源偏倚与权窗关系。"
+  },
+  {
+    "role": "figure_caption",
+    "location": "word.block150",
+    "text": "图4CADIS与FW-CADIS的重要性生成及一致偏倚。单目标采用对应响应源;多目标先由正向估计构造加权伴随源,再用同一重要性设置出生抽样和输运目标权重[4,5,43]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block151",
+    "text": "角度相关方法进一步处理同一空间—能量状态中方向不同的贡献。Munk等在CADIS-Ω中以正向角通量加权伴随角通量,构造"
+  },
+  {
+    "role": "equation",
+    "location": "word.block152",
+    "text": "IΩ(r,E)=∫4πψ(r,E,Ω)ψ†(r,E,Ω)dΩ∫4πψ(r,E,Ω)dΩ.(8)"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block153",
+    "text": "该量是在有正向通量的状态上定义的角度加权标量重要性,能够把前向流束与目标贡献的方向关系引入空间—能量权窗[45]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block154",
+    "text": "在Munk等的混凝土迷宫算例中,直接MC、CADIS和CADIS-Ω的MC-onlyFOM分别为493、5.1和145min-1。作者通过第26群(10-11—10-8MeV)的重要性分布说明:孔道出口至探测器的狭小方向范围主导该群贡献,普通标量伴随在探测器附近却较为对称,使分裂和轮盘的投入偏离主要流束。CADIS-Ω用正向角分布加权伴随贡献,改变了空间—能量权窗的分配。第11群(2.9×10-5—1.01×10-4MeV)的粒子可经孔道或屏蔽到达探测器,局部方向性较弱。CADIS-Ω相对CADIS改善了低能区统计,能谱误差分布也更均匀;直接MC虽然汇总FOM较高,仍有能区未达到作者要求的统计精度[45]。该研究把重要性构造与具体响应所敏感的能区和方向联系起来:正向角通量表示实际粒子分布,伴随角通量表示对应状态的目标贡献,两者共同调节标量权窗的统计投入。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block155",
+    "text": "Zhao等的LAA-CADIS采用局部角度适应,面向复杂通道改进重要性配置[46]。这两类研究使角向信息的作用可以通过流道中的传播方向、探测器能区和权窗执行分别考察。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block156",
+    "text": "多步骤响应则需要在不同物理阶段之间传递重要性。MS-CADIS针对停堆剂量,沿中子照射、活化和衰变光子输运的联系,将最终剂量的重要性传回中子抽样阶段[47]。其关键是按最终响应分配前一步的统计投入。对瞬发核热、运行剂量和冷却后的停堆剂量,需要分别选取相应的响应链和核数据。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block157",
+    "text": "4.2重要性生成、权窗优化与计算效率"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block158",
+    "text": "自动权窗既可由近似输运解生成,也可由蒙卡逐次探索形成。Davis与Turner将MAGIC用于ITER全局分布计算,通过已有蒙卡通量与统计信息迭代更新重要性和权窗[48]。随机射线方法则在多群、固定源区表示下随机选取起点和方向,沿射线积分并迭代通量;正向及伴随场可以用于CADIS/FW-CADIS。OpenMC现行流程同时提供MAGIC和内置随机射线权窗生成,支持在同一几何中组织预计算与生产输运[49]。表3比较这些方法所需信息与对应响应。"
+  },
+  {
+    "role": "table_caption",
+    "location": "word.block159",
+    "text": "表3自动减方差方法的信息来源与响应构造"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r0.c0",
+    "text": "方法"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r0.c1",
+    "text": "重要性信息来源"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r0.c2",
+    "text": "对应响应"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r0.c3",
+    "text": "主要计算步骤"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r1.c0",
+    "text": "CADIS[4]"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r1.c1",
+    "text": "目标响应的伴随场"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r1.c2",
+    "text": "单个或明确局部响应"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r1.c3",
+    "text": "响应源→伴随→一致源偏倚与权窗"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r2.c0",
+    "text": "FW-CADIS[5]"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r2.c1",
+    "text": "正向响应加权的伴随场"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r2.c2",
+    "text": "多探测器、区域或全域"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r2.c3",
+    "text": "正向估计→加权响应源→伴随→权窗"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r3.c0",
+    "text": "CADIS-Ω[45]"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r3.c1",
+    "text": "正向角通量加权伴随"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r3.c2",
+    "text": "局部方向性贡献"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r3.c3",
+    "text": "正/伴随角信息→替代标量重要性"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r4.c0",
+    "text": "LAA-CADIS[46]"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r4.c1",
+    "text": "局部角度自适应"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r4.c2",
+    "text": "复杂通道响应"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r4.c3",
+    "text": "按局部方向贡献改善重要性"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r5.c0",
+    "text": "MS-CADIS[47]"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r5.c1",
+    "text": "跨物理步骤的伴随联系"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r5.c2",
+    "text": "指定冷却时刻停堆剂量"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r5.c3",
+    "text": "衰变光子目标→活化→中子重要性"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r6.c0",
+    "text": "MAGIC[48,49]"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r6.c1",
+    "text": "前次蒙卡通量及统计信息"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r6.c2",
+    "text": "全局粒子分布"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r6.c3",
+    "text": "探索输运→更新权窗→继续迭代"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r7.c0",
+    "text": "随机射线CADIS/FW-CADIS[49,50]"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r7.c1",
+    "text": "多群随机射线正向/伴随场"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r7.c2",
+    "text": "局部或全局响应"
+  },
+  {
+    "role": "cell",
+    "location": "table3.r7.c3",
+    "text": "源区与MGXS准备→射线迭代→一致偏倚"
+  },
+  {
+    "role": "table_note",
+    "location": "word.block192",
+    "text": "MGXS为多群截面。随机射线是场求解方式,可用于构造CADIS或FW-CADIS重要性。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block193",
+    "text": "空间配置是连接近似场与蒙卡执行的另一环节。Ibrahim等通过材料宏观化、确定论网格细化和权窗网格粗化,使确定论解在重要区域保留分辨率,并控制蒙卡权窗的存储规模[51]。求解网格用于计算近似场,权窗网格用于粒子查询及分裂轮盘,二者可以依据各自任务配置。国内郑华庆等将自动网格与权窗平滑用于复杂屏蔽;NECP-MCX集成NECP-Hydra正向—伴随求解,后续研究按贡献理论粗化笛卡儿及嵌套权窗网格[52,53,54]。Zhang等在cosRMC中以八叉树材料网格、邻接关系及响应矩阵构造多层权窗,同时优化并行内存配置[55]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block194",
+    "text": "平滑、粗化和角向细化改变的是重要性在不同阶段的表示。材料均匀化会改变低密度通道的光学厚度,角向求积影响流束分辨,权窗映射则决定粒子跨界时看到的权重变化。空间网格细化可改善界面表示,源展开可改善单元内通量分布,局部角度适应可增加重要方向的分辨率。THETA近期将线性源用于随机射线屏蔽计算,在Kobayashi和ASPIS铁屏蔽等测试中,以更粗的源区保持精度;其摘要报告相对平源方案内存降低超过一个数量级、计算时间接近减半[56]。这为重要性预计算提供了除单纯细网格之外的空间表示选择。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block195",
+    "text": "Raffuzzi等在SCONE中实现随机射线CADIS/FW-CADIS,并与MAGIC及直接蒙卡比较整体屏蔽和源—探测器问题[50]。在其2m混凝土整体屏蔽例中,提高多群数据、空间源阶或散射阶的保真度没有增加权窗带来的统计收益,作者将这种差异与极低权重粒子引起的过度分裂联系起来。其全局比较同时给出只计蒙卡时间和加入权窗生成时间的FOM,能够直接观察重要性生成成本。局部源—探测器比较生成权窗约需2—4min,该局部比较的FOM以蒙卡生产时间计,不含这部分预计算。表4保留这些不同计时定义下的代表性结果。"
+  },
+  {
+    "role": "table_caption",
+    "location": "word.block196",
+    "text": "表4重要性近似与权窗执行的代表性数值证据"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r0.c0",
+    "text": "研究及算例"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r0.c1",
+    "text": "比较内容"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r0.c2",
+    "text": "原文结果"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r0.c3",
+    "text": "对应的计算环节"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r1.c0",
+    "text": "CADIS-Ω混凝土迷宫[45]"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r1.c1",
+    "text": "直接MC、CADIS、CADIS-Ω"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r1.c2",
+    "text": "MC-onlyFOM依次为493、5.1、145min-1;Ω使能谱误差分布更均匀"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r1.c3",
+    "text": "正向角通量加权的空间—能量重要性"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r2.c0",
+    "text": "MS-CADIS停堆剂量[47]"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r2.c1",
+    "text": "相对标准全局减方差"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r2.c2",
+    "text": "摘要报告中子MC阶段效率约550倍"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r2.c3",
+    "text": "以最终剂量为目标分配中子阶段历史"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r3.c0",
+    "text": "Raffuzzi整体屏蔽[50]"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r3.c1",
+    "text": "RR-FW-CADIS与MAGIC,20次独立完整运行"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r3.c2",
+    "text": "仅MCFOM:1.08±0.14/0.80±0.30;含WW生成:0.96±0.12/0.37±0.14"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r3.c3",
+    "text": "FOM单位为min-1;同一全局相对方差定义"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r4.c0",
+    "text": "Turner与Davis长历史[57]"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r4.c1",
+    "text": "动态窗参数M"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r4.c2",
+    "text": "M=105时pFOM0.00519,M=109时0.00081min-1"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r4.c3",
+    "text": "pFOM同时计入粒子统计与并行执行效率"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r5.c0",
+    "text": "THETA线性源随机射线[56]"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r5.c1",
+    "text": "线性源相对平源求解"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r5.c2",
+    "text": "摘要报告内存降低>10倍、时间接近减半并保持精度"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r5.c3",
+    "text": "确定论型场求解的源阶/网格配置"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r6.c0",
+    "text": "Shift先进架构[58]"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r6.c1",
+    "text": "CPU历史型与GPU事件型权窗输运"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r6.c2",
+    "text": "Frontier两例在20节点上MC运行<2min;每GCD吞吐为最佳CPU实现9—11倍"
+  },
+  {
+    "role": "cell",
+    "location": "table4.r6.c3",
+    "text": "GPU计算芯片GCD的粒子执行与队列调度"
+  },
+  {
+    "role": "table_note",
+    "location": "word.block225",
+    "text": "各行FOM按原研究分别定义。长历史pFOM使用全网格平均相对误差及并行机时;CADIS-Ω列为单响应MC时间指标。Raffuzzi的±为20次完整运行间的标准差,WW为权窗。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block226",
+    "text": "粒子执行成本还取决于权窗引起的分裂规模。一条较大权重历史进入较低目标权重区域时,可以产生大量后代;其他并行任务完成后,尚未结束的长历史可能延长墙钟时间。Turner与Davis据此提出动态调整该历史权窗的长历史处理,并以包括并行效率的指标评价参数[57]。Evans等则在Shift中比较CPU历史型线程和GPU事件型执行,使权窗控制与不同硬件上的粒子队列相适应[58]。这里需要同时观察方差、每条源历史的工作量与并行尾部等待。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block227",
+    "text": "对单个响应,常用蒙卡效率和完整计算时间可分别表示为"
+  },
+  {
+    "role": "equation",
+    "location": "word.block228",
+    "text": "FOMMC=1RSD2TMC,Tall=Tprep+Tdet+TWW+TMC+TIO.(9)"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block229",
+    "text": "其中,Tprep包含实际发生的几何和核数据准备,Tdet包含所需正向与伴随求解,TWW为映射、生成与处理权窗的时间,TIO为输出和数据管理时间。各项按实际边界计时,避免重复累计。全局评价还需指定计分集合、相对方差的汇总方式和零计分处理;生产输运中的原始源历史是统计单位,其分裂后代的贡献在同一历史中汇总。这样可以把重要性生成、权窗执行和最终响应可靠性放在同一评价中。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block230",
+    "text": "4.3研究思路与技术路线"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block231",
+    "text": "我拟从可复现的CADIS/FW-CADIS与MAGIC流程出发,研究在给定计算预算下,重要性场的哪些空间和角度特征最能改善目标统计。先固定物理几何、材料、源和响应集合,在材料多群截面及其生成约定一致的条件下,分别改变源区细度、角向配置和源展开。每次记录重要性沿主要通道的分布、权窗存储、粒子权重与源历史工作量,再比较局部响应的RSD和完整达标时间。图5给出分层试验路线。"
+  },
+  {
+    "role": "figure_caption",
+    "location": "word.block232",
+    "text": "图5耦合减方差研究的分层试验。重要性场与权窗分别配置,生产计分前固定参数,按原始源历史汇总子粒子贡献,并比较响应统计与完整计算时间[49,50,51,54,57,58]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block233",
+    "text": "随后固定预计算场,比较权窗映射、粗化和平滑,检查细小通道的查询覆盖以及跨界权重变化。拟以材料驱动配置、贡献粗化和局部角度方法为直接参照,研究保护通道传播特征与减少无效细化的组合。近零重要性区域采用保持源抽样覆盖的正下限,并核对分裂的权重总和及轮盘存活权重;全局统计同时记录关键探测器、非零计分比例和达到预设RSD要求的区域比例。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block234",
+    "text": "正式比较前固定权窗及参数,将生成、调参与生产计分分开记录。达标时间采用预先指定的误差与稳定性规则,并以独立完整重复计算核查均值和方差。再通过源更新、材料更新及孔道移动组成的序列,考察哪些重要性或轨迹数据可以复用、何时需要重新计算。预期形成重要性近似、权窗表示与统计成本之间的实证关系,并据此发展适合选定聚变屏蔽任务的配置或更新方法。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block235",
+    "text": "第五章面向聚变堆屏蔽的高效中子输运及耦合应用"
+  },
+  {
+    "role": "heading",
+    "location": "word.block236",
+    "text": "5.1屏蔽基准与聚变工程研究"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block237",
+    "text": "实验基准提供了从物理模型到可测响应的检验。SINBAD由NEA与RSICC共同维护,覆盖反应堆、聚变和加速器屏蔽;2025年发布的第二版包含105项基准,并通过NEAGitLab维护数据和条目版本[59]。对于本研究,FNS材料实验和孔道实验分别提供高能中子在实体材料中衰减与在低密度通道中传播的对象,可以将空间与角度近似放到不同物理条件下考察。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block238",
+    "text": "Ebiwonjumi等采用OpenMC0.14.1-dev分析FNS钨、钒和铍组件,使用约14MeVD-T源,以能谱、反应率、光子加热和产氚率与实验及MCNP6.2比较[1]。钨例采用Denovo/MAVRIC生成的权窗,钒和铍例按较小组件直接开展计算;输运核数据使用ENDF/B-VII.1,相应剂量学反应使用IRDFF截面。光子谱按探测器能量分辨展宽后比较。表5列出其产氚和加热响应的整体C/E结果,其中C/E指计算值除以实验值,所附离散度为不同测点C/E的标准差。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block239",
+    "text": "车锐等用cosRMC对FNS-Duct和FNS-W建立三维模型,采用中子—光子耦合及栅元重要性减方差,比较不同穿透深度的中子通量谱。其cosRMC与MCNP5差异位于文中三倍相对统计误差带内,并另与基准实验谱进行比较[60]。FNS-Duct的折弯通道适于检验流束及壁面散射,FNS-W则反映高原子序数材料中的能谱变化。Iwamoto等用PHITS与JENDL-4.0重新计算FNS铁体,报告不同深度积分中子产额的C/E为1.15—1.78[61]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block240",
+    "text": "设施级研究进一步将响应放在真实设计位置。Ibrahim等在ITER模型中计算环向场线圈核热、生物屏蔽外剂量和全局通量,以局部CADIS和全局FW-CADIS分别服务于这些目标;其剂量例的MCFOM相对直接输运提高约2.1×104[62]。后续网格适应研究在两次均为10天、权窗存储约0.21GB的MCNP计算中,将非零计分比例由79.3%提高到97.8%,对应非零计分元素数相对增加23.3%[51]。该非零计分覆盖指标用于评价设施范围的统计探索,区域剂量与线圈核热仍按各自响应定义计分。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block241",
+    "text": "CFETR研究将磁体辐照与局部屏蔽改进联系起来。Lu等基于大、小半径7.2m和2.2m的工程设计,经McCad构建MCNP模型,在200MW至1.5GW聚变功率范围评价环向场线圈核热和快中子注量。其MAGIC—密度降低组合先在较低密度下形成权窗,再逐步恢复实际密度;线圈响应在最终物理密度下计算,偏滤器屏蔽经优化后满足文中采用的ITER设计限值[2]。Zhang等的cosRMC工作则在CFETR22.5°扇区应用多层自适应权窗,报告统计相对误差小于10%的网格占93.33%[55]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block242",
+    "text": "大型确定论固定源计算也已进入聚变装置分析。Denovo的JET模型采用88080384个单元、32能群、P3散射展开和每卦限256方向,在2048个Titan节点上记录4.6h墙钟时间;每节点配备K20xGPU[39]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block243",
+    "text": "参数化设计展示了响应之间的取舍。Moreno等以ParaStell生成WISTELL-D的99组包层—高温屏蔽配置,用OpenMC统计氚增殖与磁体总核热。原文测试中的厚型、增殖层占比60%设计点,在2113MW聚变源功率下得到TBR为1.10、磁体总核热为152.0kW[3]。较早的CIT试验大厅研究则以三维MC—二维离散纵标结果校准一维模型,迭代选择混凝土组成和厚度,在满足屏蔽及结构约束的方案中获得约14%的造价降低[63]。"
+  },
+  {
+    "role": "table_caption",
+    "location": "word.block244",
+    "text": "表5聚变屏蔽基准与工程研究的对象和结果"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r0.c0",
+    "text": "研究对象"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r0.c1",
+    "text": "计算方法与条件"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r0.c2",
+    "text": "评价响应"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r0.c3",
+    "text": "代表性结果"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r1.c0",
+    "text": "FNS钨/钒/铍[1]"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r1.c1",
+    "text": "OpenMC、ENDF/B-VII.1;约14MeV源;钨例用Denovo权窗"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r1.c2",
+    "text": "能谱、反应率、GHR、TPR"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r1.c3",
+    "text": "9个TPR测点平均C/E=1.03±0.20;7个GHR测点0.95±0.14"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r2.c0",
+    "text": "FNS-Duct/FNS-W[60]"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r2.c1",
+    "text": "cosRMC中子—光子;栅元重要性;MCNP5与实验对照"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r2.c2",
+    "text": "各深度中子通量谱"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r2.c3",
+    "text": "程序间差异在原文3倍统计相对误差带内,另与实验谱比较"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r3.c0",
+    "text": "FNS铁体[61]"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r3.c1",
+    "text": "PHITS/JENDL-4.0;直径1m、厚0.95m铁体"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r3.c2",
+    "text": "0.003—10MeV积分中子产额"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r3.c3",
+    "text": "六位置C/E为1.15—1.78;表列不确定度为计数统计"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r4.c0",
+    "text": "ITER多响应[62]"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r4.c1",
+    "text": "CAD蒙卡与CADIS/FW-CADIS"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r4.c2",
+    "text": "TFC核热、屏蔽外剂量、全局通量"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r4.c3",
+    "text": "剂量例MCFOM相对直接输运提高约2.1×104"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r5.c0",
+    "text": "ITER自适应剂量图[51]"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r5.c1",
+    "text": "同为10天MCNP、约0.21GB权窗"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r5.c2",
+    "text": "设施网格非零计分覆盖"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r5.c3",
+    "text": "79.3%→97.8%;非零计分元素数量相对增23.3%"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r6.c0",
+    "text": "CFETR线圈[2]"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r6.c1",
+    "text": "McCad/MCNP;MAGIC与密度降低;200MW—1.5GW"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r6.c2",
+    "text": "线圈核热和快中子注量"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r6.c3",
+    "text": "偏滤器屏蔽优化后满足论文采用的ITER限值"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r7.c0",
+    "text": "CFETR22.5°扇区[55]"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r7.c1",
+    "text": "cosRMC多层响应矩阵权窗"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r7.c2",
+    "text": "网格通量统计精度"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r7.c3",
+    "text": "相对统计误差<10%的网格占93.33%"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r8.c0",
+    "text": "WISTELL-D设计扫描[3]"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r8.c1",
+    "text": "ParaStell/DAGMC/OpenMC;99组;2113MW源"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r8.c2",
+    "text": "TBR与磁体总核热"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r8.c3",
+    "text": "原测试厚型/60%增殖层设计点:1.10、152.0kW"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r9.c0",
+    "text": "CIT试验大厅[63]"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r9.c1",
+    "text": "MC—二维SN校准一维模型;材料/厚度迭代"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r9.c2",
+    "text": "屏蔽及结构约束下造价"
+  },
+  {
+    "role": "cell",
+    "location": "table5.r9.c3",
+    "text": "相对基准造价降低约14%,约410万美元"
+  },
+  {
+    "role": "table_note",
+    "location": "word.block285",
+    "text": "GHR为光子加热响应,TPR为产氚率。FNS平均C/E的±为测点间标准差,非单次蒙卡计分误差。TFC为环向场线圈。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block286",
+    "text": "5.2工程响应、误差来源与方案更新"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block287",
+    "text": "表5中的工程与实验研究涉及不同计分对象,实际应用需要预先明确响应的位置、物理权重和归一化。磁体总核热是整个区域的能量沉积积分,局部热功率密度则需要保留空间峰值;快中子注量和绝缘剂量对应不同能量权重;维护区的瞬发剂量与冷却后的停堆剂量还涉及不同源项。FNS实验中的每源粒子结果可与测量归一化比较,工程功率和注量再按物理源强及运行时间换算。因此,全局通量图、指定探测器和磁体局部计分应分别设置精度目标,并在同一模型中检查。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block288",
+    "text": "误差评价将物理偏差与抽样不确定度分开报告。FNS研究中,钒的低能中子谱、钨的部分阈反应和近源加热存在不同程度的C/E偏差,其变化与核数据、探测器、源表示和测量条件有关[1]。对数值方法的比较可以固定这些输入,观察空间与角度配置引起的响应变化;与实验比较时,则保留材料成分、源谱、探测器响应和实验不确定度。这样的安排可以把算法改进对应到具体误差来源。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block289",
+    "text": "对图6各层次对象的方案更新,需要依据数据的物理依赖关系处理。几何不变时,改变外源主要影响正向场及源偏倚;在固定输运算子和单一目标下,伴随解可继续表示该目标的重要性。FW-CADIS的加权伴随源还依赖正向响应。改变材料会改变截面与输运算子,移动孔道则同时改变交点和传播路径。拟分别记录源、材料和几何三类更新的数据重建范围,以实际完成各方案响应所需的时间评价复用收益。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block290",
+    "text": "5.3应用研究思路与验证方案"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block291",
+    "text": "拟按图6所示的对象层次建立算例。先以解析材料段和可计算交点的几何核对特征线及材料映射,再采用均匀体、多层材料和直通或折弯孔道,分别改变层厚、界面倾角、孔道宽度和弯折位置。各算例固定物理源与响应,先完成所采用空间、角度和能量配置的收敛比较,再将直接蒙卡、MAGIC及适合该目标的混合方法放在一致输入下评价。"
+  },
+  {
+    "role": "figure_caption",
+    "location": "word.block292",
+    "text": "图6从材料段到聚变子结构的验证对象(原理示意图)。材料实验比较能谱、反应率、核热和产氚,孔道比较流束传播,工程模型评价磁体与维护区域响应[1,2,59,60,62]。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block293",
+    "text": "随后选取可获取输入的FNS材料与通道基准,保存条目版本、材料密度和成分、源谱与角分布、核数据库、反应截面及探测器定义。能谱比较使用相同能区划分和相应探测器分辨,反应率与核热按一致的每源粒子及质量或体积归一化。对每个响应给出C/E、实验不确定度和蒙卡统计误差,并以独立程序结果作交叉比较。数值收敛、程序交叉与实验符合度各提供一层证据。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block294",
+    "text": "工程应用拟以磁体屏蔽或维护孔道子结构为对象,比较源、材料/层厚和孔道更新。各方法统一响应精度、计分规则与资源预算,记录首次准备、重建及达标时间,形成可复现算例。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block295",
+    "text": "6.候选方案"
+  },
+  {
+    "role": "heading",
+    "location": "word.block296",
+    "text": "6.1复杂几何与重要性导向空间离散"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block297",
+    "text": "我拟研究薄层、斜界面和窄孔道的材料表示如何影响目标响应及重要性场,并据此选择局部分辨率。最接近的基础是目标导向网格、非匹配界面传递以及材料驱动的多层权窗。拟从可解析交点的受控几何入手,将材料路径误差与给定模型上的输运离散误差分别测量,再比较材料标记、通量指标和伴随加权指标在相同预算下选择的细化位置。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block298",
+    "text": "预期成果是能够解释响应变化的局部误差指标、相应自适应配置方法及复现算例。该方向需要可修改的网格、材料映射和正向—伴随接口;对薄通道和界面位移的测试可先在成熟求解器中开展。候选假设是,对目标贡献较大且容易被材料近似改变的路径给予额外分辨率,可以用较少的空间工作量获得所需响应精度。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block299",
+    "text": "6.2GPU确定论正向—伴随输运"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block300",
+    "text": "我拟研究复杂轨迹的段数分布、缓存容量和更新频率如何共同影响GPU正向—伴随预计算。路线是先在可修改MOC代码中完成固定源与伴随核对,再剖析追踪、扫描、通量累积及源更新的时间和显存。对在线、显式及部分缓存策略,结合按工作量分组和局部归约开展对照,建立由实际访问与工作量解释的配置方法。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block301",
+    "text": "预期成果是经数值验证的正向—伴随模块、轨迹与执行成本模型,以及在不同显存和更新条件下的执行选择依据。该方向依赖源码、GPU时段和性能分析条件,也需要系统学习CUDA、并行调试及MOC伴随离散。候选假设是,将段数分布与数据复用次数同时纳入配置选择,能够更准确地减少完整预计算时间。"
+  },
+  {
+    "role": "heading",
+    "location": "word.block302",
+    "text": "6.3面向聚变屏蔽的自动耦合减方差"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block303",
+    "text": "我拟研究重要性场的空间与角度近似、权窗映射和设计更新怎样影响最终蒙卡统计与总成本。可先用成熟的正向—伴随工具建立CADIS/FW-CADIS及MAGIC参考流程,在直通、折弯孔道和厚实体屏蔽中分别改变预计算分辨率与权窗配置,再在独立工程子结构及更新序列中比较响应达标时间。该方向能够以现成重要性生成工具为起点,并按所测预计算占比选择GPU模块。"
+  },
+  {
+    "role": "paragraph",
+    "location": "word.block304",
+    "text": "预期成果是重要性表示与统计效率的实证联系、适合选定任务的权窗配置或更新方法,以及聚变屏蔽复现流程。候选假设是,保留主要贡献通道、减少对统计任务作用较小的细化,并按输入依赖更新数据,可以降低连续方案评价的计算时间。开展条件包括多群数据、蒙卡接口、可获取基准和明确的响应范围。表6对三个方向作综合比较,供导师结合学术目标、软件基础与资源条件确定主方向。"
+  },
+  {
+    "role": "table_caption",
+    "location": "word.block305",
+    "text": "表6三个候选研究方向的综合比较"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r0.c0",
+    "text": "维度"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r0.c1",
+    "text": "复杂几何与空间离散"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r0.c2",
+    "text": "GPU正向—伴随输运"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r0.c3",
+    "text": "自动耦合减方差"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r1.c0",
+    "text": "学术问题"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r1.c1",
+    "text": "材料路径误差与目标导向局部分辨率"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r1.c2",
+    "text": "轨迹、缓存及更新频率的联合执行成本"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r1.c3",
+    "text": "重要性表示、权窗及更新对统计成本的影响"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r2.c0",
+    "text": "最接近工作"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r2.c1",
+    "text": "目标DWR、界面映射、多层权窗[15,21,55]"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r2.c2",
+    "text": "ANT-MOC、STREAM3D、STRAUM[29,30,36]"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r2.c3",
+    "text": "自适应FW-CADIS、贡献粗化、RR[50,51,54]"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r3.c0",
+    "text": "初步路线"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r3.c1",
+    "text": "受控几何→分离误差→等预算指标比较"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r3.c2",
+    "text": "固定源/伴随核对→剖析→缓存/分组/归约对照"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r3.c3",
+    "text": "复现基线→分层近似→权窗配置与更新序列"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r4.c0",
+    "text": "预期成果"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r4.c1",
+    "text": "响应相关误差指标、局部配置及算例"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r4.c2",
+    "text": "经验证模块、成本模型及执行选择依据"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r4.c3",
+    "text": "重要性—统计实证、权窗/更新方法与流程"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r5.c0",
+    "text": "开展条件"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r5.c1",
+    "text": "网格、材料映射及伴随接口"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r5.c2",
+    "text": "可改MOC源码、GPU与分析条件、CUDA训练"
+  },
+  {
+    "role": "cell",
+    "location": "table6.r5.c3",
+    "text": "多群数据、成熟场求解器、蒙卡及授权基准"
+  },
+  {
+    "role": "references_heading",
+    "location": "word.block330",
+    "text": "参考文献"
+  },
+  {
+    "role": "reference",
+    "location": "word.block331",
+    "text": "[1]EBIWONJUMIB,SEGANTINS,PETERSONE.OpenMCInterpretationofFNSSINBADShieldingBenchmarkExperiments[J/OL].FusionScienceandTechnology,2025,81(1):18-31.https://doi.org/10.1080/15361055.2024.2323747."
+  },
+  {
+    "role": "reference",
+    "location": "word.block332",
+    "text": "[2]LUP,XUK,ZHENGY,等.AnalysisofnuclearresponseinCFETRtoroidalfieldcoilswithdensityreductionVRtechnique[J/OL].FusionEngineeringandDesign,2019,147:111243.https://doi.org/10.1016/j.fusengdes.2019.111243."
+  },
+  {
+    "role": "reference",
+    "location": "word.block333",
+    "text": "[3]MORENOC,BADERA,WILSONP.ParaStell:parametricmodelingandneutronicssupportforstellaratorfusionpowerplants[J/OL].FrontiersinNuclearEngineering,2024,3:1384788.https://doi.org/10.3389/fnuen.2024.1384788."
+  },
+  {
+    "role": "reference",
+    "location": "word.block334",
+    "text": "[4]WAGNERJC,HAGHIGHATA.AutomatedVarianceReductionofMonteCarloShieldingCalculationsUsingtheDiscreteOrdinatesAdjointFunction[J/OL].NuclearScienceandEngineering,1998,128(2):186-208.https://doi.org/10.13182/NSE98-2."
+  },
+  {
+    "role": "reference",
+    "location": "word.block335",
+    "text": "[5]WAGNERJC,PEPLOWDE,MOSHERSW.FW-CADISMethodforGlobalandRegionalVarianceReductionofMonteCarloRadiationTransportCalculations[J/OL].NuclearScienceandEngineering,2014,176(1):37-57.https://doi.org/10.13182/NSE12-33."
+  },
+  {
+    "role": "reference",
+    "location": "word.block336",
+    "text": "[6]TSIGE-TAMIRATH,FISCHERU,SERIKOVA,等.AutomaticgenerationandvalidationofanITERneutronicsmodelfromCADdata[J/OL].FusionEngineeringandDesign,2007,82(15-24):1956-1959.https://doi.org/10.1016/j.fusengdes.2007.06.038."
+  },
+  {
+    "role": "reference",
+    "location": "word.block337",
+    "text": "[7]CHENZP,ZHENGHQ,SUNGY,等.PreliminarystudyonCAD-basedmethodofcharacteristicsforneutrontransportcalculation[J/OL].ChinesePhysicsC,2014,38(5):058201.https://doi.org/10.1088/1674-1137/38/5/058201."
+  },
+  {
+    "role": "reference",
+    "location": "word.block338",
+    "text": "[8]YANGC,TANX,XUFY,等.ResearchonapproachestoautomaticmodelingofdiscreteordinateprogramsbasedonCADmodel[J/OL].NuclearEngineeringandDesign,2024,420:112994.https://doi.org/10.1016/j.nucengdes.2024.112994."
+  },
+  {
+    "role": "reference",
+    "location": "word.block339",
+    "text": "[9]BUCHANAG,DARGAVILLES,PAINCC.Acombinedimmersedbodyandadaptivemeshmethodforsimulatingneutrontransportwithincomplexstructures[J/OL].AnnalsofNuclearEnergy,2019,134:88-100.https://doi.org/10.1016/j.anucene.2019.05.044."
+  },
+  {
+    "role": "reference",
+    "location": "word.block340",
+    "text": "[10]LIUC,ZHANGB,ZHANGL,等.NonmatchingDiscontinuousCartesianGridAlgorithmBasedontheMultilevelOctreeArchitectureforDiscreteOrdinatesTransportCalculation[J/OL].NuclearScienceandEngineering,2020,194(12):1175-1201.https://doi.org/10.1080/00295639.2020.1780842."
+  },
+  {
+    "role": "reference",
+    "location": "word.block341",
+    "text": "[11]ZHANGW,MYERSA,GOTTK,等.AMReX:Block-structuredadaptivemeshrefinementformultiphysicsapplications[J/OL].TheInternationalJournalofHighPerformanceComputingApplications,2021,35(6):508-526.https://doi.org/10.1177/10943420211022811."
+  },
+  {
+    "role": "reference",
+    "location": "word.block342",
+    "text": "[12]RENL,LIUS,GUOY,等.ASurveyofGPU-BasedParallelAdaptiveCartesianGridModelingMethodsandSimulationApplications[J/OL].JournalofComputer-AidedDesign&ComputerGraphics,2026,38(2):296-312.https://doi.org/10.3724/SP.J.1089.2024-00765."
+  },
+  {
+    "role": "reference",
+    "location": "word.block343",
+    "text": "[13]BOYDW,SHANERS,LIL,等.TheOpenMOCmethodofcharacteristicsneutralparticletransportcode[J/OL].AnnalsofNuclearEnergy,2014,68:43-52.https://doi.org/10.1016/j.anucene.2013.12.012."
+  },
+  {
+    "role": "reference",
+    "location": "word.block344",
+    "text": "[14]GASTONDR,FORGETB,SMITHKS,等.MethodofCharacteristicsfor3D,Full-CoreNeutronTransportonUnstructuredMesh[J/OL].NuclearTechnology,2021,207(7):931-953.https://doi.org/10.1080/00295450.2021.1871995."
+  },
+  {
+    "role": "reference",
+    "location": "word.block345",
+    "text": "[15]LIUC,ZHANGB,CHENY.Solution-dependentpredictor-correctorfluxmappingalgorithmfordiscreteordinatescalculationonmultileveldiscontinuousgrids[J/OL].AnnalsofNuclearEnergy,2021,152:108033.https://doi.org/10.1016/j.anucene.2020.108033."
+  },
+  {
+    "role": "reference",
+    "location": "word.block346",
+    "text": "[16]WANGY,RAGUSAJC.Standardandgoal-orientedadaptivemeshrefinementappliedtoradiationtransporton2Dunstructuredtriangularmeshes[J/OL].JournalofComputationalPhysics,2011,230(3):763-788.https://doi.org/10.1016/j.jcp.2010.10.018."
+  },
+  {
+    "role": "reference",
+    "location": "word.block347",
+    "text": "[17]LATHOUWERSD.Goal-orientedspatialadaptivityfortheSNequationsonunstructuredtriangularmeshes[J/OL].AnnalsofNuclearEnergy,2011,38(6):1373-1381.https://doi.org/10.1016/j.anucene.2011.01.038."
+  },
+  {
+    "role": "reference",
+    "location": "word.block348",
+    "text": "[18]BAKERCMJ,BUCHANAG,PAINCC,等.Goalbasedmeshadaptivityforfixedsourceradiationtransportcalculations[J/OL].AnnalsofNuclearEnergy,2013,55:169-183.https://doi.org/10.1016/j.anucene.2012.11.029."
+  },
+  {
+    "role": "reference",
+    "location": "word.block349",
+    "text": "[19]GOFFINMA,BAKERCMJ,BUCHANAG,等.MinimisingtheerrorineigenvaluecalculationsinvolvingtheBoltzmanntransportequationusinggoal-basedadaptivityonunstructuredmeshes[J/OL].JournalofComputationalPhysics,2013,242:726-752.https://doi.org/10.1016/j.jcp.2012.12.035."
+  },
+  {
+    "role": "reference",
+    "location": "word.block350",
+    "text": "[20]LIUC,WEIJ,LIJ,等.Multilevelmeshadaptivityfordiscreteordinatestransportcalculationwithspatial-moment-ratioindicators[J/OL].AnnalsofNuclearEnergy,2022,176:109288.https://doi.org/10.1016/j.anucene.2022.109288."
+  },
+  {
+    "role": "reference",
+    "location": "word.block351",
+    "text": "[21]LIUC,WEIJ,ZHANGB,等.Goal-OrientedMeshAdaptivityofThree-DimensionalNeutronTransportCalculationUsingWeightedDifferenceSchemeandDual-WeightedResidualErrorIndicators[J/OL].NuclearScienceandEngineering,2023,197(11):2853-2883.https://doi.org/10.1080/00295639.2023.2169537."
+  },
+  {
+    "role": "reference",
+    "location": "word.block352",
+    "text": "[22]LIUC,ZHANGB,WEIJ,等.VerificationofmultileveloctreegridalgorithmofS_NtransportcalculationwiththeBalakovo-3VVER-1000neutrondosimetrybenchmark[J/OL].NuclearEngineeringandTechnology,2023,55(2):756-768.https://doi.org/10.1016/j.net.2022.10.017."
+  },
+  {
+    "role": "reference",
+    "location": "word.block353",
+    "text": "[23]WILSONSG,EATONMD,KÓPHÁZIJ.Adaptivemeshh(p)-refinementofadiscontinuousBubnov-Galerkinisogeometricanalysisspatialdiscretisationofthefirst-orderformoftheneutrontransportequationwithgoal-basederrormeasuresanddiffusionacceleration[J/OL].ComputerMethodsinAppliedMechanicsandEngineering,2026,455:118872.https://doi.org/10.1016/j.cma.2026.118872."
+  },
+  {
+    "role": "reference",
+    "location": "word.block354",
+    "text": "[24]SONGQ,WANGR,SHENY,等.GPU-acceleratedfew-group3DMethodofCharacteristicsforfull-coreneutrontransportinSmallModularReactors[J/OL].ProgressinNuclearEnergy,2026,192:106109.https://doi.org/10.1016/j.pnucene.2025.106109."
+  },
+  {
+    "role": "reference",
+    "location": "word.block355",
+    "text": "[25]ZHOUF,LIS,XUER,等.Neutronparticletransport3DmethodofcharacteristicMultiGPUplatformParallelComputing[A/OL].(2025)[2026-11-06].https://doi.org/10.48550/arXiv.2503.17743.(arXiv预印本)"
+  },
+  {
+    "role": "reference",
+    "location": "word.block356",
+    "text": "[26]ADINETSA.CUDAProTip:OptimizedFilteringwithWarp-AggregatedAtomics[EB/OL].(2014)[2026-11-06].https://developer.nvidia.com/blog/cuda-pro-tip-optimized-filtering-warp-aggregated-atomics/."
+  },
+  {
+    "role": "reference",
+    "location": "word.block357",
+    "text": "[27]NVIDIACORPORATION.CUDAC++BestPracticesGuide[M/OL].2026[2026-11-06].https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/.(在线指南13.5)"
+  },
+  {
+    "role": "reference",
+    "location": "word.block358",
+    "text": "[28]宋佩涛,张志俭,梁亮,等.基于CPU-GPU异构并行的MOC中子输运计算并行效率优化研究[J/OL].原子能科学技术,2019,53(11):2209-2217.https://doi.org/10.7538/yzk.2019.youxian.0416."
+  },
+  {
+    "role": "reference",
+    "location": "word.block359",
+    "text": "[29]LIS,WANGZ,BUL,等.ANT-MOC:ScalableNeutralParticleTransportUsing3DMethodofCharacteristicsonMulti-GPUSystems[C/OL]//ProceedingsoftheInternationalConferenceforHighPerformanceComputing,Networking,StorageandAnalysis.2023:1-13.https://doi.org/10.1145/3581784.3607063."
+  },
+  {
+    "role": "reference",
+    "location": "word.block360",
+    "text": "[30]DZIANISAUS,LEED.AxiallydecomposedGPU-enabledthree-dimensionalmethodofcharacteristics/diamonddifferencesolverinneutrontransportcodeSTREAM3D-GPU[J/OL].ComputerPhysicsCommunications,2026,319:109952.https://doi.org/10.1016/j.cpc.2025.109952."
+  },
+  {
+    "role": "reference",
+    "location": "word.block361",
+    "text": "[31]KIMKM,IMJ,LEEHG,等.VerificationandPerformanceAssessmentofNuDEAL,aGPU-AcceleratedDeterministicTransportFrameworkonUnstructuredMeshes[J/OL].NuclearScienceandEngineering,2026:1-25.https://doi.org/10.1080/00295639.2026.2652773.(在线发表,2026-04-23)"
+  },
+  {
+    "role": "reference",
+    "location": "word.block362",
+    "text": "[32]宋佩涛.MOC全堆芯中子输运CPU/GPU异构并行算法研究[D/OL].哈尔滨:哈尔滨工程大学,2021.https://cnki.istiz.org.cn/kcms/detail/detail.aspx?dbcode=CDFD&dbname=CDFD2024&filename=1023018169.nh."
+  },
+  {
+    "role": "reference",
+    "location": "word.block363",
+    "text": "[33]WANGA,WANGJ,DINGZ,等.Acyclic-trackdecompositionmethodfor3DMOCneutrontransportsimulation[J/OL].NuclearEngineeringandDesign,2024,422:113148.https://doi.org/10.1016/j.nucengdes.2024.113148."
+  },
+  {
+    "role": "reference",
+    "location": "word.block364",
+    "text": "[34]汪岸.三维中子输运特征线计算方法及大规模并行实现[D/OL].北京:北京科技大学,2025.https://cnki.istiz.org.cn/kcms/detail/detail.aspx?dbcode=CDFD&dbname=CDFD2026&filename=1025098988.nh."
+  },
+  {
+    "role": "reference",
+    "location": "word.block365",
+    "text": "[35]DZIANISAUS,LEED.GPUAccelerationof3DMOCSolverinSTREAM3DUsingOpenACC[C/OL]//TransactionsoftheKoreanNuclearSocietySpringMeeting.2024.https://www.kns.org/files/pre_paper/51/24S-051-Siarhei.pdf.(KNSSpringMeeting,2024-05-09—10)"
+  },
+  {
+    "role": "reference",
+    "location": "word.block366",
+    "text": "[36]ZHANGA,HONGSG,JEONGS,等.GPU-basedmulti-groupdiscreteordinatestransportcalculations:ParallelcomputingimplementationinSTRAUM[J/OL].NuclearEngineeringandTechnology,2025,57(9):103597.https://doi.org/10.1016/j.net.2025.103597."
+  },
+  {
+    "role": "reference",
+    "location": "word.block367",
+    "text": "[37]GONGC,LIUJ,CHIL,等.GPUacceleratedsimulationsof3Ddeterministicparticletransportusingdiscreteordinatesmethod[J/OL].JournalofComputationalPhysics,2011,230(15):6010-6022.https://doi.org/10.1016/j.jcp.2011.04.010."
+  },
+  {
+    "role": "reference",
+    "location": "word.block368",
+    "text": "[38]ZOUH,ZHANGQ,LIANGL,等.DevelopmentandverificationofaGPU-basedMOCtransientsolver[J/OL].AnnalsofNuclearEnergy,2022,174:109171.https://doi.org/10.1016/j.anucene.2022.109171."
+  },
+  {
+    "role": "reference",
+    "location": "word.block369",
+    "text": "[39]ROYSTONKE,JOHNSONSR,EVANSTM,等.ApplicationoftheDenovoDiscreteOrdinatesRadiationTransportCodetoLarge-ScaleFusionNeutronics[J/OL].FusionScienceandTechnology,2018,74(4):303-314.https://doi.org/10.1080/15361055.2018.1504508."
+  },
+  {
+    "role": "reference",
+    "location": "word.block370",
+    "text": "[40]ANDRSD,HARDYZ,HAWKINSD,等.OpenSn:Amassivelyparallel,open-sourcesimulationenvironmentfordiscreteordinatesradiationtransport[J/OL].ComputerPhysicsCommunications,2026,320:110001.https://doi.org/10.1016/j.cpc.2025.110001."
+  },
+  {
+    "role": "reference",
+    "location": "word.block371",
+    "text": "[41]PRYERT.BatchedWavefrontSweepsforLinearTransportUncertaintyQuantification[A/OL].2026:31[2026-11-06].https://arxiv.org/abs/2609.14496v1.DOI:10.48550/arXiv.2609.14496."
+  },
+  {
+    "role": "reference",
+    "location": "word.block372",
+    "text": "[42]BIONDOE,DAVIDSONG,EVANST,等.StatusofGPUcapabilitieswithintheShiftMonteCarloradiationtransportcode[J/OL].EPJNuclearSciences&Technologies,2025,11:5.https://doi.org/10.1051/epjn/2024034."
+  },
+  {
+    "role": "reference",
+    "location": "word.block373",
+    "text": "[43]OAKRIDGENATIONALLABORATORY.MAVRIC:MonacowithAutomatedVarianceReductionusingImportanceCalculations[M/OL].2026[2026-11-06].https://scale-manual.ornl.gov/6.3.1/MAVRIC.html.(SCALE6.3.1手册)"
+  },
+  {
+    "role": "reference",
+    "location": "word.block374",
+    "text": "[44]MUNKM,SLAYBAUGHRN.ReviewofHybridMethodsforDeep-PenetrationNeutronTransport[J/OL].NuclearScienceandEngineering,2019,193(10):1055-1089.https://doi.org/10.1080/00295639.2019.1586273."
+  },
+  {
+    "role": "reference",
+    "location": "word.block375",
+    "text": "[45]MUNKM,SLAYBAUGHRN,PANDYATM,等.FW/CADIS-Ω:Anangle-informedhybridmethodfordeep-penetrationradiationtransport[A/OL].(2016)[2026-11-06].https://doi.org/10.48550/arXiv.1612.00793.(arXiv预印本;相关会议稿PHYSOR2016)"
+  },
+  {
+    "role": "reference",
+    "location": "word.block376",
+    "text": "[46]ZHAOY,HANJ,ZUOJ,等.LocalangularadaptivityCADIShybridvariancereductionmethodformontecarloradiationtransportcalculations[J/OL].AnnalsofNuclearEnergy,2025,218:111385.https://doi.org/10.1016/j.anucene.2025.111385."
+  },
+  {
+    "role": "reference",
+    "location": "word.block377",
+    "text": "[47]IBRAHIMAM,PEPLOWDE,PETERSONJL,等.NovelhybridMonteCarlo/deterministictechniqueforshutdowndoserateanalysesoffusionenergysystems[J/OL].FusionEngineeringandDesign,2014,89(9-10):1933-1938.https://doi.org/10.1016/j.fusengdes.2014.03.014."
+  },
+  {
+    "role": "reference",
+    "location": "word.block378",
+    "text": "[48]DAVISA,TURNERA.ComparisonofglobalvariancereductiontechniquesforMonteCarloradiationtransportsimulationsofITER[J/OL].FusionEngineeringandDesign,2011,86(9-11):2698-2700.https://doi.org/10.1016/j.fusengdes.2011.01.059."
+  },
+  {
+    "role": "reference",
+    "location": "word.block379",
+    "text": "[49]OPENMCDEVELOPMENTTEAM.OpenMCUserGuide:VarianceReduction[EB/OL].(2026)[2026-11-06].https://docs.openmc.org/en/stable/usersguide/variance_reduction.html."
+  },
+  {
+    "role": "reference",
+    "location": "word.block380",
+    "text": "[50]RAFFUZZIV,NEAMER,COSGROVEP.ApplicationoftheRandomRayMethodtoVarianceReductioninRadiationShieldingProblems[J/OL].NuclearScienceandEngineering,2026,200(sup1):S485-S502.https://doi.org/10.1080/00295639.2025.2458958."
+  },
+  {
+    "role": "reference",
+    "location": "word.block381",
+    "text": "[51]IBRAHIMAM,WILSONPP,SAWANME,等.AssessmentoffusionfacilitydoseratemapusingmeshadaptivityenhancementsofhybridMonteCarlo/deterministictechniques[J/OL].FusionEngineeringandDesign,2014,89(9-10):1875-1879.https://doi.org/10.1016/j.fusengdes.2014.02.046."
+  },
+  {
+    "role": "reference",
+    "location": "word.block382",
+    "text": "[52]郑华庆,李斌,宋婧,等.基于自动网格划分与权窗平滑的自适应减方差方法[J/OL].核技术,2016,39(9):090502.https://doi.org/10.11889/j.0253-3219.2016.hjs.39.090502."
+  },
+  {
+    "role": "reference",
+    "location": "word.block383",
+    "text": "[53]HEQ,ZHENGQ,LIJ,等.NECP-MCX:AhybridMonte-Carlo-Deterministicparticle-transportcodeforthesimulationofdeep-penetrationproblems[J/OL].AnnalsofNuclearEnergy,2021,151:107978.https://doi.org/10.1016/j.anucene.2020.107978."
+  },
+  {
+    "role": "reference",
+    "location": "word.block384",
+    "text": "[54]ZHENGQ,SHENW,HEQ,等.High-efficiencysimulationofVENUS-3neutron-shieldingproblemwithanautomaticandenhancedhybridMonte-Carlo-Deterministicmethod[J/OL].AnnalsofNuclearEnergy,2021,153:108039.https://doi.org/10.1016/j.anucene.2020.108039."
+  },
+  {
+    "role": "reference",
+    "location": "word.block385",
+    "text": "[55]ZHANGX,LIUS,LIS,等.DevelopmentofmultilevelmeshadaptivityforglobalvariancereductioninMonteCarlocodecosRMC[J/OL].FusionEngineeringandDesign,2024,202:114372.https://doi.org/10.1016/j.fusengdes.2024.114372."
+  },
+  {
+    "role": "reference",
+    "location": "word.block386",
+    "text": "[56]TIANX,QINS,LIJ,等.DevelopingtheTHETAtransportcodewiththelinearsourceenhancedrandomraymethodforhigh-fidelityradiationshieldingsimulation[J/OL].ComputerPhysicsCommunications,2026,327:110288.https://doi.org/10.1016/j.cpc.2026.110288."
+  },
+  {
+    "role": "reference",
+    "location": "word.block387",
+    "text": "[57]TURNERA,DAVISA.ImprovingcomputationalefficiencyofMonte-Carlosimulationswithvariancereduction[A/OL].(2013)[2026-11-06].https://doi.org/10.48550/arXiv.1309.6166.(M&C2013作者预印本)"
+  },
+  {
+    "role": "reference",
+    "location": "word.block388",
+    "text": "[58]EVANSTM,ROYSTONKE,HAMILTONSP,等.AutomatedHybridVarianceReductiononAdvancedArchitecturesintheShiftMonteCarloCode[J/OL].NuclearScienceandEngineering,2026,200(2):444-470.https://doi.org/10.1080/00295639.2025.2484511."
+  },
+  {
+    "role": "reference",
+    "location": "word.block389",
+    "text": "[59]OECDNUCLEARENERGYAGENCY.SINBAD—ShieldingIntegralBenchmarkArchiveandDatabase[EB/OL].(2026)[2026-11-06].https://cms.oecd-nea.org/jcms/pl_32139/sinbad-shielding-integral-benchmark-archive-and-database."
+  },
+  {
+    "role": "reference",
+    "location": "word.block390",
+    "text": "[60]车锐,刘仕倡,田卓,等.基于SINBAD聚变基准题的cosRMC程序屏蔽计算研究[J/OL].核技术,2024,47(5):050008.https://doi.org/10.11889/j.0253-3219.2024.hjs.47.050008."
+  },
+  {
+    "role": "reference",
+    "location": "word.block391",
+    "text": "[61]IWAMOTOY,TSUDAS,OGAWAT.Benchmarkshieldingcalculationsforfusionandaccelerator-drivensub-criticalsystems[J/OL].FrontiersinEnergyResearch,2023,11:1085264.https://doi.org/10.3389/fenrg.2023.1085264."
+  },
+  {
+    "role": "reference",
+    "location": "word.block392",
+    "text": "[62]IBRAHIMAM,MOSHERSW,EVANSTM,等.ITERNeutronicsModelingUsingHybridMonteCarlo/DeterministicandCAD-BasedMonteCarloMethods[J/OL].NuclearTechnology,2011,175(1):251-258.https://doi.org/10.13182/NT175-251."
+  },
+  {
+    "role": "reference",
+    "location": "word.block393",
+    "text": "[63]LIEWSL,KULP.ShieldingDesignOptimizationfortheCompactIgnitionTokamakTestCellBuilding[J/OL].FusionTechnology,1991,20(2):164-178.https://doi.org/10.13182/FST91-A29687."
+  }
+]

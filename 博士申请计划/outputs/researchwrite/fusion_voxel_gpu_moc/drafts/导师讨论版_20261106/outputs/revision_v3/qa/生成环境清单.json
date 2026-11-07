@@ -1,0 +1,14 @@
+{
+  "client_date": "2026-11-07",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "md_to_word": "md-to-word 3.3.2",
+  "renderer": {
+    "path": "/Users/sophia_zhou/.codex/plugins/cache/openai-primary-runtime/documents/26.1104.11149/skills/documents/render_docx.py",
+    "sha256": "876d5993324e2faaaa96a68a4f7504642e9a07e6df265b385b2baa03b231369e"
+  },
+  "requirements": "md-to-word-docx==3.3.2\npython-docx==1.2.0\nlxml==6.1.1\npypdf==6.10.0\npdfplumber==0.11.9\nCairoSVG==2.9.1\nPillow==13.0.0\npypdfium2==5.14.0\nlatex2mathml==3.81.1\n",
+  "font_configuration_sha256": "041fd75ef47da8cd0332c72da682d1f6e2e29389628514c511f690b5eddc7ae9",
+  "all_authoring_outputs": "revision_v3 only; guarded against resolving into revision_v2",
+  "isolated_rebuild": "qa/独立重建验证.json"
+}
