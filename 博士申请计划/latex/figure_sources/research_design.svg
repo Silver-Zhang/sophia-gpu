@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="439.2pt" height="273.6pt" viewBox="0 0 439.2 273.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="420.094488pt" height="261.698206pt" viewBox="0 0 420.094488 261.698206" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-08T18:33:31.076093</dc:date>
+    <dc:date>2026-11-08T20:18:26.433724</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -21,154 +21,154 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 273.6 
-L 439.2 273.6 
-L 439.2 0 
+   <path d="M 0 261.698206 
+L 420.094488 261.698206 
+L 420.094488 0 
 L 0 0 
 z
 " style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 10.84824 116.0064 
-L 130.13496 116.0064 
-L 130.13496 43.2288 
-L 10.84824 43.2288 
+    <path d="M 10.376334 110.960039 
+L 124.473997 110.960039 
+L 124.473997 41.348317 
+L 10.376334 41.348317 
 z
-" clip-path="url(#p704ec13275)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pce8304b7b2)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 159.95664 116.0064 
-L 279.24336 116.0064 
-L 279.24336 43.2288 
-L 159.95664 43.2288 
+    <path d="M 152.998413 110.960039 
+L 267.096076 110.960039 
+L 267.096076 41.348317 
+L 152.998413 41.348317 
 z
-" clip-path="url(#p704ec13275)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pce8304b7b2)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
-    <path d="M 309.06504 116.0064 
-L 428.35176 116.0064 
-L 428.35176 43.2288 
-L 309.06504 43.2288 
+    <path d="M 295.620491 110.960039 
+L 409.718154 110.960039 
+L 409.718154 41.348317 
+L 295.620491 41.348317 
 z
-" clip-path="url(#p704ec13275)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pce8304b7b2)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
-    <path d="M 136.394788 82.2168 
-Q 145.044228 82.2168 152.575635 82.2168 
-" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
-    <path d="M 148.575635 80.2168 
-L 152.575635 82.2168 
-L 148.575635 84.2168 
-" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 130.553542 78.640311 
+Q 138.740639 78.640311 145.809703 78.640311 
+" clip-path="url(#pce8304b7b2)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 141.809703 76.640311 
+L 145.809703 78.640311 
+L 141.809703 80.640311 
+" clip-path="url(#pce8304b7b2)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
    </g>
    <g id="patch_6">
-    <path d="M 302.805212 82.2168 
-Q 294.155772 82.2168 286.624365 82.2168 
-" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
-    <path d="M 290.624365 84.2168 
-L 286.624365 82.2168 
-L 290.624365 80.2168 
-" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 289.540947 78.640311 
+Q 281.353849 78.640311 274.284785 78.640311 
+" clip-path="url(#pce8304b7b2)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 278.284785 80.640311 
+L 274.284785 78.640311 
+L 278.284785 76.640311 
+" clip-path="url(#pce8304b7b2)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
-    <path d="M 10.84824 219.9744 
-L 130.13496 219.9744 
-L 130.13496 162.792 
-L 10.84824 162.792 
+    <path d="M 10.376334 210.405357 
+L 124.473997 210.405357 
+L 124.473997 155.710432 
+L 10.376334 155.710432 
 z
-" clip-path="url(#p704ec13275)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pce8304b7b2)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_8">
-    <path d="M 159.95664 219.9744 
-L 279.24336 219.9744 
-L 279.24336 162.792 
-L 159.95664 162.792 
+    <path d="M 152.998413 210.405357 
+L 267.096076 210.405357 
+L 267.096076 155.710432 
+L 152.998413 155.710432 
 z
-" clip-path="url(#p704ec13275)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pce8304b7b2)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_9">
-    <path d="M 309.06504 219.9744 
-L 428.35176 219.9744 
-L 428.35176 162.792 
-L 309.06504 162.792 
+    <path d="M 295.620491 210.405357 
+L 409.718154 210.405357 
+L 409.718154 155.710432 
+L 295.620491 155.710432 
 z
-" clip-path="url(#p704ec13275)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pce8304b7b2)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_10">
-    <path d="M 219.6 151.793627 
-Q 219.6 154.994582 219.6 157.077502 
-" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
-    <path d="M 221.6 153.077502 
-L 219.6 157.077502 
-L 217.6 153.077502 
-" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 210.047244 145.275472 
+Q 210.047244 148.25046 210.047244 150.107415 
+" clip-path="url(#pce8304b7b2)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 212.047244 146.107415 
+L 210.047244 150.107415 
+L 208.047244 146.107415 
+" clip-path="url(#pce8304b7b2)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
    </g>
    <g id="patch_11">
-    <path d="M 136.394788 191.3832 
-Q 145.044228 191.3832 152.575635 191.3832 
-" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
-    <path d="M 148.575635 189.3832 
-L 152.575635 191.3832 
-L 148.575635 193.3832 
-" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 130.553542 183.057895 
+Q 138.740639 183.057895 145.809703 183.057895 
+" clip-path="url(#pce8304b7b2)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 141.809703 181.057895 
+L 145.809703 183.057895 
+L 141.809703 185.057895 
+" clip-path="url(#pce8304b7b2)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
    </g>
    <g id="patch_12">
-    <path d="M 285.503188 191.3832 
-Q 294.152628 191.3832 301.684035 191.3832 
-" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
-    <path d="M 297.684035 189.3832 
-L 301.684035 191.3832 
-L 297.684035 193.3832 
-" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 273.17562 183.057895 
+Q 281.362718 183.057895 288.431782 183.057895 
+" clip-path="url(#pce8304b7b2)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 284.431782 181.057895 
+L 288.431782 183.057895 
+L 284.431782 185.057895 
+" clip-path="url(#pce8304b7b2)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
    </g>
    <g id="text_1">
-    <text style="font-size: 10px; font-family: 'Heiti TC', 'Arial', sans-serif; text-anchor: middle; fill: #203445" x="219.6" y="23.411" transform="rotate(-0 219.6 23.411)">同一物理模型：斜界面 / 薄层 / 直通与折弯孔道</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #203445" x="210.047244" y="21.451636" transform="rotate(-0 210.047244 21.451636)">同一物理模型：斜界面 / 薄层 / 直通与折弯孔道</text>
    </g>
    <g id="text_2">
-    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(56.9916 67.601194)">参考链</text>
-    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(29.9916 77.545913)">解析交点与光学厚度</text>
-    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(20.9916 87.490631)">空间、角度与源迭代收敛</text>
-    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(23.844178 97.727288)">同离散 CPU / GPU核对</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(53.925165 62.326803)">参考链</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(26.925165 73.197397)">解析交点与光学厚度</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(17.925165 84.06799)">空间、角度与源迭代收敛</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(20.425478 94.938584)">同离散 CPU / GPU核对</text>
    </g>
    <g id="text_3">
-    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(197.5275 67.563225)">空间变量 θ</text>
-    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(179.666719 77.875819)">均匀 / 局部块 / 层级</text>
-    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(188.1 87.820538)">尺度与界面相位</text>
-    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(188.1 97.765256)">材料及源区配置</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(187.8524 62.326803)">空间变量 θ</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(169.375682 73.197397)">均匀 / 局部块 / 层级</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(178.547244 84.06799)">尺度与界面相位</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(178.547244 94.938584)">材料及源区配置</text>
    </g>
    <g id="text_4">
-    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(347.837541 67.169194)">执行变量 s</text>
-    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(324.275119 77.449725)">显式 / 在线 / 部分缓存</text>
-    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(324.275119 87.804506)">原序 / 分桶 / 空间分组</text>
-    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(337.491759 98.159288)">原子 / 局部归约</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(331.254245 62.326803)">执行变量 s</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(307.49776 73.197397)">显式 / 在线 / 部分缓存</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(307.49776 84.06799)">原序 / 分桶 / 空间分组</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(321.083542 94.938584)">原子 / 局部归约</text>
    </g>
    <g id="text_5">
-    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; text-anchor: middle; fill: #203445" x="219.6" y="142.445841" transform="rotate(-0 219.6 142.445841)">交叉实验：θ × s；误差、显存与完整时间逐点实测</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #203445" x="210.047244" y="135.813751" transform="rotate(-0 210.047244 135.813751)">交叉实验：θ × s；误差、显存与完整时间逐点实测</text>
    </g>
    <g id="text_6">
-    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(40.7416 184.59263)">基线与四组对照</text>
-    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(19.520819 194.332302)">均匀基线 / 仅空间 / 仅GPU</text>
-    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(32.509217 203.928536)">独立组合 / 联合配置</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(35.925165 174.665817)">基线与四组对照</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(12.794462 185.536411)">均匀基线 / 仅空间 / 仅GPU</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(26.839384 196.407004)">独立组合 / 联合配置</text>
    </g>
    <g id="text_7">
-    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(198.35 184.664348)">机制与预测</text>
-    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(177.635234 194.464583)">段数 / 带宽 / 工作分歧</text>
-    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(179.225 203.856817)">校准 → 留出几何检验</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(187.547244 174.665817)">机制与预测</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(164.875682 185.536411)">段数 / 带宽 / 工作分歧</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(166.883807 196.407004)">校准 → 留出几何检验</text>
    </g>
    <g id="text_8">
-    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(351.7084 184.776708)">应用验证</text>
-    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(335.885783 194.168942)">FNS及聚变子结构</text>
-    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(322.995666 203.744458)">固定CADIS / FW-CADIS</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(334.669323 174.665817)">应用验证</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(317.022995 185.536411)">FNS及聚变子结构</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; fill: #203445" transform="translate(303.118698 196.407004)">固定CADIS / FW-CADIS</text>
    </g>
    <g id="text_9">
-    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; text-anchor: middle; fill: #203445" x="219.6" y="254.211441" transform="rotate(-0 219.6 254.211441)">输出：误差约束下可行前沿、配置选择损失、完整达标时间</text>
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; text-anchor: middle; fill: #203445" x="210.047244" y="242.717469" transform="rotate(-0 210.047244 242.717469)">输出：误差约束下可行前沿、配置选择损失、完整达标时间</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p704ec13275">
-   <rect x="6.588" y="6.84" width="426.024" height="259.92"/>
+  <clipPath id="pce8304b7b2">
+   <rect x="6.301417" y="6.542455" width="407.491654" height="248.613295"/>
   </clipPath>
  </defs>
 </svg>

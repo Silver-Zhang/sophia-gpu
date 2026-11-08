@@ -1,0 +1,102 @@
+[
+  {
+    "figure": "fig1",
+    "width_pt": 420.094482421875,
+    "fonts": [
+      "MicrosoftYaHei"
+    ],
+    "sizes_pt": [
+      9.0
+    ]
+  },
+  {
+    "figure": "fig3",
+    "width_pt": 420.094482421875,
+    "fonts": [
+      "MicrosoftYaHei"
+    ],
+    "sizes_pt": [
+      9.0
+    ]
+  },
+  {
+    "figure": "fig5",
+    "width_pt": 420.094482421875,
+    "fonts": [
+      "MicrosoftYaHei"
+    ],
+    "sizes_pt": [
+      9.0
+    ]
+  },
+  {
+    "figure": "fig6",
+    "width_pt": 420.094482421875,
+    "fonts": [
+      "MicrosoftYaHei"
+    ],
+    "sizes_pt": [
+      9.0
+    ]
+  },
+  {
+    "figure": "fig7",
+    "width_pt": 420.094482421875,
+    "fonts": [
+      "MicrosoftYaHei"
+    ],
+    "sizes_pt": [
+      9.0
+    ]
+  },
+  {
+    "figure": "dda_index",
+    "width_pt": 420.094482421875,
+    "fonts": [
+      "MicrosoftYaHei"
+    ],
+    "sizes_pt": [
+      9.0
+    ]
+  },
+  {
+    "figure": "geometry_sdf",
+    "width_pt": 419.760009765625,
+    "fonts": [
+      "MicrosoftYaHei"
+    ],
+    "sizes_pt": [
+      9.0
+    ]
+  },
+  {
+    "figure": "fig4_nudeal",
+    "width_pt": 420.094482421875,
+    "fonts": [
+      "MicrosoftYaHei"
+    ],
+    "sizes_pt": [
+      9.0
+    ]
+  },
+  {
+    "figure": "voxel_gpu_cost",
+    "width_pt": 420.094482421875,
+    "fonts": [
+      "MicrosoftYaHei"
+    ],
+    "sizes_pt": [
+      9.0
+    ]
+  },
+  {
+    "figure": "research_design",
+    "width_pt": 420.094482421875,
+    "fonts": [
+      "MicrosoftYaHei"
+    ],
+    "sizes_pt": [
+      9.0
+    ]
+  }
+]

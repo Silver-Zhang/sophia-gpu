@@ -8,6 +8,8 @@ import csv
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 mpl.rcParams.update({'font.family':'Arial','font.size':9,'axes.labelsize':9,'xtick.labelsize':9,'ytick.labelsize':9,'pdf.fonttype':42,'svg.fonttype':'none','savefig.dpi':300})
+from figure_style import configure,finish
+configure()
 root=Path(__file__).resolve().parents[1]
 rows=list(csv.DictReader((root/'references/shriwise2017_table1.csv').open()))
 fig,ax=plt.subplots(figsize=(5.2,2.25))
@@ -20,7 +22,5 @@ ax.spines[['top','right']].set_visible(False)
 ax.tick_params(axis='y',length=0)
 ax.text(25.13+.6,1,'25.13',va='center',fontsize=9)
 ax.text(7.3+.6,2,'7.30',va='center',fontsize=9)
-fig.savefig(root/'figures/geometry_sdf.pdf')
-fig.savefig(root/'figure_sources/geometry_sdf.svg')
-fig.savefig(root/'figures/geometry_sdf.png',dpi=300)
+finish(fig,'geometry_sdf')
 plt.close(fig)

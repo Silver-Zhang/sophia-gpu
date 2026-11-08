@@ -18,6 +18,8 @@ from audit_panel_alignment import require_matplotlib_panel_alignment
 plt.rcParams.update({'font.family':'sans-serif','font.sans-serif':['Arial','Helvetica','DejaVu Sans'],
     'font.size':8,'pdf.fonttype':42,'svg.fonttype':'none','axes.spines.top':False,
     'axes.spines.right':False,'axes.linewidth':0.7,'legend.frameon':False})
+from figure_style import configure,finish
+configure()
 rows=list(csv.DictReader((ROOT/'references/nudeal_table6.csv').open()))
 valid=[r for r in rows if r['sweep_s']]
 x=list(range(len(valid))); labels=[r['angle_block_size'] for r in valid]
@@ -32,10 +34,8 @@ axs[1].legend(loc='lower right',bbox_to_anchor=(1,.03),fontsize=7)
 for ax,label in zip(axs,['a','b']):
     ax.set_xticks(x,labels);ax.set_xlabel('Angles per block')
     ax.text(-.17,1.12,label,transform=ax.transAxes,fontsize=9,fontweight='bold',va='bottom')
-    ax.grid(axis='y',color='#E6E6E6',lw=.5);ax.set_axisbelow(True)
-fig.canvas.draw()
+    ax.grid(False);ax.set_axisbelow(True)
+finish(fig,'fig4_nudeal')
 require_matplotlib_panel_alignment(fig,json_out=str(ROOT/'qa/fig4_nudeal.alignment.json'),
-    tolerance_pt=1.5,gutter_tolerance_pt=1.5,strict=True)
-fig.savefig(ROOT/'figures/fig4_nudeal.pdf')
-fig.savefig(ROOT/'figure_sources/fig4_nudeal.svg')
-fig.savefig(ROOT/'qa/fig4_nudeal.png',dpi=300)
+ tolerance_pt=1.5,gutter_tolerance_pt=1.5,strict=True)
+plt.close(fig)

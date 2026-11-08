@@ -10,9 +10,8 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle, FancyArrowPatch
 from matplotlib import font_manager
 ROOT=Path(__file__).resolve().parents[1]
-font_manager.fontManager.addfont('/System/Library/Fonts/STHeiti Light.ttc')
-CJK=font_manager.FontProperties(fname='/System/Library/Fonts/STHeiti Light.ttc').get_name()
-plt.rcParams.update({'font.family':'sans-serif','font.sans-serif':[CJK,'Arial'],'font.size':9,'pdf.fonttype':42,'svg.fonttype':'none','axes.unicode_minus':False})
+from figure_style import configure,finish
+configure()
 BLUE='#24638d'; TEAL='#34877e'; INK='#203445'; LIGHT='#e2edf3'; GRAY='#a7b6c2'; WARM='#b76842'
 
 def canvas(h):
@@ -24,11 +23,7 @@ def box(a,x,y,w,h,s,fc=LIGHT,size=9):
 def arrow(a,x,y,u,v,c=BLUE,dash=False):
     a.add_patch(FancyArrowPatch((x,y),(u,v),arrowstyle='->',mutation_scale=10,color=c,lw=1,linestyle='--' if dash else '-'))
 def save(f,name):
-    f.canvas.draw()
-    # One drawing canvas; mechanism regions are not quantitative comparable axes.
-    f.savefig(ROOT/'figures'/f'{name}.pdf')
-    f.savefig(ROOT/'figure_sources'/f'{name}.svg')
-    f.savefig(ROOT/'figure_sources'/f'{name}.png',dpi=300)
+    finish(f,name)
     plt.close(f)
 
 # DDA: all three operations take a ray but return different geometric entities.
@@ -67,7 +62,7 @@ box(a,36,76,28,18,'执行配置 s\n缓存 / 分组 / 归约')
 box(a,71,76,28,18,'固定物理与射线\n核数据 / 群 / 方向')
 box(a,1,43,28,20,'体素/树节点访问\nNv,k：定位与穿越')
 box(a,36,43,28,20,'实际输运段\nNs,k：材料/源/计分')
-box(a,71,43,28,20,'通量累积与热点\n源区写入 / 原子竞争')
+box(a,71,43,28,20,'通量求和与热点\n通量写入 / 原子冲突')
 for x in [15,50,85]:arrow(a,x,75,x,64,dash=True)
 arrow(a,29,53,35,53,dash=True);arrow(a,64,53,70,53,dash=True)
 box(a,1,11,28,18,'几何与响应误差\nΔτ / 连通性 / εR',fc='#e4efeb')
