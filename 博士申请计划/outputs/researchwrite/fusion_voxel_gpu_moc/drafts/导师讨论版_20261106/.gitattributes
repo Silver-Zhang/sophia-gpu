@@ -1,2 +1,0 @@
-# Raw review evidence must retain the original bytes, including Word's CRLF.
-review_archive/**/ooxml/** -text -diff

@@ -1,0 +1,19 @@
+# macOS / Python
+.DS_Store
+__pycache__/
+*.pyc
+
+# Office 临时锁文件（Word 已停用，保留规则防止误加）
+~$*
+
+# LaTeX 编译中间件（交付 PDF 只保留 exports/ 一份）
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+博士申请计划/latex/main.pdf

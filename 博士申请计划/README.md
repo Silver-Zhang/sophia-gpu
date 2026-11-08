@@ -1,18 +1,62 @@
 # 博士申请计划
 
-面向聚变堆屏蔽快速方案迭代的块结构体素—GPU-MOC协同设计。
+面向聚变堆屏蔽快速方案迭代的块结构体素—GPU-MOC 协同设计。
 
-## 阅读入口
+**V4.2 起全面改用 LaTeX，不再维护 Word，也不保留历史副本。** 正文只有 `latex/main.tex` 一个来源。
 
-- [网页版上下文交接Prompt](GPT网页版交接Prompt.md)：可直接复制给GPT网页版；建议同时上传定稿Markdown或Word。
-- [定稿正文](outputs/researchwrite/fusion_voxel_gpu_moc/exports/博士科研计划书_唯一审查底稿.md)
-- [Word审阅版](outputs/researchwrite/fusion_voxel_gpu_moc/exports/博士科研计划书_审阅版.docx)
-- [提交前信息清单](outputs/researchwrite/fusion_voxel_gpu_moc/exports/提交前仍需补充的信息清单.md)
-- [参考文献核验表](outputs/researchwrite/fusion_voxel_gpu_moc/exports/参考文献核验表.md)
-- [全文下载清单](outputs/researchwrite/fusion_voxel_gpu_moc/参考文献全文/00_下载清单.md)：已取得9/13项，缺[2][3][8][12]。
+## 当前交付
 
-## 版本与归档
+| 内容 | 路径 |
+|---|---|
+| LaTeX 源码（单文件：导言区 + 封面 + 六章 + 67 条参考文献） | [`latex/main.tex`](latex/main.tex) |
+| 编译脚本 | [`latex/build.sh`](latex/build.sh) |
+| 图片（矢量 PDF + 位图 PNG） | `latex/figures/fig1.pdf` … `fig7.pdf`、`fig4.png` |
+| 编译产物 | `latex/main.pdf`（本地生成，不入库） |
 
-定稿正文与最近确认优先。旧大纲已废弃；早期研究约束文件和阶段记录可能含退出主线的内容，不能作为当前写作依据。qa_logs中的旧渲染和下载候选保留作追溯；未验证候选不是可用全文。第三方文献版权与许可仍归原权利人，存档不构成项目对文献的再许可。
+成稿约 35 页，含 7 幅图、6 张表、67 篇参考文献。
 
-本目录为本地资料快照；仅排除.DS_Store和Python字节码缓存。文件哈希见上传文件清单.json。上传日期：2026-10-31。
+## 编译
+
+需要 XeLaTeX + ctex（TeX Live 或 MacTeX 均可）。
+
+```bash
+cd latex
+bash build.sh          # 连编两遍，目录与交叉引用才完整
+```
+
+字体使用 macOS 系统字体：正文 Songti SC、标题 Heiti SC、西文 Times New Roman。
+换到 Linux/Windows 时，把 `main.tex` 里的 `\setCJKmainfont` 等改成 `fandol`
+或本机可用字体即可。
+
+版式要点：
+
+- 章标题自动编号「第一章 …第六章」，节标题 `1.1 / 1.2 …`，与原文手工编号一致；
+- 引文统一用 `\upcite{1,2}` 渲染为上标 `[1,2]`，对应文末 67 条 `thebibliography`；
+- 6 张表用 `longtable` + `booktabs`，跨页自动重复表头；7 幅图为 `figure` 浮动体；
+- 公式用 `equation` 自动编号，与原稿（1）—（9）一致。
+
+## 目录结构
+
+```
+博士申请计划/
+├── README.md                本文件
+├── GPT网页版交接Prompt.md    交给网页版模型的上下文交接稿
+└── latex/                  ← 正文唯一来源
+    ├── main.tex              单文件：导言区 + 封面 + 六章 + 参考文献
+    ├── build.sh              编译脚本
+    ├── figures/              图 1–7
+    └── main.pdf              编译产物（本地生成，不入库）
+```
+
+## 版本沿革
+
+| 版本 | 形态 | 说明 |
+|---|---|---|
+| 导师讨论初稿 → V2 → V3 | Word（已废弃） | 六章骨架、批注处理、63 篇文献收尾 |
+| V4 / V4.1 / V4.2 | Word（已废弃） | 陈述式改写、调研深化、两句立场句；67 篇文献 |
+| **V4.2（LaTeX）** | **当前** | 由 V4.2 Word 全文转换并重排版式，正文内容等价 |
+
+Word 原件与逐轮修改记录只保留在仓库外的备份
+`/Users/sophia_zhou/GPU/_backup_rp_20261108.tar.gz` 与交付快照
+`/Users/sophia_zhou/GPU/科研计划与计算迭代汇总_截至V4.2_20261108/` 中；
+V2/V3 的 Word 也可从 Git 提交 `171f19d`、`bb17d7a` 取回。
