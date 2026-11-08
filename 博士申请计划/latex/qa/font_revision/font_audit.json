@@ -10,38 +10,8 @@
     ]
   },
   {
-    "figure": "fig3",
-    "width_pt": 420.094482421875,
-    "fonts": [
-      "MicrosoftYaHei"
-    ],
-    "sizes_pt": [
-      9.0
-    ]
-  },
-  {
-    "figure": "fig5",
-    "width_pt": 420.094482421875,
-    "fonts": [
-      "MicrosoftYaHei"
-    ],
-    "sizes_pt": [
-      9.0
-    ]
-  },
-  {
-    "figure": "fig6",
-    "width_pt": 420.094482421875,
-    "fonts": [
-      "MicrosoftYaHei"
-    ],
-    "sizes_pt": [
-      9.0
-    ]
-  },
-  {
-    "figure": "fig7",
-    "width_pt": 420.094482421875,
+    "figure": "geometry_sdf",
+    "width_pt": 419.760009765625,
     "fonts": [
       "MicrosoftYaHei"
     ],
@@ -60,8 +30,8 @@
     ]
   },
   {
-    "figure": "geometry_sdf",
-    "width_pt": 419.760009765625,
+    "figure": "fig3",
+    "width_pt": 420.094482421875,
     "fonts": [
       "MicrosoftYaHei"
     ],
@@ -91,6 +61,36 @@
   },
   {
     "figure": "research_design",
+    "width_pt": 420.094482421875,
+    "fonts": [
+      "MicrosoftYaHei"
+    ],
+    "sizes_pt": [
+      9.0
+    ]
+  },
+  {
+    "figure": "fig7",
+    "width_pt": 420.094482421875,
+    "fonts": [
+      "MicrosoftYaHei"
+    ],
+    "sizes_pt": [
+      9.0
+    ]
+  },
+  {
+    "figure": "fig5",
+    "width_pt": 420.094482421875,
+    "fonts": [
+      "MicrosoftYaHei"
+    ],
+    "sizes_pt": [
+      9.0
+    ]
+  },
+  {
+    "figure": "fig6",
     "width_pt": 420.094482421875,
     "fonts": [
       "MicrosoftYaHei"

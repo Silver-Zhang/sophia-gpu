@@ -1,6 +1,6 @@
 {
   "baseline_commit": "90694990d1717da06eafc59f4cc25081a74f9cb5",
-  "checked_source_sha256": "a6696e1dc0c5fd7c1d31d4cf22ea5ca3d1a4da803c89a90ae4ffccbcb29b5a43",
+  "checked_source_sha256": "4a65b915e87c46778afb23d443f9707d0ce8aa1d3668d7dd2f243e74fe15a5e9",
   "equations": [
     {
       "label": "eq:1",
@@ -27,7 +27,7 @@
       "label": "eq:4",
       "exists": true,
       "baseline_line": 299,
-      "current_line": 327,
+      "current_line": 326,
       "source_unchanged": true
     },
     {
@@ -62,7 +62,7 @@
       "label": "eq:9",
       "exists": true,
       "baseline_line": 424,
-      "current_line": 626,
+      "current_line": 624,
       "source_unchanged": true
     }
   ],
@@ -80,7 +80,7 @@
       "label": "tab:2",
       "exists": true,
       "baseline_line": 264,
-      "current_line": 294,
+      "current_line": 293,
       "source_unchanged": false,
       "content_unchanged_ignoring_column_definition": false,
       "content_unchanged_ignoring_columns_and_whitespace": false
@@ -98,7 +98,7 @@
       "label": "tab:4",
       "exists": true,
       "baseline_line": 398,
-      "current_line": 600,
+      "current_line": 601,
       "source_unchanged": false,
       "content_unchanged_ignoring_column_definition": false,
       "content_unchanged_ignoring_columns_and_whitespace": false
@@ -116,7 +116,7 @@
       "label": "tab:6",
       "exists": true,
       "baseline_line": 532,
-      "current_line": 659,
+      "current_line": 657,
       "source_unchanged": false,
       "content_unchanged_ignoring_column_definition": false,
       "content_unchanged_ignoring_columns_and_whitespace": false
