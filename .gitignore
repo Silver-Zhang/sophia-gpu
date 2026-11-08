@@ -17,3 +17,9 @@ __pycache__/
 *.bbl
 *.blg
 博士申请计划/latex/main.pdf
+
+# 可重建的绘图预览与本地审阅副本
+博士申请计划/latex/figure_sources/*.png
+博士申请计划/latex/figure_sources/*.svg
+博士申请计划/latex/main_*.pdf
+博士申请计划/exports/.*.tmp

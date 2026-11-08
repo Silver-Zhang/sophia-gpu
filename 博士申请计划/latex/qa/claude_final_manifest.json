@@ -1,7 +1,0 @@
-{
-  "source_sha256": "b86cfa13382099ec1b133dcdf59e96796429d16fc181bebbda4a704798b7de3a",
-  "prompt_sha256": "debeb007f978f6fcee202e634dca3fc9f581edd18ed914c930ae1c1dcbb1b7f3",
-  "prompt_characters": 47334,
-  "tools_enabled": false,
-  "review_scope": "stage2 disposition; current full chapters4/5/6, section2 MOC conventions, all13 equations, preservation and69 matrix summary, application evidence"
-}

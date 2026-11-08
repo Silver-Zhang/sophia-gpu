@@ -33,5 +33,6 @@ def finish(fig,name):
         text.set_fontfamily('Microsoft YaHei');text.set_fontsize(FONT_PT);text.set_fontweight('normal')
     fig.canvas.draw()
     fig.savefig(ROOT/'figures'/f'{name}.pdf')
-    fig.savefig(ROOT/'figure_sources'/f'{name}.svg')
-    fig.savefig(ROOT/'figure_sources'/f'{name}.png',dpi=300)
+    if os.environ.get('FIGURE_PREVIEWS') == '1':
+        fig.savefig(ROOT/'figure_sources'/f'{name}.svg')
+        fig.savefig(ROOT/'figure_sources'/f'{name}.png',dpi=300)

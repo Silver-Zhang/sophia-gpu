@@ -3,7 +3,7 @@
 from pathlib import Path
 import argparse,collections,json,re,sys
 ap=argparse.ArgumentParser();ap.add_argument('--log',type=Path);ap.add_argument('--source',type=Path);args=ap.parse_args()
-root=Path(__file__).resolve().parents[1];path=args.source or root/'main.tex'; raw=path.read_text();s=re.sub(r'(?m)(?<!\\)%.*$','',raw)
+root=Path(__file__).resolve().parent;path=args.source or root/'main.tex'; raw=path.read_text();s=re.sub(r'(?m)(?<!\\)%.*$','',raw)
 errors=[];warnings=[]
 bibs=re.findall(r'\\bibitem(?:\[[^]]*\])?\{([^}]+)\}',s)
 for kind,vals in [('bibitem',bibs),('label',re.findall(r'\\label\{([^}]+)\}',s))]:
@@ -27,10 +27,11 @@ warnings += ['uncited bibliography entry: '+k for k in sorted(keys-used)]
 baseline=json.loads((root/'references/baseline_inventory.json').read_text())
 errors += ['baseline bibliography entry removed: '+x['key'] for x in baseline['bibliography'] if x['key'] not in keys]
 errors += ['baseline equation label removed: '+x for x in baseline['equations'] if x not in labels]
+for name in re.findall(r'\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}',s):
+    errors += [] if any((root/(name+suffix)).is_file() for suffix in ['', '.pdf', '.png']) else ['missing figure: '+name]
 if args.log:
     log=args.log.read_text(errors='replace')
     errors += [line for line in log.splitlines() if re.search(r'undefined|There were undefined references|Rerun to get cross-references right|Fatal error|^!',line,re.I)]
     warnings += [line for line in log.splitlines() if re.search(r'Overfull|Missing character',line)]
 result={'source':str(path),'bibliography_count':len(bibs),'cited_entries':len(used),'equations':len(re.findall(r'\\begin\{equation\}',s)),'figures':len(re.findall(r'\\includegraphics',s)),'tables':len(re.findall(r'\\begin\{longtable\}',s)),'errors':errors,'warnings':warnings}
-(root/'qa/integrity_report.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
-print(json.dumps(result,ensure_ascii=False,indent=2));sys.exit(bool(errors))
+print(json.dumps(result,ensure_ascii=False,indent=2));sys.exit(bool(errors or warnings))

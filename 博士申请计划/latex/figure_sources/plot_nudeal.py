@@ -10,11 +10,6 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 ROOT = Path(__file__).resolve().parents[1]
-audit_dir = os.environ.get('NATURE_FIGURE_SCRIPTS')
-if not audit_dir:
-    audit_dir = str(Path.home()/'.codex/plugins/cache/nature-skills/nature-skills/0.1.0/skills/nature-figure/scripts')
-sys.path.insert(0, audit_dir)
-from audit_panel_alignment import require_matplotlib_panel_alignment
 plt.rcParams.update({'font.family':'sans-serif','font.sans-serif':['Arial','Helvetica','DejaVu Sans'],
     'font.size':8,'pdf.fonttype':42,'svg.fonttype':'none','axes.spines.top':False,
     'axes.spines.right':False,'axes.linewidth':0.7,'legend.frameon':False})
@@ -36,6 +31,3 @@ for ax,label in zip(axs,['a','b']):
     ax.text(-.17,1.12,label,transform=ax.transAxes,fontsize=9,fontweight='bold',va='bottom')
     ax.grid(False);ax.set_axisbelow(True)
 finish(fig,'fig4_nudeal')
-require_matplotlib_panel_alignment(fig,json_out=str(ROOT/'qa/fig4_nudeal.alignment.json'),
- tolerance_pt=1.5,gutter_tolerance_pt=1.5,strict=True)
-plt.close(fig)

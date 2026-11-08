@@ -1,8 +1,1 @@
-# Preserve generated audit snapshots and Matplotlib path formatting verbatim.
-**/figure_sources/*.svg -whitespace
-**/qa/claude_* -whitespace
-**/qa/build/*.log -whitespace
-# Unified diffs retain the required space prefix on empty context lines.
-**/qa/*.diff -whitespace
-# Keep machine-readable source tables portable across platforms.
 *.csv text eol=lf
