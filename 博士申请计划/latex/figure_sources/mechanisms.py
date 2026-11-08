@@ -26,35 +26,39 @@ def save(f,name):
     finish(f,name)
     plt.close(f)
 
-# Three horizontal rows with method names and essential geometric information only.
-f,a=canvas(3.7)
-text(a,2,96,'a  DDA',ha='left')
+# Equal-width horizontal panels; essential labels only, with shared baselines.
+f,a=canvas(2.45)
+for x,label in [(2,'a  DDA'),(36,'b  八叉树'),(70,'c  BVH')]:
+ text(a,x,94,label,ha='left')
+
+# DDA: regular cells and ordered ray intervals.
 for i in range(6):
  for j in range(4):
-    a.add_patch(Rectangle((2+i*4.3,71+j*5),4.3,5,
+    a.add_patch(Rectangle((2+i*28/6,36+j*12),28/6,12,
         fc=LIGHT if i<3 else '#e4efeb',ec=GRAY,lw=.6))
-arrow(a,1,74,29,88)
+arrow(a,0,44,32,65)
 for i in range(1,6):
- x=2+i*4.3;a.plot([x],[74+(x-1)/28*14],'.',color=WARM,ms=3)
-text(a,34,85,'单元穿越',ha='left')
-text(a,34,75,r'索引 $(i,j,k)$；区间 $[t_{\mathrm{in}},t_{\mathrm{out}}]$',ha='left')
+ x=2+i*28/6;a.plot([x],[44+x/32*21],'.',color=WARM,ms=3)
+text(a,16,24,'单元穿越')
+text(a,16,10,r'$(i,j,k)$，$[t_{\mathrm{in}},t_{\mathrm{out}}]$')
 
-text(a,2,64,'b  八叉树',ha='left')
-for x,y,w,h in [(2,39,13,20),(15,49,13,10),(15,39,6.5,10),
-                (21.5,39,6.5,5),(21.5,44,6.5,5)]:
+# Octree slice: the same extent with locally refined leaf cells.
+for x,y,w,h in [(36,36,14,48),(50,60,14,24),(50,36,7,24),
+                (57,36,7,12),(57,48,7,12)]:
  a.add_patch(Rectangle((x,y),w,h,fc=LIGHT,ec=GRAY,lw=.7))
-arrow(a,1,42,29,56)
-text(a,34,53,'叶单元定位',ha='left')
-text(a,34,43,'编号、尺寸、材料',ha='left')
+arrow(a,34,44,66,65)
+text(a,50,24,'叶单元定位')
+text(a,50,10,'编号、尺寸、材料')
 
-text(a,2,32,'c  BVH',ha='left')
-for x,y,w,h in [(2,7,26,20),(4,10,10,14),(16,14,10,11)]:
+# BVH: bounding boxes screen candidate surfaces.
+a.add_patch(Rectangle((70,36),28,48,fc=LIGHT,ec=GRAY,lw=.7))
+for x,y,w,h in [(72,42,11,32),(85,52,11,27)]:
  a.add_patch(Rectangle((x,y),w,h,fc='none',ec=GRAY,lw=.8))
-a.plot([5,12,9,5],[12,14,22,12],color=TEAL,lw=1.2)
-a.plot([18,25,22,18],[15,18,24,15],color=TEAL,lw=1.2)
-arrow(a,1,10,29,24)
-text(a,34,21,'候选面筛选与求交',ha='left')
-text(a,34,11,'表面编号、交点参数',ha='left')
+a.plot([73,80,77,73],[45,51,73,45],color=TEAL,lw=1.2)
+a.plot([87,94,91,87],[57,61,73,57],color=TEAL,lw=1.2)
+arrow(a,68,44,100,65)
+text(a,84,24,'候选面筛选与求交')
+text(a,84,10,'表面编号、交点参数')
 save(f,'dda_index')
 
 # Causal links among numerical discretization, GPU execution and joint selection.

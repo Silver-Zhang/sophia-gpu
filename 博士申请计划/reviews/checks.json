@@ -1,7 +1,7 @@
 {
   "base": "90976b7",
   "source_sha256": "c09e56bf3bfc7beb646fbb12ade774a8ed82fb5fe3c1593693ffce73b098a968",
-  "pdf_sha256": "1b6c93d1b264b74b46af4518119061d104bd4b6b14fa8007b42d9ba9df87422c",
+  "pdf_sha256": "d26dbd9d4b5b74bf8a8aa92d6a0d20c8824c99a14c600cc5872b1805533523dd",
   "pages": 32,
   "sections": 5,
   "references": 69,
@@ -63,5 +63,5 @@
     ]
   },
   "figure_typography": "Chinese: Microsoft YaHei; Latin labels: Arial; math: XeLaTeX CM + Times New Roman as in main.tex; normal labels/base math 9 bp, scripts 6 bp.",
-  "figure_layout_followup": "DDA/octree/BVH: three rows, core method/geometry labels only; all figures omit explanatory sentences and redundant callouts; no ray-input footer."
+  "figure_layout_followup": "Figure 2 uses three equal-width horizontal panels with aligned diagrams and labels; compact 148.2 by 59.5 mm canvas; essential labels only; 0 collision findings."
 }
