@@ -1,0 +1,375 @@
+[
+  {
+    "key": "ref25",
+    "doi": "10.48550/arXiv.2503.17743",
+    "source": "https://api.datacite.org/dois/10.48550%2FarXiv.2503.17743",
+    "checked_date": "2026-11-08",
+    "status": "datacite_metadata_retrieved",
+    "titles": [
+      {
+        "title": "Neutron particle transport 3D method of characteristic Multi GPU platform Parallel Computing"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Zhou, Faguo",
+        "nameType": "Personal",
+        "givenName": "Faguo",
+        "familyName": "Zhou",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Li, Shunde",
+        "nameType": "Personal",
+        "givenName": "Shunde",
+        "familyName": "Li",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Xue, Rong",
+        "nameType": "Personal",
+        "givenName": "Rong",
+        "familyName": "Xue",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Bu, Lingkun",
+        "nameType": "Personal",
+        "givenName": "Lingkun",
+        "familyName": "Bu",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Nie, Ningming",
+        "nameType": "Personal",
+        "givenName": "Ningming",
+        "familyName": "Nie",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Shi, Peng",
+        "nameType": "Personal",
+        "givenName": "Peng",
+        "familyName": "Shi",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Wang, Jue",
+        "nameType": "Personal",
+        "givenName": "Jue",
+        "familyName": "Wang",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Hu, Yun",
+        "nameType": "Personal",
+        "givenName": "Yun",
+        "familyName": "Hu",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Wang, Zongguo",
+        "nameType": "Personal",
+        "givenName": "Zongguo",
+        "familyName": "Wang",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Wang, Yangang",
+        "nameType": "Personal",
+        "givenName": "Yangang",
+        "familyName": "Wang",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Yang, Qinmeng",
+        "nameType": "Personal",
+        "givenName": "Qinmeng",
+        "familyName": "Yang",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Yu, Miao",
+        "nameType": "Personal",
+        "givenName": "Miao",
+        "familyName": "Yu",
+        "affiliation": [],
+        "nameIdentifiers": []
+      }
+    ],
+    "publication_year": 2025,
+    "dates": [
+      {
+        "date": "2025-03-22T12:02:43Z",
+        "dateType": "Submitted",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2025-03-25T00:29:43Z",
+        "dateType": "Updated",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2025-03",
+        "dateType": "Available",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2025",
+        "dateType": "Issued"
+      }
+    ],
+    "url": "https://arxiv.org/abs/2503.17743",
+    "rights_list": [
+      {
+        "rights": "Creative Commons Attribution 4.0 International",
+        "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc-by-4.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ]
+  },
+  {
+    "key": "ref41",
+    "doi": "10.48550/arXiv.2609.14496",
+    "source": "https://api.datacite.org/dois/10.48550%2FarXiv.2609.14496",
+    "checked_date": "2026-11-08",
+    "status": "datacite_metadata_retrieved",
+    "titles": [
+      {
+        "title": "Batched Wavefront Sweeps for Linear Transport Uncertainty Quantification"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Pryer, Tristan",
+        "nameType": "Personal",
+        "givenName": "Tristan",
+        "familyName": "Pryer",
+        "affiliation": [],
+        "nameIdentifiers": []
+      }
+    ],
+    "publication_year": 2026,
+    "dates": [
+      {
+        "date": "2026-09-13T13:05:11Z",
+        "dateType": "Submitted",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026-09-15T01:09:09Z",
+        "dateType": "Updated",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026-09",
+        "dateType": "Available",
+        "dateInformation": "v1"
+      }
+    ],
+    "url": "https://arxiv.org/abs/2609.14496",
+    "rights_list": [
+      {
+        "rights": "Creative Commons Attribution 4.0 International",
+        "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc-by-4.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ]
+  },
+  {
+    "key": "ref45",
+    "doi": "10.48550/arXiv.1612.00793",
+    "source": "https://api.datacite.org/dois/10.48550%2FarXiv.1612.00793",
+    "checked_date": "2026-11-08",
+    "status": "datacite_metadata_retrieved",
+    "titles": [
+      {
+        "title": "FW/CADIS-$Ω$: An angle-informed hybrid method for deep-penetration radiation transport"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Munk, Madicken",
+        "nameType": "Personal",
+        "givenName": "Madicken",
+        "familyName": "Munk",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Slaybaugh, R. N.",
+        "nameType": "Personal",
+        "givenName": "R. N.",
+        "familyName": "Slaybaugh",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Pandya, Tara M.",
+        "nameType": "Personal",
+        "givenName": "Tara M.",
+        "familyName": "Pandya",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Johnson, Seth R.",
+        "nameType": "Personal",
+        "givenName": "Seth R.",
+        "familyName": "Johnson",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Evans, T. M.",
+        "nameType": "Personal",
+        "givenName": "T. M.",
+        "familyName": "Evans",
+        "affiliation": [],
+        "nameIdentifiers": []
+      }
+    ],
+    "publication_year": 2016,
+    "dates": [
+      {
+        "date": "2016-12-02T19:16:06Z",
+        "dateType": "Submitted",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2026-06-04T17:34:49Z",
+        "dateType": "Updated",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2016-12",
+        "dateType": "Available",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2016",
+        "dateType": "Issued"
+      }
+    ],
+    "url": "https://arxiv.org/abs/1612.00793",
+    "rights_list": [
+      {
+        "rights": "arXiv.org perpetual, non-exclusive license",
+        "rightsUri": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      }
+    ]
+  },
+  {
+    "key": "ref57",
+    "doi": "10.48550/arXiv.1309.6166",
+    "source": "https://api.datacite.org/dois/10.48550%2FarXiv.1309.6166",
+    "checked_date": "2026-11-08",
+    "status": "datacite_metadata_retrieved",
+    "titles": [
+      {
+        "title": "Improving computational efficiency of Monte-Carlo simulations with variance reduction"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Turner, A.",
+        "nameType": "Personal",
+        "givenName": "A.",
+        "familyName": "Turner",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Davis, A.",
+        "nameType": "Personal",
+        "givenName": "A.",
+        "familyName": "Davis",
+        "affiliation": [],
+        "nameIdentifiers": []
+      }
+    ],
+    "publication_year": 2013,
+    "dates": [
+      {
+        "date": "2013-09-24T14:11:12Z",
+        "dateType": "Submitted",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2013-09-25T00:07:45Z",
+        "dateType": "Updated",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2013-09",
+        "dateType": "Available",
+        "dateInformation": "v1"
+      },
+      {
+        "date": "2013",
+        "dateType": "Issued"
+      }
+    ],
+    "url": "https://arxiv.org/abs/1309.6166",
+    "rights_list": [
+      {
+        "rights": "arXiv.org perpetual, non-exclusive license",
+        "rightsUri": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      }
+    ]
+  },
+  {
+    "key": "ref68",
+    "doi": "10.2312/egtp.19871000",
+    "source": "https://api.datacite.org/dois/10.2312%2Fegtp.19871000",
+    "checked_date": "2026-11-08",
+    "status": "datacite_metadata_retrieved",
+    "titles": [
+      {
+        "title": "A Fast Voxel Traversal Algorithm for Ray Tracing"
+      }
+    ],
+    "creators": [
+      {
+        "name": "Amanatides, John",
+        "nameType": "Personal",
+        "givenName": "John",
+        "familyName": "Amanatides",
+        "affiliation": [],
+        "nameIdentifiers": []
+      },
+      {
+        "name": "Woo, Andrew",
+        "nameType": "Personal",
+        "givenName": "Andrew",
+        "familyName": "Woo",
+        "affiliation": [],
+        "nameIdentifiers": []
+      }
+    ],
+    "publication_year": 1987,
+    "dates": [
+      {
+        "date": "1987",
+        "dateType": "Issued"
+      }
+    ],
+    "url": "https://diglib.eg.org/handle/10.2312/egtp19871000",
+    "rights_list": []
+  }
+]

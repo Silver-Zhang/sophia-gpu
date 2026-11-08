@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="439.2pt" height="273.6pt" viewBox="0 0 439.2 273.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-08T18:33:31.076093</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.5, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 273.6 
+L 439.2 273.6 
+L 439.2 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 10.84824 116.0064 
+L 130.13496 116.0064 
+L 130.13496 43.2288 
+L 10.84824 43.2288 
+z
+" clip-path="url(#p704ec13275)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 159.95664 116.0064 
+L 279.24336 116.0064 
+L 279.24336 43.2288 
+L 159.95664 43.2288 
+z
+" clip-path="url(#p704ec13275)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 309.06504 116.0064 
+L 428.35176 116.0064 
+L 428.35176 43.2288 
+L 309.06504 43.2288 
+z
+" clip-path="url(#p704ec13275)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 136.394788 82.2168 
+Q 145.044228 82.2168 152.575635 82.2168 
+" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 148.575635 80.2168 
+L 152.575635 82.2168 
+L 148.575635 84.2168 
+" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 302.805212 82.2168 
+Q 294.155772 82.2168 286.624365 82.2168 
+" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 290.624365 84.2168 
+L 286.624365 82.2168 
+L 290.624365 80.2168 
+" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 10.84824 219.9744 
+L 130.13496 219.9744 
+L 130.13496 162.792 
+L 10.84824 162.792 
+z
+" clip-path="url(#p704ec13275)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 159.95664 219.9744 
+L 279.24336 219.9744 
+L 279.24336 162.792 
+L 159.95664 162.792 
+z
+" clip-path="url(#p704ec13275)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 309.06504 219.9744 
+L 428.35176 219.9744 
+L 428.35176 162.792 
+L 309.06504 162.792 
+z
+" clip-path="url(#p704ec13275)" style="fill: #e2edf3; stroke: #a7b6c2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 219.6 151.793627 
+Q 219.6 154.994582 219.6 157.077502 
+" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 221.6 153.077502 
+L 219.6 157.077502 
+L 217.6 153.077502 
+" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 136.394788 191.3832 
+Q 145.044228 191.3832 152.575635 191.3832 
+" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 148.575635 189.3832 
+L 152.575635 191.3832 
+L 148.575635 193.3832 
+" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 285.503188 191.3832 
+Q 294.152628 191.3832 301.684035 191.3832 
+" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+    <path d="M 297.684035 189.3832 
+L 301.684035 191.3832 
+L 297.684035 193.3832 
+" clip-path="url(#p704ec13275)" style="fill: none; stroke: #24638d; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'Heiti TC', 'Arial', sans-serif; text-anchor: middle; fill: #203445" x="219.6" y="23.411" transform="rotate(-0 219.6 23.411)">同一物理模型：斜界面 / 薄层 / 直通与折弯孔道</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(56.9916 67.601194)">参考链</text>
+    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(29.9916 77.545913)">解析交点与光学厚度</text>
+    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(20.9916 87.490631)">空间、角度与源迭代收敛</text>
+    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(23.844178 97.727288)">同离散 CPU / GPU核对</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(197.5275 67.563225)">空间变量 θ</text>
+    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(179.666719 77.875819)">均匀 / 局部块 / 层级</text>
+    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(188.1 87.820538)">尺度与界面相位</text>
+    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(188.1 97.765256)">材料及源区配置</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(347.837541 67.169194)">执行变量 s</text>
+    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(324.275119 77.449725)">显式 / 在线 / 部分缓存</text>
+    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(324.275119 87.804506)">原序 / 分桶 / 空间分组</text>
+    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(337.491759 98.159288)">原子 / 局部归约</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; text-anchor: middle; fill: #203445" x="219.6" y="142.445841" transform="rotate(-0 219.6 142.445841)">交叉实验：θ × s；误差、显存与完整时间逐点实测</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(40.7416 184.59263)">基线与四组对照</text>
+    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(19.520819 194.332302)">均匀基线 / 仅空间 / 仅GPU</text>
+    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(32.509217 203.928536)">独立组合 / 联合配置</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(198.35 184.664348)">机制与预测</text>
+    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(177.635234 194.464583)">段数 / 带宽 / 工作分歧</text>
+    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(179.225 203.856817)">校准 → 留出几何检验</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(351.7084 184.776708)">应用验证</text>
+    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(335.885783 194.168942)">FNS及聚变子结构</text>
+    <text style="font-size: 8.5px; font-family: 'Heiti TC', 'Arial', sans-serif; fill: #203445" transform="translate(322.995666 203.744458)">固定CADIS / FW-CADIS</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 9px; font-family: 'Heiti TC', 'Arial', sans-serif; text-anchor: middle; fill: #203445" x="219.6" y="254.211441" transform="rotate(-0 219.6 254.211441)">输出：误差约束下可行前沿、配置选择损失、完整达标时间</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p704ec13275">
+   <rect x="6.588" y="6.84" width="426.024" height="259.92"/>
+  </clipPath>
+ </defs>
+</svg>

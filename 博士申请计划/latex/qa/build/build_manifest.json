@@ -1,0 +1,12 @@
+{
+  "source_sha256": "fc953dbc2cc93f57905df784ed11b09077c94a007b74bdbd2537ed06d14f9d98",
+  "pdf_sha256": "e9327cf6a0e9b63711f538aad37166d0040d552f842671b139a92c06a976fb9d",
+  "build_directory": "/var/folders/y8/b4qzj0d930149j2y3lrlkz740000gn/T//rp-v5-build.tt0P53",
+  "passes": 3,
+  "xelatex_return_codes": [
+    0,
+    0,
+    0
+  ],
+  "final_log_sha256": "3968d4ecb05129ca9e33e748214b65d95b5bb3d4388cb588549fe0a881be75d4"
+}

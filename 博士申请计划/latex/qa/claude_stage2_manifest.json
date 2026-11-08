@@ -1,0 +1,8 @@
+{
+  "review_scope": "Full LaTeX source plus canon, argument map, geometry/GPU evidence summaries, baseline equations and tables3/4",
+  "tools_enabled": false,
+  "prompt_sha256": "0c3ae451bcf64c1cd16efa7a71f3b90547a03deb6846c6cc7240fe0a9847e608",
+  "prompt_characters": 73293,
+  "source_extracted_from_prompt_sha256": "2553d748f7156523c79c3f5bfda5e80c64d46e4b0ddced943fc2d757a7839a8d",
+  "result_file": "claude_stage2_result.json"
+}

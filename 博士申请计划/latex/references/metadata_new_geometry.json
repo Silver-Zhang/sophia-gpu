@@ -1,0 +1,121 @@
+[
+  {
+    "key": "ref68",
+    "doi": "10.2312/egtp.19871000",
+    "source": "https://api.crossref.org/works/10.2312%2Fegtp.19871000",
+    "checked_date": "2026-11-08",
+    "status": "retrieval_failed",
+    "error": "curl: (56) The requested URL returned error: 404\n"
+  },
+  {
+    "key": "ref69",
+    "doi": "10.1145/1730804.1730814",
+    "source": "https://api.crossref.org/works/10.1145%2F1730804.1730814",
+    "checked_date": "2026-11-08",
+    "status": "crossref_metadata_retrieved",
+    "title": [
+      "Efficient sparse voxel octrees"
+    ],
+    "authors": [
+      {
+        "given": "Samuli",
+        "family": "Laine",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "NVIDIA Research"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Tero",
+        "family": "Karras",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "NVIDIA Research"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2010,
+          2,
+          19
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2010,
+          2,
+          19
+        ]
+      ]
+    },
+    "published_print": {
+      "date-parts": [
+        [
+          2010,
+          2,
+          19
+        ]
+      ]
+    },
+    "container_title": [
+      "Proceedings of the 2010 ACM SIGGRAPH symposium on Interactive 3D Graphics and Games"
+    ],
+    "volume": null,
+    "issue": null,
+    "page": "55-63",
+    "article_number": null,
+    "publisher": "ACM",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2010,
+              2,
+              19
+            ]
+          ],
+          "date-time": "2010-02-19T00:00:00Z",
+          "timestamp": 1266537600000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+      }
+    ],
+    "links": [
+      {
+        "URL": "https://dl.acm.org/doi/10.1145/1730804.1730814",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://dl.acm.org/doi/pdf/10.1145/1730804.1730814",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ]
+  }
+]

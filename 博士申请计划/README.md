@@ -1,61 +1,23 @@
-# 博士申请计划
+# 博士申请计划 V5
 
-面向聚变堆屏蔽快速方案迭代的块结构体素—GPU-MOC 协同设计。
+《面向聚变堆复杂几何的体素化特征线中子输运与GPU并行加速方法研究》
 
-**V4.2 起全面改用 LaTeX，不再维护 Word，也不保留历史副本。** 正文只有 `latex/main.tex` 一个来源。
+正文唯一来源为[latex/main.tex](latex/main.tex)，使用XeLaTeX；不维护Word或Markdown正文副本。
 
-## 当前交付
-
-| 内容 | 路径 |
+|交付|路径|
 |---|---|
-| LaTeX 源码（单文件：导言区 + 封面 + 六章 + 67 条参考文献） | [`latex/main.tex`](latex/main.tex) |
-| 编译脚本 | [`latex/build.sh`](latex/build.sh) |
-| 图片（矢量 PDF + 位图 PNG） | `latex/figures/fig1.pdf` … `fig7.pdf`、`fig4.png` |
-| 编译产物 | `latex/main.pdf`（本地生成，不入库） |
+|最终PDF|[exports/博士科研计划书_V5.pdf](exports/博士科研计划书_V5.pdf)|
+|编译与完整性检查|[latex/build.sh](latex/build.sh)、[latex/qa/check_integrity.py](latex/qa/check_integrity.py)|
+|图与可编辑源|`latex/figures/`、`latex/figure_sources/`|
+|69项证据与核查边界|[latex/references/evidence_matrix.csv](latex/references/evidence_matrix.csv)、专项矩阵|
+|审阅、编译、逐页检查|[latex/qa/final_review.md](latex/qa/final_review.md)|
+|修改历史|[V4.2_to_V5_修改对照.md](V4.2_to_V5_修改对照.md)|
+|研究与实验约定|[V5_核心研究问题与实验方案.md](V5_核心研究问题与实验方案.md)|
 
-成稿约 35 页，含 7 幅图、6 张表、67 篇参考文献。
+六章依次为动机、复杂几何与MOC现状、GPU-MOC现状、RQ1–RQ3研究方案、聚变屏蔽验证与减方差应用、博士工作安排。含69项文献、13个公式、10幅图和7张表；原67项文献与9个公式保留。旧图2/4文件仅供基准保护，不再用于正文。
 
-## 编译
+在`latex/`执行`bash build.sh`：隔离旧PDF与中间文件，预检引用后真实运行三遍XeLaTeX，检查返回码及最终日志，再生成本地`main.pdf`并更新交付PDF。源与PDF的SHA256见`qa/build/build_manifest.json`。
 
-需要 XeLaTeX + ctex（TeX Live 或 MacTeX 均可）。
+需要Python3、XeLaTeX与ctex，以及Songti SC、Heiti SC、Times New Roman和Helvetica字体。绘图用Python/Matplotlib；新增重绘数据为原文表格事实，不含受限原图。核验脚本与图形QA记录均随分支保存。
 
-```bash
-cd latex
-bash build.sh          # 连编两遍，目录与交叉引用才完整
-```
-
-字体使用 macOS 系统字体：正文 Songti SC、标题 Heiti SC、西文 Times New Roman。
-换到 Linux/Windows 时，把 `main.tex` 里的 `\setCJKmainfont` 等改成 `fandol`
-或本机可用字体即可。
-
-版式要点：
-
-- 章标题自动编号「第一章 …第六章」，节标题 `1.1 / 1.2 …`，与原文手工编号一致；
-- 引文统一用 `\upcite{1,2}` 渲染为上标 `[1,2]`，对应文末 67 条 `thebibliography`；
-- 6 张表用 `longtable` + `booktabs`，跨页自动重复表头；7 幅图为 `figure` 浮动体；
-- 公式用 `equation` 自动编号，与原稿（1）—（9）一致。
-
-## 目录结构
-
-```
-博士申请计划/
-├── README.md                本文件
-└── latex/                  ← 正文唯一来源
-    ├── main.tex              单文件：导言区 + 封面 + 六章 + 参考文献
-    ├── build.sh              编译脚本
-    ├── figures/              图 1–7
-    └── main.pdf              编译产物（本地生成，不入库）
-```
-
-## 版本沿革
-
-| 版本 | 形态 | 说明 |
-|---|---|---|
-| 导师讨论初稿 → V2 → V3 | Word（已废弃） | 六章骨架、批注处理、63 篇文献收尾 |
-| V4 / V4.1 / V4.2 | Word（已废弃） | 陈述式改写、调研深化、两句立场句；67 篇文献 |
-| **V4.2（LaTeX）** | **当前** | 由 V4.2 Word 全文转换并重排版式，正文内容等价 |
-
-Word 原件与逐轮修改记录只保留在仓库外的备份
-`/Users/sophia_zhou/GPU/_backup_rp_20261108.tar.gz` 与交付快照
-`/Users/sophia_zhou/GPU/科研计划与计算迭代汇总_截至V4.2_20261108/` 中；
-V2/V3 的 Word 也可从 Git 提交 `171f19d`、`bb17d7a` 取回。
+V4.2正式基准为`90694990d1717da06eafc59f4cc25081a74f9cb5`；V5仅在`revision/rp-v5-voxel-gpu`分支修订，PR供人工审阅，不自动合并。

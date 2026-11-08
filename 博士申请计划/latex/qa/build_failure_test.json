@@ -1,0 +1,9 @@
+{
+  "test": "invalid citation plus missing protected baseline objects",
+  "exit_code": 1,
+  "old_pdf_removed_from_output": true,
+  "failure_message_present": true,
+  "stdout_excerpt": "{\n  \"source\": \"/private/var/folders/y8/b4qzj0d930149j2y3lrlkz740000gn/T/rp-build-failure-test-oti0v57c/main.tex\",\n  \"bibliography_count\": 0,\n  \"cited_entries\": 1,\n  \"equations\": 0,\n  \"figures\": 0,\n  \"tables\": 0,\n  \"errors\": [\n    \"missing bibliograph",
+  "stderr": "FAILED (exit 1): 隔离构建目录 /var/folders/y8/b4qzj0d930149j2y3lrlkz740000gn/T//rp-v5-build.fua0Ts；旧 PDF（如有）为 previous-main.pdf",
+  "fixture_directory": "/var/folders/y8/b4qzj0d930149j2y3lrlkz740000gn/T/rp-build-failure-test-oti0v57c"
+}
