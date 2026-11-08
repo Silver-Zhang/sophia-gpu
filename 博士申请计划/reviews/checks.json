@@ -1,7 +1,7 @@
 {
   "base": "90976b7",
   "source_sha256": "c09e56bf3bfc7beb646fbb12ade774a8ed82fb5fe3c1593693ffce73b098a968",
-  "pdf_sha256": "226870bdce912f946178dd41e80e8130a6002359d8f195fad6d47e38be737f8f",
+  "pdf_sha256": "1b6c93d1b264b74b46af4518119061d104bd4b6b14fa8007b42d9ba9df87422c",
   "pages": 32,
   "sections": 5,
   "references": 69,
@@ -15,10 +15,53 @@
     "eq:joint"
   ],
   "original_9_equation_sources_unchanged": true,
-  "yahei_text_spans": 124,
   "figure_text_pt": [
     9.0
   ],
   "outside_page_text": [],
-  "compile": "three XeLaTeX passes; no undefined/missing/overfull warnings"
+  "compile": "three XeLaTeX passes; no undefined/missing/overfull warnings",
+  "figure_math_pt": [
+    6.0
+  ],
+  "figure_fonts": {
+    "dda_index": [
+      "ArialMT",
+      "CMMI9",
+      "CMR9",
+      "MicrosoftYaHei",
+      "TimesNewRomanPSMT"
+    ],
+    "fig1": [
+      "ArialMT",
+      "CMMI9",
+      "CMR6",
+      "CMR9",
+      "MicrosoftYaHei"
+    ],
+    "fig3": [
+      "ArialMT",
+      "CMMI9",
+      "CMR6",
+      "CMR9",
+      "MicrosoftYaHei"
+    ],
+    "fig4_nudeal": [
+      "ArialMT"
+    ],
+    "fig5": [
+      "ArialMT",
+      "CMMI9",
+      "CMR9",
+      "MicrosoftYaHei"
+    ],
+    "voxel_gpu_cost": [
+      "ArialMT",
+      "CMMI9",
+      "CMR9",
+      "MicrosoftYaHei",
+      "TimesNewRomanPSMT"
+    ]
+  },
+  "figure_typography": "Chinese: Microsoft YaHei; Latin labels: Arial; math: XeLaTeX CM + Times New Roman as in main.tex; normal labels/base math 9 bp, scripts 6 bp.",
+  "figure_layout_followup": "DDA/octree/BVH: three rows, core method/geometry labels only; all figures omit explanatory sentences and redundant callouts; no ray-input footer."
 }
