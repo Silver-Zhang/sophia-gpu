@@ -1,0 +1,9 @@
+{
+  "reviewer": "Claude CLI",
+  "phase": "final-structure-language-consistency",
+  "status": "timeout120s",
+  "source_sha256": "2ce377aadf7ce84f274b419c748b6095942aa563c62258386d145f94f96f8bd9",
+  "partial_stdout": "",
+  "partial_stderr": "",
+  "elapsed_seconds": 120.0
+}

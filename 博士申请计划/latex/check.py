@@ -29,6 +29,15 @@ errors += ['baseline bibliography entry removed: '+x['key'] for x in baseline['b
 errors += ['baseline equation label removed: '+x for x in baseline['equations'] if x not in labels]
 for name in re.findall(r'\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}',s):
     errors += [] if any((root/(name+suffix)).is_file() for suffix in ['', '.pdf', '.png']) else ['missing figure: '+name]
+# Numbered bibliography follows first citation, including numeric ranges.
+first=[]
+for citation in re.findall(r'\\upcite\{([^}]+)\}',s.split('\\begin{thebibliography}',1)[0]):
+    for token in citation.split(','):
+        match=re.fullmatch(r'(\d+)--(\d+)',token)
+        values=list(range(int(match[1]),int(match[2])+1)) if match else ([int(token)] if token.isdigit() else [])
+        for value in values:
+            if value not in first: first.append(value)
+if first != list(range(1,len(bibs)+1)): errors.append('bibliography is not numbered by first citation')
 if args.log:
     log=args.log.read_text(errors='replace')
     errors += [line for line in log.splitlines() if re.search(r'undefined|There were undefined references|Rerun to get cross-references right|Fatal error|^!',line,re.I)]

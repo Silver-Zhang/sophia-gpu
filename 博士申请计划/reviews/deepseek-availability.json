@@ -1,0 +1,14 @@
+{
+  "reviewer": "DeepSeek Harness",
+  "status": "unavailable_not_invoked",
+  "checks": {
+    "available_tool_catalog_matching_deepseek_or_harness": [],
+    "PATH_commands": {
+      "deepseek": null,
+      "deepseek-harness": null,
+      "harness": null
+    },
+    "claude_mcp_list": "No MCP servers configured"
+  },
+  "consequence": "未取得DeepSeek独立学术意见；数学物理和研究方案由Codex自查，不冒称替代独立审查。"
+}

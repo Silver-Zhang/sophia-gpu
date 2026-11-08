@@ -1,6 +1,6 @@
 # 文献依据（按需查编号）
 
-核查日期：2026-11-08。参考文献完整身份见 main.tex。下列记录限于实际取得的原文、作者稿、摘要或片段，不能视为69篇均已全文核验。V5.2已删除缺少原表支持的定量陈述；被删除的数据不可据历史记录恢复。未记录的硬件、条件和误差不得补写。
+核查日期：2026-11-08。本文件编号沿用V5.2；V5.3首次引用顺序的编号对照见citation_map_v53.csv。参考文献完整身份见main.tex。下列记录限于实际取得的原文、作者稿、摘要或片段，不能视为69篇均已全文核验。V5.2已删除缺少原表支持的定量陈述；被删除的数据不可据历史记录恢复。未记录的硬件、条件和误差不得补写。
 
 ## 几何与空间离散
 
@@ -40,7 +40,7 @@
 
 |35 Dzianisau S, Lee D. **GPU Acceleration of 3D MOC Solver in STREAM3D Using OpenACC**. KNS Spring Meeting, 2024（会议PDF无DOI）|C5G7四分之一：7群、64轴向平面；OPR-1000八分之一：72群、197平面、热工反馈；3 cm轴向网格|按平面传输入/出角通量及CMFD电流，部分数据保留设备；OpenACC卸载MOC|64核（2×EPYC 7543）CPU参考，对同主机+8×RTX A5000；C5G7 MOC 1368→34 s、总1704→100 s；OPR MOC 61535→3995 s、总212416→11201 s|第2页表1、第3页表2；方法第1–2页；作者报告两版本keff一致；未给其差值精度|OPR总时间还受径向MPI分区等待改变影响；不归于扫描单核。原始PDF全部三页已读。https://www.kns.org/files/pre_paper/51/24S-051-Siarhei.pdf |
 
-|31 Kim KM, Im J, Lee HG, Jung YS. **Verification and Performance Assessment of NuDEAL, a GPU-Accelerated Deterministic Transport Framework on Unstructured Meshes**. 2026. DOI 10.1080/00295639.2026.2652773；数据版arXiv:2607.01591v1|C5G7及先进堆本征值；MOC/HFEM、DGMOC、DFEM-SN|预存平面段；方位角顺序扫描；压缩角通量，DoF细粒度并行|3D C5G7 DGMOC：8507520单元=283584×30，RTX2080Ti；角块大小2/4/8/16/32时显存2589/2893/3499/4709/7133 MB；sweep 5.25/5.19/5.10/5.10/5.09 s；MOC 10.50/9.96/9.50/9.30/9.21 s；64角OOM|公开作者稿表5–6；2D DFEM表2：同RTX4070Ti顺序/并发148/26 s。期刊4月23日在线，公开稿7月2日；本次没有逐页核对最终期刊文本|每块角数增加不等于块数增加；多占2.75倍显存仅使sweep快约3.0%。图4严格依据作者稿表6，不能声称已核对期刊最终表号。https://arxiv.org/html/2607.01591v1 |
+|31 Kim KM, Im J, Lee HG, Jung YS. **Verification and Performance Assessment of NuDEAL, a GPU-Accelerated Deterministic Transport Framework on Unstructured Meshes**. 2026. DOI 10.1080/00295639.2026.2652773；数据版arXiv:2607.01591v1|C5G7及先进堆本征值；MOC/HFEM、DGMOC、DFEM-SN|预存平面段；方位角顺序扫描；压缩角通量，DoF细粒度并行|3D C5G7 DGMOC：8507520单元=283584×30，RTX2080Ti；角块大小2/4/8/16/32时显存2589/2893/3499/4709/7133 MB；sweep 5.25/5.19/5.10/5.10/5.09 s；MOC 10.50/9.96/9.50/9.30/9.21 s；64角OOM|公开作者稿表5–6；2D DFEM表2：同RTX4070Ti顺序/并发148/26 s。期刊4月23日在线，公开稿7月2日；本次没有逐页核对最终期刊文本|每块角数增加不等于块数增加；显存为原来的2.76倍，单次扫描时间缩短3.0%，单次MOC时间缩短12.3%。图4严格依据作者稿表6，不能声称已核对期刊最终表号。https://arxiv.org/html/2607.01591v1 |
 
 |33 Wang A, Wang J, Ding Z, Geng X, Shan H, Hu Y, Chen D. **A cyclic-track decomposition method for 3D MOC neutron transport simulation**. 2024. DOI 10.1016/j.nucengdes.2024.113148|轴向挤出几何三维MOC，ANT-MOC|MRT周期轨迹、OTF、组合负载模型，比角度分解细|ORISE 10240→98304 CPU核，效率>40%；节点32核AMD Zen、128 GiB|出版社摘要及Results片段；比较角度分解与循环轨迹分解；完整试验表未取得|规则几何可解析预测负载；一般体素场须重新估计分段/材料访问。https://www.sciencedirect.com/science/article/pii/S0029549324002486 |
 
@@ -57,3 +57,9 @@
 |ref3 Moreno C, Bader A, Wilson P. ParaStell. 2024. DOI10.3389/fnuen.2024.1384788|ParaStell参数化WISTELL-D包层与屏蔽，DAGMC/OpenMC，11×9=99种几何，2113 MW聚变源功率|研究中的总厚度100%、增殖层比例60%设计点：TBR 1.10、磁体总核热152.0 kW|出版社开放全文第3.2–3.3节 https://www.frontiersin.org/journals/nuclear-engineering/articles/10.3389/fnuen.2024.1384788/full|TBR和热对应指定设计点与功率，不外推为所有99种模型的结果。|
 
 |ref61 Iwamoto Y, Tsuda S, Ogawa T. Benchmark shielding calculations for fusion and accelerator-driven subcritical systems. 2023. DOI10.3389/fenrg.2023.1085264|FNS铁屏蔽，PHITS/JENDL-4.0；0.003–10 MeV积分中子产额|表1深度11/21/31/41/61/96 cm的C/E依次为1.39±0.01、1.31±0.01、1.24±0.01、1.21±0.01、1.15±0.01、1.78±0.02|出版社开放全文Table 1及邻近说明 https://www.frontiersin.org/journals/energy-research/articles/10.3389/fenrg.2023.1085264/full|正文保留六位置范围1.15–1.78，表列不确定度为计数统计；删除此次未复核的铁体尺寸。|
+
+## V5.3 定向复核
+
+NuDEAL作者稿 arXiv:2607.01591v1 第4.1节、表5—6重新核对（2026-11-08）：无棒三维C5G7 DGMOC、8507520单元、RTX 2080 Ti；列标题分别为Single transport sweep time、Single MOC time、GPU memory pressure。角块2与32的数据及64角OOM与CSV一致。7133/2589=2.7551，(5.25-5.09)/5.25=3.0476%，(10.50-9.21)/10.50=12.2857%。原文解释每角度已有足量任务；未将MOC列擅自分解为未报告的阶段计时。https://arxiv.org/html/2607.01591v1
+
+ANT-MOC原始会议档案摘要重核存储/计算/通信模型、三级分配及扩展数值：https://sc23.supercomputing.org/proceedings/tech_paper/tech_paper_pages/pap300.html 。Song与STREAM出版社正文直接访问403，现有摘要/章节证据支持的结果继续按原范围使用，不新增原表数值或硬件参数。Liu研究沿用上列来源范围，未将离散纵标结果当成MOC已验证结论。
