@@ -40,7 +40,6 @@ bash build.sh          # 连编两遍，目录与交叉引用才完整
 ```
 博士申请计划/
 ├── README.md                本文件
-├── GPT网页版交接Prompt.md    交给网页版模型的上下文交接稿
 └── latex/                  ← 正文唯一来源
     ├── main.tex              单文件：导言区 + 封面 + 六章 + 参考文献
     ├── build.sh              编译脚本
