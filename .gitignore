@@ -23,3 +23,7 @@ __pycache__/
 博士申请计划/latex/figure_sources/*.svg
 博士申请计划/latex/main_*.pdf
 博士申请计划/exports/.*.tmp
+
+# 仅维护唯一正式导出，审阅副本不入库
+博士申请计划/exports/*_副本.pdf
+博士申请计划/exports/*_修改.pdf
