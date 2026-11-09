@@ -12,7 +12,7 @@ from matplotlib import font_manager
 ROOT=Path(__file__).resolve().parents[1]
 from figure_style import configure,finish
 configure()
-BLUE='#24638d'; TEAL='#34877e'; INK='#203445'; LIGHT='#e2edf3'; GRAY='#a7b6c2'; WARM='#b76842'
+BLUE=TEAL=INK=GRAY=WARM='#000000'; LIGHT='#ffffff'
 
 def canvas(h):
     f,a=plt.subplots(figsize=(6.1,h));f.subplots_adjust(left=.015,right=.985,bottom=.025,top=.975);a.set(xlim=(0,100),ylim=(0,100));a.axis('off');return f,a
@@ -35,7 +35,7 @@ for x,label in [(2,'a  DDA'),(36,'b  八叉树'),(70,'c  BVH')]:
 for i in range(6):
  for j in range(4):
     a.add_patch(Rectangle((2+i*28/6,36+j*12),28/6,12,
-        fc=LIGHT if i<3 else '#e4efeb',ec=GRAY,lw=.6))
+        fc=LIGHT if i<3 else '#ffffff',ec=GRAY,lw=.6))
 arrow(a,0,44,32,65)
 for i in range(1,6):
  x=2+i*28/6;a.plot([x],[44+x/32*21],'.',color=WARM,ms=3)
@@ -67,7 +67,7 @@ box(a,1,77,28,18,r'RQ1 网格与离散 $\theta$'+'\n'+'材料界面 / 源区 / �
 box(a,36,77,28,18,'轨迹工作量\n访问数 / 段数 / 写入分布')
 box(a,71,77,28,18,'RQ2 GPU参数 $s$\n缓存 / 分组 / 批次 / 求和')
 arrow(a,29,86,35,86);arrow(a,65,86,70,86)
-box(a,1,43,28,21,'CPU与参考解\n'+r'离散误差 $e_{\mathrm{disc}}$',fc='#e4efeb')
+box(a,1,43,28,21,'CPU与参考解\n'+r'离散误差 $e_{\mathrm{disc}}$',fc='#ffffff')
 box(a,36,43,28,21,'同离散 CPU / GPU\n'+r'实现差异 $e_{\mathrm{impl}}$')
 box(a,71,43,28,21,'执行成本\n'+r'$T$ / $M_{\mathrm{peak}}$')
 for x in [15,50,85]:arrow(a,x,76,x,65)

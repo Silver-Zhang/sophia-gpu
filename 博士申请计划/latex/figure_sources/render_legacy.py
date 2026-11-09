@@ -35,9 +35,18 @@ for name,s in scenes.items():
             else:raise ValueError(typ)
         if not verts:continue
         if d.get('closePath') and codes[-1]!=MPath.CLOSEPOLY:verts.append(verts[0]);codes.append(MPath.CLOSEPOLY)
-        stroke=d.get('color');fill=d.get('fill')
-        patch=PathPatch(MPath(verts,codes),facecolor=fill if fill is not None else 'none',edgecolor=stroke if stroke is not None else 'none',linewidth=(d.get('width') or 0)*WIDTH_MM/25.4*72/w,
-            alpha=min(d.get('fill_opacity') or 1,d.get('stroke_opacity') or 1))
+        original_stroke=d.get('color')
+        white_stroke=original_stroke is not None and all(abs(v-1)<0.01 for v in original_stroke)
+        original_fill=d.get('fill')
+        colored_fill=original_fill is not None and any(abs(v-1)>0.01 for v in original_fill)
+        stroke=('#ffffff' if white_stroke else '#000000') if original_stroke is not None or colored_fill else None
+        fill='#ffffff' if original_fill is not None else None
+        # White wide strokes represent open channels, not absorbing material.
+        if white_stroke and (d.get('width') or 0)>=4:
+            ax.add_patch(PathPatch(MPath(verts,codes),facecolor='none',edgecolor='#000000',
+                linewidth=(d['width']+0.8)*WIDTH_MM/25.4*72/w))
+        patch=PathPatch(MPath(verts,codes),facecolor=fill if fill is not None else 'none',edgecolor=stroke if stroke is not None else 'none',linewidth=(d.get('width') or .7)*WIDTH_MM/25.4*72/w,
+            alpha=1)
         dash=re.search(r'\[([^]]+)\]',(d.get('dashes') or ''))
         if dash:
             seq=[float(x) for x in dash.group(1).split()]
@@ -45,5 +54,5 @@ for name,s in scenes.items():
         ax.add_patch(patch)
     for label in s['labels']:
         x0,y0,x1,y1=label['bbox'];cx,cy=(x0+x1)/2,(y0+y1)/2
-        ax.text(cx,cy,label['text'],ha='center',va='center',color='#203445',fontsize=9)
+        ax.text(cx,cy,label['text'],ha='center',va='center',color='#000000',fontsize=9)
     finish(fig,name);plt.close(fig)
