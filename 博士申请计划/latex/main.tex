@@ -76,17 +76,23 @@
 \begin{titlepage}
   \centering
   \vspace*{2.4cm}
-  {\zihao{2}\bfseries 博士科研计划书\par}
-  \vspace{1.6cm}
-  {\zihao{3}\bfseries 面向聚变堆复杂几何的体素化特征线\\[0.6ex]
-   中子输运与GPU并行加速方法研究\par}
-  \vspace{2.4cm}
-  {\zihao{4} 博士学位申请 · 研究计划\par}
-  \vspace{6cm}
-  {\zihao{5} 版本 V5.3（文献图件补充）\par}
-  \vspace{0.6ex}
-  {\zihao{5} 2026 年 11 月 9 日\par}
+  {\zihao{2}\bfseries 博士生科研计划书\par}
+  \vspace{2.2cm}
+  \begin{minipage}{0.9\linewidth}
+    \zihao{4}
+    \renewcommand{\arraystretch}{1.9}
+    \begin{tabular}{@{}>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{\dimexpr\linewidth-5em-2\tabcolsep\relax}@{}}
+      学生姓名： & 周璐楠 \\
+      报考院系： & 机械与动力工程学院 \\
+      报考专业： & 核科学与技术 \\
+      研究方向： & 反应堆物理 \\
+      导师： & 张滕飞 \\
+      论文题目： & 面向聚变堆复杂几何的体素化特征线中子输运与GPU并行加速方法研究
+    \end{tabular}
+  \end{minipage}
   \vfill
+  {\zihao{5} 2026 年 11 月 9 日\par}
+  \vspace*{1cm}
 \end{titlepage}
 
 % ---------------- 目录 ----------------
@@ -250,10 +256,6 @@ Liu 2023 Balakovo\upcite{29} & VVER-1000固定源剂量 & 多层网格、源投�
 \end{longtable}
 
 DWR为双重加权残差，RMS为均方根差异。
-
-\subsection{已有研究的联系与待解决问题}
-
-现有方法分别控制了材料投影与几何查询、段内源近似、粗细网格通量传递和目标误差。Liu等的局部自适应结果说明，按通量或目标信息分配分辨率可以减少达到给定精度的空间工作量；对体素MOC，射线还要穿过新增网格及源区，减少的源区总数未必对应同比例减少的扫描段数。材料体积相近也不能保证薄层和孔道内的光学路径相近。材料路径误差、源区近似误差与实际沿程工作量之间的关系，构成体素化MOC需要进一步检验的问题。
 
 \section{GPU-MOC并行算法研究现状}\label{sec:3}
 
