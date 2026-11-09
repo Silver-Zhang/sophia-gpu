@@ -6,8 +6,8 @@
 
 |成稿图/位置|原始资料与处理|许可/引用|
 |---|---|---|
-|图1，1.1工程需求|ARIES官方CAD图Cross-Section与Blanket/Shield 3D Sector，完整图片等比例并排，仅添加a/b标签。不是本文输运结果。|官方页面明确允许下载高清图用于打印或文档；不标为CC或公有领域。图题署名ARIES项目。设计论文新[3]。|
-|图2，2.1材料界面|Yang等2025原文图1(b,d)，选取完整分图并横排，保留原(b)/(d)标号与颜色，替换原fig1。左图移除圆内单元、保留阶梯边界；右图边界节点移动后保留内外四边形区域。|作者©2025 Yang, Yang, Popov and Buchan，CC BY 4.0；图题注明原图号与排列改编。图1图题/全文未见单独第三方署名或许可例外。新[13]。|
+|图1，1.1工程需求|ARIES官方CAD图Cross-Section与Blanket/Shield 3D Sector，完整图片等比例并排，仅添加a/b标签。不是本文输运结果。|官方页面明确允许下载高清图用于打印或文档；不标为CC或公有领域。图题采用简洁图名与[3]；项目署名和直接图源记入本记录及PDF元数据。设计论文新[3]。|
+|图2，2.1材料界面|Yang等2025原文图1(b,d)，选取完整分图并横排，保留原(b)/(d)标号与颜色，替换原fig1。左图移除圆内单元、保留阶梯边界；右图边界节点移动后保留内外四边形区域。|作者©2025 Yang, Yang, Popov and Buchan，CC BY 4.0；原图号、许可和排列改编记入本记录及PDF元数据，图题仅图名与[13]。图1图题/全文未见单独第三方署名或许可例外。新[13]。|
 |图3，2.2穿越方法|保留DDA/八叉树/BVH原创比较图，黑白。2.1补一处二维截面与局部细化说明。|未采用论坛图片；与已有图重复，不增加图片或论坛文献。理论沿用[14–18]等已有研究。|
 |图4，3.1并行扫描|沿用现有GPU扫描、缓存与通量求和原创图，改为黑白。Gaston仅在邻近正文说明CPU跨分区扫描。|按用户追加要求，不转载Gaston图，也不新增替代示意图。Gaston原[18]现[20]沿用，不新增条目。|
 
@@ -18,7 +18,7 @@
   - https://aries.pppl.gov/LIB/CAD/FIGURE/ARIES-RS/ars-9611-blanket03.jpg
   - 官方未为这两幅独立CAD图列单独绘图者或论文图号，按项目与资源名称署名，不臆定它们是设计论文的某图。
 - 新[3] M. S. Tillack, S. Malang, L. Waganer, X. R. Wang, D. K. Sze, L. El-Guebaly, C. P. C. Wong, J. A. Crowell, T. K. Mau, L. Bromberg, and the ARIES Team. *Configuration and engineering design of the ARIES-RS tokamak power plant*. Fusion Engineering and Design, 1997, 38(1–2):87–113. [DOI](https://doi.org/10.1016/S0920-3796(97)00113-0)。Crossref核对十位个人作者及期刊卷期页；[项目正式报告目录](https://aries.pppl.gov/LIB/REPORT/ARIES-RS/)另署ARIES Team。该论文提供设计背景，图片直接来自上述CAD图库，未从出版社论文截取图件。
-- 新[13] Liang Yang, Jianhui Yang, Jakov Popov, Andrew G. Buchan. *Hybrid solvers for reactor modelling: matrix-based and matrix-free approaches on voxel-dominated meshes*. Frontiers in Nuclear Engineering, 2025, 4:1597165. [正式全文](https://www.frontiersin.org/journals/nuclear-engineering/articles/10.3389/fnuen.2025.1597165/full)、[DOI](https://doi.org/10.3389/fnuen.2025.1597165)、[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。出版社全文、PDF与Crossref的作者/题名/年份/卷/文章号一致。原图1源文件：https://www.frontiersin.org/files/Articles/1597165/xml-images/fnuen-04-1597165-g001.webp 。保留原生931×1010像素，不用放大插值冒充高清；裁取b/d各约463×504像素，按约71 mm宽排版，约165 ppi；网格与原标号须按成稿目视核对。
+- 新[13] Liang Yang, Jianhui Yang, Jakov Popov, Andrew G. Buchan. *Hybrid solvers for reactor modelling: matrix-based and matrix-free approaches on voxel-dominated meshes*. Frontiers in Nuclear Engineering, 2025, 4:1597165. [正式全文](https://www.frontiersin.org/journals/nuclear-engineering/articles/10.3389/fnuen.2025.1597165/full)、[DOI](https://doi.org/10.3389/fnuen.2025.1597165)、[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。出版社全文、PDF与Crossref的作者/题名/年份/卷/文章号一致。原图1源文件：https://www.frontiersin.org/files/Articles/1597165/xml-images/fnuen-04-1597165-g001.webp 。保留原生931×1010像素，不用放大插值冒充高清；裁取b/d各约463×504像素，每分图按约37 mm宽排版，最终PDF实测318–319 ppi；网格与原标号已按成稿目视核对。
 - 沿用[20] Derek R. Gaston, Benoit Forget, Kord S. Smith, Logan H. Harbour, Gavin K. Ridley, Guillaume G. Giudicelli. *Method of Characteristics for 3D, Full-Core Neutron Transport on Unstructured Mesh*. Nuclear Technology, 2021, 207(7):931–953. [DOI](https://doi.org/10.1080/00295450.2021.1871995)。Crossref与出版社可检索摘要元数据一致，补全六位作者。出版社全文/PDF直连403，无法重新核对用户建议的图1/图10具体画面及第三方例外；不转载。Crossref列CC BY-NC-ND 4.0（content-version unspecified），不足以确认所需原图与公开仓库用途的许可范围；不称已获得转载授权。正文保留已检索到的非结构MOC与约14亿单元/12000 CPU处理器结果，简述沿程递推与跨分区角通量依赖；不提交原图或替代图。
 - Mathematica StackExchange讨论未采用，故不转载、不要求其CC内容进入仓库；局部细化已由原图3和既有自适应网格文献说明。
 
@@ -41,3 +41,11 @@ ARIES图对应曲面、多层材料、集管和可拆卸扇区的几何定位问
 新拼版的两幅图面板对齐检查通过；新图源静态检查0失败，2提示为未生成TIFF及从共享配置读取宽度，符合本项目仅交付PDF/可编辑Python源的要求，实际宽148.2 mm。六幅含文本的图碰撞检查通过；Yang纯栅格原图无法用PDF文本碰撞审计器检查，已逐分图目视检查网格、原标号和成稿清晰度，不称自动检查通过。
 
 按要求实际调用Claude CLI只读审阅，180秒超时，未取得完成审阅的意见；本轮未通过Claude独立审核。未把失败或不可访问原文记为已核验。临时渲染、审查日志与诊断图不提交。
+
+## 高清导出与图题修订
+
+用户要求原图清晰、图题简洁。本次查明旧PGF拼版对imshow图像进行了默认插值降采样：ARIES两幅原件2293×1820和2654×1826像素仅嵌入280×222/280×192像素，Yang分图降为约277×301像素。现设置interpolation=none、resample=False，保持源图原生像素；图源导出新增实际嵌入像素断言，防止以后再次降采样。
+
+正式成稿图1实测822/952 ppi，原件像素完整保留。Yang当前官方原件仍为931×1010像素，尝试出版社其他图像格式及QMUL作者稿，未取得更高分辨率可用图；保留原463×504/463×506分图，图2宽改为0.5行宽，实测318/319 ppi。未插值放大、锐化、AI补画或冒充矢量原图。
+
+图1、图2、图5和图7标题删去来源说明长句、硬件/表号括注及变量解释；已有引文保留。原图号、完整署名、许可及改编记录保存在本文件及PDF的FigureSources元数据，参考文献身份/编号不变。图3与图7为原创方法图，无需硬加文献编号。

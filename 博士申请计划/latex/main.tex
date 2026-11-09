@@ -67,6 +67,7 @@
 \newcommand{\upcite}[1]{\textsuperscript{[#1]}}
 
 \graphicspath{{figures/}}
+\hypersetup{pdfinfo={FigureSources={ARIES project official CAD library, Cross-Section and 3D Sector; Yang, Yang, Popov and Buchan (2025), DOI 10.3389/fnuen.2025.1597165, Figure 1(b,d), selected and rearranged, CC BY 4.0 https://creativecommons.org/licenses/by/4.0/}}}
 
 % =====================================================================
 \begin{document}
@@ -115,7 +116,7 @@ ARIES-RS反磁剪切托卡马克聚变电站概念设计将第一壁、包层、
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/aries_rs}
-\caption{ARIES-RS概念设计的整体剖面与包层—屏蔽扇区。转载自ARIES项目官方CAD图库：Cross-Section（a）与3D Sector（b），设计依据见文献\upcite{3}。}
+\caption{ARIES-RS整体剖面与包层—屏蔽扇区\upcite{3}}
 \label{fig:aries}
 \end{figure}
 
@@ -169,8 +170,8 @@ Liang Yang等在规则笛卡尔背景网格上移动界面附近的节点，使�
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.95\linewidth]{figures/yang_mesh}
-\caption{规则体素网格与边界贴合的体素主导网格。选取Yang等（2025）原文图1(b,d)并横向排列，CC BY 4.0\upcite{13}。}
+\includegraphics[width=0.5\linewidth]{figures/yang_mesh}
+\caption{规则体素与边界贴合的体素主导网格\upcite{13}}
 \label{fig:1}
 \end{figure}
 
@@ -308,7 +309,7 @@ NuDEAL进一步展示了批次大小与实际并行度之间的关系。其轴�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig4_nudeal}
-\caption{NuDEAL三维C5G7 DGMOC的显存与时间（RTX 2080 Ti，作者稿表6）\upcite{38}}
+\caption{NuDEAL三维C5G7 DGMOC的显存与时间\upcite{38}}
 \label{fig:4}
 \end{figure}
 
@@ -455,7 +456,7 @@ Raffuzzi等的整体屏蔽结果来自P0平源随机射线FW-CADIS，$\pm$为20�
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/voxel_gpu_cost}
-\caption{体素离散、GPU执行与协同选择（$\theta$为离散参数，$s$为GPU参数）}
+\caption{体素离散与GPU执行的联合优化}
 \label{fig:cost}
 \end{figure}
 
