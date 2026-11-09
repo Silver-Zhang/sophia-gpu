@@ -1,6 +1,6 @@
 % =====================================================================
 %  博士科研计划书 —— 面向聚变堆复杂几何的体素化特征线中子输运与GPU并行加速方法研究
-%  版本：V5.3（结构修订与学术精修）（2026-11-08）
+%  版本：V5.3（文献图件补充）（2026-11-09）
 %  编译：xelatex main.tex  ×2（生成目录与交叉引用）
 % =====================================================================
 \documentclass[UTF8, zihao=-4, fontset=none, a4paper]{ctexart}
@@ -21,6 +21,7 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{etoolbox}
 \usepackage{needspace}
 \usepackage{array}
 \usepackage{calc}
@@ -59,6 +60,7 @@
 % 图表标题
 \captionsetup{font=small, labelsep=quad, skip=6pt}
 \captionsetup[longtable]{font=small, labelsep=quad, skip=4pt}
+\AtBeginEnvironment{longtable}{\small}
 
 % ---------------- 自定义命令 ----------------
 % 上标数字引文，例如 \upcite{1,2} -> [1,2]
@@ -80,9 +82,9 @@
   \vspace{2.4cm}
   {\zihao{4} 博士学位申请 · 研究计划\par}
   \vspace{6cm}
-  {\zihao{5} 版本 V5.3（结构修订与学术精修）\par}
+  {\zihao{5} 版本 V5.3（文献图件补充）\par}
   \vspace{0.6ex}
-  {\zihao{5} 2026 年 11 月 8 日\par}
+  {\zihao{5} 2026 年 11 月 9 日\par}
   \vfill
 \end{titlepage}
 
@@ -108,9 +110,18 @@
 
 聚变装置的屏蔽设计需要在有限的空间内同时满足磁体辐照、结构材料寿命、维护作业和氚增殖等要求。D-T反应产生的约14 MeV中子穿过第一壁、包层、屏蔽体与真空室后，可通过散射、俘获及次级粒子产生向外传递能量。超导磁体中的核热决定低温系统的附加热负荷，绝缘材料的辐照影响磁体寿命，维护区域的剂量则影响设备布置与作业安排。输运计算把几何、材料和核反应数据联系到这些可评价的工程响应，是比较屏蔽方案的基础\upcite{1,2}。
 
+ARIES-RS反磁剪切托卡马克聚变电站概念设计将第一壁、包层、高温与低温屏蔽层及真空室布置在相互嵌套的曲面结构中\upcite{3}。图\ref{fig:aries}中的可拆卸扇区还包含偏滤器、冷却剂集管和支承结构。层间曲率、局部厚度与管线穿透共同决定中子经过的材料次序和段长，几何转换因而需要保留这些界面与通道。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/aries_rs}
+\caption{ARIES-RS概念设计的整体剖面与包层—屏蔽扇区。转载自ARIES项目官方CAD图库：Cross-Section（a）与3D Sector（b），设计依据见文献\upcite{3}。}
+\label{fig:aries}
+\end{figure}
+
 聚变屏蔽中的复杂性首先来自材料与传播路径的三维分布。薄层屏蔽、斜交界面、诊断孔道和管线穿透件同时存在，局部结构的改变可能使中子穿过不同材料，或增加经孔道及壁面散射到达外部区域的概率。对于磁体背侧和厚屏蔽后的探测位置，贡献来自穿透或散射后仍能到达目标的粒子历史。因此，几何模型既要描述部件形状，也要准确表示中子沿传播路径穿过的材料及其厚度。材料段长度与宏观总截面的乘积决定该段的光学厚度，它是衡量中子沿程碰撞与衰减的无量纲量。体素化引起的界面位移会改变材料段长度，进而影响屏蔽后的中子通量和反应率。
 
-聚变堆屏蔽设计需要反复比较不同材料、屏蔽厚度和孔道布局。参数化建模与输运计算的联用已用于三维设计扫描\upcite{3}，但每次修改几何或材料后，都可能需要重新生成材料映射和特征线，并完成多群源迭代。三维模型中的轨迹数据量随空间与角向分辨率增加，求解时间和存储需求限制了可比较的设计方案数量。本研究将体素化材料表示与GPU特征线扫描结合，研究在满足屏蔽响应精度的条件下减少轨迹存储、改善并行负载并缩短完整输运求解时间的方法。
+聚变堆屏蔽设计需要反复比较不同材料、屏蔽厚度和孔道布局。参数化建模与输运计算的联用已用于三维设计扫描\upcite{4}，但每次修改几何或材料后，都可能需要重新生成材料映射和特征线，并完成多群源迭代。三维模型中的轨迹数据量随空间与角向分辨率增加，求解时间和存储需求限制了可比较的设计方案数量。本研究将体素化材料表示与GPU特征线扫描结合，研究在满足屏蔽响应精度的条件下减少轨迹存储、改善并行负载并缩短完整输运求解时间的方法。
 
 \subsection{中子输运问题与计算需求}
 
@@ -130,7 +141,7 @@ R = \sum_{g}^{}{\int_{V_{D}}^{}{d_{g}(r)\phi_{g}(r)dV}},\phi_{g} = \int_{4\pi}^{
 
 响应函数\(d_g\)由所评价的物理量确定。区域平均通量采用体积归一化权重，反应率采用相应宏观反应截面，中子剂量采用能量相关的通量--剂量转换系数。本研究以屏蔽区域的中子通量、反应率和剂量为主要响应，采用相同的物理源归一化比较不同空间离散及GPU实现的误差与计算时间。
 
-确定论方法将空间、角度和能量离散，通过求解输运方程获得全域通量。伴随输运则提供粒子状态对指定响应的贡献，即重要性信息。蒙特卡罗方法以粒子历史抽样描述连续能碰撞和复杂几何传播，通过历史贡献的平均估计响应。确定论与蒙卡的耦合利用近似正向或伴随场生成重要性，据此设置蒙卡源偏倚和权窗，使更多粒子历史用于目标响应的估计，并通过权重修正保持响应估计的无偏性\upcite{4,5}。
+确定论方法将空间、角度和能量离散，通过求解输运方程获得全域通量。伴随输运则提供粒子状态对指定响应的贡献，即重要性信息。蒙特卡罗方法以粒子历史抽样描述连续能碰撞和复杂几何传播，通过历史贡献的平均估计响应。确定论与蒙卡的耦合利用近似正向或伴随场生成重要性，据此设置蒙卡源偏倚和权窗，使更多粒子历史用于目标响应的估计，并通过权重修正保持响应估计的无偏性\upcite{5,6}。
 
 \subsection{总体研究问题与目标}
 
@@ -144,34 +155,34 @@ R = \sum_{g}^{}{\int_{V_{D}}^{}{d_{g}(r)\phi_{g}(r)dV}},\phi_{g} = \int_{4\pi}^{
 
 \subsection{几何表示与材料界面处理}
 
-输运计算中的几何表示需要回答两个问题：粒子位于哪种材料中，以及沿给定方向何时进入下一种材料。CAD通常以曲面和实体边界描述设计部件，构造实体几何（CSG）以基本曲面和布尔运算定义区域。由CAD转换为输运模型时，需要把设计实体整理为无遗漏、无重叠且材料赋值明确的空间分区。Tsige-Tamirat等利用McCad生成ITER中子学模型，并以MCNP随机体积计算对照CAD体积，建立了几何转换后的定量检查途径\upcite{6}。
+输运计算中的几何表示需要回答两个问题：粒子位于哪种材料中，以及沿给定方向何时进入下一种材料。CAD通常以曲面和实体边界描述设计部件，构造实体几何（CSG）以基本曲面和布尔运算定义区域。由CAD转换为输运模型时，需要把设计实体整理为无遗漏、无重叠且材料赋值明确的空间分区。Tsige-Tamirat等利用McCad生成ITER中子学模型，并以MCNP随机体积计算对照CAD体积，建立了几何转换后的定量检查途径\upcite{7}。
 
-Chen等在SuperMC中将MCAM的CAD建模与射线求交用于二维MOC计算，并采用菱形差分处理空间近似误差\upcite{7}。射线与CAD边界相交后得到各材料段的起点和终点，段长随后用于角通量递推。该方法将几何求交直接用于特征线分段，源项近似和角向求积则分别控制段内源项及方向积分的精度。
+Chen等在SuperMC中将MCAM的CAD建模与射线求交用于二维MOC计算，并采用菱形差分处理空间近似误差\upcite{8}。射线与CAD边界相交后得到各材料段的起点和终点，段长随后用于角通量递推。该方法将几何求交直接用于特征线分段，源项近似和角向求积则分别控制段内源项及方向积分的精度。
 
-在蒙卡方法中，DAGMC利用CAD表面的三角面元进行粒子定位与射线求交，从而直接访问CAD几何。三角面元对曲面的近似精度由面元划分及几何容差控制。Shriwise等将有符号距离场（SDF）作为下一表面求交的预筛选器：输入粒子位置、拟飞行距离及距离场误差界，如果距离场及其误差界表明粒子在下一次碰撞前不会穿过材料边界，就省去此次边界求交。存在越界可能时，仍调用DAGMC射线求交以确定交点\upcite{8}。距离场用于筛选需要求交的粒子飞行过程，实际材料边界仍由原几何追踪算法确定。表\ref{tab:1}列出同一氢球算例的时间，表明表面筛选降低了CAD查询开销，但仍保留了显式几何求交。其后，Shriwise等将Embree射线追踪内核用于CAD面元访问\upcite{9}。这些蒙卡研究通过减少重复边界求交降低几何追踪开销。MOC则需要沿轨迹生成完整的材料段序列，后续源迭代还可复用这些数据。因此，空间索引在MOC中的作用需要结合段生成次数和轨迹复用次数评价。
+在蒙卡方法中，DAGMC利用CAD表面的三角面元进行粒子定位与射线求交，从而直接访问CAD几何。三角面元对曲面的近似精度由面元划分及几何容差控制。Shriwise等将有符号距离场（SDF）作为下一表面求交的预筛选器：输入粒子位置、拟飞行距离及距离场误差界，如果距离场及其误差界表明粒子在下一次碰撞前不会穿过材料边界，就省去此次边界求交。存在越界可能时，仍调用DAGMC射线求交以确定交点\upcite{9}。距离场用于筛选需要求交的粒子飞行过程，实际材料边界仍由原几何追踪算法确定。表\ref{tab:1}列出同一氢球算例的时间，表明表面筛选降低了CAD查询开销，但仍保留了显式几何求交。其后，Shriwise等将Embree射线追踪内核用于CAD面元访问\upcite{10}。这些蒙卡研究通过减少重复边界求交降低几何追踪开销。MOC则需要沿轨迹生成完整的材料段序列，后续源迭代还可复用这些数据。因此，空间索引在MOC中的作用需要结合段生成次数和轨迹复用次数评价。
 
 
 
-非贴体方法使用独立于实体边界的背景网格，材料界面可以穿过网格内部。Yang等基于SALOME完成边界表示到CSG的转换，在笛卡尔和柱坐标单元中采用体积加权的材料均匀化，减少只以单元中心位置决定材料所造成的映射偏差\upcite{10}。Buchan等进一步采用supermeshing，即由实体网格与背景网格的交叠关系构造材料投影，并将守恒投影与背景有限元网格自适应结合\upcite{11}。两类方法都将几何生成与求解网格分开管理，区别在于混合材料参数及投影进入离散方程的方式。
+非贴体方法使用独立于实体边界的背景网格，材料界面可以穿过网格内部。Yang等基于SALOME完成边界表示到CSG的转换，在笛卡尔和柱坐标单元中采用体积加权的材料均匀化，减少只以单元中心位置决定材料所造成的映射偏差\upcite{11}。Buchan等进一步采用supermeshing，即由实体网格与背景网格的交叠关系构造材料投影，并将守恒投影与背景有限元网格自适应结合\upcite{12}。两类方法都将几何生成与求解网格分开管理，区别在于混合材料参数及投影进入离散方程的方式。
 
-材料体积分数和方向传播特征承担不同作用。一个含窄孔道的单元即使保持相同空隙体积分数，均匀混合后的材料也可能给沿孔道运动的粒子分配额外碰撞。沿某条特征线，各段的宏观总截面与长度之积累加为光学厚度。细薄高吸收层的位置和厚度会直接改变沿程衰减。图\ref{fig:1}将曲面、局部网格与材料段对应起来，说明材料投影需要同时核对体积、交点、弦长和通道连通性。
+Liang Yang等在规则笛卡尔背景网格上移动界面附近的节点，使单元边界贴合几何，同时保留远离界面的规则单元\upcite{13}。图\ref{fig:1}左侧移除圆内单元后留下阶梯边界；右侧以变形四边形贴合圆形界面，并保留界面内外区域。其输运算例采用间断伽辽金有限元与离散纵标法。这种网格处理可用于比较体素MOC的材料路径表示，但MOC仍需检验界面位置和段长改变后角通量递推的误差。
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.95\linewidth]{figures/fig1}
-\caption{非贴体材料表示与特征线分段\upcite{7,10,11,12}}
+\includegraphics[width=0.95\linewidth]{figures/yang_mesh}
+\caption{规则体素网格与边界贴合的体素主导网格。选取Yang等（2025）原文图1(b,d)并横向排列，CC BY 4.0\upcite{13}。}
 \label{fig:1}
 \end{figure}
 
+材料体积分数与沿程衰减描述不同的几何信息。含窄孔道的单元即使保持相同空隙体积分数，均匀混合也可能给沿孔道运动的粒子分配额外碰撞。体素MOC需分别检查材料体积、射线交点与孔道连通性。
 
-
-规则体素通过整数索引访问材料与源区数据，局部细化则提高指定区域的空间分辨率。块结构方法将细化单元放在矩形块内，用连续数组保存各块的数据，再由层级索引处理粗细网格的关系。AMReX中的Box、BoxArray和DistributionMapping分别描述矩形区域、块集合及其并行分配，重网格时依据标记聚类形成新块，再迁移数据\upcite{13}。GPU自适应笛卡尔网格研究还分析了相邻网格层级差异的控制、网格并行构建及动态更新所需的计算开销\upcite{14}。对中子输运，块的计算负载还与穿越特征线数量、段长分布、能群和迭代次数相联系，因此工作量估计可以超出单元数量本身。
+规则体素通过整数索引访问材料与源区数据，局部细化则提高指定区域的空间分辨率\upcite{14}。图\ref{fig:2}中间以八叉树的二维截面表示不同尺寸的叶单元：细化增加局部几何分辨率，也增加射线与单元边界的交点；它与移动节点以贴合边界的方法不同。块结构方法将细化单元放在矩形块内，用连续数组保存各块的数据，再由层级索引处理粗细网格的关系。AMReX中的Box、BoxArray和DistributionMapping分别描述矩形区域、块集合及其并行分配，重网格时依据标记聚类形成新块，再迁移数据\upcite{15}。GPU自适应笛卡尔网格研究还分析了相邻网格层级差异的控制、网格并行构建及动态更新所需的计算开销\upcite{16}。对中子输运，块的计算负载还与穿越特征线数量、段长分布、能群和迭代次数相联系，因此工作量估计可以超出单元数量本身。
 
 \subsection{体素穿越与几何界面求交方法}
 
-均匀体素的材料定位可由坐标、网格原点和步长计算整数索引。Amanatides与Woo的快速遍历算法维护射线到下一组$x,y,z$网格面的参数值及各轴的增量，每次选择最小参数并更新相应索引\upcite{15}。原文给出相邻体素推进所需的两次浮点比较与一次加法。这一计数针对基本推进操作，不包含初始化、材料读取和输运计算。在MOC中，该算法根据射线起点、方向和网格尺寸，依次确定射线经过的体素，并计算每个体素内的射线段长度。面、棱、角交点的相等参数需一致处理，防止零长度段、漏段或重复段。相邻同材料体素可共享衰减计算，但应保留源区和通量统计区的分界。采用CMFD加速时，还需单独记录粗网界面的中子流。
+均匀体素的材料定位可由坐标、网格原点和步长计算整数索引。Amanatides与Woo的快速遍历算法维护射线到下一组$x,y,z$网格面的参数值及各轴的增量，每次选择最小参数并更新相应索引\upcite{17}。原文给出相邻体素推进所需的两次浮点比较与一次加法。这一计数针对基本推进操作，不包含初始化、材料读取和输运计算。在MOC中，该算法根据射线起点、方向和网格尺寸，依次确定射线经过的体素，并计算每个体素内的射线段长度。面、棱、角交点的相等参数需一致处理，防止零长度段、漏段或重复段。相邻同材料体素可共享衰减计算，但应保留源区和通量统计区的分界。采用CMFD加速时，还需单独记录粗网界面的中子流。
 
-局部细化改变单元尺寸，均匀DDA的固定轴向增量因而不能直接贯穿所有层级。Laine与Karras用稀疏八叉树保存表面附近的体素，在每个节点记录八个子节点是否存在，并利用相对地址定位子节点，减少树结构的存储量\upcite{16}。用于中子输运时，可沿八叉树逐层定位射线穿过的叶单元，即不再细分的空间单元，并读取该单元的尺寸和材料编号。中子输运需要继续追踪穿过真空孔道和多层材料的射线，并为相应源区计算通量。八叉树用于输运时，需保留这些区间及源区信息，同时记录树节点存储、地址访问和跨层定位的计算成本。
+局部细化改变单元尺寸，均匀DDA的固定轴向增量因而不能直接贯穿所有层级。Laine与Karras用稀疏八叉树保存表面附近的体素，在每个节点记录八个子节点是否存在，并利用相对地址定位子节点，减少树结构的存储量\upcite{18}。用于中子输运时，可沿八叉树逐层定位射线穿过的叶单元，即不再细分的空间单元，并读取该单元的尺寸和材料编号。中子输运需要继续追踪穿过真空孔道和多层材料的射线，并为相应源区计算通量。八叉树用于输运时，需保留这些区间及源区信息，同时记录树节点存储、地址访问和跨层定位的计算成本。
 
 层次包围盒（BVH）将CAD面元按空间位置分组，用逐层嵌套的包围盒建立树结构。射线追踪时，先检查射线是否与包围盒相交，排除不相交盒内的面元，再对剩余候选面元求交。随后对交点排序并判断所处实体，得到材料边界与材料编号。体素与几何界面结合的追踪方法可在界面单元中使用BVH辅助求交，在其余单元中采用规则体素穿越。图\ref{fig:2}比较三种操作，区分材料定位、叶单元穿越和表面求交的输入输出。
 
@@ -201,21 +212,21 @@ MOC把指定方向的输运方程转化为沿射线的一维递推。射线与�
 \end{equation}
 式中各量均对应同一能群，\(n,k,s\)分别表示离散方向、轨迹和轨迹子段，\(w_n\)为角权重（和为\(4\pi\)），\(a_{kn}\)为与角权重分开的射线横截面求积权重，\(V_r\)为源区体积。每个方向的轨迹横截面权重与段长之积用于近似源区体积，并按源区体积归一化得到标量通量。反应率由相应空间区内的标量通量与宏观反应截面相乘后积分得到。真空段平均值取\(\psi_{\rm in}+Q\ell/2\)，小光学厚度采用指数差或级数保持稳定。特征线需要在材料、源项近似或通量统计区域发生变化的位置分段。相邻区间即使具有相同材料和源值，也应分别计算各源区的通量积分。采用粗网有限差分（CMFD）加速时，还需记录穿过粗网界面的中子流。扫描中可共享相同区间的衰减计算，但应保留各空间区的通量积分和界面中子流，再据此更新散射源及加速方程。由此，几何交点决定材料段，源区划分决定沿程源近似，轨迹间距和角向求积决定积分分辨率。
 
-OpenMOC包含二维CSG射线追踪、平源MOC、源迭代和粗网有限差分加速，并以C5G7和LRA问题检验本征值与功率分布\upcite{17}。Gaston等在MOCkingbird中采用非结构网格三维长特征线，使完整轨迹穿过多个计算子域，并比较预先保存分段与求解时重新分段两种方法。其全堆芯算例达到约14亿单元、12000个处理器\upcite{18}。局部细化增加射线与网格的交点，产生更多需要保存和扫描的短段。轨迹跨越计算子域时，还要传递边界角通量。因此，评价三维MOC的存储与运行时间时，需要同时统计网格单元数、轨迹段数和跨域传输量。
+OpenMOC包含二维CSG射线追踪、平源MOC、源迭代和粗网有限差分加速，并以C5G7和LRA问题检验本征值与功率分布\upcite{19}。Gaston等在MOCkingbird中采用非结构网格三维长特征线，使完整轨迹穿过多个计算子域，并比较预先保存分段与求解时重新分段两种方法。其全堆芯算例达到约14亿单元、12000个处理器\upcite{20}。局部细化增加射线与网格的交点，产生更多需要保存和扫描的短段。轨迹跨越计算子域时，还要传递边界角通量。因此，评价三维MOC的存储与运行时间时，需要同时统计网格单元数、轨迹段数和跨域传输量。
 
-Porhemmat等在二维MOC中采用模块化射线追踪（Modular Ray Tracing，MRT），利用重复栅元的局部追踪结果，减少同类几何的重复求交和轨迹存储\upcite{19}。该研究比较了三种角向求积。在Legendre--Chebyshev $S_{20}$设置下，C5G7正向和伴随计算与参考$k_{\mathrm{eff}}$之差分别为$7\times10^{-6}$和$9\times10^{-6}$，16个CPU线程的加速比为6.18。模块复用以几何重复为条件，重复栅元和一般曲面孔道因而具有不同的轨迹生成与存储需求。
+Porhemmat等在二维MOC中采用模块化射线追踪（Modular Ray Tracing，MRT），利用重复栅元的局部追踪结果，减少同类几何的重复求交和轨迹存储\upcite{21}。该研究比较了三种角向求积。在Legendre--Chebyshev $S_{20}$设置下，C5G7正向和伴随计算与参考$k_{\mathrm{eff}}$之差分别为$7\times10^{-6}$和$9\times10^{-6}$，16个CPU线程的加速比为6.18。模块复用以几何重复为条件，重复栅元和一般曲面孔道因而具有不同的轨迹生成与存储需求。
 
 \subsection{局部细化与目标响应误差控制}
 
-Liu等在多层八叉树上建立非匹配笛卡尔网格，用于离散纵标计算，随后发展了随通量解变化的预测--校正方法，利用通量形状和平衡关系计算粗细网格界面上的通量\upcite{12,20}。这些研究表明，局部加密既要生成不同尺寸的网格，也要计算粗细网格间传递的通量，并安排满足依赖关系的扫描顺序。MOC沿轨迹把上一段的出射角通量传给下一段，可据此检查粗细单元交界处是否存在漏段、重复段或通量不连续。
+Liu等在多层八叉树上建立非匹配笛卡尔网格，用于离散纵标计算，随后发展了随通量解变化的预测--校正方法，利用通量形状和平衡关系计算粗细网格界面上的通量\upcite{14,22}。这些研究表明，局部加密既要生成不同尺寸的网格，也要计算粗细网格间传递的通量，并安排满足依赖关系的扫描顺序。MOC沿轨迹把上一段的出射角通量传给下一段，可据此检查粗细单元交界处是否存在漏段、重复段或通量不连续。
 
-自适应的另一核心问题是依据什么量分配分辨率。标准误差指标强调全域解或局部梯度。目标导向方法使用伴随信息，把残差对探测器或积分响应的贡献作为加密依据。Wang与Ragusa在二维非结构三角形网格上比较高阶DG的标准与目标导向自适应，讨论点通量和区域平均反应率。Lathouwers针对体与表面探测器构造含角度依赖的双重加权残差及目标误差控制\upcite{21,22}。远端探测区的绝对通量可能很小，目标导向选择使误差控制与需要评价的响应直接对应。
+自适应的另一核心问题是依据什么量分配分辨率。标准误差指标强调全域解或局部梯度。目标导向方法使用伴随信息，把残差对探测器或积分响应的贡献作为加密依据。Wang与Ragusa在二维非结构三角形网格上比较高阶DG的标准与目标导向自适应，讨论点通量和区域平均反应率。Lathouwers针对体与表面探测器构造含角度依赖的双重加权残差及目标误差控制\upcite{23,24}。远端探测区的绝对通量可能很小，目标导向选择使误差控制与需要评价的响应直接对应。
 
-Baker等在球谐角展开和空间子网格尺度有限元框架中，用子网格校正构造残差，并组合正向、伴随各向异性误差度量，针对两个单群和一个多群固定源屏蔽问题选择加密位置\upcite{23}。Goffin等把目标泛函扩展到有效增殖因子\upcite{24}。这些研究将“哪里需要分辨率”具体化为与空间格式、残差构造和目标定义相联系的数值过程。有限元或离散纵标的残差度量依赖其离散方程，MOC的误差评价则需与沿程源近似、段积分和轨迹求积对应。
+Baker等在球谐角展开和空间子网格尺度有限元框架中，用子网格校正构造残差，并组合正向、伴随各向异性误差度量，针对两个单群和一个多群固定源屏蔽问题选择加密位置\upcite{25}。Goffin等把目标泛函扩展到有效增殖因子\upcite{26}。这些研究将“哪里需要分辨率”具体化为与空间格式、残差构造和目标定义相联系的数值过程。有限元或离散纵标的残差度量依赖其离散方程，MOC的误差评价则需与沿程源近似、段积分和轨迹求积对应。
 
-Liu等的后续工作分别推进了全局与目标精度控制。2022年研究利用多层金字塔结构、空间矩比指标和扫描优化，在达到相同精度时，相对均匀细化节省60\%---80\%的计算成本。2023年研究以加权差分通量重构残差，并以DWR驱动多群固定源与临界问题的加密，在所测目标相近精度下减少超过70\%的工作量和运行时间\upcite{25,26}。在Balakovo-3固定源剂量基准中，多层八叉树将约950万网格降至190万，对传统离散纵标计算和实验结果的RMS差异分别约为4\%与10\%，相对均匀细网格节省约70\%计算成本\upcite{27}。这些结果为采用局部细化减少达到指定响应精度所需的工作量提供了依据。
+Liu等的后续工作分别推进了全局与目标精度控制。2022年研究利用多层金字塔结构、空间矩比指标和扫描优化，在达到相同精度时，相对均匀细化节省60\%---80\%的计算成本。2023年研究以加权差分通量重构残差，并以DWR驱动多群固定源与临界问题的加密，在所测目标相近精度下减少超过70\%的工作量和运行时间\upcite{27,28}。在Balakovo-3固定源剂量基准中，多层八叉树将约950万网格降至190万，对传统离散纵标计算和实验结果的RMS差异分别约为4\%与10\%，相对均匀细网格节省约70\%计算成本\upcite{29}。这些结果为采用局部细化减少达到指定响应精度所需的工作量提供了依据。
 
-近年的发展还包括提高空间阶次。Wilson等将非连续等几何离散、目标误差度量、局部\(h(p)\)细化与扩散加速结合，在参考空间求解后投影形成误差估计\upcite{28}。这使网格划分具有改变单元尺寸和提高解表示阶次两种选择。表\ref{tab:1}按数值处理与验证结果归纳代表性工作。改变单元尺寸、提高源展开阶次和重构材料界面，分别影响空间积分的不同部分。 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr0.24\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.22\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.24\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.28\linewidth-1.5\tabcolsep\relax}@{}}
+近年的发展还包括提高空间阶次。Wilson等将非连续等几何离散、目标误差度量、局部\(h(p)\)细化与扩散加速结合，在参考空间求解后投影形成误差估计\upcite{30}。这使网格划分具有改变单元尺寸和提高解表示阶次两种选择。表\ref{tab:1}按数值处理与验证结果归纳代表性工作。改变单元尺寸、提高源展开阶次和重构材料界面，分别影响空间积分的不同部分。 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr0.24\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.22\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.24\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.28\linewidth-1.5\tabcolsep\relax}@{}}
 \caption{复杂几何与目标导向空间离散的代表性研究}\label{tab:1}\\
 \toprule
 工作 & 对象与离散 & 数值处理 & 验证结果及启发 \\
@@ -227,14 +238,14 @@ Liu等的后续工作分别推进了全局与目标精度控制。2022年研究�
 \endhead
 \bottomrule
 \endlastfoot
-Shriwise\upcite{8} & 5 MeV点源、半径10 cm、密度1 g/cm$^3$氢球，$10^8$历史 & SDF预筛选下一边界查询 & 原DAGMC墙钟25.13 min降至7.30 min，解析CSG为2.75 min \\
-Gaston\upcite{18} & 非结构网格三维MOC全堆芯 & 完整轨迹与跨域角通量传递 & 约14亿单元、12000处理器，分别统计网格单元数和轨迹存储量 \\
-Porhemmat\upcite{19} & C5G7二维MOC & 模块化追踪与求积比较 & 16 CPU线程加速6.18倍，复用条件取决于几何重复性 \\
-Chen，Yang\upcite{7,10} & CAD-MOC，CAD至离散纵标网格 & 通用射线求交，体积加权混合材料 & 几何边界访问与材料投影分别进入输运离散 \\
-Buchan\upcite{11} & 内部实体与独立背景有限元网格 & supermeshing守恒投影并结合自适应 & 分别控制实体边界和背景求解网格的分辨率 \\
-Liu 2022\upcite{25} & 多层空间矩离散 & 空间矩比指标与优化扫描 & 相同精度下较均匀细化节省60\%--80\%成本 \\
-Liu 2023 DWR\upcite{26} & 三维多群固定源与临界 & 加权差分重构残差及近似伴随 & 相近目标精度下工作量和时间减少$>$70\% \\
-Liu 2023 Balakovo\upcite{27} & VVER-1000固定源剂量 & 多层网格、源投影与跨界映射 & 约950万$\rightarrow$190万网格，对计算/实验RMS约4\%/10\% \\
+Shriwise\upcite{9} & 5 MeV点源、半径10 cm、密度1 g/cm$^3$氢球，$10^8$历史 & SDF预筛选下一边界查询 & 原DAGMC墙钟25.13 min降至7.30 min，解析CSG为2.75 min \\
+Gaston\upcite{20} & 非结构网格三维MOC全堆芯 & 完整轨迹与跨域角通量传递 & 约14亿单元、12000处理器，分别统计网格单元数和轨迹存储量 \\
+Porhemmat\upcite{21} & C5G7二维MOC & 模块化追踪与求积比较 & 16 CPU线程加速6.18倍，复用条件取决于几何重复性 \\
+Chen，Yang\upcite{8,11} & CAD-MOC，CAD至离散纵标网格 & 通用射线求交，体积加权混合材料 & 几何边界访问与材料投影分别进入输运离散 \\
+Buchan\upcite{12} & 内部实体与独立背景有限元网格 & supermeshing守恒投影并结合自适应 & 分别控制实体边界和背景求解网格的分辨率 \\
+Liu 2022\upcite{27} & 多层空间矩离散 & 空间矩比指标与优化扫描 & 相同精度下较均匀细化节省60\%--80\%成本 \\
+Liu 2023 DWR\upcite{28} & 三维多群固定源与临界 & 加权差分重构残差及近似伴随 & 相近目标精度下工作量和时间减少$>$70\% \\
+Liu 2023 Balakovo\upcite{29} & VVER-1000固定源剂量 & 多层网格、源投影与跨界映射 & 约950万$\rightarrow$190万网格，对计算/实验RMS约4\%/10\% \\
 \end{longtable}
 
 DWR为双重加权残差，RMS为均方根差异。
@@ -247,26 +258,28 @@ DWR为双重加权残差，RMS为均方根差异。
 
 \subsection{轨迹生成、存储与通量求和}
 
-GPU-MOC的并行性来自给定源项下可以分别计算的轨迹、离散方向和能群，而同一轨迹内的角通量仍需沿程递推。段长、材料编号、源区编号和边界角通量构成扫描的主要输入。预存全部分段能复用首次追踪结果，代价是每步读取段数组；在线生成减少段存储，代价是在扫描时重新定位和求交；部分缓存则在二者之间选择。Zhou等研究的部分缓存和在线生成，以及MRT利用重复模块的局部轨迹复用，分别利用了迭代复用和几何重复性\upcite{19,29}。
+GPU-MOC的并行性来自给定源项下可以分别计算的轨迹、离散方向和能群，而同一轨迹内的角通量仍需沿程递推。段长、材料编号、源区编号和边界角通量构成扫描的主要输入。预存全部分段能复用首次追踪结果，代价是每步读取段数组；在线生成减少段存储，代价是在扫描时重新定位和求交；部分缓存则在二者之间选择。Zhou等研究的部分缓存和在线生成，以及MRT利用重复模块的局部轨迹复用，分别利用了迭代复用和几何重复性\upcite{21,31}。
 
-多个线程经过同一源区时，需将各自的通量积分累加到同一结果。原子加保证并发更新正确，但集中写入同一地址会增加等待。线程块内先求和再写入全局数组，可减少原子更新次数，同时需要共享内存和同步。NVIDIA的线程束聚合示例与CUDA指南介绍了原子更新聚合、合并访存和数据复用\upcite{30,31}。图\ref{fig:3}区分沿程扫描、轨迹缓存、通量累积和源更新，说明几何追踪速度与完整输运迭代时间之间还隔着哪些计算环节。
+Gaston等的非结构网格MOC提供了CPU分布式计算的比较对象\upcite{20}。跨分区扫描需传递上游出射角通量，沿程依赖、边界通信和扫描工作量分配共同影响扩展性。其12000处理器结果属于CPU并行计算，可用于比较任务划分方法。
+
+GPU线程扫描不同轨迹时，还需将同一源区内的加权段积分求和，得到式\eqref{eq:tally}中的标量通量。不同线程可能写入通量数组的同一位置，原子加法保证这些更新不会相互覆盖；先在线程块内求和可减少全局原子更新次数，但需要共享内存和同步\upcite{32,33}。本计划固定离散方法，分别比较轨迹分组、缓存和求和方式对GPU运行时间的影响。
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig3}
-\caption{GPU-MOC轨迹扫描与通量求和\upcite{29,30,32,33,34,35,36}}
+\caption{GPU-MOC轨迹扫描与通量求和\upcite{31,32,34,35,36,37,38}}
 \label{fig:3}
 \end{figure}
 
 \subsection{几何结构、任务分配与存储压缩}
 
-二维OpenMOC将轨迹--能群任务分配给CUDA线程，能群内层的连续计算也用于CPU向量化\upcite{17}。在方位角从4增加到128的比较中，任务数量随角度数增加，GPU可利用的并行度提高。宋佩涛等采用通信与扫描重叠、异步传输及CPU/GPU任务分配，处理异构执行的等待\upcite{33,37}。这两类优化分别增加同时可执行的计算、减少设备或通信空闲，并不改变材料和源区的数值表示。
+二维OpenMOC将轨迹--能群任务分配给CUDA线程，能群内层的连续计算也用于CPU向量化\upcite{19}。在方位角从4增加到128的比较中，任务数量随角度数增加，GPU可利用的并行度提高。宋佩涛等采用通信与扫描重叠、异步传输及CPU/GPU任务分配，处理异构执行的等待\upcite{35,39}。这两类优化分别增加同时可执行的计算、减少设备或通信空闲，并不改变材料和源区的数值表示。
 
-三维MOC的容量问题还取决于几何结构。Song等在平源、显式三维分段基线上结合线性源、在线轴向追踪和分批处理\upcite{32}。线性源提高源近似阶次，减少达到相应精度所需的空间分段；在线轴向追踪保存二维径向段，并利用其与轴向平面的交点构造三维段；分批处理限制同时驻留的轨迹和边界通量。因此，表\ref{tab:2}的容量改善来自三项共同作用，既有数值离散变化，也有存储和驻留方式变化。一般体素几何可用DDA生成分段，但其定位和层级访问成本需要结合实际体素分布分析。
+三维MOC的容量问题还取决于几何结构。Song等在平源、显式三维分段基线上结合线性源、在线轴向追踪和分批处理\upcite{34}。线性源提高源近似阶次，减少达到相应精度所需的空间分段；在线轴向追踪保存二维径向段，并利用其与轴向平面的交点构造三维段；分批处理限制同时驻留的轨迹和边界通量。因此，表\ref{tab:2}的容量改善来自三项共同作用，既有数值离散变化，也有存储和驻留方式变化。一般体素几何可用DDA生成分段，但其定位和层级访问成本需要结合实际体素分布分析。
 
-Wang等将轴向挤出几何的循环轨迹划分为比角度分解更细的任务，按估计计算量分配处理器；汪岸进一步研究周期轨迹长度与负载分配\upcite{38,39}。ANT-MOC以存储、计算和通信成本模型支持轨迹管理，并在节点、GPU和计算单元三个层次分配任务\upcite{34}。大规模扩展结果说明容量控制和负载平衡可以同时发挥作用。对于薄层、孔道和局部细化形成的长短轨迹，几何相同并不意味着每条任务的扫描段数或材料访问量接近，因而仅按方向数或网格数等量划分未必等于计算量均衡。
+Wang等将轴向挤出几何的循环轨迹划分为比角度分解更细的任务，按估计计算量分配处理器；汪岸进一步研究周期轨迹长度与负载分配\upcite{40,41}。ANT-MOC以存储、计算和通信成本模型支持轨迹管理，并在节点、GPU和计算单元三个层次分配任务\upcite{36}。大规模扩展结果说明容量控制和负载平衡可以同时发挥作用。对于薄层、孔道和局部细化形成的长短轨迹，几何相同并不意味着每条任务的扫描段数或材料访问量接近，因而仅按方向数或网格数等量划分未必等于计算量均衡。
 
-STREAM3D-GPU通过轴向分解降低每个MPI进程的显存驻留，并以异步执行协调计算和传输\upcite{35}。2024年KNS报告给出了逐平面传输的操作：扫描前送入入射角通量，扫描后回传出射角通量和CMFD网格界面中子流，同时保留可复用的设备数据\upcite{40}。其七群、64轴向平面C5G7在两颗EPYC 7543的64核CPU参考与同主机加8块RTX A5000之间，MOC时间由1368 s降至34 s，总时间由1704 s降至100 s；72群、197平面的OPR-1000八分之一堆芯相应为61535 s至3995 s、212416 s至11201 s。扫描与总时间的变化不同，后一算例还包含径向MPI分区等待时间的改变。2026年四分之一堆芯结果见表\ref{tab:2}，与该会议算例分别解释。
+STREAM3D-GPU通过轴向分解降低每个MPI进程的显存驻留，并以异步执行协调计算和传输\upcite{37}。2024年KNS报告给出了逐平面传输的操作：扫描前送入入射角通量，扫描后回传出射角通量和CMFD网格界面中子流，同时保留可复用的设备数据\upcite{42}。其七群、64轴向平面C5G7在两颗EPYC 7543的64核CPU参考与同主机加8块RTX A5000之间，MOC时间由1368 s降至34 s，总时间由1704 s降至100 s；72群、197平面的OPR-1000八分之一堆芯相应为61535 s至3995 s、212416 s至11201 s。扫描与总时间的变化不同，后一算例还包含径向MPI分区等待时间的改变。2026年四分之一堆芯结果见表\ref{tab:2}，与该会议算例分别解释。
 
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr0.22\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.25\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.32\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.21\linewidth-1.5\tabcolsep\relax}@{}}
 \caption{代表性MOC并行方法的结构条件与计算结果}\label{tab:2}\\
@@ -280,28 +293,28 @@ STREAM3D-GPU通过轴向分解降低每个MPI进程的显存驻留，并以异�
 \endhead
 \bottomrule
 \endlastfoot
-OpenMOC\upcite{17}，二维C5G7七群 & 轨迹--能群任务，内层能群向量化 & 四种NVIDIA GPU，相对单Xeon核最大求解加速近50倍 & 角度数影响可并行任务量 \\
-Song等\upcite{32}，少群三维组件/SMR & 线性源、在线轴向追踪、分批驻留 & 25 cm组件平源显式基线22129 MB；组合后组件显存降低98.5\%，可在单GPU运行四群SMR全堆芯 & 区分源阶次、段存储和驻留规模 \\
-Wang等\upcite{38}，轴向挤出CPU-MOC & 循环轨迹细分与计算量分配 & 10240至98304 CPU核，并行效率$>$40\% & 根据轨迹工作量分配任务 \\
-ANT-MOC\upcite{34}，三维全堆芯 & 存储/计算/通信模型，三级任务分配 & 约$10^{11}$轨迹，16000 GPU；强/弱扩展效率70.69\%/89.38\% & 容量与跨设备负载同时约束 \\
-STREAM3D-GPU\upcite{35}，OPR四分之一堆芯 & 逐轴向平面处理与异步执行 & 每MPI进程约50 GB至$<$4.5 GB；8/16 GPU对128核CPU求解22.1/40.5倍 & 用驻留规模换取传输与同步 \\
-NuDEAL\upcite{36}，挤出几何DGMOC & 按方位角分批，逐平面计算轴向矩 & 三维C5G7，RTX 2080 Ti；同算例角块对照见图\ref{fig:4} & 并发数量须结合角内任务规模 \\
+OpenMOC\upcite{19}，二维C5G7七群 & 轨迹--能群任务，内层能群向量化 & 四种NVIDIA GPU，相对单Xeon核最大求解加速近50倍 & 角度数影响可并行任务量 \\
+Song等\upcite{34}，少群三维组件/SMR & 线性源、在线轴向追踪、分批驻留 & 25 cm组件平源显式基线22129 MB；组合后组件显存降低98.5\%，可在单GPU运行四群SMR全堆芯 & 区分源阶次、段存储和驻留规模 \\
+Wang等\upcite{40}，轴向挤出CPU-MOC & 循环轨迹细分与计算量分配 & 10240至98304 CPU核，并行效率$>$40\% & 根据轨迹工作量分配任务 \\
+ANT-MOC\upcite{36}，三维全堆芯 & 存储/计算/通信模型，三级任务分配 & 约$10^{11}$轨迹，16000 GPU；强/弱扩展效率70.69\%/89.38\% & 容量与跨设备负载同时约束 \\
+STREAM3D-GPU\upcite{37}，OPR四分之一堆芯 & 逐轴向平面处理与异步执行 & 每MPI进程约50 GB至$<$4.5 GB；8/16 GPU对128核CPU求解22.1/40.5倍 & 用驻留规模换取传输与同步 \\
+NuDEAL\upcite{38}，挤出几何DGMOC & 按方位角分批，逐平面计算轴向矩 & 三维C5G7，RTX 2080 Ti；同算例角块对照见图\ref{fig:4} & 并发数量须结合角内任务规模 \\
 \end{longtable}
 
-NuDEAL进一步展示了批次大小与实际并行度之间的关系。其轴向挤出几何采用MOC/HFEM或DGMOC，一般多面体网格采用DFEM-$S_N$，各求解器使用不同的角通量存储和任务划分\upcite{36}。公开作者稿表5--6中的无控制棒三维C5G7 DGMOC算例含8507520个单元，在RTX 2080 Ti上将每块角度数由2增至32时，显存由2589 MB变为7133 MB，即原来的约2.76倍；单次输运扫描由5.25 s变为5.09 s，约缩短3.0\%；原表的单次MOC时间由10.50 s变为9.21 s，约缩短12.3\%。64角全并发时显存不足。图\ref{fig:4}保留同一算例内的比较，两个时间量分别按原表定义，单次MOC时间不能等同于单次扫描或完整收敛求解。
+NuDEAL进一步展示了批次大小与实际并行度之间的关系。其轴向挤出几何采用MOC/HFEM或DGMOC，一般多面体网格采用DFEM-$S_N$，各求解器使用不同的角通量存储和任务划分\upcite{38}。公开作者稿表5--6中的无控制棒三维C5G7 DGMOC算例含8507520个单元，在RTX 2080 Ti上将每块角度数由2增至32时，显存由2589 MB变为7133 MB，即原来的约2.76倍；单次输运扫描由5.25 s变为5.09 s，约缩短3.0\%；原表的单次MOC时间由10.50 s变为9.21 s，约缩短12.3\%。64角全并发时显存不足。图\ref{fig:4}保留同一算例内的比较，两个时间量分别按原表定义，单次MOC时间不能等同于单次扫描或完整收敛求解。
 
-每个角度已有较多任务时，增加同批角度对扫描时间的改善较小，却会增加工作数组；单次MOC时间的变化还反映扫描以外的计算。因此，显存和扫描吞吐不能单独决定完整迭代时间。相同框架的二维DFEM-$S_N$在RTX 4070 Ti上的顺序与并发总时间分别为148 s和26 s\upcite{36}，也说明并行方式的作用依赖具体离散算法和任务规模。
+每个角度已有较多任务时，增加同批角度对扫描时间的改善较小，却会增加工作数组；单次MOC时间的变化还反映扫描以外的计算。因此，显存和扫描吞吐不能单独决定完整迭代时间。相同框架的二维DFEM-$S_N$在RTX 4070 Ti上的顺序与并发总时间分别为148 s和26 s\upcite{38}，也说明并行方式的作用依赖具体离散算法和任务规模。
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig4_nudeal}
-\caption{NuDEAL三维C5G7 DGMOC的显存与时间（RTX 2080 Ti，作者稿表6）\upcite{36}}
+\caption{NuDEAL三维C5G7 DGMOC的显存与时间（RTX 2080 Ti，作者稿表6）\upcite{38}}
 \label{fig:4}
 \end{figure}
 
 \subsection{固定源扩展、伴随求解与体素离散的联系}
 
-固定源GPU输运研究提供了不同扫描和迭代方式的参照。STRAUM采用群块Krylov和空间波前，Gong等研究三维离散纵标GPU计算\upcite{41,42}；ALPHA将全隐式瞬态固定源MOC与棒级CMFD结合，并考察FP32和收敛容限\upcite{43}。Denovo的大型工程求解、OpenSn的开源实现及Pryer的批量波前计算分别涉及多维并行、可复用的程序实现和多样本任务\upcite{44,45,46}。Biondo等介绍的Shift流程则在CPU上完成Denovo正向/伴随预计算及权窗生成，在GPU上执行蒙卡输运\upcite{47}，与GPU-MOC加速的是不同计算环节。
+固定源GPU输运研究提供了不同扫描和迭代方式的参照。STRAUM采用群块Krylov和空间波前，Gong等研究三维离散纵标GPU计算\upcite{43,44}；ALPHA将全隐式瞬态固定源MOC与棒级CMFD结合，并考察FP32和收敛容限\upcite{45}。Denovo的大型工程求解、OpenSn的开源实现及Pryer的批量波前计算分别涉及多维并行、可复用的程序实现和多样本任务\upcite{46,47,48}。Biondo等介绍的Shift流程则在CPU上完成Denovo正向/伴随预计算及权窗生成，在GPU上执行蒙卡输运\upcite{49}，与GPU-MOC加速的是不同计算环节。
 
 伴随实现还需保持离散内积关系。对实数输运矩阵\(A\)和由正体积、正求积权构成的对称正定内积矩阵\(W\)，有
 
@@ -310,7 +323,7 @@ A^{\dagger} = W^{- 1}A^{\mathsf{T}}W,\langle Au,v\rangle_{W} = \langle u,A^{\dag
 \label{eq:4}
 \end{equation}
 
-材料和轨迹索引可以共享，散射与能群耦合需作相应转置，轨迹传播和边界交换服从配对的伴随次序。内积对偶与源--响应互易为正向--伴随实现提供检验，再将所得重要性用于第\ref{sec:4}章的混合计算\upcite{5,48}。
+材料和轨迹索引可以共享，散射与能群耦合需作相应转置，轨迹传播和边界交换服从配对的伴随次序。内积对偶与源--响应互易为正向--伴随实现提供检验，再将所得重要性用于第\ref{sec:4}章的混合计算\upcite{6,50}。
 
 已有GPU优化主要在给定离散问题上减少驻留数据、增加并行任务或平衡负载；线性源等方法还改变达到指定精度所需的自由度。体素尺寸和源区划分则直接改变这些优化面对的任务：几何访问数、实际扫描段数、段长分布及同址通量累积的次数。均匀网格、重复模块或轴向挤出结构中的性能收益，为复杂体素几何提供了方法依据；其可迁移性仍取决于相应几何结构、复用次数和扫描依赖是否成立。由此，需要把体素表示带来的响应误差和工作量变化，与同一离散问题下的GPU运行成本联系起来，而不只比较孤立内核的加速比。
 
@@ -320,13 +333,13 @@ A^{\dagger} = W^{- 1}A^{\mathsf{T}}W,\langle Au,v\rangle_{W} = \langle u,A^{\dag
 
 聚变屏蔽中的厚材料层、薄壁部件和低密度孔道对应不同的传播条件。厚屏蔽后的响应依赖多次散射和能谱变化；孔道及穿透件则可能保留明显的方向性。磁体总核热是区域能量沉积积分，局部热功率密度需要辨认空间峰值，快中子注量和绝缘剂量具有不同的能量权重。FNS材料实验中的产氚率是特定反应率，光子加热响应（GHR）需要中子--光子耦合计算。运行中的瞬发剂量与冷却后的停堆剂量具有不同源项，后者还涉及活化和衰变过程。响应的位置、粒子类型与归一化因此决定了几何和场解需要保留哪些信息。
 
-ITER中已有将CAD蒙卡与CADIS/FW-CADIS结合、计算线圈核热、屏蔽外剂量和通量分布的研究\upcite{49}；Denovo也用于大型聚变固定源计算\upcite{44}。CFETR线圈研究以密度降低和迭代权窗改善深穿透抽样，最终在物理密度下评价核响应；cosRMC进一步研究多层网格全局减方差\upcite{2,50}。ParaStell的参数扫描和CIT试验大厅中多维输运与近似模型的结合，分别反映了方案数量和模型求解成本对工程设计的影响\upcite{3,51}。这些应用要求快速求解既能描述主要传播路径，也能提供目标位置所需的通量或重要性分布。
+ITER中已有将CAD蒙卡与CADIS/FW-CADIS结合、计算线圈核热、屏蔽外剂量和通量分布的研究\upcite{51}；Denovo也用于大型聚变固定源计算\upcite{46}。CFETR线圈研究以密度降低和迭代权窗改善深穿透抽样，最终在物理密度下评价核响应；cosRMC进一步研究多层网格全局减方差\upcite{2,52}。ParaStell的参数扫描和CIT试验大厅中多维输运与近似模型的结合，分别反映了方案数量和模型求解成本对工程设计的影响\upcite{4,53}。这些应用要求快速求解既能描述主要传播路径，也能提供目标位置所需的通量或重要性分布。
 
 \subsection{材料与孔道基准的实验依据}
 
-SINBAD由NEA与RSICC共同维护，涵盖反应堆、聚变和加速器屏蔽实验\upcite{52}。其中FNS材料实验可检验高能中子在实体中的衰减和能谱变化，FNS-Duct则反映孔道传播及壁面散射。材料体、直通通道与折弯通道分别强调截面处理、直达流束和多次散射，适合考察不同空间及角向近似对响应的影响。
+SINBAD由NEA与RSICC共同维护，涵盖反应堆、聚变和加速器屏蔽实验\upcite{54}。其中FNS材料实验可检验高能中子在实体中的衰减和能谱变化，FNS-Duct则反映孔道传播及壁面散射。材料体、直通通道与折弯通道分别强调截面处理、直达流束和多次散射，适合考察不同空间及角向近似对响应的影响。
 
-表\ref{tab:5}归纳已有计算的条件与结果。Ebiwonjumi等采用OpenMC分析FNS钨、钒和铍组件，与实验及MCNP比较；钨例使用Denovo/MAVRIC权窗\upcite{1}。表中C/E为计算值除以实验值，TPR为产氚率，$\pm$表示不同测点C/E之间的标准差，而非单次蒙卡计分误差。这一汇总描述测点整体偏离程度，逐深度的能谱和反应率仍是辨认偏差来源的依据。车锐等的cosRMC结果及Iwamoto等的PHITS结果提供了不同程序和核数据条件下的对照\upcite{53,54}。
+表\ref{tab:5}归纳已有计算的条件与结果。Ebiwonjumi等采用OpenMC分析FNS钨、钒和铍组件，与实验及MCNP比较；钨例使用Denovo/MAVRIC权窗\upcite{1}。表中C/E为计算值除以实验值，TPR为产氚率，$\pm$表示不同测点C/E之间的标准差，而非单次蒙卡计分误差。这一汇总描述测点整体偏离程度，逐深度的能谱和反应率仍是辨认偏差来源的依据。车锐等的cosRMC结果及Iwamoto等的PHITS结果提供了不同程序和核数据条件下的对照\upcite{55,56}。
 
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr0.2\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.31\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.22\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.27\linewidth-1.5\tabcolsep\relax}@{}}
 \caption{聚变屏蔽基准及工程研究的条件与响应}\label{tab:5}\\
@@ -341,9 +354,9 @@ SINBAD由NEA与RSICC共同维护，涵盖反应堆、聚变和加速器屏蔽实
 \bottomrule
 \endlastfoot
 FNS钨/钒/铍\upcite{1} & OpenMC 0.14.1-dev、ENDF/B-VII.1，约14 MeV D-T源，MCNP 6.2对照 & 中子谱、反应率、TPR与GHR & 铍TPR 9点C/E：1.0295$\pm$0.1956；钨/钒GHR共7点：0.9537$\pm$0.1366 \\
-FNS-Duct/FNS-W\upcite{53} & cosRMC、MCNP5及实验比较 & 中子通量谱 & 孔道传播、壁面散射及钨中能谱变化 \\
-FNS铁屏蔽\upcite{54} & PHITS/JENDL-4.0 & 0.003--10 MeV积分中子产额 & 六位置C/E为1.15--1.78，原表不确定度为计数统计 \\
-WISTELL-D\upcite{3} & ParaStell/\allowbreak DAGMC/\allowbreak OpenMC，99组几何，2113 MW源功率 & TBR与磁体总核热 & 厚型、增殖层占比60\%设计点：1.10、152.0 kW \\
+FNS-Duct/FNS-W\upcite{55} & cosRMC、MCNP5及实验比较 & 中子通量谱 & 孔道传播、壁面散射及钨中能谱变化 \\
+FNS铁屏蔽\upcite{56} & PHITS/JENDL-4.0 & 0.003--10 MeV积分中子产额 & 六位置C/E为1.15--1.78，原表不确定度为计数统计 \\
+WISTELL-D\upcite{4} & ParaStell/\allowbreak DAGMC/\allowbreak OpenMC，99组几何，2113 MW源功率 & TBR与磁体总核热 & 厚型、增殖层占比60\%设计点：1.10、152.0 kW \\
 \end{longtable}
 
 FNS研究中钒的低能谱、钨的部分阈反应和近源加热具有不同程度的C/E偏差\upcite{1}。实验符合度同时受核数据、材料和源表示、探测器响应及测量不确定度影响；即使计算程序之间接近，也不能据此单独确认材料路径和空间源近似均已收敛。相反，在同一物理输入下独立改变几何和离散参数，才能分析数值近似对这些响应的具体贡献。
@@ -356,7 +369,7 @@ FNS研究中钒的低能谱、钨的部分阈反应和近源加热具有不同�
 
 \subsection{伴随重要性、源偏倚与目标构造}
 
-深穿透蒙卡计算中，对目标贡献较大的历史可能很少。源偏倚改变粒子出生状态的抽样概率，分裂和俄罗斯轮盘改变后续粒子分支数量，各操作通过权重修正维持响应估计的无偏性。权窗按空间和能量区间规定适宜的粒子权重范围，近似伴随解则提供与目标响应相联系的重要性信息\upcite{4,55}。令\(L\)为线性固定源输运算子，\(q\)为物理源，\(d\)为响应函数；配对边界条件下有
+深穿透蒙卡计算中，对目标贡献较大的历史可能很少。源偏倚改变粒子出生状态的抽样概率，分裂和俄罗斯轮盘改变后续粒子分支数量，各操作通过权重修正维持响应估计的无偏性。权窗按空间和能量区间规定适宜的粒子权重范围，近似伴随解则提供与目标响应相联系的重要性信息\upcite{5,57}。令\(L\)为线性固定源输运算子，\(q\)为物理源，\(d\)为响应函数；配对边界条件下有
 
 \begin{equation}
 L\psi = q,L^{\dagger}\psi^{\dagger} = d,R = \langle d,\psi\rangle = \langle q,\psi^{\dagger}\rangle.
@@ -370,9 +383,9 @@ C = \int_{}^{}{p(x)I(x)dx},\widehat{p}(x) = \frac{p(x)I(x)}{C},w_{0}(x) = \frac{
 \label{eq:6}
 \end{equation}
 
-按\(\widehat p\)抽样时以\(w_0\)修正出生权重，结果再按物理源强归一化。源偏倚和沿程权窗采用同一重要性的倒数，可使出生权重与输运中的权重控制相一致。MAVRIC的Denovo--Monaco流程及ADVANTG提供了已有实现\upcite{48,56}。
+按\(\widehat p\)抽样时以\(w_0\)修正出生权重，结果再按物理源强归一化。源偏倚和沿程权窗采用同一重要性的倒数，可使出生权重与输运中的权重控制相一致。MAVRIC的Denovo--Monaco流程及ADVANTG提供了已有实现\upcite{50,58}。
 
-CADIS以指定响应为伴随源；FW-CADIS先计算近似正向响应，再按各目标响应的估计值调节伴随源\upcite{4,5}。对给定响应函数\(d_i\)、正估计\(\widetilde R_i\)及无量纲优先级\(\beta_i\)，归一化目标\(\sum_i\beta_iR_i/\widetilde R_i\)对应的伴随源为
+CADIS以指定响应为伴随源；FW-CADIS先计算近似正向响应，再按各目标响应的估计值调节伴随源\upcite{5,6}。对给定响应函数\(d_i\)、正估计\(\widetilde R_i\)及无量纲优先级\(\beta_i\)，归一化目标\(\sum_i\beta_iR_i/\widetilde R_i\)对应的伴随源为
 
 \begin{equation}
 d_{FW} = \sum_{i = 1}^{N_{D}}\frac{\beta_{i}}{{\widetilde{R}}_{i}}d_{i}.
@@ -384,7 +397,7 @@ d_{FW} = \sum_{i = 1}^{N_{D}}\frac{\beta_{i}}{{\widetilde{R}}_{i}}d_{i}.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig5}
-\caption{CADIS与FW-CADIS重要性生成及源偏倚\upcite{4,5,48}}
+\caption{CADIS与FW-CADIS重要性生成及源偏倚\upcite{5,6,50}}
 \label{fig:5}
 \end{figure}
 
@@ -395,13 +408,13 @@ I_{\Omega}(r,E) = \frac{\int_{4\pi}^{}{\psi(r,E,\Omega)\psi^{\dagger}(r,E,\Omega
 \label{eq:8}
 \end{equation}
 
-该量在正向标量通量非零处，将实际传播方向与目标贡献联系起来\upcite{57}。LAA-CADIS以局部角度适应改进复杂通道的重要性计算\upcite{58}。MS-CADIS则针对停堆剂量，将衰变光子的目标重要性经活化过程传回中子抽样阶段\upcite{59}。方向性和多阶段响应说明重要性应服从相应物理问题的定义，中子固定源求解构成本计划的主要开发和验证对象。
+该量在正向标量通量非零处，将实际传播方向与目标贡献联系起来\upcite{59}。LAA-CADIS以局部角度适应改进复杂通道的重要性计算\upcite{60}。MS-CADIS则针对停堆剂量，将衰变光子的目标重要性经活化过程传回中子抽样阶段\upcite{61}。方向性和多阶段响应说明重要性应服从相应物理问题的定义，中子固定源求解构成本计划的主要开发和验证对象。
 
 \subsection{重要性近似与完整计算效率}
 
-重要性场既可由确定论近似解生成，也可经蒙卡迭代探索。MAGIC根据已有通量和统计信息更新权窗；随机射线方法在多群、固定源区表示下随机选取射线，迭代求正向或伴随场，可用于CADIS/FW-CADIS。OpenMC提供相应权窗生成流程\upcite{60,61}。THETA采用线性源随机射线表示单元内源变化\upcite{62}，说明源近似阶次也是预计算精度与内存需求的影响因素。
+重要性场既可由确定论近似解生成，也可经蒙卡迭代探索。MAGIC根据已有通量和统计信息更新权窗；随机射线方法在多群、固定源区表示下随机选取射线，迭代求正向或伴随场，可用于CADIS/FW-CADIS。OpenMC提供相应权窗生成流程\upcite{62,63}。THETA采用线性源随机射线表示单元内源变化\upcite{64}，说明源近似阶次也是预计算精度与内存需求的影响因素。
 
-求解重要性场的网格与蒙卡查询权窗的网格可以不同。Ibrahim等在ITER中结合材料宏观化、确定论网格细化和权窗粗化，将确定论空间--能量单元由1640万增加到5.28亿，权窗保留1630万单元\upcite{63}。相同MCNP计时和文件规模下的计分覆盖及FOM变化见表\ref{tab:4}。郑华庆等的自动网格和平滑方法，以及NECP-MCX/NECP-Hydra的正向--伴随计算与贡献粗化，进一步体现了场解、映射和权窗查询三个环节的不同要求\upcite{64,65,66}。
+求解重要性场的网格与蒙卡查询权窗的网格可以不同。Ibrahim等在ITER中结合材料宏观化、确定论网格细化和权窗粗化，将确定论空间--能量单元由1640万增加到5.28亿，权窗保留1630万单元\upcite{65}。相同MCNP计时和文件规模下的计分覆盖及FOM变化见表\ref{tab:4}。郑华庆等的自动网格和平滑方法，以及NECP-MCX/NECP-Hydra的正向--伴随计算与贡献粗化，进一步体现了场解、映射和权窗查询三个环节的不同要求\upcite{66,67,68}。
 
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr0.24\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.21\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.37\linewidth-1.5\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr0.16\linewidth-1.5\tabcolsep\relax}@{}}
 \caption{重要性计算与权窗输运的代表性结果}\label{tab:4}\\
@@ -415,12 +428,12 @@ I_{\Omega}(r,E) = \frac{\int_{4\pi}^{}{\psi(r,E,\Omega)\psi^{\dagger}(r,E,\Omega
 \endhead
 \bottomrule
 \endlastfoot
-ITER网格与权窗\upcite{63} & 同为10天MCNP，权窗文件约0.21 GB & 非零计分79.3\%提高到97.8\%，MC FOM提高3.4倍 & 材料宏观化、求解网格细化与权窗粗化 \\
-Raffuzzi整体屏蔽\upcite{67} & RR-FW-CADIS的P0平源，20次独立运行 & 仅MC FOM为1.08$\pm$0.14，含WW生成为0.96$\pm$0.12 min$^{-1}$ & 权窗生成与生产输运的分别计时 \\
-Shift先进架构\upcite{68} & CPU历史型与GPU事件型权窗输运 & Frontier两例在20节点上MC运行$<$2 min，每GCD吞吐为最佳CPU实现9--11倍 & GPU计算芯片GCD的粒子执行与队列调度 \\
+ITER网格与权窗\upcite{65} & 同为10天MCNP，权窗文件约0.21 GB & 非零计分79.3\%提高到97.8\%，MC FOM提高3.4倍 & 材料宏观化、求解网格细化与权窗粗化 \\
+Raffuzzi整体屏蔽\upcite{69} & RR-FW-CADIS的P0平源，20次独立运行 & 仅MC FOM为1.08$\pm$0.14，含WW生成为0.96$\pm$0.12 min$^{-1}$ & 权窗生成与生产输运的分别计时 \\
+Shift先进架构\upcite{70} & CPU历史型与GPU事件型权窗输运 & Frontier两例在20节点上MC运行$<$2 min，每GCD吞吐为最佳CPU实现9--11倍 & GPU计算芯片GCD的粒子执行与队列调度 \\
 \end{longtable}
 
-Raffuzzi等的整体屏蔽结果来自P0平源随机射线FW-CADIS，$\pm$为20次独立完整运行间的标准差\upcite{67}。仅计蒙卡与计入权窗生成的FOM差别，说明预计算时间会改变完整效率。Shift结果针对蒙卡粒子执行；它与确定论场求解的加速发生在不同环节\upcite{68}。权窗引起的大量分裂还会使个别源历史延长并行等待，Turner与Davis据此研究长历史处理\upcite{69}。
+Raffuzzi等的整体屏蔽结果来自P0平源随机射线FW-CADIS，$\pm$为20次独立完整运行间的标准差\upcite{69}。仅计蒙卡与计入权窗生成的FOM差别，说明预计算时间会改变完整效率。Shift结果针对蒙卡粒子执行；它与确定论场求解的加速发生在不同环节\upcite{70}。权窗引起的大量分裂还会使个别源历史延长并行等待，Turner与Davis据此研究长历史处理\upcite{71}。
 
 对单一响应，蒙卡效率和完整应用时间可写为
 
@@ -448,7 +461,7 @@ Raffuzzi等的整体屏蔽结果来自P0平源随机射线FW-CADIS，$\pm$为20�
 
 \subsection{复杂几何体素化与材料路径误差}
 
-CAD-MOC、非贴体材料投影和层级空间离散分别提供几何求交、材料表示与局部加密的依据\upcite{7,11,12,20,25,26,27}。对薄层、斜界面和孔道，材料体积分数接近并不保证沿射线的材料次序及光学厚度接近。RQ1关注体素标记改变哪些传播路径，以及路径变化与源区近似误差如何共同影响指定响应。初步判断是：对主要贡献路径附近的细化可能比全域均匀细化更有效，但其优势取决于几何连通性、角向分辨率和新增扫描工作量。
+CAD-MOC、非贴体材料投影和层级空间离散分别提供几何求交、材料表示与局部加密的依据\upcite{8,12,14,22,27,28,29}。对薄层、斜界面和孔道，材料体积分数接近并不保证沿射线的材料次序及光学厚度接近。RQ1关注体素标记改变哪些传播路径，以及路径变化与源区近似误差如何共同影响指定响应。初步判断是：对主要贡献路径附近的细化可能比全域均匀细化更有效，但其优势取决于几何连通性、角向分辨率和新增扫描工作量。
 
 以可解析CSG或可直接访问的CAD边界为材料参考，对相同起点和方向分别计算参考与体素材料区间，将两组交点取并集。对轨迹\(k\)、能群\(g\)，定义
 
@@ -463,11 +476,11 @@ E_{\tau,kg}=\sum_{J}\left|\Sigma^{h}_{t,g,J}-\Sigma^{\mathrm{ref}}_{t,g,J}\right
 
 程序开发从均匀体素与DDA开始，扩展到局部块细化和层级体素，并以界面单元直接求交作几何精度对照。中心点材料标记与子采样体积分数分别比较，混合材料采用明确的截面均匀化和源区约定。固定材料、核数据和射线集合，改变网格尺度、界面相对网格的位置及倾角、薄层厚度和孔道宽度，检查逐材料段长、光学厚度和通道连通性。
 
-在同一映射材料模型上，独立收敛轨迹间距、角向求积、源展开和迭代，再与几何参考响应比较，可区分材料近似与输运离散的影响。按界面距离、通量变化和目标加权残差选择细化位置，比较相同时间或显存预算下的响应误差。目标导向指标借鉴已有方法\upcite{21,22,23,26}，其残差须按MOC段积分和配对伴随离散构造；初期以局部扰动响应检验灵敏度。同步统计体素数、源区数、实际扫描段数与构建成本，辨认空间误差下降而扫描工作量增加、或角向误差限制继续细化的条件。
+在同一映射材料模型上，独立收敛轨迹间距、角向求积、源展开和迭代，再与几何参考响应比较，可区分材料近似与输运离散的影响。按界面距离、通量变化和目标加权残差选择细化位置，比较相同时间或显存预算下的响应误差。目标导向指标借鉴已有方法\upcite{23,24,25,28}，其残差须按MOC段积分和配对伴随离散构造；初期以局部扰动响应检验灵敏度。同步统计体素数、源区数、实际扫描段数与构建成本，辨认空间误差下降而扫描工作量增加、或角向误差限制继续细化的条件。
 
 \subsection{GPU特征线扫描与轨迹存储优化}
 
-已有工作利用重复模块、轴向挤出结构和角度分批控制数据驻留，体现了重新计算与保存数据之间的取舍\upcite{19,29,32,34,35,36,40}。一般体素材料场中，不同射线经过的体素、材料界面和源区数量可能差异显著。RQ2研究这些差异如何改变缓存的复用价值和线程等待，并识别通量累积与在线几何查询分别主导运行时间的条件。
+已有工作利用重复模块、轴向挤出结构和角度分批控制数据驻留，体现了重新计算与保存数据之间的取舍\upcite{21,31,34,36,37,38,42}。一般体素材料场中，不同射线经过的体素、材料界面和源区数量可能差异显著。RQ2研究这些差异如何改变缓存的复用价值和线程等待，并识别通量累积与在线几何查询分别主导运行时间的条件。
 
 对第\(k\)条射线，分别记录体素访问数\(N_{v,k}\)、材料段数\(N_{m,k}\)、源积分子段数\(N_{q,k}\)、计分子段数\(N_{t,k}\)及实际扫描段数\(N_{s,k}\)。材料、源近似或通量统计区改变时均保留相应分界；相邻体素即使材料相同，也需分别计算各源区积分。仅在各区积分不变时共享相同区间的衰减计算，由此区分几何穿越、源项积分和通量累积各自的工作量。
 
@@ -559,74 +572,74 @@ FNS材料与通道算例选取可取得输入及实验定义的条目，统一�
 \small
 \bibitem{ref1} EBIWONJUMI B, SEGANTIN S, PETERSON E. OpenMC Interpretation of FNS SINBAD Shielding Benchmark Experiments{[}J/OL{]}. Fusion Science and Technology, 2025, 81(1): 18-31. \url{https://doi.org/10.1080/15361055.2024.2323747}.
 \bibitem{ref2} LU P, XU K, ZHENG Y, 等. Analysis of nuclear response in CFETR toroidal field coils with density reduction VR technique{[}J/OL{]}. Fusion Engineering and Design, 2019, 147: 111243. \url{https://doi.org/10.1016/j.fusengdes.2019.111243}.
-\bibitem{ref3} MORENO C, BADER A, WILSON P. ParaStell: parametric modeling and neutronics support for stellarator fusion power plants{[}J/OL{]}. Frontiers in Nuclear Engineering, 2024, 3: 1384788. \url{https://doi.org/10.3389/fnuen.2024.1384788}.
-\bibitem{ref4} WAGNER J C, HAGHIGHAT A. Automated Variance Reduction of Monte Carlo Shielding Calculations Using the Discrete Ordinates Adjoint Function{[}J/OL{]}. Nuclear Science and Engineering, 1998, 128(2): 186-208. \url{https://doi.org/10.13182/NSE98-2}.
-\bibitem{ref5} WAGNER J C, PEPLOW D E, MOSHER S W. FW-CADIS Method for Global and Regional Variance Reduction of Monte Carlo Radiation Transport Calculations{[}J/OL{]}. Nuclear Science and Engineering, 2014, 176(1): 37-57. \url{https://doi.org/10.13182/NSE12-33}.
-\bibitem{ref6} TSIGE-TAMIRAT H, FISCHER U, SERIKOV A, 等. Automatic generation and validation of an ITER neutronics model from CAD data{[}J/OL{]}. Fusion Engineering and Design, 2007, 82(15-24): 1956-1959. \url{https://doi.org/10.1016/j.fusengdes.2007.06.038}.
-\bibitem{ref7} CHEN Z P, ZHENG H Q, SUN G Y, 等. Preliminary study on CAD-based method of characteristics for neutron transport calculation{[}J/OL{]}. Chinese Physics C, 2014, 38(5): 058201. \url{https://doi.org/10.1088/1674-1137/38/5/058201}.
-\bibitem{ref8} SHRIWISE P C, DAVIS A, JACOBSON L J, et al. Particle Tracking Acceleration via Signed Distance Fields in Direct-Accelerated Geometry Monte Carlo{[}J/OL{]}. Nuclear Engineering and Technology, 2017, 49(6): 1189-1198. https://doi.org/10.1016/j.net.2017.08.008.
-\bibitem{ref9} SHRIWISE P, WILSON P P H, DAVIS A, et al. Hardware-Accelerated Ray Tracing of CAD-Based Geometry for Monte Carlo Radiation Transport{[}J/OL{]}. Computing in Science \& Engineering, 2022, 24(2): 52-61. https://doi.org/10.1109/MCSE.2022.3154656.
-\bibitem{ref10} YANG C, TAN X, XU F Y, 等. Research on approaches to automatic modeling of discrete ordinate programs based on CAD model{[}J/OL{]}. Nuclear Engineering and Design, 2024, 420: 112994. \url{https://doi.org/10.1016/j.nucengdes.2024.112994}.
-\bibitem{ref11} BUCHAN A G, DARGAVILLE S, PAIN C C. A combined immersed body and adaptive mesh method for simulating neutron transport within complex structures{[}J/OL{]}. Annals of Nuclear Energy, 2019, 134: 88-100. \url{https://doi.org/10.1016/j.anucene.2019.05.044}.
-\bibitem{ref12} LIU C, ZHANG B, ZHANG L, 等. Nonmatching Discontinuous Cartesian Grid Algorithm Based on the Multilevel Octree Architecture for Discrete Ordinates Transport Calculation{[}J/OL{]}. Nuclear Science and Engineering, 2020, 194(12): 1175-1201. \url{https://doi.org/10.1080/00295639.2020.1780842}.
-\bibitem{ref13} ZHANG W, MYERS A, GOTT K, 等. AMReX: Block-structured adaptive mesh refinement for multiphysics applications{[}J/OL{]}. The International Journal of High Performance Computing Applications, 2021, 35(6): 508-526. \url{https://doi.org/10.1177/10943420211022811}.
-\bibitem{ref14} REN L, LIU S, GUO Y, 等. A Survey of GPU-Based Parallel Adaptive Cartesian Grid Modeling Methods and Simulation Applications{[}J/OL{]}. Journal of Computer-Aided Design \& Computer Graphics, 2026, 38(2): 296-312. \url{https://doi.org/10.3724/SP.J.1089.2024-00765}.
-\bibitem{ref15} AMANATIDES J, WOO A. A Fast Voxel Traversal Algorithm for Ray Tracing{[}C/OL{]}//Eurographics '87. 1987: 3--10. \url{https://doi.org/10.2312/egtp.19871000}.
-\bibitem{ref16} LAINE S, KARRAS T. Efficient Sparse Voxel Octrees{[}C/OL{]}//Proceedings of the 2010 ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games. 2010: 55--63. \url{https://doi.org/10.1145/1730804.1730814}.
-
-\bibitem{ref17} BOYD W, SHANER S, LI L, 等. The OpenMOC method of characteristics neutral particle transport code{[}J/OL{]}. Annals of Nuclear Energy, 2014, 68: 43-52. \url{https://doi.org/10.1016/j.anucene.2013.12.012}.
-\bibitem{ref18} GASTON D R, FORGET B, SMITH K S, 等. Method of Characteristics for 3D, Full-Core Neutron Transport on Unstructured Mesh{[}J/OL{]}. Nuclear Technology, 2021, 207(7): 931-953. \url{https://doi.org/10.1080/00295450.2021.1871995}.
-\bibitem{ref19} PORHEMMAT Mohammadhadi, MAHZOON Mojtaba, SALEHI Ali Akbar, et al. Improved Memory Management for Solving Neutron Transport via a Novel Modular Ray Tracing (MRT) Approach Embedded in Parallel method of characteristic (MOC) framework{[}J/OL{]}. Progress in Nuclear Energy, 2021, 132: 103590. https://doi.org/10.1016/j.pnucene.2020.103590.
-\bibitem{ref20} LIU C, ZHANG B, CHEN Y. Solution-dependent predictor-corrector flux mapping algorithm for discrete ordinates calculation on multilevel discontinuous grids{[}J/OL{]}. Annals of Nuclear Energy, 2021, 152: 108033. \url{https://doi.org/10.1016/j.anucene.2020.108033}.
-\bibitem{ref21} WANG Y, RAGUSA J C. Standard and goal-oriented adaptive mesh refinement applied to radiation transport on 2D unstructured triangular meshes{[}J/OL{]}. Journal of Computational Physics, 2011, 230(3): 763-788. \url{https://doi.org/10.1016/j.jcp.2010.10.018}.
-\bibitem{ref22} LATHOUWERS D. Goal-oriented spatial adaptivity for the SN equations on unstructured triangular meshes{[}J/OL{]}. Annals of Nuclear Energy, 2011, 38(6): 1373-1381. \url{https://doi.org/10.1016/j.anucene.2011.01.038}.
-\bibitem{ref23} BAKER C M J, BUCHAN A G, PAIN C C, 等. Goal based mesh adaptivity for fixed source radiation transport calculations{[}J/OL{]}. Annals of Nuclear Energy, 2013, 55: 169-183. \url{https://doi.org/10.1016/j.anucene.2012.11.029}.
-\bibitem{ref24} GOFFIN M A, BAKER C M J, BUCHAN A G, 等. Minimising the error in eigenvalue calculations involving the Boltzmann transport equation using goal-based adaptivity on unstructured meshes{[}J/OL{]}. Journal of Computational Physics, 2013, 242: 726-752. \url{https://doi.org/10.1016/j.jcp.2012.12.035}.
-\bibitem{ref25} LIU C, WEI J, LI J, 等. Multilevel mesh adaptivity for discrete ordinates transport calculation with spatial-moment-ratio indicators{[}J/OL{]}. Annals of Nuclear Energy, 2022, 176: 109288. \url{https://doi.org/10.1016/j.anucene.2022.109288}.
-\bibitem{ref26} LIU C, WEI J, ZHANG B, 等. Goal-Oriented Mesh Adaptivity of Three-Dimensional Neutron Transport Calculation Using Weighted Difference Scheme and Dual-Weighted Residual Error Indicators{[}J/OL{]}. Nuclear Science and Engineering, 2023, 197(11): 2853-2883. \url{https://doi.org/10.1080/00295639.2023.2169537}.
-\bibitem{ref27} LIU C, ZHANG B, WEI J, 等. Verification of multilevel octree grid algorithm of S\_N transport calculation with the Balakovo-3 VVER-1000 neutron dosimetry benchmark{[}J/OL{]}. Nuclear Engineering and Technology, 2023, 55(2): 756-768. \url{https://doi.org/10.1016/j.net.2022.10.017}.
-\bibitem{ref28} WILSON S G, EATON M D, KÓPHÁZI J. Adaptive mesh h(p)-refinement of a discontinuous Bubnov-Galerkin isogeometric analysis spatial discretisation of the first-order form of the neutron transport equation with goal-based error measures and diffusion acceleration{[}J/OL{]}. Computer Methods in Applied Mechanics and Engineering, 2026, 455: 118872. \url{https://doi.org/10.1016/j.cma.2026.118872}.
-\bibitem{ref29} ZHOU F, LI S, XUE R, 等. Neutron particle transport 3D method of characteristic Multi GPU platform Parallel Computing{[}A/OL{]}. (2025)[2026-11-06]. \url{https://doi.org/10.48550/arXiv.2503.17743}.（arXiv预印本）
-\bibitem{ref30} ADINETS A. CUDA Pro Tip: Optimized Filtering with Warp-Aggregated Atomics{[}EB/OL{]}. (2014)[2026-11-06]. \url{https://developer.nvidia.com/blog/cuda-pro-tip-optimized-filtering-warp-aggregated-atomics/}.
-\bibitem{ref31} NVIDIA CORPORATION. CUDA C++ Best Practices Guide{[}M/OL{]}. 2026[2026-11-06]. \url{https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/}.（版本13.5）
-\bibitem{ref32} SONG Q, WANG R, SHEN Y, 等. GPU-accelerated few-group 3D Method of Characteristics for full-core neutron transport in Small Modular Reactors{[}J/OL{]}. Progress in Nuclear Energy, 2026, 192: 106109. \url{https://doi.org/10.1016/j.pnucene.2025.106109}.
-\bibitem{ref33} 宋佩涛, 张志俭, 梁亮, 等. 基于CPU-GPU异构并行的MOC中子输运计算并行效率优化研究{[}J/OL{]}. 原子能科学技术, 2019, 53(11): 2209-2217. \url{https://doi.org/10.7538/yzk.2019.youxian.0416}.
-\bibitem{ref34} LI S, WANG Z, BU L, 等. ANT-MOC: Scalable Neutral Particle Transport Using 3D Method of Characteristics on Multi-GPU Systems{[}C/OL{]}//Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis. 2023: 1-13. \url{https://doi.org/10.1145/3581784.3607063}.
-\bibitem{ref35} DZIANISAU S, LEE D. Axially decomposed GPU-enabled three-dimensional method of characteristics/diamond difference solver in neutron transport code STREAM3D-GPU{[}J/OL{]}. Computer Physics Communications, 2026, 319: 109952. \url{https://doi.org/10.1016/j.cpc.2025.109952}.
-\bibitem{ref36} KIM K M, IM J, LEE H G, 等. Verification and Performance Assessment of NuDEAL, a GPU-Accelerated Deterministic Transport Framework on Unstructured Meshes{[}J/OL{]}. Nuclear Science and Engineering, 2026: 1-25. \url{https://doi.org/10.1080/00295639.2026.2652773}.（在线发表，2026-04-23；定量数据参见公开作者稿\url{https://arxiv.org/abs/2607.01591v1}）
-\bibitem{ref37} 宋佩涛. MOC全堆芯中子输运CPU/GPU异构并行算法研究{[}D/OL{]}. 哈尔滨: 哈尔滨工程大学, 2021. \url{https://cnki.istiz.org.cn/kcms/detail/detail.aspx?dbcode=CDFD&dbname=CDFD2024&filename=1023018169.nh}.
-\bibitem{ref38} WANG A, WANG J, DING Z, 等. A cyclic-track decomposition method for 3D MOC neutron transport simulation{[}J/OL{]}. Nuclear Engineering and Design, 2024, 422: 113148. \url{https://doi.org/10.1016/j.nucengdes.2024.113148}.
-\bibitem{ref39} 汪岸. 三维中子输运特征线计算方法及大规模并行实现{[}D/OL{]}. 北京: 北京科技大学, 2025. \url{https://cnki.istiz.org.cn/kcms/detail/detail.aspx?dbcode=CDFD&dbname=CDFD2026&filename=1025098988.nh}.
-\bibitem{ref40} DZIANISAU S, LEE D. GPU Acceleration of 3D MOC Solver in STREAM3D Using OpenACC{[}C/OL{]}//Transactions of the Korean Nuclear Society Spring Meeting. 2024. \url{https://www.kns.org/files/pre_paper/51/24S-051-Siarhei.pdf}.（KNS Spring Meeting，2024-05-09-\/-\/-10）
-\bibitem{ref41} ZHANG A, HONG S G, JEONG S, 等. GPU-based multi-group discrete ordinates transport calculations: Parallel computing implementation in STRAUM{[}J/OL{]}. Nuclear Engineering and Technology, 2025, 57(9): 103597. \url{https://doi.org/10.1016/j.net.2025.103597}.
-\bibitem{ref42} GONG C, LIU J, CHI L, 等. GPU accelerated simulations of 3D deterministic particle transport using discrete ordinates method{[}J/OL{]}. Journal of Computational Physics, 2011, 230(15): 6010-6022. \url{https://doi.org/10.1016/j.jcp.2011.04.010}.
-\bibitem{ref43} ZOU H, ZHANG Q, LIANG L, 等. Development and verification of a GPU-based MOC transient solver{[}J/OL{]}. Annals of Nuclear Energy, 2022, 174: 109171. \url{https://doi.org/10.1016/j.anucene.2022.109171}.
-\bibitem{ref44} ROYSTON K E, JOHNSON S R, EVANS T M, 等. Application of the Denovo Discrete Ordinates Radiation Transport Code to Large-Scale Fusion Neutronics{[}J/OL{]}. Fusion Science and Technology, 2018, 74(4): 303-314. \url{https://doi.org/10.1080/15361055.2018.1504508}.
-\bibitem{ref45} ANDRS D, HARDY Z, HAWKINS D, 等. OpenSn: A massively parallel, open-source simulation environment for discrete ordinates radiation transport{[}J/OL{]}. Computer Physics Communications, 2026, 320: 110001. \url{https://doi.org/10.1016/j.cpc.2025.110001}.
-\bibitem{ref46} PRYER T. Batched Wavefront Sweeps for Linear Transport Uncertainty Quantification{[}A/OL{]}. (2026)[2026-11-06]. \url{https://arxiv.org/abs/2609.14496v1}. DOI:10.48550/arXiv.2609.14496.（arXiv预印本）
-\bibitem{ref47} BIONDO E, DAVIDSON G, EVANS T, 等. Status of GPU capabilities within the Shift Monte Carlo radiation transport code{[}J/OL{]}. EPJ Nuclear Sciences \& Technologies, 2025, 11: 5. \url{https://doi.org/10.1051/epjn/2024034}.
-\bibitem{ref48} OAK RIDGE NATIONAL LABORATORY. MAVRIC: Monaco with Automated Variance Reduction using Importance Calculations{[}M/OL{]}. 2026[2026-11-06]. \url{https://scale-manual.ornl.gov/6.3.1/MAVRIC.html}.（SCALE 6.3.1手册）
-\bibitem{ref49} IBRAHIM A M, MOSHER S W, EVANS T M, 等. ITER Neutronics Modeling Using Hybrid Monte Carlo/Deterministic and CAD-Based Monte Carlo Methods{[}J/OL{]}. Nuclear Technology, 2011, 175(1): 251-258. \url{https://doi.org/10.13182/NT175-251}.
-\bibitem{ref50} ZHANG X, LIU S, LI S, 等. Development of multilevel mesh adaptivity for global variance reduction in Monte Carlo code cosRMC{[}J/OL{]}. Fusion Engineering and Design, 2024, 202: 114372. \url{https://doi.org/10.1016/j.fusengdes.2024.114372}.
-\bibitem{ref51} LIEW S L, KU L P. Shielding Design Optimization for the Compact Ignition Tokamak Test Cell Building{[}J/OL{]}. Fusion Technology, 1991, 20(2): 164-178. \url{https://doi.org/10.13182/FST91-A29687}.
-\bibitem{ref52} OECD NUCLEAR ENERGY AGENCY. SINBAD -\/-\/- Shielding Integral Benchmark Archive and Database{[}EB/OL{]}. (2026)[2026-11-06]. \url{https://cms.oecd-nea.org/jcms/pl_32139/sinbad-shielding-integral-benchmark-archive-and-database}.
-\bibitem{ref53} 车锐, 刘仕倡, 田卓, 等. 基于SINBAD聚变基准题的cosRMC程序屏蔽计算研究{[}J/OL{]}. 核技术, 2024, 47(5): 050008. \url{https://doi.org/10.11889/j.0253-3219.2024.hjs.47.050008}.
-\bibitem{ref54} IWAMOTO Y, TSUDA S, OGAWA T. Benchmark shielding calculations for fusion and accelerator-driven sub-critical systems{[}J/OL{]}. Frontiers in Energy Research, 2023, 11: 1085264. \url{https://doi.org/10.3389/fenrg.2023.1085264}.
-\bibitem{ref55} MUNK M, SLAYBAUGH R N. Review of Hybrid Methods for Deep-Penetration Neutron Transport{[}J/OL{]}. Nuclear Science and Engineering, 2019, 193(10): 1055-1089. \url{https://doi.org/10.1080/00295639.2019.1586273}.
-\bibitem{ref56} MOSHER S W, JOHNSON S R, BEVILL A M I, et al. ADVANTG-\/-\/-An Automated Variance Reduction Parameter Generator (Rev. 1){[}R/OL{]}. Oak Ridge National Laboratory, ORNL/TM-2011/349 Rev.1, 2015. https://doi.org/10.2172/1210162.
-\bibitem{ref57} MUNK M, SLAYBAUGH R N, PANDYA T M, 等. FW/CADIS-Ω: An angle-informed hybrid method for deep-penetration radiation transport{[}A/OL{]}. (2016)[2026-11-06]. \url{https://doi.org/10.48550/arXiv.1612.00793}.（arXiv预印本；相关会议稿PHYSOR 2016）
-\bibitem{ref58} ZHAO Y, HAN J, ZUO J, 等. Local angular adaptivity CADIS hybrid variance reduction method for monte carlo radiation transport calculations{[}J/OL{]}. Annals of Nuclear Energy, 2025, 218: 111385. \url{https://doi.org/10.1016/j.anucene.2025.111385}.
-\bibitem{ref59} IBRAHIM A M, PEPLOW D E, PETERSON J L, 等. Novel hybrid Monte Carlo/deterministic technique for shutdown dose rate analyses of fusion energy systems{[}J/OL{]}. Fusion Engineering and Design, 2014, 89(9-10): 1933-1938. \url{https://doi.org/10.1016/j.fusengdes.2014.03.014}.
-\bibitem{ref60} DAVIS A, TURNER A. Comparison of global variance reduction techniques for Monte Carlo radiation transport simulations of ITER{[}J/OL{]}. Fusion Engineering and Design, 2011, 86(9-11): 2698-2700. \url{https://doi.org/10.1016/j.fusengdes.2011.01.059}.
-\bibitem{ref61} OPENMC DEVELOPMENT TEAM. OpenMC User Guide: Variance Reduction{[}EB/OL{]}. (2026)[2026-11-06]. \url{https://docs.openmc.org/en/stable/usersguide/variance_reduction.html}.
-\bibitem{ref62} TIAN X, QIN S, LI J, 等. Developing the THETA transport code with the linear source enhanced random ray method for high-fidelity radiation shielding simulation{[}J/OL{]}. Computer Physics Communications, 2026, 327: 110288. \url{https://doi.org/10.1016/j.cpc.2026.110288}.
-\bibitem{ref63} IBRAHIM A M, WILSON P P, SAWAN M E, 等. Assessment of fusion facility dose rate map using mesh adaptivity enhancements of hybrid Monte Carlo/deterministic techniques{[}J/OL{]}. Fusion Engineering and Design, 2014, 89(9-10): 1875-1879. \url{https://doi.org/10.1016/j.fusengdes.2014.02.046}.
-\bibitem{ref64} 郑华庆, 李斌, 宋婧, 等. 基于自动网格划分与权窗平滑的自适应减方差方法{[}J/OL{]}. 核技术, 2016, 39(9): 090502. \url{https://doi.org/10.11889/j.0253-3219.2016.hjs.39.090502}.
-\bibitem{ref65} HE Q, ZHENG Q, LI J, 等. NECP-MCX: A hybrid Monte-Carlo-Deterministic particle-transport code for the simulation of deep-penetration problems{[}J/OL{]}. Annals of Nuclear Energy, 2021, 151: 107978. \url{https://doi.org/10.1016/j.anucene.2020.107978}.
-\bibitem{ref66} ZHENG Q, SHEN W, HE Q, 等. High-efficiency simulation of VENUS-3 neutron-shielding problem with an automatic and enhanced hybrid Monte-Carlo-Deterministic method{[}J/OL{]}. Annals of Nuclear Energy, 2021, 153: 108039. \url{https://doi.org/10.1016/j.anucene.2020.108039}.
-\bibitem{ref67} RAFFUZZI V, NEAME R, COSGROVE P. Application of the Random Ray Method to Variance Reduction in Radiation Shielding Problems{[}J/OL{]}. Nuclear Science and Engineering, 2026, 200(sup1): S485-S502. \url{https://doi.org/10.1080/00295639.2025.2458958}.
-\bibitem{ref68} EVANS T M, ROYSTON K E, HAMILTON S P, 等. Automated Hybrid Variance Reduction on Advanced Architectures in the Shift Monte Carlo Code{[}J/OL{]}. Nuclear Science and Engineering, 2026, 200(2): 444-470. \url{https://doi.org/10.1080/00295639.2025.2484511}.
-\bibitem{ref69} TURNER A, DAVIS A. Improving computational efficiency of Monte-Carlo simulations with variance reduction{[}A/OL{]}. (2013)[2026-11-06]. \url{https://doi.org/10.48550/arXiv.1309.6166}.（M\&C 2013作者预印本）
+\bibitem{ref3} TILLACK M S, MALANG S, WAGANER L, WANG X R, SZE D K, EL-GUEBALY L, WONG C P C, CROWELL J A, MAU T K, BROMBERG L, ARIES TEAM. Configuration and engineering design of the ARIES-RS tokamak power plant{[}J/OL{]}. Fusion Engineering and Design, 1997, 38(1-2): 87-113. \url{https://doi.org/10.1016/S0920-3796(97)00113-0}.
+\bibitem{ref4} MORENO C, BADER A, WILSON P. ParaStell: parametric modeling and neutronics support for stellarator fusion power plants{[}J/OL{]}. Frontiers in Nuclear Engineering, 2024, 3: 1384788. \url{https://doi.org/10.3389/fnuen.2024.1384788}.
+\bibitem{ref5} WAGNER J C, HAGHIGHAT A. Automated Variance Reduction of Monte Carlo Shielding Calculations Using the Discrete Ordinates Adjoint Function{[}J/OL{]}. Nuclear Science and Engineering, 1998, 128(2): 186-208. \url{https://doi.org/10.13182/NSE98-2}.
+\bibitem{ref6} WAGNER J C, PEPLOW D E, MOSHER S W. FW-CADIS Method for Global and Regional Variance Reduction of Monte Carlo Radiation Transport Calculations{[}J/OL{]}. Nuclear Science and Engineering, 2014, 176(1): 37-57. \url{https://doi.org/10.13182/NSE12-33}.
+\bibitem{ref7} TSIGE-TAMIRAT H, FISCHER U, SERIKOV A, 等. Automatic generation and validation of an ITER neutronics model from CAD data{[}J/OL{]}. Fusion Engineering and Design, 2007, 82(15-24): 1956-1959. \url{https://doi.org/10.1016/j.fusengdes.2007.06.038}.
+\bibitem{ref8} CHEN Z P, ZHENG H Q, SUN G Y, 等. Preliminary study on CAD-based method of characteristics for neutron transport calculation{[}J/OL{]}. Chinese Physics C, 2014, 38(5): 058201. \url{https://doi.org/10.1088/1674-1137/38/5/058201}.
+\bibitem{ref9} SHRIWISE P C, DAVIS A, JACOBSON L J, et al. Particle Tracking Acceleration via Signed Distance Fields in Direct-Accelerated Geometry Monte Carlo{[}J/OL{]}. Nuclear Engineering and Technology, 2017, 49(6): 1189-1198. https://doi.org/10.1016/j.net.2017.08.008.
+\bibitem{ref10} SHRIWISE P, WILSON P P H, DAVIS A, et al. Hardware-Accelerated Ray Tracing of CAD-Based Geometry for Monte Carlo Radiation Transport{[}J/OL{]}. Computing in Science \& Engineering, 2022, 24(2): 52-61. https://doi.org/10.1109/MCSE.2022.3154656.
+\bibitem{ref11} YANG C, TAN X, XU F Y, 等. Research on approaches to automatic modeling of discrete ordinate programs based on CAD model{[}J/OL{]}. Nuclear Engineering and Design, 2024, 420: 112994. \url{https://doi.org/10.1016/j.nucengdes.2024.112994}.
+\bibitem{ref12} BUCHAN A G, DARGAVILLE S, PAIN C C. A combined immersed body and adaptive mesh method for simulating neutron transport within complex structures{[}J/OL{]}. Annals of Nuclear Energy, 2019, 134: 88-100. \url{https://doi.org/10.1016/j.anucene.2019.05.044}.
+\bibitem{ref13} YANG L, YANG J, POPOV J, BUCHAN A G. Hybrid solvers for reactor modelling: matrix-based and matrix-free approaches on voxel-dominated meshes{[}J/OL{]}. Frontiers in Nuclear Engineering, 2025, 4: 1597165. \url{https://doi.org/10.3389/fnuen.2025.1597165}.
+\bibitem{ref14} LIU C, ZHANG B, ZHANG L, 等. Nonmatching Discontinuous Cartesian Grid Algorithm Based on the Multilevel Octree Architecture for Discrete Ordinates Transport Calculation{[}J/OL{]}. Nuclear Science and Engineering, 2020, 194(12): 1175-1201. \url{https://doi.org/10.1080/00295639.2020.1780842}.
+\bibitem{ref15} ZHANG W, MYERS A, GOTT K, 等. AMReX: Block-structured adaptive mesh refinement for multiphysics applications{[}J/OL{]}. The International Journal of High Performance Computing Applications, 2021, 35(6): 508-526. \url{https://doi.org/10.1177/10943420211022811}.
+\bibitem{ref16} REN L, LIU S, GUO Y, 等. A Survey of GPU-Based Parallel Adaptive Cartesian Grid Modeling Methods and Simulation Applications{[}J/OL{]}. Journal of Computer-Aided Design \& Computer Graphics, 2026, 38(2): 296-312. \url{https://doi.org/10.3724/SP.J.1089.2024-00765}.
+\bibitem{ref17} AMANATIDES J, WOO A. A Fast Voxel Traversal Algorithm for Ray Tracing{[}C/OL{]}//Eurographics '87. 1987: 3--10. \url{https://doi.org/10.2312/egtp.19871000}.
+\bibitem{ref18} LAINE S, KARRAS T. Efficient Sparse Voxel Octrees{[}C/OL{]}//Proceedings of the 2010 ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games. 2010: 55--63. \url{https://doi.org/10.1145/1730804.1730814}.
+\bibitem{ref19} BOYD W, SHANER S, LI L, 等. The OpenMOC method of characteristics neutral particle transport code{[}J/OL{]}. Annals of Nuclear Energy, 2014, 68: 43-52. \url{https://doi.org/10.1016/j.anucene.2013.12.012}.
+\bibitem{ref20} GASTON D R, FORGET B, SMITH K S, HARBOUR L H, RIDLEY G K, GIUDICELLI G G. Method of Characteristics for 3D, Full-Core Neutron Transport on Unstructured Mesh{[}J/OL{]}. Nuclear Technology, 2021, 207(7): 931-953. \url{https://doi.org/10.1080/00295450.2021.1871995}.
+\bibitem{ref21} PORHEMMAT Mohammadhadi, MAHZOON Mojtaba, SALEHI Ali Akbar, et al. Improved Memory Management for Solving Neutron Transport via a Novel Modular Ray Tracing (MRT) Approach Embedded in Parallel method of characteristic (MOC) framework{[}J/OL{]}. Progress in Nuclear Energy, 2021, 132: 103590. https://doi.org/10.1016/j.pnucene.2020.103590.
+\bibitem{ref22} LIU C, ZHANG B, CHEN Y. Solution-dependent predictor-corrector flux mapping algorithm for discrete ordinates calculation on multilevel discontinuous grids{[}J/OL{]}. Annals of Nuclear Energy, 2021, 152: 108033. \url{https://doi.org/10.1016/j.anucene.2020.108033}.
+\bibitem{ref23} WANG Y, RAGUSA J C. Standard and goal-oriented adaptive mesh refinement applied to radiation transport on 2D unstructured triangular meshes{[}J/OL{]}. Journal of Computational Physics, 2011, 230(3): 763-788. \url{https://doi.org/10.1016/j.jcp.2010.10.018}.
+\bibitem{ref24} LATHOUWERS D. Goal-oriented spatial adaptivity for the SN equations on unstructured triangular meshes{[}J/OL{]}. Annals of Nuclear Energy, 2011, 38(6): 1373-1381. \url{https://doi.org/10.1016/j.anucene.2011.01.038}.
+\bibitem{ref25} BAKER C M J, BUCHAN A G, PAIN C C, 等. Goal based mesh adaptivity for fixed source radiation transport calculations{[}J/OL{]}. Annals of Nuclear Energy, 2013, 55: 169-183. \url{https://doi.org/10.1016/j.anucene.2012.11.029}.
+\bibitem{ref26} GOFFIN M A, BAKER C M J, BUCHAN A G, 等. Minimising the error in eigenvalue calculations involving the Boltzmann transport equation using goal-based adaptivity on unstructured meshes{[}J/OL{]}. Journal of Computational Physics, 2013, 242: 726-752. \url{https://doi.org/10.1016/j.jcp.2012.12.035}.
+\bibitem{ref27} LIU C, WEI J, LI J, 等. Multilevel mesh adaptivity for discrete ordinates transport calculation with spatial-moment-ratio indicators{[}J/OL{]}. Annals of Nuclear Energy, 2022, 176: 109288. \url{https://doi.org/10.1016/j.anucene.2022.109288}.
+\bibitem{ref28} LIU C, WEI J, ZHANG B, 等. Goal-Oriented Mesh Adaptivity of Three-Dimensional Neutron Transport Calculation Using Weighted Difference Scheme and Dual-Weighted Residual Error Indicators{[}J/OL{]}. Nuclear Science and Engineering, 2023, 197(11): 2853-2883. \url{https://doi.org/10.1080/00295639.2023.2169537}.
+\bibitem{ref29} LIU C, ZHANG B, WEI J, 等. Verification of multilevel octree grid algorithm of S\_N transport calculation with the Balakovo-3 VVER-1000 neutron dosimetry benchmark{[}J/OL{]}. Nuclear Engineering and Technology, 2023, 55(2): 756-768. \url{https://doi.org/10.1016/j.net.2022.10.017}.
+\bibitem{ref30} WILSON S G, EATON M D, KÓPHÁZI J. Adaptive mesh h(p)-refinement of a discontinuous Bubnov-Galerkin isogeometric analysis spatial discretisation of the first-order form of the neutron transport equation with goal-based error measures and diffusion acceleration{[}J/OL{]}. Computer Methods in Applied Mechanics and Engineering, 2026, 455: 118872. \url{https://doi.org/10.1016/j.cma.2026.118872}.
+\bibitem{ref31} ZHOU F, LI S, XUE R, 等. Neutron particle transport 3D method of characteristic Multi GPU platform Parallel Computing{[}A/OL{]}. (2025)[2026-11-06]. \url{https://doi.org/10.48550/arXiv.2503.17743}.（arXiv预印本）
+\bibitem{ref32} ADINETS A. CUDA Pro Tip: Optimized Filtering with Warp-Aggregated Atomics{[}EB/OL{]}. (2014)[2026-11-06]. \url{https://developer.nvidia.com/blog/cuda-pro-tip-optimized-filtering-warp-aggregated-atomics/}.
+\bibitem{ref33} NVIDIA CORPORATION. CUDA C++ Best Practices Guide{[}M/OL{]}. 2026[2026-11-06]. \url{https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/}.（版本13.5）
+\bibitem{ref34} SONG Q, WANG R, SHEN Y, 等. GPU-accelerated few-group 3D Method of Characteristics for full-core neutron transport in Small Modular Reactors{[}J/OL{]}. Progress in Nuclear Energy, 2026, 192: 106109. \url{https://doi.org/10.1016/j.pnucene.2025.106109}.
+\bibitem{ref35} 宋佩涛, 张志俭, 梁亮, 等. 基于CPU-GPU异构并行的MOC中子输运计算并行效率优化研究{[}J/OL{]}. 原子能科学技术, 2019, 53(11): 2209-2217. \url{https://doi.org/10.7538/yzk.2019.youxian.0416}.
+\bibitem{ref36} LI S, WANG Z, BU L, 等. ANT-MOC: Scalable Neutral Particle Transport Using 3D Method of Characteristics on Multi-GPU Systems{[}C/OL{]}//Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis. 2023: 1-13. \url{https://doi.org/10.1145/3581784.3607063}.
+\bibitem{ref37} DZIANISAU S, LEE D. Axially decomposed GPU-enabled three-dimensional method of characteristics/diamond difference solver in neutron transport code STREAM3D-GPU{[}J/OL{]}. Computer Physics Communications, 2026, 319: 109952. \url{https://doi.org/10.1016/j.cpc.2025.109952}.
+\bibitem{ref38} KIM K M, IM J, LEE H G, 等. Verification and Performance Assessment of NuDEAL, a GPU-Accelerated Deterministic Transport Framework on Unstructured Meshes{[}J/OL{]}. Nuclear Science and Engineering, 2026: 1-25. \url{https://doi.org/10.1080/00295639.2026.2652773}.（在线发表，2026-04-23；定量数据参见公开作者稿\url{https://arxiv.org/abs/2607.01591v1}）
+\bibitem{ref39} 宋佩涛. MOC全堆芯中子输运CPU/GPU异构并行算法研究{[}D/OL{]}. 哈尔滨: 哈尔滨工程大学, 2021. \url{https://cnki.istiz.org.cn/kcms/detail/detail.aspx?dbcode=CDFD&dbname=CDFD2024&filename=1023018169.nh}.
+\bibitem{ref40} WANG A, WANG J, DING Z, 等. A cyclic-track decomposition method for 3D MOC neutron transport simulation{[}J/OL{]}. Nuclear Engineering and Design, 2024, 422: 113148. \url{https://doi.org/10.1016/j.nucengdes.2024.113148}.
+\bibitem{ref41} 汪岸. 三维中子输运特征线计算方法及大规模并行实现{[}D/OL{]}. 北京: 北京科技大学, 2025. \url{https://cnki.istiz.org.cn/kcms/detail/detail.aspx?dbcode=CDFD&dbname=CDFD2026&filename=1025098988.nh}.
+\bibitem{ref42} DZIANISAU S, LEE D. GPU Acceleration of 3D MOC Solver in STREAM3D Using OpenACC{[}C/OL{]}//Transactions of the Korean Nuclear Society Spring Meeting. 2024. \url{https://www.kns.org/files/pre_paper/51/24S-051-Siarhei.pdf}.（KNS Spring Meeting，2024-05-09-\/-\/-10）
+\bibitem{ref43} ZHANG A, HONG S G, JEONG S, 等. GPU-based multi-group discrete ordinates transport calculations: Parallel computing implementation in STRAUM{[}J/OL{]}. Nuclear Engineering and Technology, 2025, 57(9): 103597. \url{https://doi.org/10.1016/j.net.2025.103597}.
+\bibitem{ref44} GONG C, LIU J, CHI L, 等. GPU accelerated simulations of 3D deterministic particle transport using discrete ordinates method{[}J/OL{]}. Journal of Computational Physics, 2011, 230(15): 6010-6022. \url{https://doi.org/10.1016/j.jcp.2011.04.010}.
+\bibitem{ref45} ZOU H, ZHANG Q, LIANG L, 等. Development and verification of a GPU-based MOC transient solver{[}J/OL{]}. Annals of Nuclear Energy, 2022, 174: 109171. \url{https://doi.org/10.1016/j.anucene.2022.109171}.
+\bibitem{ref46} ROYSTON K E, JOHNSON S R, EVANS T M, 等. Application of the Denovo Discrete Ordinates Radiation Transport Code to Large-Scale Fusion Neutronics{[}J/OL{]}. Fusion Science and Technology, 2018, 74(4): 303-314. \url{https://doi.org/10.1080/15361055.2018.1504508}.
+\bibitem{ref47} ANDRS D, HARDY Z, HAWKINS D, 等. OpenSn: A massively parallel, open-source simulation environment for discrete ordinates radiation transport{[}J/OL{]}. Computer Physics Communications, 2026, 320: 110001. \url{https://doi.org/10.1016/j.cpc.2025.110001}.
+\bibitem{ref48} PRYER T. Batched Wavefront Sweeps for Linear Transport Uncertainty Quantification{[}A/OL{]}. (2026)[2026-11-06]. \url{https://arxiv.org/abs/2609.14496v1}. DOI:10.48550/arXiv.2609.14496.（arXiv预印本）
+\bibitem{ref49} BIONDO E, DAVIDSON G, EVANS T, 等. Status of GPU capabilities within the Shift Monte Carlo radiation transport code{[}J/OL{]}. EPJ Nuclear Sciences \& Technologies, 2025, 11: 5. \url{https://doi.org/10.1051/epjn/2024034}.
+\bibitem{ref50} OAK RIDGE NATIONAL LABORATORY. MAVRIC: Monaco with Automated Variance Reduction using Importance Calculations{[}M/OL{]}. 2026[2026-11-06]. \url{https://scale-manual.ornl.gov/6.3.1/MAVRIC.html}.（SCALE 6.3.1手册）
+\bibitem{ref51} IBRAHIM A M, MOSHER S W, EVANS T M, 等. ITER Neutronics Modeling Using Hybrid Monte Carlo/Deterministic and CAD-Based Monte Carlo Methods{[}J/OL{]}. Nuclear Technology, 2011, 175(1): 251-258. \url{https://doi.org/10.13182/NT175-251}.
+\bibitem{ref52} ZHANG X, LIU S, LI S, 等. Development of multilevel mesh adaptivity for global variance reduction in Monte Carlo code cosRMC{[}J/OL{]}. Fusion Engineering and Design, 2024, 202: 114372. \url{https://doi.org/10.1016/j.fusengdes.2024.114372}.
+\bibitem{ref53} LIEW S L, KU L P. Shielding Design Optimization for the Compact Ignition Tokamak Test Cell Building{[}J/OL{]}. Fusion Technology, 1991, 20(2): 164-178. \url{https://doi.org/10.13182/FST91-A29687}.
+\bibitem{ref54} OECD NUCLEAR ENERGY AGENCY. SINBAD -\/-\/- Shielding Integral Benchmark Archive and Database{[}EB/OL{]}. (2026)[2026-11-06]. \url{https://cms.oecd-nea.org/jcms/pl_32139/sinbad-shielding-integral-benchmark-archive-and-database}.
+\bibitem{ref55} 车锐, 刘仕倡, 田卓, 等. 基于SINBAD聚变基准题的cosRMC程序屏蔽计算研究{[}J/OL{]}. 核技术, 2024, 47(5): 050008. \url{https://doi.org/10.11889/j.0253-3219.2024.hjs.47.050008}.
+\bibitem{ref56} IWAMOTO Y, TSUDA S, OGAWA T. Benchmark shielding calculations for fusion and accelerator-driven sub-critical systems{[}J/OL{]}. Frontiers in Energy Research, 2023, 11: 1085264. \url{https://doi.org/10.3389/fenrg.2023.1085264}.
+\bibitem{ref57} MUNK M, SLAYBAUGH R N. Review of Hybrid Methods for Deep-Penetration Neutron Transport{[}J/OL{]}. Nuclear Science and Engineering, 2019, 193(10): 1055-1089. \url{https://doi.org/10.1080/00295639.2019.1586273}.
+\bibitem{ref58} MOSHER S W, JOHNSON S R, BEVILL A M I, et al. ADVANTG-\/-\/-An Automated Variance Reduction Parameter Generator (Rev. 1){[}R/OL{]}. Oak Ridge National Laboratory, ORNL/TM-2011/349 Rev.1, 2015. https://doi.org/10.2172/1210162.
+\bibitem{ref59} MUNK M, SLAYBAUGH R N, PANDYA T M, 等. FW/CADIS-Ω: An angle-informed hybrid method for deep-penetration radiation transport{[}A/OL{]}. (2016)[2026-11-06]. \url{https://doi.org/10.48550/arXiv.1612.00793}.（arXiv预印本；相关会议稿PHYSOR 2016）
+\bibitem{ref60} ZHAO Y, HAN J, ZUO J, 等. Local angular adaptivity CADIS hybrid variance reduction method for monte carlo radiation transport calculations{[}J/OL{]}. Annals of Nuclear Energy, 2025, 218: 111385. \url{https://doi.org/10.1016/j.anucene.2025.111385}.
+\bibitem{ref61} IBRAHIM A M, PEPLOW D E, PETERSON J L, 等. Novel hybrid Monte Carlo/deterministic technique for shutdown dose rate analyses of fusion energy systems{[}J/OL{]}. Fusion Engineering and Design, 2014, 89(9-10): 1933-1938. \url{https://doi.org/10.1016/j.fusengdes.2014.03.014}.
+\bibitem{ref62} DAVIS A, TURNER A. Comparison of global variance reduction techniques for Monte Carlo radiation transport simulations of ITER{[}J/OL{]}. Fusion Engineering and Design, 2011, 86(9-11): 2698-2700. \url{https://doi.org/10.1016/j.fusengdes.2011.01.059}.
+\bibitem{ref63} OPENMC DEVELOPMENT TEAM. OpenMC User Guide: Variance Reduction{[}EB/OL{]}. (2026)[2026-11-06]. \url{https://docs.openmc.org/en/stable/usersguide/variance_reduction.html}.
+\bibitem{ref64} TIAN X, QIN S, LI J, 等. Developing the THETA transport code with the linear source enhanced random ray method for high-fidelity radiation shielding simulation{[}J/OL{]}. Computer Physics Communications, 2026, 327: 110288. \url{https://doi.org/10.1016/j.cpc.2026.110288}.
+\bibitem{ref65} IBRAHIM A M, WILSON P P, SAWAN M E, 等. Assessment of fusion facility dose rate map using mesh adaptivity enhancements of hybrid Monte Carlo/deterministic techniques{[}J/OL{]}. Fusion Engineering and Design, 2014, 89(9-10): 1875-1879. \url{https://doi.org/10.1016/j.fusengdes.2014.02.046}.
+\bibitem{ref66} 郑华庆, 李斌, 宋婧, 等. 基于自动网格划分与权窗平滑的自适应减方差方法{[}J/OL{]}. 核技术, 2016, 39(9): 090502. \url{https://doi.org/10.11889/j.0253-3219.2016.hjs.39.090502}.
+\bibitem{ref67} HE Q, ZHENG Q, LI J, 等. NECP-MCX: A hybrid Monte-Carlo-Deterministic particle-transport code for the simulation of deep-penetration problems{[}J/OL{]}. Annals of Nuclear Energy, 2021, 151: 107978. \url{https://doi.org/10.1016/j.anucene.2020.107978}.
+\bibitem{ref68} ZHENG Q, SHEN W, HE Q, 等. High-efficiency simulation of VENUS-3 neutron-shielding problem with an automatic and enhanced hybrid Monte-Carlo-Deterministic method{[}J/OL{]}. Annals of Nuclear Energy, 2021, 153: 108039. \url{https://doi.org/10.1016/j.anucene.2020.108039}.
+\bibitem{ref69} RAFFUZZI V, NEAME R, COSGROVE P. Application of the Random Ray Method to Variance Reduction in Radiation Shielding Problems{[}J/OL{]}. Nuclear Science and Engineering, 2026, 200(sup1): S485-S502. \url{https://doi.org/10.1080/00295639.2025.2458958}.
+\bibitem{ref70} EVANS T M, ROYSTON K E, HAMILTON S P, 等. Automated Hybrid Variance Reduction on Advanced Architectures in the Shift Monte Carlo Code{[}J/OL{]}. Nuclear Science and Engineering, 2026, 200(2): 444-470. \url{https://doi.org/10.1080/00295639.2025.2484511}.
+\bibitem{ref71} TURNER A, DAVIS A. Improving computational efficiency of Monte-Carlo simulations with variance reduction{[}A/OL{]}. (2013)[2026-11-06]. \url{https://doi.org/10.48550/arXiv.1309.6166}.（M\&C 2013作者预印本）
 \end{thebibliography}
-
 \end{document}
