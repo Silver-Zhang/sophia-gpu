@@ -1,0 +1,37 @@
+{
+  "sources": [
+    {
+      "id": "kobayashi_oecd",
+      "url": "https://www.oecd-nea.org/upload/docs/application/pdf/2020-01/nsc-doc2000-4.pdf",
+      "sha256": "4cec15a0a13cf7ff76959616dfb4dbf347974aa8abc4a1f394e2e006dbd12dae",
+      "use": "Original geometry based on factual dimensions in figures 5–8 and table 1; no original artwork reproduced."
+    },
+    {
+      "id": "fng_streaming",
+      "url": "https://dspace.mit.edu/bitstreams/c44a5194-a199-4294-93c7-7b41645b9387/download",
+      "doi": "10.1080/15361055.2024.2400762",
+      "sha256": "366186f582284ba6c70f9140f5d889b78a85fed6e7dbc2945e2ffbe7620546d3",
+      "use": "Figure 3 native 1016x903 image; CC BY 4.0, copyright the authors, no scientific edits."
+    },
+    {
+      "id": "jeff_cu",
+      "url": "https://www.oecd-nea.org/upload/docs/application/pdf/2020-08/jefreport-21_appendix2.pdf",
+      "sha256": "55f21a2e53faa058161a105c7e11f3f03664a2d5b4d3230e17357d11af4a9148",
+      "figure": "3.7",
+      "page_pdf": 30,
+      "page_report": "13-52",
+      "use": "Numeric coordinates extracted from vector marks and error bars; original graph artwork not reproduced. 127 spectrum observations, 127 calculated energy intervals, 124 C/E marks within the published axes. Distinct from the c47fc57 140-bin table."
+    },
+    {
+      "id": "fng_w_geometry",
+      "url": "https://www.oecd-nea.org/science/wprs/shielding/sinbad/fng_w/fngw-a.htm",
+      "public_model_commit": "c47fc573a7e2a9ca11a8958dc67155b1146adf51",
+      "use": "Original central-layer schematic based on public physical dimensions; depth labels rounded to 5,15,25,35 cm only in the schematic. Exact foil depths retained in geometry_parameters.json and the experimental CSV files."
+    }
+  ],
+  "figure_contract": {
+    "A": "Idealized dog-leg transport geometry versus realistic layered FNG streaming geometry. Schematic/image mixed plate, no quantitative shared axes.",
+    "B": "Thickness and foil depth in FNG-W versus energy-resolved Cu leakage response. Mixed geometry and spectrum/C/E, all numerical uncertainties retained from the source plot."
+  },
+  "data_separation": "The c47fc57 copper experiment has 140 energy-bin rows. The new numerical plate is reconstructed solely from the JEFF report Figure 3.7, including its MCNP curve and C/E/error marks; it does not combine the two sources or infer new MCNP results."
+}

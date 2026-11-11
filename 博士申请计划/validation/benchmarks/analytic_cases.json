@@ -1,0 +1,63 @@
+{
+  "description": "自定义纯吸收数值检验，长度cm，宏观截面cm^-1，非实验数据",
+  "box_cm": [
+    10,
+    10,
+    10
+  ],
+  "boundary": "vacuum",
+  "incident_beam": {
+    "direction": [
+      1,
+      0,
+      0
+    ],
+    "plane": "x=0",
+    "flux_normalization": 1.0
+  },
+  "groups": 1,
+  "external_volumetric_source": 0,
+  "scattering": 0,
+  "rays_y_cm": [
+    2,
+    5,
+    8
+  ],
+  "rays_z_cm": [
+    2,
+    5,
+    8
+  ],
+  "cases": [
+    {
+      "id": "uniform_absorber",
+      "Sigma_t": 0.1
+    },
+    {
+      "id": "three_layer",
+      "x_interfaces_cm": [
+        0,
+        4,
+        4.2,
+        10
+      ],
+      "Sigma_t": [
+        0.1,
+        1.0,
+        0.2
+      ]
+    },
+    {
+      "id": "oblique_thin_layer",
+      "background_Sigma_t": 0.1,
+      "layer_Sigma_t": 1.0,
+      "centre_cm": [
+        5,
+        5,
+        5
+      ],
+      "normal_angle_deg": 30,
+      "normal_thickness_cm": 0.2
+    }
+  ]
+}

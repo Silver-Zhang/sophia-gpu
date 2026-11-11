@@ -1,12 +1,14 @@
 # sophia-gpu
 
-- [博士科研计划书 V5.3（PDF）](博士申请计划/exports/博士科研计划书_V5.3.pdf)
-- [LaTeX正文（当前 V5.3 基线，后续按新提纲重构）](博士申请计划/latex/main.tex)
-- [博士科研计划书重构提纲 V2.1](博士申请计划/outline/博士科研计划书_重构提纲_V2.1.md)
-- [历史版本归档索引](archive/README.md)
-- [开发目的、用户要求与最简修改记录](AGENTS.md)
-- [文献图源与许可](博士申请计划/latex/references/figure_sources_v53.md)
+- [当前科研计划书 PDF](博士申请计划/exports/博士科研计划书_V2.1_第四章完整修订_20261111.pdf)
+- [唯一 LaTeX 正文](博士申请计划/latex/main.tex)
+- [修改过程与版本说明](博士申请计划/history/README.md)
+- [文献与正文核查记录](博士申请计划/outline/当前版本_文献与正文核查_20261110.md)
+- [项目说明](博士申请计划/README.md)
+- [历史归档](archive/README.md)
 
-验证：`cd 博士申请计划/latex && bash build.sh --check`；生成PDF用`bash build.sh`。
+当前稿27页、55项文献、12式、7图、2表。前四章正文已修订，第五章仅保留大纲。已完成前四章表达澄清、第四章基准图文与验证方案修订。逐项变更见[最新修改记录](博士申请计划/outline/前四章表达澄清修改记录_20261111.md)。
 
-[LJC.docx](LJC.docx)为原有随机射线方法组会参考资料。旧版本和过程记录保留在Git历史。
+检查：`cd 博士申请计划/latex && bash build.sh --check`。生成当前PDF：`bash build.sh`。
+
+2026-11-11按用户授权，将当前本地修改保存并推送至 `revision/rp-v2.1-20261111` 分支。不自动合并或创建PR。批注原件、旧V5.3、图源与历史归档保留。LJC.docx为原有组会参考资料。

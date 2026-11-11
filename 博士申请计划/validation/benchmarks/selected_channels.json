@@ -1,0 +1,100 @@
+[
+  {
+    "case": "fng_w",
+    "channel": "rr_nb93",
+    "rows": 4,
+    "measurement_file": "measurements/fng_w__rr_nb93.csv",
+    "raw_sha256": "3827c47e6c211d6a2a51b0ccf500e0ca0e771dfdc96004c7d575db0d55df5062"
+  },
+  {
+    "case": "fng_w",
+    "channel": "rr_al27",
+    "rows": 4,
+    "measurement_file": "measurements/fng_w__rr_al27.csv",
+    "raw_sha256": "3827c47e6c211d6a2a51b0ccf500e0ca0e771dfdc96004c7d575db0d55df5062"
+  },
+  {
+    "case": "fng_w",
+    "channel": "rr_fe56",
+    "rows": 4,
+    "measurement_file": "measurements/fng_w__rr_fe56.csv",
+    "raw_sha256": "3827c47e6c211d6a2a51b0ccf500e0ca0e771dfdc96004c7d575db0d55df5062"
+  },
+  {
+    "case": "fng_w",
+    "channel": "rr_ni58_np",
+    "rows": 4,
+    "measurement_file": "measurements/fng_w__rr_ni58_np.csv",
+    "raw_sha256": "3827c47e6c211d6a2a51b0ccf500e0ca0e771dfdc96004c7d575db0d55df5062"
+  },
+  {
+    "case": "fng_w",
+    "channel": "rr_au197",
+    "rows": 4,
+    "measurement_file": "measurements/fng_w__rr_au197.csv",
+    "raw_sha256": "3827c47e6c211d6a2a51b0ccf500e0ca0e771dfdc96004c7d575db0d55df5062"
+  },
+  {
+    "case": "fng_w",
+    "channel": "rr_mn55",
+    "rows": 4,
+    "measurement_file": "measurements/fng_w__rr_mn55.csv",
+    "raw_sha256": "3827c47e6c211d6a2a51b0ccf500e0ca0e771dfdc96004c7d575db0d55df5062"
+  },
+  {
+    "case": "fng_w",
+    "channel": "rr_zr90",
+    "rows": 4,
+    "measurement_file": "measurements/fng_w__rr_zr90.csv",
+    "raw_sha256": "3827c47e6c211d6a2a51b0ccf500e0ca0e771dfdc96004c7d575db0d55df5062"
+  },
+  {
+    "case": "fng_str",
+    "channel": "rr_onaxis1_nb93",
+    "rows": 13,
+    "measurement_file": "measurements/fng_str__rr_onaxis1_nb93.csv",
+    "raw_sha256": "49c7a1f19576497deb5cb5db95651fc6208aa3545d2d8d289d870d403f225d31"
+  },
+  {
+    "case": "fng_str",
+    "channel": "rr_onaxis1_al27",
+    "rows": 13,
+    "measurement_file": "measurements/fng_str__rr_onaxis1_al27.csv",
+    "raw_sha256": "49c7a1f19576497deb5cb5db95651fc6208aa3545d2d8d289d870d403f225d31"
+  },
+  {
+    "case": "fng_str",
+    "channel": "rr_onaxis1_ni58",
+    "rows": 13,
+    "measurement_file": "measurements/fng_str__rr_onaxis1_ni58.csv",
+    "raw_sha256": "49c7a1f19576497deb5cb5db95651fc6208aa3545d2d8d289d870d403f225d31"
+  },
+  {
+    "case": "fng_str",
+    "channel": "rr_onaxis2_nb93",
+    "rows": 11,
+    "measurement_file": "measurements/fng_str__rr_onaxis2_nb93.csv",
+    "raw_sha256": "49c7a1f19576497deb5cb5db95651fc6208aa3545d2d8d289d870d403f225d31"
+  },
+  {
+    "case": "fng_str",
+    "channel": "rr_onaxis2_al27",
+    "rows": 11,
+    "measurement_file": "measurements/fng_str__rr_onaxis2_al27.csv",
+    "raw_sha256": "49c7a1f19576497deb5cb5db95651fc6208aa3545d2d8d289d870d403f225d31"
+  },
+  {
+    "case": "fng_str",
+    "channel": "rr_offaxis_nb93",
+    "rows": 15,
+    "measurement_file": "measurements/fng_str__rr_offaxis_nb93.csv",
+    "raw_sha256": "49c7a1f19576497deb5cb5db95651fc6208aa3545d2d8d289d870d403f225d31"
+  },
+  {
+    "case": "oktavian_cu",
+    "channel": "nspectrum",
+    "rows": 140,
+    "measurement_file": "measurements/oktavian_cu__nspectrum.csv",
+    "raw_sha256": "68de7e780a317df099edc309cd1e3d2211766ae88aa212d99d5bbd949e9935b2"
+  }
+]

@@ -1,0 +1,475 @@
+{
+  "repository": "https://github.com/eepeterson/openmc_fusion_benchmarks",
+  "commit": "c47fc573a7e2a9ca11a8958dc67155b1146adf51",
+  "commit_date": "2025-03-21",
+  "retrieved": "2026-11-11",
+  "files": [
+    {
+      "path": "upstream/LICENSE",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/LICENSE",
+      "bytes": 1064,
+      "sha256": "1da773dbea96bcf9f118cbe770414a8dcd40d0f53c2e14046c5c3640cf5ed83a",
+      "git_blob_sha1": "13bf6c44db26f48d3d579e0c196ff362597551b5"
+    },
+    {
+      "path": "upstream/README.md",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/README.md",
+      "bytes": 3597,
+      "sha256": "b85e8d358e92b13e7fbc7d6c32ab2ffac4f9a5b7c0453fc224717b9147fe81c9",
+      "git_blob_sha1": "32b5c92c997ad7be0cf4b5935c5ed5abc3786c84"
+    },
+    {
+      "path": "upstream/models/fng_str/helpers.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/models/fng_str/helpers.py",
+      "bytes": 2829,
+      "sha256": "843330bf7f1707e23e9e0eefcacf00ae52beee31bc634152c088196a69b46f9c",
+      "git_blob_sha1": "9af6f85f54279a3f085e3515f74f620804187646"
+    },
+    {
+      "path": "upstream/models/fng_str/openmc_model.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/models/fng_str/openmc_model.py",
+      "bytes": 130063,
+      "sha256": "a0e6f2dbe91ccfdde6056cf7ab5022b930060b33e7f101880969f0de87184dcc",
+      "git_blob_sha1": "a6c3ffe2eb8834f61a898e976687caeffdbc4925"
+    },
+    {
+      "path": "upstream/models/fng_str/postprocessing.ipynb",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/models/fng_str/postprocessing.ipynb",
+      "bytes": 1059663,
+      "sha256": "d3e629451fb56c3edca6df29af423b61af3b2fd98cd7a317653fb4de70779e85",
+      "git_blob_sha1": "876b24d10bc4896541d6e1afef4e9734246f687e"
+    },
+    {
+      "path": "upstream/models/fng_str/run_and_store.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/models/fng_str/run_and_store.py",
+      "bytes": 6604,
+      "sha256": "61960be70c337f36655924fe188e34493e1c75d7f1a96b53754e43887d437ced",
+      "git_blob_sha1": "4d4f3313de958d87ccd6a4b7fe0805908d453411"
+    },
+    {
+      "path": "upstream/models/fng_str/weight_windows.cadis.wwinp",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/models/fng_str/weight_windows.cadis.wwinp",
+      "bytes": 26208780,
+      "sha256": "df4a3a8b764f0294efe8631c321fbbd14a04b06470c3458a8b2cd768d086298d",
+      "git_blob_sha1": "dd5d41274ca1291f59511f2cb6aa1113e6b7b0b1"
+    },
+    {
+      "path": "upstream/models/fng_w/helpers.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/models/fng_w/helpers.py",
+      "bytes": 3198,
+      "sha256": "0297dc26ace69276f762ce46e5676f46d51acdb7fb80f4a57aaf937f179ebd81",
+      "git_blob_sha1": "d9c61a4d21593af98b722f10833fcd14fec34d6c"
+    },
+    {
+      "path": "upstream/models/fng_w/openmc_model.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/models/fng_w/openmc_model.py",
+      "bytes": 139143,
+      "sha256": "4ba2f0718a7ffcda067716fb1f3776f073d848f65f4148aa077f03d5c62fde74",
+      "git_blob_sha1": "f2c0b76963f3d71c99596f199b1e6bc1f00f1d1e"
+    },
+    {
+      "path": "upstream/models/fng_w/postprocessing.ipynb",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/models/fng_w/postprocessing.ipynb",
+      "bytes": 530953,
+      "sha256": "e38e9e7cf57a896b81dfc686952e9c6856016034d363d5b01f25b18805eca3b5",
+      "git_blob_sha1": "4228427e41300789b7eae83b5896fbbe01871f4e"
+    },
+    {
+      "path": "upstream/models/fng_w/run_and_store.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/models/fng_w/run_and_store.py",
+      "bytes": 3426,
+      "sha256": "d051ba109264d3c71cb99160a4e3c99e45e99fdec3ee705d51ca6fce71185cd8",
+      "git_blob_sha1": "0167c613ee18f7fd4a034ce9e0b00c061bc72a20"
+    },
+    {
+      "path": "upstream/models/fng_w/weight_windows.cadis.wwinp",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/models/fng_w/weight_windows.cadis.wwinp",
+      "bytes": 2453342,
+      "sha256": "c8022619abb1aa688a5ae2b60b6f462b190075c9181be620638760a8b8f74c6f",
+      "git_blob_sha1": "b74d006b9970947cf36a04ce96f410d835dd8a44"
+    },
+    {
+      "path": "upstream/models/oktavian/oktavian_cu/helpers.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/models/oktavian/oktavian_cu/helpers.py",
+      "bytes": 66,
+      "sha256": "835ffe49521d7133e3eea3d2e5add429e6883b2206de8e836edfce7748b2407d",
+      "git_blob_sha1": "291fbab740a44112bf2e0777995c66bebf90ea18"
+    },
+    {
+      "path": "upstream/models/oktavian/oktavian_cu/openmc_model.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/models/oktavian/oktavian_cu/openmc_model.py",
+      "bytes": 10511,
+      "sha256": "a4f8ed24617911e9a54114d61c2721142bd2c1aa1018a990186c8ad42a8648b3",
+      "git_blob_sha1": "86b9b2a793cdd452e0af00648040f7aa431d8823"
+    },
+    {
+      "path": "upstream/models/oktavian/oktavian_cu/postprocessing.ipynb",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/models/oktavian/oktavian_cu/postprocessing.ipynb",
+      "bytes": 274796,
+      "sha256": "8647baf7c5e6eed6120745f1536457067fbd373c4dbe2d0ccc26743af651ad39",
+      "git_blob_sha1": "a3e5201735c5df42dcb03122f8641395c09c8264"
+    },
+    {
+      "path": "upstream/models/oktavian/oktavian_cu/run_and_store.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/models/oktavian/oktavian_cu/run_and_store.py",
+      "bytes": 2273,
+      "sha256": "3c4209e5ce08c79662853037f9f5fe3fce9fcae51344beaf7a0041763f021b50",
+      "git_blob_sha1": "b5c3cccf060b0a39e2d4df204db1f89261e59616"
+    },
+    {
+      "path": "upstream/pyproject.toml",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/pyproject.toml",
+      "bytes": 1088,
+      "sha256": "538e41444a596fdc27765e92de969144ebe698e467d32d3cee96fb7134f163c0",
+      "git_blob_sha1": "75786879c4396f14b51c609e5e91d9d42109aa1e"
+    },
+    {
+      "path": "upstream/results_database/fng_str/experiment.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/fng_str/experiment.h5",
+      "bytes": 1063121,
+      "sha256": "49c7a1f19576497deb5cb5db95651fc6208aa3545d2d8d289d870d403f225d31",
+      "git_blob_sha1": "8e3b1417e37abdfe06f349f55c652a61876ea007"
+    },
+    {
+      "path": "upstream/results_database/fng_str/mcnp-4a-b_eff3.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/fng_str/mcnp-4a-b_eff3.h5",
+      "bytes": 1389703,
+      "sha256": "77e8c4f5d5dd2cc06154d50a0add4182b37083a95101fe278ac37006c865a546",
+      "git_blob_sha1": "5c2c180ef73ed8791aefe92081accec9e0d49641"
+    },
+    {
+      "path": "upstream/results_database/fng_str/mcnp-4a-b_fendl1.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/fng_str/mcnp-4a-b_fendl1.h5",
+      "bytes": 1453015,
+      "sha256": "2ba84dad0abf8b48079e3b72be99471f190e03e71f5fbb43da36c1f150ee5d1e",
+      "git_blob_sha1": "3b274a27ed62a71ab74ed34354fa2c1239363b73"
+    },
+    {
+      "path": "upstream/results_database/fng_str/mcnp-4a-b_fendl2.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/fng_str/mcnp-4a-b_fendl2.h5",
+      "bytes": 1115517,
+      "sha256": "043db9e765d44582b2af16f7d4a67b075acfdd285954cc7c5b1cc46f51c09be1",
+      "git_blob_sha1": "e8bc5a9471c04eb67e88c5898305a14323c2cb65"
+    },
+    {
+      "path": "upstream/results_database/fng_str/openmc-0-14-0_endfb80.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/fng_str/openmc-0-14-0_endfb80.h5",
+      "bytes": 1091573,
+      "sha256": "eb72bd55b615722f4c4cdcc1659882d9054e5cfb71b34e9da679b51b02cd1d23",
+      "git_blob_sha1": "d1feddb6010c85876c817c2e30045bb68f3c06ed"
+    },
+    {
+      "path": "upstream/results_database/fng_str/openmc-0-14-0_fendl32b.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/fng_str/openmc-0-14-0_fendl32b.h5",
+      "bytes": 1011701,
+      "sha256": "969479c36bf46fe98e965df8e2f9b14b9a98dd0e8be2d41c70ffa2a25e6dc377",
+      "git_blob_sha1": "c2c5e7b58c02bf9b167dced44cff037c6a863a3c"
+    },
+    {
+      "path": "upstream/results_database/fng_str/openmc-0-14-0_jeff33.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/fng_str/openmc-0-14-0_jeff33.h5",
+      "bytes": 1011701,
+      "sha256": "4d085dae6fff48e051132685553c9d961c95795ed0df26d670b93138e67e2911",
+      "git_blob_sha1": "a706f2e3a5ef58ef7bb8f8c2628ff72aa89737e0"
+    },
+    {
+      "path": "upstream/results_database/fng_w/experiment.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/fng_w/experiment.h5",
+      "bytes": 778936,
+      "sha256": "3827c47e6c211d6a2a51b0ccf500e0ca0e771dfdc96004c7d575db0d55df5062",
+      "git_blob_sha1": "62ec62f23e5f43e2146a4b87a425e3924ca24ddc"
+    },
+    {
+      "path": "upstream/results_database/fng_w/mcnp-4c_eff24.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/fng_w/mcnp-4c_eff24.h5",
+      "bytes": 778936,
+      "sha256": "2d0af068147bbfa2fdc25c13616ff4e7a52b4f28872fc2b8e174929ee7ccdb03",
+      "git_blob_sha1": "d8517c5b64bf17dbbac02fa315df5781f55e4277"
+    },
+    {
+      "path": "upstream/results_database/fng_w/mcnp-4c_fendl2.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/fng_w/mcnp-4c_fendl2.h5",
+      "bytes": 778936,
+      "sha256": "ebecc2eb14036050f6c6e1df1bd7eac947eb9d5422f5f23ce0b83b376a4675aa",
+      "git_blob_sha1": "f48e88f307a74cd1c40a024827eefc7b80791372"
+    },
+    {
+      "path": "upstream/results_database/fng_w/openmc-0-14-0_endfb80.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/fng_w/openmc-0-14-0_endfb80.h5",
+      "bytes": 778446,
+      "sha256": "ef93745eef47555e0b2392a81606b52188d37300a439ad8f1a875f11a1be1a11",
+      "git_blob_sha1": "9f266386093df5f055c7b3a10979b5cc946cd5ed"
+    },
+    {
+      "path": "upstream/results_database/fng_w/openmc-0-14-0_fendl32b.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/fng_w/openmc-0-14-0_fendl32b.h5",
+      "bytes": 778446,
+      "sha256": "ce3244c5f428a5c3fd74869fe25e7922bcb8e64e77dcad72b04132b8b2a45494",
+      "git_blob_sha1": "a10a01328e29ea6da5b45bb4af5d526f11d3ed29"
+    },
+    {
+      "path": "upstream/results_database/fng_w/openmc-0-14-0_jeff33.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/fng_w/openmc-0-14-0_jeff33.h5",
+      "bytes": 778446,
+      "sha256": "27f5251c5e5410205333cf7d2bb0b727eab2cf9ce55df7707427af91844c1343",
+      "git_blob_sha1": "c5cc0ca87feb31cf08744f8aa8fa374eb7856ad7"
+    },
+    {
+      "path": "upstream/results_database/oktavian_cu/experiment.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/oktavian_cu/experiment.h5",
+      "bytes": 194632,
+      "sha256": "68de7e780a317df099edc309cd1e3d2211766ae88aa212d99d5bbd949e9935b2",
+      "git_blob_sha1": "5a50b94869acd171946ef2a42880c03e96a74a98"
+    },
+    {
+      "path": "upstream/results_database/oktavian_cu/mcnp-6-1-1b_endfb80.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/oktavian_cu/mcnp-6-1-1b_endfb80.h5",
+      "bytes": 206920,
+      "sha256": "b69fb60f68aa19fe184c4b4e17fef5ee795a631707c740aa3db93831be3f816e",
+      "git_blob_sha1": "2c691ca565fe8f079d90453f65886538cc11a9da"
+    },
+    {
+      "path": "upstream/results_database/oktavian_cu/mcnp-6-1-1b_jeff33.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/oktavian_cu/mcnp-6-1-1b_jeff33.h5",
+      "bytes": 206920,
+      "sha256": "700e3db570237c9852c78f995ecd435b3f6162c97f6499c907fbf3813e876b9d",
+      "git_blob_sha1": "7d9b50456c678e1ec87ef5488c1ce92298448077"
+    },
+    {
+      "path": "upstream/results_database/oktavian_cu/mcnp-6-1-1b_tendl17.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/oktavian_cu/mcnp-6-1-1b_tendl17.h5",
+      "bytes": 206920,
+      "sha256": "25a6e8d4ecdee7258b385ea92228f7254df7e82b1543693682fdee581d7c4c87",
+      "git_blob_sha1": "1e226af4f471f105740ffc71c60981be4ea04ef1"
+    },
+    {
+      "path": "upstream/results_database/oktavian_cu/mcnp-6-2-17_jendl40.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/oktavian_cu/mcnp-6-2-17_jendl40.h5",
+      "bytes": 194632,
+      "sha256": "a2de815c53ff17e2207396108834e9b8504327a5ec8189495877664d470b1145",
+      "git_blob_sha1": "56079650bfbba44a2d6270a69bc759d286539e14"
+    },
+    {
+      "path": "upstream/results_database/oktavian_cu/openmc-0-14-0_endfb80.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/oktavian_cu/openmc-0-14-0_endfb80.h5",
+      "bytes": 158560,
+      "sha256": "f392eaffe3749135b4292fe9ff6bab48f3c4619973e74291744cda18bd015a6e",
+      "git_blob_sha1": "c1de4ddeaf2d558352dc1ff2ac79df888cee1877"
+    },
+    {
+      "path": "upstream/results_database/oktavian_cu/openmc-0-14-0_fendl32.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/oktavian_cu/openmc-0-14-0_fendl32.h5",
+      "bytes": 158560,
+      "sha256": "fe615990f6892048ea9e89da9a39f2dfdc2dd5fa38b5198eac2513b5d3639a32",
+      "git_blob_sha1": "f4e84e54c4c7e51308e152ad6baa9f2d58213507"
+    },
+    {
+      "path": "upstream/results_database/oktavian_cu/openmc-0-14-0_jeff33.h5",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/results_database/oktavian_cu/openmc-0-14-0_jeff33.h5",
+      "bytes": 158560,
+      "sha256": "a6fc55980a4b43c0f13a9cb8f2cba0f6b055752cb70afbd7f3de324075a7b1bf",
+      "git_blob_sha1": "2fa38fdec429d8956c5e63ba87b8ff33dceeda4e"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/__init__.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/__init__.py",
+      "bytes": 587,
+      "sha256": "445479162ed2e5495a970452175d0ac24dc6403e42d3e09596ea51e16bf288ca",
+      "git_blob_sha1": "fb1573e88bd030b555f3707d4fa2b58c1adad267"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/benchmark.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/benchmark.py",
+      "bytes": 3826,
+      "sha256": "2c21446b39f61bb5c0c683cc0a6eb56587bb769075ff43a3f1b6187a13d6c157",
+      "git_blob_sha1": "a91f1600b2b1b8978c326e8bed737ef57a0e82e7"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/benchmarks/fng_str/benchmark_module.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/benchmarks/fng_str/benchmark_module.py",
+      "bytes": 135075,
+      "sha256": "9c03e99c16c979440b28cc64c489721a6950a90be54b9d260e0048549012d003",
+      "git_blob_sha1": "2c637e6a3558b3137c4766a264c6ba051e587b1f"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/benchmarks/fng_w/benchmark_module.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/benchmarks/fng_w/benchmark_module.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/benchmarks/fns_duct/benchmark_module.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/benchmarks/fns_duct/benchmark_module.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/cloud_interface.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/cloud_interface.py",
+      "bytes": 922,
+      "sha256": "cde9c00b25c83ce7f09f5e0ad810bc982cad5d8024a4ff2b4706a23415859f2c",
+      "git_blob_sha1": "b80b5eb55a4b724bf03eb4186ca58ea9cb5dff88"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/data/irdff2_xs/__init__.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/data/irdff2_xs/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-1325.acef",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-1325.acef",
+      "bytes": 64665,
+      "sha256": "1ea901a28f187e6192283faf4f68503f5b9f677cc8b72eeb93486f56225d4d70",
+      "git_blob_sha1": "c54860651d98762043bc41fec0b8cbf88a294e28"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-2525_modified.acef",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-2525_modified.acef",
+      "bytes": 1181751,
+      "sha256": "2c2d51d7fcc11946df3ec8d5c5ebd4a3da2aaa925152b53f28bf0e10d8752a24",
+      "git_blob_sha1": "97c6c4b4c5cbcd57e5d6cbd0548b3b791ec9e164"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-2631.acef",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-2631.acef",
+      "bytes": 4765,
+      "sha256": "01a9b9b91fd275434f570d6d1cd3496e6a6c473c5c48b35e38057c2d4674b5f2",
+      "git_blob_sha1": "9214901057253bc02efdad7825cd952ee4df97dd"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-2825_modified.acef",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-2825_modified.acef",
+      "bytes": 9479,
+      "sha256": "d546001d34582a5e86360d80149b43c30c72ba76cc38a238b7f32ae4cdd68110",
+      "git_blob_sha1": "ba1c6abf2d2c538fafc1b56d2cf7a5f7fe579411"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-4025.acef",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-4025.acef",
+      "bytes": 3535,
+      "sha256": "1e4e5d99fffc0d0caa1a726239d214dfd8be9bedbb6552a9951e9375d68135a7",
+      "git_blob_sha1": "953ffcb02e9f038fc420f2b7b164cc869578a123"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-4125.acef",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-4125.acef",
+      "bytes": 5300611,
+      "sha256": "55cd105b5fa4e41f74c2e970b88b5432d77eb4af699c1db2bd053cf2af399b83",
+      "git_blob_sha1": "a85f93151724950b486ebe2537bdd704c77a6216"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-4931.acef",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-4931.acef",
+      "bytes": 4448345,
+      "sha256": "f27a5c04c340ac299e51aef2a9bbd2ef164c8bc2efe28eda65b3d7f8433f5d57",
+      "git_blob_sha1": "9cd886a159088f09c236c02e5fa4ed994d3087fd"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-7443_modified.acef",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-7443_modified.acef",
+      "bytes": 1973461,
+      "sha256": "2e8269db4cfacbdb35fdaf8b090a16193a3721e7dc2db5e7710bb1519765fb50",
+      "git_blob_sha1": "adad85ccb7470704757560795ebc49472d9b2289"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-7925_modified.acef",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/data/irdff2_xs/dos-irdff2-7925_modified.acef",
+      "bytes": 1335173,
+      "sha256": "d2b56b725fcf77aaa76eeada2eccb4e42184cbf772ff195a7c5f3e9100a7dcdf",
+      "git_blob_sha1": "f8f9f8be08bab804f961f547f67c1e7af3ff28a5"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/irdff.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/irdff.py",
+      "bytes": 2077,
+      "sha256": "2b2ec561dee4fc768d08fd7260f50169210277930b27109c43aa82a37ae3982e",
+      "git_blob_sha1": "1557cc666a7685afdeb891270f8e12e42a4d4943"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/lib/cad_geometries.json",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/lib/cad_geometries.json",
+      "bytes": 1151,
+      "sha256": "8809779f8e98a41d63c54b49c528729186492a377f605e0cf3370ad915daf6e9",
+      "git_blob_sha1": "2881e06b58dcf5b74edd8d43e82dd5af2ba81793"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/neutron_sources/__init__.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/neutron_sources/__init__.py",
+      "bytes": 46,
+      "sha256": "a29a3c7751bd0cff60962f214a6196535b9fb024e4884657da91ad89bcea98fc",
+      "git_blob_sha1": "67d6db030d4a8b63dd84bb0ed96ddbfd40f546fe"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/neutron_sources/fng_source/__init__.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/neutron_sources/fng_source/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/neutron_sources/fng_source/fng_230keV_characteristics.csv",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/neutron_sources/fng_source/fng_230keV_characteristics.csv",
+      "bytes": 380000,
+      "sha256": "84ae84d3c0750a9459723873134becde96e761608a6e18613080bd89e44d9b05",
+      "git_blob_sha1": "3f671be79426d471514a94a19bb2b9caaa91c599"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/neutron_sources/fng_source/fng_260keV_characteristics.csv",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/neutron_sources/fng_source/fng_260keV_characteristics.csv",
+      "bytes": 380000,
+      "sha256": "1f05207aaf2889937b1eec04f920b75c2893996a9b6641328144ace444551f34",
+      "git_blob_sha1": "e3200bbc2f51edaddd87beb73b09ef9d7b92521c"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/neutron_sources/fng_source/fng_350keV_characteristics.csv",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/neutron_sources/fng_source/fng_350keV_characteristics.csv",
+      "bytes": 380000,
+      "sha256": "a737550f2924def0b9daa5b17b5490db47f5eb0d46ca8e13186b69fde9731d01",
+      "git_blob_sha1": "4430c8dd2a6caf265d461defe7f6169765aafc67"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/neutron_sources/fng_source/fng_source.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/neutron_sources/fng_source/fng_source.py",
+      "bytes": 1999,
+      "sha256": "c48ecc4bf15b637ecee16c84a646ae5fb306e8221650c1532ea32d270df0ef98",
+      "git_blob_sha1": "96d40bbaca46c6def4403bab49c88eccbd678940"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/read_results.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/read_results.py",
+      "bytes": 14447,
+      "sha256": "994ff38fbcdb36cbd215384490f713d4a5337cab8f20b7ff35021458d6eb7cd1",
+      "git_blob_sha1": "79151b350f9602cf40489a2370a1ec248a90e76b"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/utils.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/utils.py",
+      "bytes": 5310,
+      "sha256": "c610f219b08218be758fa077c9c2c3eada75ce58787a48c2db9053a38a33fa30",
+      "git_blob_sha1": "3e89cb2a0e20079b1b451751b351d50edc8146b9"
+    },
+    {
+      "path": "upstream/src/openmc_fusion_benchmarks/visualize.py",
+      "source_url": "https://raw.githubusercontent.com/eepeterson/openmc_fusion_benchmarks/c47fc573a7e2a9ca11a8958dc67155b1146adf51/src/openmc_fusion_benchmarks/visualize.py",
+      "bytes": 17384,
+      "sha256": "9b7f285882213a395a7c947b38e8a65bc4a6cff8f282aa68227999a24b934f5f",
+      "git_blob_sha1": "baa12c356930d6705e2636963150f5338503eaff"
+    },
+    {
+      "path": "reference_documents/kobayashi_lanl.pdf",
+      "source_url": "https://mcnp.lanl.gov/pdf_files/TechReport_2003_LANL_LA-UR-03-5974_TothBrown.pdf",
+      "bytes": 384842,
+      "sha256": "3c7ab1a794f475a4275a4dc67deae97b483d3894eb09239bf1caafc310511232"
+    },
+    {
+      "path": "reference_documents/kobayashi_lanl.txt",
+      "source_url": "derived by PyMuPDF from the accompanying PDF",
+      "bytes": 36179,
+      "sha256": "bdcad4d8910b331498540c550560f238b6c1854a841c7f4bed30b1b8b590f397"
+    }
+  ]
+}

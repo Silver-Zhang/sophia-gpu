@@ -1,0 +1,41 @@
+v21_key,doi,identity_evidence,crossref_title,year_note,verification_boundary
+ref1,10.1080/15361055.2024.2323747,Crossref API元数据已解析,OpenMC Interpretation of FNS SINBAD Shielding Benchmark Experiments,"[[2024, 3, 25]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref2,10.3389/fnuen.2024.1384788,Crossref API元数据已解析,ParaStell: parametric modeling and neutronics support for stellarator fusion power plants,"[[2024, 4, 4]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref3,10.1016/S0920-3796(97)00113-0,Crossref API元数据已解析,Configuration and engineering design of the ARIES-RS tokamak power plant,"[[1997, 12]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref4,10.1016/j.anucene.2013.12.012,Crossref API元数据已解析,The OpenMOC method of characteristics neutral particle transport code,"[[2014, 6]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref5,10.1080/00295450.2021.1871995,Crossref API元数据已解析,"Method of Characteristics for 3D, Full-Core Neutron Transport on Unstructured Mesh","[[2021, 7, 3]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref6,10.1016/j.nucengdes.2024.112994,Crossref API元数据已解析,Research on approaches to automatic modeling of discrete ordinate programs based on CAD model,"[[2024, 4]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref7,10.1016/j.anucene.2019.05.044,Crossref API元数据已解析,A combined immersed body and adaptive mesh method for simulating neutron transport within complex structures,"[[2019, 12]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref8,10.3389/fnuen.2025.1597165,Crossref API元数据已解析,Hybrid solvers for reactor modelling: matrix-based and matrix-free approaches on voxel-dominated meshes,"[[2025, 10, 15]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref9,10.1016/j.pnucene.2025.106109,Crossref API元数据已解析,GPU-accelerated few-group 3D Method of Characteristics for full-core neutron transport in Small Modular Reactors,"[[2026, 2]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref10,10.1145/3581784.3607063,Crossref API元数据已解析,ANT-MOC: Scalable Neutral Particle Transport Using 3D Method of Characteristics on Multi-GPU Systems,"[[2023, 11, 11]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref11,10.1016/j.fusengdes.2007.06.038,Crossref API元数据已解析,Automatic generation and validation of an ITER neutronics model from CAD data,"[[2007, 10]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref12,10.1088/1674-1137/38/5/058201,Crossref API元数据已解析,Preliminary study on CAD-based method of characteristics for neutron transport calculation,"[[2014, 5]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref13,10.1016/j.net.2017.08.008,Crossref API元数据已解析,Particle tracking acceleration via signed distance fields in direct-accelerated geometry Monte Carlo,"[[2017, 9]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref14,10.1109/MCSE.2022.3154656,Crossref API元数据已解析,Hardware-Accelerated Ray Tracing of CAD-Based Geometry for Monte Carlo Radiation Transport,"[[2022, 3, 1]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref15,10.1080/00295639.2020.1780842,Crossref API元数据已解析,Nonmatching Discontinuous Cartesian Grid Algorithm Based on the Multilevel Octree Architecture for Discrete Ordinates Transport Calculation,"[[2020, 9, 14]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref16,10.1177/10943420211022811,Crossref API元数据已解析,AMReX: Block-structured adaptive mesh refinement for multiphysics applications,"[[2021, 6, 12]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref17,10.1016/j.pnucene.2020.103590,Crossref API元数据已解析,Improved memory management for solving neutron transport via a novel Modular Ray Tracing (MRT) approach embedded in parallel method of characteristic (MOC) framework,"[[2021, 2]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref18,10.2312/egtp.19871000,Eurographics数字图书馆出版记录： https://diglib.eg.org/collections/ce7b470e-6b6a-472c-9702-afbe7ce326b1,,,元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref19,10.1145/1730804.1730814,Crossref API元数据已解析,Efficient sparse voxel octrees,"[[2010, 2, 19]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref20,,OpenMC官方方法文档；本轮读取,,,元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref21,10.1016/j.jcp.2010.10.018,Crossref API元数据已解析,Standard and goal-oriented adaptive mesh refinement applied to radiation transport on 2D unstructured triangular meshes,"[[2011, 2]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref22,10.1016/j.anucene.2011.01.038,Crossref API元数据已解析,Goal-oriented spatial adaptivity for the SN equations on unstructured triangular meshes,"[[2011, 6]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref23,10.1016/j.anucene.2012.11.029,Crossref API元数据已解析,Goal based mesh adaptivity for fixed source radiation transport calculations,"[[2013, 5]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref24,10.1016/j.jcp.2012.12.035,本轮Crossref及原出版社/作者机构核对，见第二章引文核查表,"GOFFIN M A, BAKER C M J, BUCHAN A G, 等. Minimising the error in eigenvalue calculations involving the Boltzmann transport equation using goal-based adaptivity on unstructured meshes{[}J/OL{]}. Journal of Computational Physics, 2013, 242: 726-752.",以卷期年为准,方法和定量结论的证据层级见第二章引文核查表
+ref25,10.1016/j.anucene.2022.109288,Crossref API元数据已解析,Multilevel mesh adaptivity for discrete ordinates transport calculation with spatial-moment-ratio indicators,"[[2022, 10]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref26,10.1080/00295639.2023.2169537,Crossref API元数据已解析,Goal-Oriented Mesh Adaptivity of Three-Dimensional Neutron Transport Calculation Using Weighted Difference Scheme and Dual-Weighted Residual Error Indicators,"[[2023, 6, 14]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref27,10.1016/j.net.2022.10.017,本轮Crossref及原出版社/作者机构核对，见第二章引文核查表,"LIU C, ZHANG B, WEI J, 等. Verification of multilevel octree grid algorithm of S\_N transport calculation with the Balakovo-3 VVER-1000 neutron dosimetry benchmark{[}J/OL{]}. Nuclear Engineering and Technology, 2023, 55(2): 756-768.",以卷期年为准,方法和定量结论的证据层级见第二章引文核查表
+ref28,10.1016/j.cma.2026.118872,本轮Crossref及原出版社/作者机构核对，见第二章引文核查表,"WILSON S G, EATON M D, KÓPHÁZI J. Adaptive mesh h(p)-refinement of a discontinuous Bubnov-Galerkin isogeometric analysis spatial discretisation of the first-order form of the neutron transport equation with goal-based error measures and diffusion acceleration{[}J/OL{]}. Computer Methods in Applied Mechanics and Engineering, 2026, 455: 118872.",以卷期年为准,方法和定量结论的证据层级见第二章引文核查表
+ref29,10.7538/yzk.2019.youxian.0416,原子能科学技术出版页及摘要： https://yznkxjs.xml-journal.net/article/doi/10.7538/yzk.2019.youxian.0416,,,元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref30,10.1016/j.cpc.2025.109952,Crossref API元数据已解析,Axially decomposed GPU-enabled three-dimensional method of characteristics/diamond difference solver in neutron transport code STREAM3D-GPU,"[[2026, 2]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref31,,KNS会议报告；沿用evidence.md三页原文记录，未再次逐页核验,,,元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref32,10.1080/00295639.2026.2652773,Crossref API元数据已解析,"Verification and Performance Assessment of NuDEAL, a GPU-Accelerated Deterministic Transport Framework on Unstructured Meshes","[[2026, 4, 23]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref33,10.1016/j.nucengdes.2024.113148,Crossref API元数据已解析,A cyclic-track decomposition method for 3D MOC neutron transport simulation,"[[2024, 6]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref34,,NVIDIA官方实践指南；沿用来源，删除未复核版本号,,,元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref35,,NEA SINBAD官方入口；本轮读取,,,元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref36,10.3389/fenrg.2023.1085264,Crossref API元数据已解析,Benchmark shielding calculations for fusion and accelerator-driven sub-critical systems,"[[2023, 1, 25]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref37,10.11889/j.0253-3219.2024.hjs.47.050008,核技术出版页： https://hjsu.publish.founderss.cn/zh/article/doi/10.11889/j.0253-3219.2024.hjs.47.050008/,,,元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref38,10.13182/NSE98-2,Crossref API元数据已解析,Automated Variance Reduction of Monte Carlo Shielding Calculations Using the Discrete Ordinates Adjoint Function,"[[1998, 2]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref39,10.13182/NSE12-33,Crossref API元数据已解析,FW-CADIS Method for Global and Regional Variance Reduction of Monte Carlo Radiation Transport Calculations,"[[2014, 1]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
+ref40,10.2172/1210162,Crossref API元数据已解析,ADVANTG—An Automated Variance Reduction Parameter Generator (Rev. 1),"[[2015, 8, 1]]",元数据/摘要不等于全文；在线年份与卷期年份可能不同
