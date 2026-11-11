@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="420.094488pt" height="328.818898pt" viewBox="0 0 420.094488 328.818898" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="420.094488pt" height="306.141732pt" viewBox="0 0 420.094488 306.141732" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-11T15:14:05.904213</dc:date>
+    <dc:date>2026-11-11T20:29:29.579551</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -20,177 +20,152 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 328.818898
-L 420.094488 328.818898
+   <path d="M 0 306.141732
+L 420.094488 306.141732
 L 420.094488 0
 L 0 0
 z
 " style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
-   <g id="node-inputs">
-    <path d="M 22.677165 39.685039
-L 402.519685 39.685039
-L 402.519685 11.338583
-L 22.677165 11.338583
+   <g id="node-scope">
+    <path d="M 34.015748 39.587293
+L 391.181102 39.587293
+L 391.181102 10.556611
+L 34.015748 10.556611
 z
-" clip-path="url(#p792e610c1e)" style="fill: #ffffff; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter"/>
-   </g>
-   <g id="node-moc">
-    <path d="M 22.677165 96.377953
-L 402.519685 96.377953
-L 402.519685 53.858268
-L 22.677165 53.858268
-z
-" clip-path="url(#p792e610c1e)" style="fill: #ffffff; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pc511fc4795)" style="fill: #ffffff; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="node-error">
-    <path d="M 22.677165 189.92126
-L 201.259843 189.92126
-L 201.259843 124.724409
-L 22.677165 124.724409
+    <path d="M 34.015748 102.926962
+L 391.181102 102.926962
+L 391.181102 58.061363
+L 34.015748 58.061363
 z
-" clip-path="url(#p792e610c1e)" style="fill: #ffffff; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pc511fc4795)" style="fill: #ffffff; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="node-gpu">
-    <path d="M 223.937008 189.92126
-L 402.519685 189.92126
-L 402.519685 124.724409
-L 223.937008 124.724409
+    <path d="M 34.015748 187.379853
+L 391.181102 187.379853
+L 391.181102 142.514255
+L 34.015748 142.514255
 z
-" clip-path="url(#p792e610c1e)" style="fill: #ffffff; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pc511fc4795)" style="fill: #ffffff; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="node-selection">
-    <path d="M 22.677165 266.456693
-L 402.519685 266.456693
-L 402.519685 218.267717
-L 22.677165 218.267717
+    <path d="M 34.015748 271.832745
+L 391.181102 271.832745
+L 391.181102 226.967146
+L 34.015748 226.967146
 z
-" clip-path="url(#p792e610c1e)" style="fill: #ffffff; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pc511fc4795)" style="fill: #ffffff; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
-   <g id="node-validation">
-    <path d="M 22.677165 323.149606
-L 402.519685 323.149606
-L 402.519685 286.299213
-L 22.677165 286.299213
-z
-" clip-path="url(#p792e610c1e)" style="fill: #ffffff; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter"/>
+   <g id="edge-scope-error">
+    <path d="M 212.598425 41.585343
+Q 212.598425 48.82377 212.598425 55.16777
+" clip-path="url(#pc511fc4795)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 214.398425 51.56777
+L 212.598425 55.16777
+L 210.798425 51.56777
+" clip-path="url(#pc511fc4795)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
-   <g id="edge-inputs-moc">
-    <path d="M 212.598425 41.68161
-Q 212.598425 46.769586 212.598425 50.963135
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 214.398425 47.363135
-L 212.598425 50.963135
-L 210.798425 47.363135
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
-   </g>
-   <g id="edge-moc-error">
-    <path d="M 111.968504 118.217735
-Q 111.968504 120.471878 111.968504 121.831594
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 113.768504 118.231594
-L 111.968504 121.831594
-L 110.168504 118.231594
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
-   </g>
-   <g id="edge-moc-gpu">
-    <path d="M 313.228346 118.217735
-Q 313.228346 120.471878 313.228346 121.831594
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 315.028346 118.231594
-L 313.228346 121.831594
-L 311.428346 118.231594
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
-   </g>
-   <g id="edge-error-selection">
-    <path d="M 111.968504 191.91783
-Q 111.968504 204.094038 111.968504 215.375819
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 113.768504 211.775819
-L 111.968504 215.375819
-L 110.168504 211.775819
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
+   <g id="edge-error-gpu">
+    <path d="M 102.047244 104.922757
+Q 102.047244 122.72044 102.047244 139.623697
+" clip-path="url(#pc511fc4795)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 103.847244 136.023697
+L 102.047244 139.623697
+L 100.247244 136.023697
+" clip-path="url(#pc511fc4795)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="edge-gpu-selection">
-    <path d="M 313.228346 191.91783
-Q 313.228346 204.094038 313.228346 215.375819
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 315.028346 211.775819
-L 313.228346 215.375819
-L 311.428346 211.775819
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 102.047244 189.375648
+Q 102.047244 207.173332 102.047244 224.076589
+" clip-path="url(#pc511fc4795)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 103.847244 220.476589
+L 102.047244 224.076589
+L 100.247244 220.476589
+" clip-path="url(#pc511fc4795)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="edge-error-selection">
+    <path d="M 397.687777 249.399946
+Q 395.433633 249.399946 394.073917 249.399946
+" clip-path="url(#pc511fc4795)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 397.673917 251.199946
+L 394.073917 249.399946
+L 397.673917 247.599946
+" clip-path="url(#pc511fc4795)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="edge-selection-feedback">
+    <path d="M 24.67858 80.494162
+Q 28.346428 80.494162 31.119848 80.494162
+" clip-path="url(#pc511fc4795)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 27.519848 78.694162
+L 31.119848 80.494162
+L 27.519848 82.294162
+" clip-path="url(#pc511fc4795)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="edge-selection-validation">
-    <path d="M 212.598425 268.457416
-Q 212.598425 276.378633 212.598425 283.405424
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 214.398425 279.805424
-L 212.598425 283.405424
-L 210.798425 279.805424
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 212.598425 273.833372
+Q 212.598425 278.431961 212.598425 282.136122
+" clip-path="url(#pc511fc4795)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 214.398425 278.536122
+L 212.598425 282.136122
+L 210.798425 278.536122
+" clip-path="url(#pc511fc4795)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
-   <g id="edge-feedback-moc">
-    <path d="M 13.339998 75.11811
-Q 17.007845 75.11811 19.781265 75.11811
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 16.181265 73.31811
-L 19.781265 75.11811
-L 16.181265 76.91811
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: round"/>
+   <g id="error-cost-link">
+    <path d="M 391.181102 80.494162
+L 411.023622 80.494162
+L 411.023622 249.399946
+L 399.685039 249.399946
+" clip-path="url(#pc511fc4795)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
-   <g id="fork">
-    <path d="M 111.968504 116.220472
-L 111.968504 107.716535
-L 313.228346 107.716535
-L 313.228346 116.220472
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: square"/>
+   <g id="configuration-return">
+    <path d="M 34.015748 249.399946
+L 8.503937 249.399946
+L 8.503937 80.494162
+L 22.677165 80.494162
+" clip-path="url(#pc511fc4795)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
-   <g id="moc-fork">
-    <path d="M 212.598425 96.377953
-L 212.598425 107.716535
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: square"/>
-   </g>
-   <g id="parameter-feedback">
-    <path d="M 22.677165 242.362205
-L 4.251969 242.362205
-L 4.251969 75.11811
-L 11.338583 75.11811
-" clip-path="url(#p792e610c1e)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: square"/>
-   </g>
-   <g id="text-inputs">
-    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'; text-anchor: middle" x="212.598425" y="28.153477">几何、材料、群常数与外源</text>
-   </g>
-   <g id="text-moc">
-    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(121.758423 71.369563)">材料映射 → 特征线分段 → 多群扫描与源更新</text>
-    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(158.395925 84.097764)">通量、反应率与轨迹工作量</text>
+   <g id="text-scope">
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(185.497175 21.256534)">局部体素细化</text>
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(135.057091 34.039431)">响应误差、轨迹工作量与GPU执行成本</text>
    </g>
    <g id="text-error">
-    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(78.588798 147.395308)">误差控制（5.2）</text>
-    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(58.518346 160.110382)">材料次序/段长 → 伴随加权</text>
-    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(50.73944 172.838583)">独立加密求积 → 局部细化指标</text>
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(137.058631 76.936488)">RQ1 材料路径响应评价与细化（5.2）</text>
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(126.275298 89.62312)">共同材料区间 → 局部贡献 → 候选细化区域</text>
    </g>
    <g id="text-gpu">
-    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(270.060431 147.397355)">GPU异构并行（5.3）</text>
-    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(255.261313 160.112428)">受影响轨迹 → 增量更新/缓存</text>
-    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(262.287877 172.757491)">分组扫描/按目的地址求和</text>
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(146.092381 161.37597)">RQ2 轨迹增量更新与缓存（5.3）</text>
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(139.071464 174.062602)">受影响轨迹 → 局部重建 → GPU执行</text>
    </g>
    <g id="text-selection">
-    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(179.218719 238.66299)">协同选择（5.4）</text>
-    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(113.979517 251.526838)">误差指标与时间/显存预测 → 筛选离散及执行参数</text>
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(150.609256 245.779212)">RQ3 有限预算配置选择（5.4）</text>
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(139.825923 258.546794)">误差与显存筛选 → 试算 → 最终配置</text>
    </g>
-   <g id="text-validation">
-    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(179.218719 301.150185)">独立验证（5.5）</text>
-    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(119.751237 313.878386)">解析、基准及实验 → 比较响应、总时间与显存</text>
+   <g id="refinement-work">
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(211.008986 119.525766)">候选细化区域</text>
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(215.525861 131.146556)">受影响轨迹</text>
+   </g>
+   <g id="work-cost">
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(192.941486 204.030743)">计算工作量、预计耗时</text>
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(220.042736 215.538894)">峰值显存</text>
+   </g>
+   <g id="error-feed">
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'; text-anchor: middle" x="403.744028" y="163.627478" transform="rotate(-90 403.744028 163.627478)">局部误差贡献</text>
    </g>
    <g id="feedback-text">
-    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'" transform="translate(15.973676 173.973012) rotate(-90)">参数更新</text>
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'; text-anchor: middle" x="22.445369" y="163.627478" transform="rotate(-90 22.445369 163.627478)">细化与执行配置更新</text>
+   </g>
+   <g id="validation">
+    <text style="font-size: 9.03375; font-family: 'Arial', 'Microsoft YaHei'; text-anchor: middle" x="212.598425" y="299.698808">独立验证（5.5）：响应误差、全过程时间与峰值显存</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p792e610c1e">
-   <rect x="0" y="0" width="420.094488" height="328.818898"/>
+  <clipPath id="pc511fc4795">
+   <rect x="0" y="0" width="420.094488" height="306.141732"/>
   </clipPath>
  </defs>
 </svg>
