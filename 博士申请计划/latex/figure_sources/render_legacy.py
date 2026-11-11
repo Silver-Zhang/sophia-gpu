@@ -2,7 +2,7 @@
 Geometry is preserved; Chinese and English labels use YaHei/Arial; formulas use body-matched TeX math.
 """
 from pathlib import Path
-import json,re
+import json,re,sys
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -13,6 +13,7 @@ configure()
 ROOT=Path(__file__).resolve().parents[1]
 scenes=json.loads((ROOT/'figure_sources/legacy_scenes.json').read_text())['scenes']
 for name,s in scenes.items():
+    if len(sys.argv)>1 and name not in sys.argv[1:]:continue
     w,h=s['width_pt'],s['height_pt']
     fig=plt.figure(figsize=(WIDTH_MM/25.4,WIDTH_MM/25.4*h/w));ax=fig.add_axes([0,0,1,1]);ax.set(xlim=(0,w),ylim=(h,0));ax.axis('off')
     for d in s['paths']:

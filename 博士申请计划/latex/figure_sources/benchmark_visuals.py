@@ -52,7 +52,6 @@ def geometry_plate():
     a.text(60,101,'屏蔽区',ha='center',va='center')
     a.text(27,-6,'x',ha='center');a.text(110,30,'y',ha='center');a.text(-5,65,'z',ha='center')
     a.text(56,88,'60 cm',ha='center');a.text(113,67,'100 cm',rotation=90,ha='center',va='center',rotation_mode='anchor')
-    a.text(53,-15,'第一卦限，三次直角转弯',ha='center',va='center')
     image=plt.imread(DATA/'fng_streaming_fig3.png')
     w,h=fig.get_size_inches();ih=(.465*w/(.81*h))*(image.shape[0]/image.shape[1])
     b.imshow(image,extent=[0,1,.5-ih/2,.5+ih/2],aspect='auto',interpolation='none',resample=False)
