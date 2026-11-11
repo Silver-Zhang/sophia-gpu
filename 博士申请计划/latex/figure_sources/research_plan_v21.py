@@ -55,7 +55,7 @@ def draw():
     raw=re.sub(r'<!DOCTYPE[^>]+>','',raw)
     raw=re.sub(r'(font-size: [0-9.]+)px',r'\1',raw)
     raw=re.sub(r' transform="rotate\(-?0 [^"]+\)"','',raw)
-    svg.write_text(raw)
+    svg.write_text('\n'.join(line.rstrip() for line in raw.splitlines())+'\n')
     plt.close(fig)
 
 if __name__=='__main__':
