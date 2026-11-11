@@ -18,3 +18,7 @@
 
 
 第二章批注修订：删除旧DDA/八叉树/BVH图（dda_index.pdf，原文件保留），重画v21_moc.pdf。当前图1 ARIES、图2 Yang、图3多群源迭代、图4多GPU、图5研究任务。图3可编辑源为moc_iteration.py；v21_schematics.py调用新源；图宽和字体不变，PDF碰撞审计通过。该图只表示固定真空、预存轨迹及群Jacobi基线，不包含CMFD/群GS的实现分支。
+
+## 完整五章修订（2026-11-11）
+
+当前新图8为research_plan_v21.pdf，由figure_sources/research_plan_v21.py原创绘制，活文字SVG同名保留。图表达第5.2—5.5节拟研究算法：材料路径与伴随评价、局部轨迹更新与缓存、误差/成本筛选、独立验证，反馈线表示候选离散及执行参数更新，不表示已有实验结果。图宽148.2 mm，高116 mm，白底黑线，中文微软雅黑、英文Arial，PDF字高9 pt。SVG、PDF字体及碰撞QA见five_chapter_revision_qa_20261111.json。既有七图文件和来源不变。

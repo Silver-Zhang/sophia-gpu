@@ -54,7 +54,7 @@ for idx,chapter in enumerate(re.split(r'\\section\{',s)[1:],1):
         if r'\paragraph*{本章小结}' in chapter or '{tab:sum'+str(idx)+'}' in chapter:
             errors.append(f'chapter {idx} summary/table must be removed per annotation')
         continue
-    # The user explicitly retains chapter 4–5 headings only.
+    # Chapters 4 and 5 contain the approved validation basis and research plan.
     if idx in (4,5):
         body=chapter.split('\\clearpage',1)[0]
         body=re.sub(r'^[^}]+\}\\label\{[^}]+\}', '', body, count=1)
@@ -62,16 +62,29 @@ for idx,chapter in enumerate(re.split(r'\\section\{',s)[1:],1):
             sections=re.split(r'\\subsection\{[^}]+\}',body)[1:]
             if len(sections)!=4 or any(not x.strip() for x in sections): errors.append('chapter 4 requires four completed subsections')
         else:
-            body=re.sub(r'\\subsection\{[^}]+\}', '', body)
-            if body.strip(): errors.append('chapter 5 must contain headings only')
+            sections=re.split(r'\\subsection\{[^}]+\}',body)[1:]
+            if len(sections)!=7 or any(not x.strip() for x in sections): errors.append('chapter 5 requires seven completed subsections')
+            for required in ['eq:response_perturbation','eq:independent_residual','eq:joint_selection','fig:research_plan','tab:research_validation','tab:research_schedule']:
+                if required not in labels: errors.append('missing research-plan element: '+required)
 if s.find(r'\label{eq:transport}') > s.find(r'\subsection{复杂几何体素化与 GPU'):
     errors.append('transport equation must appear in 1.2')
 for name in re.findall(r'\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}',s):
     errors += [] if any((root/(name+suffix)).is_file() for suffix in ['', '.pdf', '.png']) else ['missing figure: '+name]
-# Preserve the user's existing 1–40 numbering plus appended 41–44.
-# First-appearance renumbering is a separate editorial change, not a build failure.
+# The current revision numbers references by first appearance; retained uncited entries follow.
 if bibs != ['ref'+str(n) for n in range(1,len(bibs)+1)]:
     errors.append('bibliography keys must be sequential and ordered')
+# Ignore the macro definition and check actual numeric citation first appearances.
+first_seen=[]
+for c in re.findall(r'\\upcite\{([^}]+)\}',s):
+    if c.startswith('#'): continue
+    for token in c.split(','):
+        m=re.fullmatch(r'(\d+)\s*(?:--|–|—|-)\s*(\d+)',token.strip())
+        seq=range(int(m[1]),int(m[2])+1) if m else [int(token.strip())]
+        for n in seq:
+            if n not in first_seen: first_seen.append(n)
+if first_seen!=list(range(1,len(first_seen)+1)):
+    errors.append('numeric citations must follow first appearance')
+
 if args.log:
     log=args.log.read_text(errors='replace')
     errors += [line for line in log.splitlines() if re.search(r'undefined|There were undefined references|Rerun to get cross-references right|Fatal error|^!',line,re.I)]
