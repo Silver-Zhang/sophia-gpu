@@ -1,17 +1,15 @@
 # 博士申请计划
 
-- [当前PDF：V3修订稿](exports/周璐楠博士科研计划书_V3.pdf)
-- [唯一正文](latex/main.tex)
-- [修改过程及阶段稿](history/README.md)
-- [文献与正文核查报告](outline/当前版本_文献与正文核查_20261110.md)
-- [第一章批注落实记录](outline/第一章批注修订_20261110.md)
-- [第二章批注与引文核查记录](outline/第二章批注修订_20261110.md)
-- [第二章24项引文核查数据](latex/references/第二章_引文与主张核查.csv)
-- [图源和许可](latex/references/figure_sources_v21.md)
-- [原始V2.1重构提纲](outline/博士科研计划书_重构提纲_V2.1.md)，后续用户指定的章节修改优先。
+- [当前V4 PDF](exports/周璐楠博士科研计划书_V4_定点修订_20261112.pdf)
+- [唯一LaTeX正文](latex/main.tex)
+- [最新修改记录](outline/V3定点学术修订记录_20261112.md)
+- [图源与许可](latex/references/figure_sources.md)
+- [基准图件来源与数据限制](latex/references/benchmark_sources.md)
 
-当前32页、53项文献、19式、8图、4表。已完成全文用语修订、第五章批注与精简、图8主流程对齐和参考文献格式统一。源码修订号V2.2对应用户命名的V3 PDF。见[最新修改记录](outline/第五章批注与文献格式修订记录_20261112.md)与[全文用语修订记录](outline/全文用语修订记录_20261112.md)。V1的5条批注及V2的11条批注保留，旧记录按其对应版本查阅。
+## 构建
 
-`cd latex && bash build.sh --check`执行结构、引用和三遍XeLaTeX检查，不覆盖PDF。`bash build.sh`生成当前PDF。2026-11-12按用户授权提交并推送至 `main`。
+在`latex`目录执行`bash build.sh --check`，完成结构、引文、交叉引用和三遍XeLaTeX检查，不覆盖正式PDF。执行`bash build.sh`生成当前V4 PDF。需安装XeLaTeX及正文使用的字体。
 
-exports保留当前稿、用户批注原件及既有版本。阶段PDF和源码快照已归并到history中的过程包。早期文献映射及图源文件按各自版本保留，不将其当作当前53条文献的统一编号表。
+`figure_sources`保存当前八幅图的Python、JSON、SVG及原始图像，依赖与字体约定见图源说明。`validation/benchmarks`保存固定版本公开输入包、所选测量表及提取脚本。该输入包是可追溯的研究数据，不是旧稿备份。文献证据中既有核查记录保留其证据层级，较早记录中的编号须按DOI或题名对应当前参考文献。
+
+历史PDF、旧提纲、过程包及未使用图件已按用户要求移除，已提交内容可从Git历史恢复。

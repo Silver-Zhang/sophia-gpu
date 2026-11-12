@@ -1,4 +1,0 @@
-implementation,cpu_time_min,wall_time_min,reported_time_ratio,preconditioner_utilization
-MCNP5,2.75,2.75,1,
-DAG-MCNP5,25.04,25.13,9.13,
-DAG-MCNP5 with SDF,7.15,7.30,2.65,0.97

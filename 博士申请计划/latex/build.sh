@@ -1,5 +1,5 @@
 #!/bin/bash
-# V2.1 builds use separate output; --check preserves releases.
+# Build the current release; --check preserves the published PDF.
 set -euo pipefail
 cd "$(dirname "$0")"
 MODE="${1:-build}"
@@ -25,6 +25,6 @@ if [ "$MODE" = '--check' ]; then
 else
   mkdir -p ../exports
   cp "$BUILD_DIR/main.pdf" ../exports/.proposal-build.tmp
-  mv ../exports/.proposal-build.tmp ../exports/周璐楠博士科研计划书_V3.pdf
-  echo 'OK -> ../exports/周璐楠博士科研计划书_V3.pdf'
+  mv ../exports/.proposal-build.tmp ../exports/周璐楠博士科研计划书_V4_定点修订_20261112.pdf
+  echo 'OK -> ../exports/周璐楠博士科研计划书_V4_定点修订_20261112.pdf'
 fi

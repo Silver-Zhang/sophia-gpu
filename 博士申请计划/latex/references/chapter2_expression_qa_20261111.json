@@ -1,9 +1,0 @@
-{
-  "chapter1_and_preamble_unchanged": true,
-  "chapter3_onward_and_bibliography_unchanged": true,
-  "all_equations_unchanged": true,
-  "pdf_pages": 34,
-  "build": "three XeLaTeX passes; no errors, overfull boxes, missing glyphs or unresolved references",
-  "visual_review": "PDF pages 7–13 and table 1 inspected",
-  "revision_items": 29
-}

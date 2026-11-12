@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Licensed literature image assembly.
-Reproduction details and immutable asset hashes: references/figure_sources_v53.md.
+Reproduction details and immutable asset hashes: references/figure_sources.md.
 """
 from pathlib import Path
 import os, sys, tempfile

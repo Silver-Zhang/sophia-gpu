@@ -25,28 +25,11 @@ errors += ['missing bibliography entry: '+k for k in sorted(used-keys)]
 labels.update(re.findall(r'\\SummaryTable\{[^}]+\}\{([^}]+)\}',s))
 refs=set(re.findall(r'\\(?:ref|eqref|pageref|autoref)\{([^}]+)\}',s));errors += ['missing label: '+k for k in sorted(refs-labels)]
 notes += ['retained uncited bibliography entry: '+k for k in sorted(keys-used)]
-# V2.1 retires unrelated V5.3 sources and equations; check the new outline.
-outline=(root.parent/'outline/博士科研计划书_重构提纲_V2.1.md').read_text()
-expected_sections=re.findall(r'^# 第[一二三四五]章 (.+)$',outline,re.M)
-expected_subsections=re.findall(r'^## [1-5]\.\d+ (.+)$',outline,re.M)
-# User's second-chapter annotations merge voxel traversal into coupling.
-expected_subsections.remove('体素穿越与几何界面求交方法')
-# The user replaced chapter 3 verbatim after the original outline was written.
-expected_sections[2]='GPU-MOC并行算法研究现状'
-third_titles=['三维MOC计算流程与并行特征', 'CPU-GPU异构并行与任务划分', '特征线存储与GPU显存管理', 'GPU任务调度与负载均衡']
-expected_subsections=[]
-third_inserted=False
-for number,title in re.findall(r'^## ([1-5])\.\d+ (.+)$',outline,re.M):
-    if title=='体素穿越与几何界面求交方法': continue
-    if number=='3':
-        if not third_inserted: expected_subsections.extend(third_titles);third_inserted=True
-    else: expected_subsections.append(title)
-# Approved GPU scope: no device-count commitment in chapter-five headings.
-expected_subsections=[title.replace('面向复杂体素几何的 CPU-GPU 多设备协同并行','面向复杂体素几何的CPU-GPU协同并行').replace('体素离散与多 GPU 执行的精度–成本协同优化','体素离散与GPU执行的精度–成本协同优化') for title in expected_subsections]
-# Latest annotation moves former 4.1 prose into the chapter introduction.
-expected_subsections.remove('聚变屏蔽典型结构与目标响应')
-if re.findall(r'\\section\{([^}]+)\}',s) != expected_sections: errors.append('chapter titles/order differ from V2.1')
-if re.findall(r'\\subsection\{([^}]+)\}',s) != expected_subsections: errors.append('subsection titles/order differ from V2.1')
+# Approved current structure; no historical outline dependency.
+expected_sections=['研究背景与研究目标', '复杂几何体素化与 MOC 数值方法研究现状', 'GPU-MOC并行算法研究现状', '聚变屏蔽应用与数值验证依据', '研究内容、技术路线与实施方案']
+expected_subsections=['聚变堆中子屏蔽的工程需求与计算挑战', '中子输运数值方法及 MOC 的选择依据', '复杂几何体素化与 GPU 异构并行技术路线', '研究目标与关键科学问题', '复杂几何表示与材料映射方法', '体素化几何与 MOC 特征线离散的耦合', 'MOC 沿程输运求解与多群源迭代', 'MOC 数值误差与空间精度控制方法', '三维MOC计算流程与并行特征', 'CPU-GPU异构并行与任务划分', '特征线存储与GPU显存管理', 'GPU任务调度与负载均衡', '聚变屏蔽基准与实验验证依据', '数值验证与计算效率评价', '聚变屏蔽中的混合减方差方法', '总体研究思路与技术路线', '复杂几何体素化 MOC 特征线追踪与误差控制', '面向复杂体素几何的CPU-GPU协同并行', '体素离散与GPU执行的精度–成本协同优化', '数值验证与聚变屏蔽应用方案', '研究计划与阶段成果', '预期创新与研究可行性']
+if re.findall(r'\\section\{([^}]+)\}',s) != expected_sections: errors.append('chapter titles/order differ from approved current structure')
+if re.findall(r'\\subsection\{([^}]+)\}',s) != expected_subsections: errors.append('subsection titles/order differ from approved current structure')
 if re.search(r'\\subsubsection\{',s): errors.append('unexpected third-level heading')
 for idx,chapter in enumerate(re.split(r'\\section\{',s)[1:],1):
     # Chapters 1–2 follow annotations; chapter 3 follows the supplied replacement.
@@ -60,7 +43,7 @@ for idx,chapter in enumerate(re.split(r'\\section\{',s)[1:],1):
         body=re.sub(r'^[^}]+\}\\label\{[^}]+\}', '', body, count=1)
         if idx==4:
             sections=re.split(r'\\subsection\{[^}]+\}',body)[1:]
-            if len(sections)!=4 or any(not x.strip() for x in sections): errors.append('chapter 4 requires four completed subsections')
+            if len(sections)!=3 or any(not x.strip() for x in sections): errors.append('chapter 4 requires three completed subsections')
         else:
             sections=re.split(r'\\subsection\{[^}]+\}',body)[1:]
             if len(sections)!=7 or any(not x.strip() for x in sections): errors.append('chapter 5 requires seven completed subsections')
