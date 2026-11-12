@@ -25,6 +25,6 @@ if [ "$MODE" = '--check' ]; then
 else
   mkdir -p ../exports
   cp "$BUILD_DIR/main.pdf" ../exports/.proposal-build.tmp
-  mv ../exports/.proposal-build.tmp ../exports/博士科研计划书_V2.1_批注与表达精修_20261111.pdf
-  echo 'OK -> ../exports/博士科研计划书_V2.1_批注与表达精修_20261111.pdf'
+  mv ../exports/.proposal-build.tmp ../exports/周璐楠博士科研计划书_V3.pdf
+  echo 'OK -> ../exports/周璐楠博士科研计划书_V3.pdf'
 fi
